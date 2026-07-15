@@ -99,15 +99,21 @@ export function QuestionCard({
   };
 
   return (
-    <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+    <div
+      className="rounded-xl border p-6 shadow-sm transition-colors"
+      style={{
+        backgroundColor: `${accentColor}29`,
+        borderColor: `${accentColor}80`,
+      }}
+    >
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
         <span
           className="rounded-full px-2.5 py-1 font-medium"
-          style={{ backgroundColor: `${accentColor}1a`, color: accentColor }}
+          style={{ backgroundColor: `${accentColor}40`, color: accentColor }}
         >
           {question.subdomainId} · Question {questionNumber} of {totalInSubdomain}
         </span>
-        <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-1 font-medium text-slate-500 dark:text-slate-400">
+        <span className="rounded-full bg-white/50 dark:bg-slate-900/40 px-2.5 py-1 font-medium text-slate-600 dark:text-slate-300">
           {TIER_LABELS[question.tier]} · {DIFFICULTY_LABELS[question.difficulty]} (
           {question.difficulty}/5)
         </span>
