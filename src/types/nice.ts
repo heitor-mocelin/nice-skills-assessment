@@ -6,11 +6,17 @@
 /** The 5 core Work Role Categories (Domains) defined by NICE v2.2.0 */
 export type DomainId = "OG" | "DD" | "IO" | "PD" | "IN";
 
+/** Sub-domain identifier, e.g. "DD-A", "PD-C". Unique across the whole framework. */
+export type SubdomainId = string;
+
 /** Difficulty rating applied to every question, 1 (easiest) to 5 (hardest) */
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5;
 
-/** Self-attestation comfort/familiarity rating, 1 (no familiarity) to 5 (expert) */
-export type FamiliarityRating = 1 | 2 | 3 | 4 | 5;
+/**
+ * Self-attestation comfort/familiarity rating for a sub-domain, 0 (no
+ * familiarity) to 4 (expert). Matches the paper worksheet's 0-4 scale.
+ */
+export type FamiliarityRating = 0 | 1 | 2 | 3 | 4;
 
 export interface Domain {
   id: DomainId;
@@ -19,6 +25,28 @@ export interface Domain {
   description: string;
   /** Tailwind-friendly accent color used for charts/badges for this domain */
   color: string;
+}
+
+/** A referenced NICE work role, e.g. { code: "DD-WRL-001", name: "Cybersecurity Architecture" } */
+export interface NiceWorkRole {
+  code: string;
+  name: string;
+}
+
+/**
+ * A sub-domain: a focused cluster of skills within a parent Domain, mapped to
+ * one or more official NICE work roles. This is the actual unit the user
+ * self-rates against in Stage 1 (not the broad parent Domain), matching the
+ * granularity of the source worksheet (e.g. "DD-A — Security & Enterprise
+ * Architecture").
+ */
+export interface Subdomain {
+  id: SubdomainId; // e.g. "DD-A"
+  domainId: DomainId;
+  title: string; // e.g. "Security & Enterprise Architecture"
+  workRoles: NiceWorkRole[];
+  /** The "what lives here" checklist the user rates themselves against as a whole */
+  topics: string[];
 }
 
 export interface AnswerOption {
@@ -54,10 +82,15 @@ export interface QuestionBank {
 /* User progress / response tracking                                       */
 /* ---------------------------------------------------------------------- */
 
-/** Stage 1: user's self-rated familiarity per domain, captured before the quiz */
-export interface FamiliarityBaseline {
+/** Stage 1: user's self-rated familiarity for a single sub-domain, captured before the quiz */
+export interface SubdomainBaseline {
+  subdomainId: SubdomainId;
   domainId: DomainId;
-  rating: FamiliarityRating;
+  rating: FamiliarityRating; // 0-4
+  /** whether the user flagged this sub-domain as a career focus area */
+  isFocusArea: boolean | null;
+  /** free-form notes, e.g. "TCP/IP solid, BGP theoretical only" */
+  notes: string;
 }
 
 /** Stage 2: a single user response to a single question */
@@ -81,7 +114,7 @@ export interface QuestionResponse {
 export interface AssessmentState {
   schemaVersion: number; // bump if shape changes, to safely migrate/reset localStorage
   currentStage: "baseline" | "quiz" | "results" | "not-started";
-  baseline: FamiliarityBaseline[];
+  baseline: SubdomainBaseline[];
   responses: QuestionResponse[];
   /** ids of questions served in this session, per domain, preserves ordering */
   quizQuestionIds: Record<DomainId, string[]>;
@@ -98,8 +131,7 @@ export interface AssessmentState {
 
 export interface DomainResult {
   domainId: DomainId;
-  baselineRating: FamiliarityRating | null; // Stage 1 self-attestation (1-5)
-  baselineScorePercent: number; // baselineRating normalized to 0-100 for chart comparison
+  baselineScorePercent: number; // avg of subdomain ratings (0-4) normalized to 0-100
   totalQuestions: number;
   correctCount: number;
   incorrectCount: number;

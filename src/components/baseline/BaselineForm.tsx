@@ -3,29 +3,33 @@
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { DOMAINS } from "@/data/domains";
+import { SUBDOMAINS, getSubdomainsByDomain } from "@/data/subdomains";
 import { useAssessment } from "@/context/AssessmentContext";
-import { DomainRatingCard } from "@/components/baseline/DomainRatingCard";
+import { SubdomainRatingCard } from "@/components/baseline/SubdomainRatingCard";
 import { RadarChart } from "@/components/charts/RadarChart";
-import { FamiliarityRating } from "@/types/nice";
+import { computeDomainBaselinePercents } from "@/lib/baselineRollup";
 
 export function BaselineForm() {
   const router = useRouter();
-  const { state, setBaselineRating, getBaselineRating, completeBaseline } = useAssessment();
+  const { state, completeBaseline } = useAssessment();
 
-  const allRated = DOMAINS.every((d) => getBaselineRating(d.id) !== null);
+  const ratedSubdomainIds = new Set(state.baseline.map((b) => b.subdomainId));
+  const allRated = SUBDOMAINS.every((s) => ratedSubdomainIds.has(s.id));
+  const ratedCount = ratedSubdomainIds.size;
+
+  const domainPercents = useMemo(
+    () => computeDomainBaselinePercents(state.baseline),
+    [state.baseline]
+  );
 
   const radarData = useMemo(
     () =>
-      DOMAINS.map((d) => {
-        const rating = getBaselineRating(d.id);
-        return {
-          label: d.id,
-          value: rating ? (rating / 5) * 100 : 0,
-          color: d.color,
-        };
-      }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [state.baseline]
+      DOMAINS.map((d) => ({
+        label: d.id,
+        value: domainPercents[d.id] ?? 0,
+        color: d.color,
+      })),
+    [domainPercents]
   );
 
   const handleSubmit = () => {
@@ -35,36 +39,61 @@ export function BaselineForm() {
   };
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-      <div className="space-y-4">
+    <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
+      <div className="space-y-10">
         {DOMAINS.map((domain) => (
-          <DomainRatingCard
-            key={domain.id}
-            domain={domain}
-            value={getBaselineRating(domain.id) as FamiliarityRating | null}
-            onChange={(rating) => setBaselineRating(domain.id, rating)}
-          />
+          <section key={domain.id}>
+            <div className="mb-4 flex items-center gap-2">
+              <span
+                className="h-3 w-3 shrink-0 rounded-full"
+                style={{ backgroundColor: domain.color }}
+                aria-hidden
+              />
+              <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                {domain.name}{" "}
+                <span className="text-sm font-normal text-slate-400">({domain.id})</span>
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {getSubdomainsByDomain(domain.id).map((subdomain) => (
+                <SubdomainRatingCard
+                  key={subdomain.id}
+                  subdomain={subdomain}
+                  accentColor={domain.color}
+                />
+              ))}
+            </div>
+          </section>
         ))}
 
-        <button
-          type="button"
-          onClick={handleSubmit}
-          disabled={!allRated}
-          className="w-full rounded-lg bg-indigo-600 py-3 font-semibold text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 dark:disabled:bg-slate-700 dark:disabled:text-slate-500"
-        >
-          {allRated ? "Begin Assessment →" : `Rate all ${DOMAINS.length} domains to continue`}
-        </button>
+        <div className="sticky bottom-4">
+          <button
+            type="button"
+            onClick={handleSubmit}
+            disabled={!allRated}
+            className="w-full rounded-lg bg-indigo-600 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none dark:disabled:bg-slate-700 dark:disabled:text-slate-500"
+          >
+            {allRated
+              ? "Begin Assessment →"
+              : `Rate all sub-domains to continue (${ratedCount}/${SUBDOMAINS.length})`}
+          </button>
+        </div>
       </div>
 
-      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
-        <h3 className="text-center font-semibold text-slate-900 dark:text-slate-100">
-          Your Familiarity Baseline
-        </h3>
-        <p className="mt-1 text-center text-xs text-slate-400">
-          Updates live as you rate each domain
-        </p>
-        <div className="mx-auto mt-4 aspect-square max-w-xs">
-          <RadarChart data={radarData} />
+      <div className="lg:sticky lg:top-6 lg:self-start">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+          <h3 className="text-center font-semibold text-slate-900 dark:text-slate-100">
+            Your Familiarity Baseline
+          </h3>
+          <p className="mt-1 text-center text-xs text-slate-400">
+            Domain average across rated sub-domains — updates live
+          </p>
+          <div className="mx-auto mt-4 aspect-square max-w-xs">
+            <RadarChart data={radarData} />
+          </div>
+          <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
+            {ratedCount} / {SUBDOMAINS.length} sub-domains rated
+          </p>
         </div>
       </div>
     </div>

@@ -12,6 +12,8 @@ import {
   DomainId,
   FamiliarityRating,
   QuestionResponse,
+  SubdomainBaseline,
+  SubdomainId,
 } from "@/types/nice";
 import {
   getServerSnapshot,
@@ -21,12 +23,20 @@ import {
   subscribe,
 } from "@/lib/assessmentStore";
 
+type SubdomainBaselinePatch = Partial<
+  Pick<SubdomainBaseline, "rating" | "isFocusArea" | "notes">
+>;
+
 interface AssessmentContextValue {
   state: AssessmentState;
   /** true once the client has mounted and the useSyncExternalStore snapshot reflects localStorage */
   isHydrated: boolean;
-  setBaselineRating: (domainId: DomainId, rating: FamiliarityRating) => void;
-  getBaselineRating: (domainId: DomainId) => FamiliarityRating | null;
+  getSubdomainBaseline: (subdomainId: SubdomainId) => SubdomainBaseline | null;
+  updateSubdomainBaseline: (
+    subdomainId: SubdomainId,
+    domainId: DomainId,
+    patch: SubdomainBaselinePatch
+  ) => void;
   completeBaseline: () => void;
   startQuiz: (quizQuestionIds: Record<DomainId, string[]>) => void;
   recordResponse: (response: QuestionResponse) => void;
@@ -37,6 +47,8 @@ interface AssessmentContextValue {
 
 const AssessmentContext = createContext<AssessmentContextValue | null>(null);
 
+const DEFAULT_RATING: FamiliarityRating = 0;
+
 export function AssessmentProvider({ children }: { children: React.ReactNode }) {
   // Synchronizes with the external localStorage-backed store. On the server
   // and during the first client render this returns the empty initial state
@@ -45,25 +57,35 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
   const state = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const isHydrated = typeof window !== "undefined";
 
-  const setBaselineRating = useCallback(
-    (domainId: DomainId, rating: FamiliarityRating) => {
+  const getSubdomainBaseline = useCallback(
+    (subdomainId: SubdomainId): SubdomainBaseline | null => {
+      return state.baseline.find((b) => b.subdomainId === subdomainId) ?? null;
+    },
+    [state.baseline]
+  );
+
+  const updateSubdomainBaseline = useCallback(
+    (subdomainId: SubdomainId, domainId: DomainId, patch: SubdomainBaselinePatch) => {
       setAssessmentState((prev) => {
-        const existing = prev.baseline.filter((b) => b.domainId !== domainId);
+        const existing = prev.baseline.find((b) => b.subdomainId === subdomainId);
+        const next: SubdomainBaseline = existing
+          ? { ...existing, ...patch }
+          : {
+              subdomainId,
+              domainId,
+              rating: DEFAULT_RATING,
+              isFocusArea: null,
+              notes: "",
+              ...patch,
+            };
         return {
           ...prev,
           currentStage: prev.currentStage === "not-started" ? "baseline" : prev.currentStage,
-          baseline: [...existing, { domainId, rating }],
+          baseline: [...prev.baseline.filter((b) => b.subdomainId !== subdomainId), next],
         };
       });
     },
     []
-  );
-
-  const getBaselineRating = useCallback(
-    (domainId: DomainId): FamiliarityRating | null => {
-      return state.baseline.find((b) => b.domainId === domainId)?.rating ?? null;
-    },
-    [state.baseline]
   );
 
   const completeBaseline = useCallback(() => {
@@ -117,8 +139,8 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     () => ({
       state,
       isHydrated,
-      setBaselineRating,
-      getBaselineRating,
+      getSubdomainBaseline,
+      updateSubdomainBaseline,
       completeBaseline,
       startQuiz,
       recordResponse,
@@ -129,8 +151,8 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     [
       state,
       isHydrated,
-      setBaselineRating,
-      getBaselineRating,
+      getSubdomainBaseline,
+      updateSubdomainBaseline,
       completeBaseline,
       startQuiz,
       recordResponse,

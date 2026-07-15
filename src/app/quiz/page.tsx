@@ -31,8 +31,9 @@ export default function QuizPlaceholderPage() {
           </p>
           <ul className="mt-2 space-y-1 text-slate-500 dark:text-slate-400">
             {state.baseline.map((b) => (
-              <li key={b.domainId}>
-                {b.domainId}: {b.rating}/5
+              <li key={b.subdomainId}>
+                {b.subdomainId}: {b.rating}/4
+                {b.isFocusArea ? " · focus area" : ""}
               </li>
             ))}
           </ul>
