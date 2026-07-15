@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useAssessment } from "@/context/AssessmentContext";
 import { DOMAINS } from "@/data/domains";
+import { SUBDOMAINS } from "@/data/subdomains";
 import { RadarChart } from "@/components/charts/RadarChart";
 import { computeDomainResults } from "@/lib/resultsCompute";
 
@@ -31,8 +32,8 @@ export function ResultsDashboard() {
   const { state, resetAssessment } = useAssessment();
 
   const results = useMemo(
-    () => computeDomainResults(state.baseline, state.responses),
-    [state.baseline, state.responses]
+    () => computeDomainResults(state.baseline, state.responses, state.skippedSubdomains),
+    [state.baseline, state.responses, state.skippedSubdomains]
   );
 
   const totalQuestions = results.reduce((sum, r) => sum + r.totalQuestions, 0);
@@ -133,6 +134,28 @@ export function ResultsDashboard() {
                 </div>
                 <span className={`text-xs font-semibold ${gap.className}`}>{gap.text}</span>
               </div>
+
+              {result.skippedSubdomainIds.length > 0 && (
+                <div className="mt-3 rounded-lg border border-amber-200 dark:border-amber-900/50 bg-amber-50 dark:bg-amber-950/30 p-3">
+                  <p className="text-xs font-semibold text-amber-700 dark:text-amber-400">
+                    ⏭ {result.skippedSubdomainIds.length === result.totalSubdomains
+                      ? "Entire domain skipped"
+                      : `${result.skippedSubdomainIds.length} of ${result.totalSubdomains} sections skipped`}
+                  </p>
+                  <ul className="mt-1 space-y-0.5 text-xs text-amber-700/90 dark:text-amber-400/90">
+                    {result.skippedSubdomainIds.map((subdomainId) => {
+                      const subdomain = SUBDOMAINS.find((s) => s.id === subdomainId);
+                      return (
+                        <li key={subdomainId}>
+                          <span className="font-mono">{subdomainId}</span>
+                          {subdomain ? ` — ${subdomain.title}` : ""}: shown as 0% (skipped),
+                          excluded from the domain score above.
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
 
               <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 <Metric

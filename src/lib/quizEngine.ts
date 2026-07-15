@@ -162,3 +162,21 @@ export function findReplacementQuestion(
 export function getDomainIdForSubdomain(subdomainId: SubdomainId): DomainId | undefined {
   return SUBDOMAINS.find((s) => s.id === subdomainId)?.domainId;
 }
+
+/**
+ * Finds the index (in traversal order) of the first sub-domain at or after
+ * `fromIndex` whose queue still has questions. Used after a sub-domain is
+ * skipped (its queue is emptied) to figure out where the quiz should jump
+ * to next. Returns null if no sub-domain from `fromIndex` onward has any
+ * questions left — meaning the quiz is complete.
+ */
+export function findNextNonEmptySubdomainIndexFrom(
+  queue: Record<SubdomainId, string[]>,
+  fromIndex: number
+): number | null {
+  const ordered = getOrderedSubdomains();
+  for (let i = fromIndex; i < ordered.length; i++) {
+    if ((queue[ordered[i].id]?.length ?? 0) > 0) return i;
+  }
+  return null;
+}

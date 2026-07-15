@@ -6,7 +6,10 @@ export const STORAGE_KEY = "nice-assessment:state";
 // v4: quiz queue moved from per-domain to per-subdomain pools (4 easy/3 medium/3 hard,
 //     sampled from a 30-question pool per sub-domain); added skip tracking and the
 //     ability to explicitly skip the baseline stage.
-export const SCHEMA_VERSION = 4;
+// v5: added the ability to skip an entire sub-domain during the quiz
+//     (skippedSubdomains), shown as a zeroed-out, explicitly flagged
+//     section in the results dashboard.
+export const SCHEMA_VERSION = 5;
 
 const EMPTY_SKIP_COUNTS: Record<DomainId, number> = {
   OG: 0,
@@ -28,6 +31,7 @@ export function createInitialState(): AssessmentState {
     currentSubdomainIndex: 0,
     currentQuestionIndex: 0,
     skipsUsedByDomain: { ...EMPTY_SKIP_COUNTS },
+    skippedSubdomains: [],
     startedAt: null,
     completedAt: null,
   };

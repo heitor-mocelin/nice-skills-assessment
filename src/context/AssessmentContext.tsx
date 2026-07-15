@@ -22,7 +22,12 @@ import {
   setAssessmentState,
   subscribe,
 } from "@/lib/assessmentStore";
-import { MAX_SKIPS_PER_DOMAIN, findReplacementQuestion } from "@/lib/quizEngine";
+import {
+  MAX_SKIPS_PER_DOMAIN,
+  findNextNonEmptySubdomainIndexFrom,
+  findReplacementQuestion,
+  getOrderedSubdomains,
+} from "@/lib/quizEngine";
 
 type SubdomainMetaPatch = Partial<Pick<SubdomainBaseline, "isFocusArea" | "notes">>;
 
@@ -63,6 +68,15 @@ interface AssessmentContextValue {
     tier: "easy" | "medium" | "hard"
   ) => boolean;
   remainingSkips: (domainId: DomainId) => number;
+  /**
+   * Skips an entire sub-domain's remaining questions in one action (distinct
+   * from skipping a single question). Clears the sub-domain's queue and any
+   * already-recorded responses for it, marks it as explicitly skipped, and
+   * advances to the next available sub-domain (or completes the quiz if
+   * none remain). No-op if the sub-domain is already fully skipped.
+   */
+  skipSubdomain: (subdomainId: SubdomainId) => void;
+  isSubdomainSkipped: (subdomainId: SubdomainId) => boolean;
   completeQuiz: () => void;
   resetAssessment: () => void;
 }
@@ -226,6 +240,61 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     []
   );
 
+  const isSubdomainSkipped = useCallback(
+    (subdomainId: SubdomainId): boolean => {
+      return state.skippedSubdomains.includes(subdomainId);
+    },
+    [state.skippedSubdomains]
+  );
+
+  const skipSubdomain = useCallback((subdomainId: SubdomainId) => {
+    setAssessmentState((prev) => {
+      if (prev.skippedSubdomains.includes(subdomainId)) return prev;
+
+      const nextQueue: Record<SubdomainId, string[]> = {
+        ...prev.quizQuestionIds,
+        [subdomainId]: [],
+      };
+      const nextSkippedSubdomains = [...prev.skippedSubdomains, subdomainId];
+      // Drop any responses already recorded for this sub-domain so the
+      // results dashboard shows it as a clean, explicit zero rather than a
+      // partial score blended in with the skip.
+      const nextResponses = prev.responses.filter((r) => r.subdomainId !== subdomainId);
+
+      const ordered = getOrderedSubdomains();
+      let currentSubdomainIndex = prev.currentSubdomainIndex;
+      let currentQuestionIndex = prev.currentQuestionIndex;
+      let currentStage = prev.currentStage;
+      let completedAt = prev.completedAt;
+
+      if (ordered[prev.currentSubdomainIndex]?.id === subdomainId) {
+        const nextIndex = findNextNonEmptySubdomainIndexFrom(
+          nextQueue,
+          prev.currentSubdomainIndex
+        );
+        if (nextIndex !== null) {
+          currentSubdomainIndex = nextIndex;
+          currentQuestionIndex = 0;
+        } else {
+          // Nothing left ahead — the quiz is complete.
+          currentStage = "results";
+          completedAt = completedAt ?? Date.now();
+        }
+      }
+
+      return {
+        ...prev,
+        quizQuestionIds: nextQueue,
+        skippedSubdomains: nextSkippedSubdomains,
+        responses: nextResponses,
+        currentSubdomainIndex,
+        currentQuestionIndex,
+        currentStage,
+        completedAt,
+      };
+    });
+  }, []);
+
   const completeQuiz = useCallback(() => {
     setAssessmentState((prev) => ({
       ...prev,
@@ -252,6 +321,8 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       advanceQuestion,
       skipQuestion,
       remainingSkips,
+      skipSubdomain,
+      isSubdomainSkipped,
       completeQuiz,
       resetAssessment,
     }),
@@ -268,6 +339,8 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       advanceQuestion,
       skipQuestion,
       remainingSkips,
+      skipSubdomain,
+      isSubdomainSkipped,
       completeQuiz,
       resetAssessment,
     ]

@@ -164,6 +164,13 @@ export interface AssessmentState {
   currentQuestionIndex: number;
   /** how many questions the user has skipped so far, per parent domain (cap: 3) */
   skipsUsedByDomain: Record<DomainId, number>;
+  /**
+   * Sub-domains the user explicitly opted to skip entirely (distinct from
+   * skipping a single question). Any recorded responses for a skipped
+   * sub-domain are removed so the results dashboard shows it as a true
+   * zero, flagged as skipped rather than blended into the score.
+   */
+  skippedSubdomains: SubdomainId[];
   startedAt: number | null;
   completedAt: number | null;
 }
@@ -186,4 +193,8 @@ export interface DomainResult {
   performancePercent: number; // 0-100, actual quiz performance
   /** performancePercent - baselineScorePercent; null when there's no baseline to compare against */
   confidenceGap: number | null;
+  /** sub-domain ids within this domain that the user explicitly skipped entirely */
+  skippedSubdomainIds: SubdomainId[];
+  /** total number of sub-domains that belong to this domain (for "N of M skipped" display) */
+  totalSubdomains: number;
 }

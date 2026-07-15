@@ -1,5 +1,6 @@
-import { DomainResult, QuestionResponse, SubdomainBaseline } from "@/types/nice";
+import { DomainResult, QuestionResponse, SubdomainBaseline, SubdomainId } from "@/types/nice";
 import { DOMAINS } from "@/data/domains";
+import { SUBDOMAINS } from "@/data/subdomains";
 import { loadQuestionBank } from "@/lib/questionBank";
 import { computeDomainBaselinePercentsOrNull } from "@/lib/baselineRollup";
 
@@ -12,7 +13,8 @@ import { computeDomainBaselinePercentsOrNull } from "@/lib/baselineRollup";
  */
 export function computeDomainResults(
   baseline: SubdomainBaseline[],
-  responses: QuestionResponse[]
+  responses: QuestionResponse[],
+  skippedSubdomains: SubdomainId[] = []
 ): DomainResult[] {
   const baselinePercents = computeDomainBaselinePercentsOrNull(baseline);
   const bank = loadQuestionBank();
@@ -38,6 +40,11 @@ export function computeDomainResults(
     const confidenceGap =
       baselineScorePercent === null ? null : performancePercent - baselineScorePercent;
 
+    const domainSubdomains = SUBDOMAINS.filter((s) => s.domainId === domain.id);
+    const skippedSubdomainIds = domainSubdomains
+      .map((s) => s.id)
+      .filter((id) => skippedSubdomains.includes(id));
+
     return {
       domainId: domain.id,
       baselineScorePercent,
@@ -50,6 +57,8 @@ export function computeDomainResults(
       pointsPossible,
       performancePercent,
       confidenceGap,
+      skippedSubdomainIds,
+      totalSubdomains: domainSubdomains.length,
     };
   });
 }

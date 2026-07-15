@@ -27,6 +27,7 @@ export function QuizRunner() {
     advanceQuestion,
     skipQuestion,
     remainingSkips,
+    skipSubdomain,
     completeQuiz,
   } = useAssessment();
 
@@ -70,6 +71,15 @@ export function QuizRunner() {
     }
   }, [isHydrated, hasQueue, currentQuestion, state.quizQuestionIds, advanceQuestion]);
 
+  // Redirect to /results whenever the quiz reaches its completed stage —
+  // covers both normal completion (last question answered) and completion
+  // triggered by skipping the final remaining sub-domain.
+  useEffect(() => {
+    if (state.currentStage === "results") {
+      router.push("/results");
+    }
+  }, [state.currentStage, router]);
+
   const existingResponse = currentQuestion
     ? state.responses.find((r) => r.questionId === currentQuestion.id) ?? null
     : null;
@@ -92,6 +102,16 @@ export function QuizRunner() {
     const domainId = getDomainIdForSubdomain(currentSubdomain.id);
     if (!domainId) return;
     skipQuestion(currentSubdomain.id, domainId, currentQuestion.id, currentQuestion.tier);
+  };
+
+  const handleSkipSubdomain = () => {
+    if (!currentSubdomain) return;
+    const confirmed = window.confirm(
+      `Skip the entire "${currentSubdomain.title}" (${currentSubdomain.id}) section? ` +
+        "Any answers already given in this section will be cleared, and it will show as 0% (skipped) on your final report."
+    );
+    if (!confirmed) return;
+    skipSubdomain(currentSubdomain.id);
   };
 
   const handleSubmit = (result: {
@@ -161,6 +181,15 @@ export function QuizRunner() {
             {skipsRemaining}/{MAX_SKIPS_PER_DOMAIN} skips left in {domainId}
           </p>
         )}
+        <div className="mt-2 flex justify-end">
+          <button
+            type="button"
+            onClick={handleSkipSubdomain}
+            className="text-xs font-medium text-slate-400 underline decoration-dotted underline-offset-2 transition-colors hover:text-red-500 dark:hover:text-red-400"
+          >
+            Skip this entire section ({currentSubdomain.id}) →
+          </button>
+        </div>
       </div>
 
       <QuestionCard
