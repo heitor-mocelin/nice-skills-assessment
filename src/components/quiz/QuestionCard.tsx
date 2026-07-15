@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { Question, QuestionResponse } from "@/types/nice";
 
 const DIFFICULTY_LABELS: Record<number, string> = {
@@ -199,7 +199,10 @@ export function QuestionCard({
           onChange={(e) => setNotes(e.target.value)}
           rows={2}
           placeholder="Optional notes..."
-          className="mt-2 w-full resize-y rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm text-slate-700 dark:text-slate-200 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="mt-2 w-full resize-y rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm text-slate-700 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-1"
+          style={{ "--tw-ring-color": accentColor } as CSSProperties}
+          onFocus={(e) => (e.currentTarget.style.borderColor = accentColor)}
+          onBlur={(e) => (e.currentTarget.style.borderColor = "")}
         />
       </div>
 
