@@ -16,6 +16,7 @@ import {
   getTotalQuestionCount,
   MAX_SKIPS_PER_DOMAIN,
 } from "@/lib/quizEngine";
+import { getSubdomainColor } from "@/lib/domainColors";
 
 export function QuizRunner() {
   const router = useRouter();
@@ -160,6 +161,7 @@ export function QuizRunner() {
   const progressPercent = Math.round((completedQuestions / totalQuestions) * 100);
   const domainId = getDomainIdForSubdomain(currentSubdomain.id);
   const skipsRemaining = domainId ? remainingSkips(domainId) : 0;
+  const accentColor = getSubdomainColor(currentSubdomain.id);
 
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -172,8 +174,8 @@ export function QuizRunner() {
         </div>
         <div className="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
           <div
-            className="h-full rounded-full bg-indigo-600 transition-all"
-            style={{ width: `${progressPercent}%` }}
+            className="h-full rounded-full transition-all"
+            style={{ width: `${progressPercent}%`, backgroundColor: accentColor }}
           />
         </div>
         {domainId && (
@@ -200,6 +202,7 @@ export function QuizRunner() {
         existingResponse={existingResponse}
         canGoBack={previousPosition !== null}
         skipsRemaining={skipsRemaining}
+        accentColor={accentColor}
         onSubmit={handleSubmit}
         onBack={handleBack}
         onSkip={handleSkip}

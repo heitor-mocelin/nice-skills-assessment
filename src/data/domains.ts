@@ -2,8 +2,10 @@ import { Domain } from "@/types/nice";
 
 /**
  * The 5 core NICE Framework v2.2.0 Work Role Categories (Domains).
- * Colors are Tailwind-compatible hex values used consistently across
- * charts, badges, and progress bars.
+ * Colors are the mid-shade of each domain's color scale (see
+ * src/lib/domainColors.ts), which also derives lighter/darker per
+ * sub-domain shades from the same hue family:
+ *   OG = purple, DD = blue, IO = green, PD = yellow/amber, IN = red.
  */
 export const DOMAINS: Domain[] = [
   {
@@ -12,7 +14,7 @@ export const DOMAINS: Domain[] = [
     shortName: "Oversight & Governance",
     description:
       "Leadership, management, direction, and development of cybersecurity policy, strategy, legal/regulatory compliance, and workforce oversight.",
-    color: "#6366f1", // indigo-500
+    color: "#8b5cf6", // violet-500 (purple)
   },
   {
     id: "DD",
@@ -20,7 +22,7 @@ export const DOMAINS: Domain[] = [
     shortName: "Design & Development",
     description:
       "Conceptualizing, designing, and building secure information technology systems and software.",
-    color: "#0ea5e9", // sky-500
+    color: "#3b82f6", // blue-500
   },
   {
     id: "IO",

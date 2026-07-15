@@ -26,6 +26,8 @@ interface QuestionCardProps {
   canGoBack: boolean;
   /** Skips remaining for this question's parent domain (0 disables the Skip button). */
   skipsRemaining: number;
+  /** This question's sub-domain shade (see src/lib/domainColors.ts) — used for the badge and selection accents. */
+  accentColor: string;
   onSubmit: (result: {
     selectedOptionId: string | null;
     idkSelected: boolean;
@@ -52,6 +54,7 @@ export function QuestionCard({
   existingResponse,
   canGoBack,
   skipsRemaining,
+  accentColor,
   onSubmit,
   onBack,
   onSkip,
@@ -98,7 +101,10 @@ export function QuestionCard({
   return (
     <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-        <span className="rounded-full bg-indigo-50 dark:bg-indigo-950 px-2.5 py-1 font-medium text-indigo-600 dark:text-indigo-400">
+        <span
+          className="rounded-full px-2.5 py-1 font-medium"
+          style={{ backgroundColor: `${accentColor}1a`, color: accentColor }}
+        >
           {question.subdomainId} · Question {questionNumber} of {totalInSubdomain}
         </span>
         <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-1 font-medium text-slate-500 dark:text-slate-400">
@@ -130,9 +136,14 @@ export function QuestionCard({
                   : showIncorrectSelection
                   ? "border-red-400 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300"
                   : isSelected
-                  ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-800 dark:text-indigo-300"
-                  : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-indigo-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+                  ? "text-slate-900 dark:text-slate-100"
+                  : "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
               } ${hasAnswered ? "cursor-default" : "cursor-pointer"}`}
+              style={
+                isSelected && !showCorrect && !showIncorrectSelection
+                  ? { borderColor: accentColor, backgroundColor: `${accentColor}14` }
+                  : undefined
+              }
             >
               <span className="mr-2 font-semibold uppercase">{option.id}.</span>
               {option.text}
@@ -207,7 +218,8 @@ export function QuestionCard({
             type="button"
             onClick={handleSubmitAnswer}
             disabled={!canSubmit}
-            className="flex-1 rounded-lg bg-indigo-600 py-3 font-semibold text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 dark:disabled:bg-slate-700 dark:disabled:text-slate-500"
+            className="flex-1 rounded-lg py-3 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 dark:disabled:bg-slate-700 dark:disabled:text-slate-500"
+            style={canSubmit ? { backgroundColor: accentColor } : undefined}
           >
             Submit Answer
           </button>
@@ -215,7 +227,8 @@ export function QuestionCard({
           <button
             type="button"
             onClick={handleContinue}
-            className="flex-1 rounded-lg bg-indigo-600 py-3 font-semibold text-white transition-colors hover:bg-indigo-700"
+            className="flex-1 rounded-lg py-3 font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: accentColor }}
           >
             Continue →
           </button>

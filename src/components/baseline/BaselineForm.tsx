@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { DOMAINS } from "@/data/domains";
 import { SUBDOMAINS, getSubdomainsByDomain } from "@/data/subdomains";
+import { getSubdomainColor } from "@/lib/domainColors";
 import { useAssessment } from "@/context/AssessmentContext";
 import { SubdomainRatingCard } from "@/components/baseline/SubdomainRatingCard";
 import { RadarChart } from "@/components/charts/RadarChart";
@@ -69,7 +70,7 @@ export function BaselineForm() {
                 <SubdomainRatingCard
                   key={subdomain.id}
                   subdomain={subdomain}
-                  accentColor={domain.color}
+                  accentColor={getSubdomainColor(subdomain.id)}
                 />
               ))}
             </div>

@@ -7,6 +7,7 @@ import { DOMAINS } from "@/data/domains";
 import { SUBDOMAINS } from "@/data/subdomains";
 import { RadarChart } from "@/components/charts/RadarChart";
 import { computeDomainResults } from "@/lib/resultsCompute";
+import { getSubdomainColor } from "@/lib/domainColors";
 
 function confidenceGapLabel(gap: number | null): { text: string; className: string } {
   if (gap === null) {
@@ -146,10 +147,17 @@ export function ResultsDashboard() {
                     {result.skippedSubdomainIds.map((subdomainId) => {
                       const subdomain = SUBDOMAINS.find((s) => s.id === subdomainId);
                       return (
-                        <li key={subdomainId}>
-                          <span className="font-mono">{subdomainId}</span>
-                          {subdomain ? ` — ${subdomain.title}` : ""}: shown as 0% (skipped),
-                          excluded from the domain score above.
+                        <li key={subdomainId} className="flex items-center gap-1.5">
+                          <span
+                            className="h-2 w-2 shrink-0 rounded-full"
+                            style={{ backgroundColor: getSubdomainColor(subdomainId) }}
+                            aria-hidden
+                          />
+                          <span>
+                            <span className="font-mono">{subdomainId}</span>
+                            {subdomain ? ` — ${subdomain.title}` : ""}: shown as 0% (skipped),
+                            excluded from the domain score above.
+                          </span>
                         </li>
                       );
                     })}
