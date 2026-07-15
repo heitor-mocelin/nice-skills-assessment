@@ -198,3 +198,21 @@ export interface DomainResult {
   /** total number of sub-domains that belong to this domain (for "N of M skipped" display) */
   totalSubdomains: number;
 }
+
+/**
+ * Stage 3 detail for a single sub-domain, used to surface how the user's
+ * self-declared "career focus area" (Stage 1) actually performed in the
+ * quiz — otherwise that flag is captured but never referenced again.
+ */
+export interface SubdomainResult {
+  subdomainId: SubdomainId;
+  domainId: DomainId;
+  /** the user's Stage 1 "focus area for my career?" answer for this sub-domain */
+  isFocusArea: boolean;
+  /** avg topic rating (0-4) normalized to 0-100; null if not rated */
+  baselineScorePercent: number | null;
+  totalQuestions: number;
+  correctCount: number;
+  performancePercent: number; // 0-100; 0 when no questions answered
+  skipped: boolean;
+}

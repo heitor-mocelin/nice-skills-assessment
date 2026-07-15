@@ -6,7 +6,7 @@ import { useAssessment } from "@/context/AssessmentContext";
 import { DOMAINS } from "@/data/domains";
 import { SUBDOMAINS } from "@/data/subdomains";
 import { RadarChart } from "@/components/charts/RadarChart";
-import { computeDomainResults } from "@/lib/resultsCompute";
+import { computeDomainResults, computeSubdomainResults } from "@/lib/resultsCompute";
 import { getSubdomainColor } from "@/lib/domainColors";
 
 function confidenceGapLabel(gap: number | null): { text: string; className: string } {
@@ -35,6 +35,15 @@ export function ResultsDashboard() {
   const results = useMemo(
     () => computeDomainResults(state.baseline, state.responses, state.skippedSubdomains),
     [state.baseline, state.responses, state.skippedSubdomains]
+  );
+
+  const subdomainResults = useMemo(
+    () => computeSubdomainResults(state.baseline, state.responses, state.skippedSubdomains),
+    [state.baseline, state.responses, state.skippedSubdomains]
+  );
+  const focusAreaResults = useMemo(
+    () => subdomainResults.filter((s) => s.isFocusArea),
+    [subdomainResults]
   );
 
   const totalQuestions = results.reduce((sum, r) => sum + r.totalQuestions, 0);
@@ -76,8 +85,95 @@ export function ResultsDashboard() {
         <SummaryCard label="Questions answered" value={String(totalQuestions)} />
         <SummaryCard label="Overall accuracy" value={`${overallAccuracy}%`} />
         <SummaryCard label="Points earned" value={`${totalPointsEarned} / ${totalPointsPossible}`} />
-        <SummaryCard label="\u201cI don't know\u201d" value={String(totalIdk)} />
+        <SummaryCard label={"“I don't know”"} value={String(totalIdk)} />
       </div>
+
+      {/* Career focus areas */}
+      {focusAreaResults.length > 0 && (
+        <div className="rounded-xl border-2 border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/20 p-5 shadow-sm">
+          <h2 className="flex items-center gap-2 font-bold text-amber-900 dark:text-amber-300">
+            <span aria-hidden>⭐</span>
+            Your Career Focus Areas
+          </h2>
+          <p className="mt-1 text-xs text-amber-800/80 dark:text-amber-400/80">
+            You flagged {focusAreaResults.length === 1 ? "this sub-domain" : "these sub-domains"}{" "}
+            as a focus area for your career during the self-assessment. Here&apos;s how you
+            actually performed:
+          </p>
+          <div className="mt-4 space-y-3">
+            {focusAreaResults.map((fa) => {
+              const subdomain = SUBDOMAINS.find((s) => s.id === fa.subdomainId);
+              const domain = DOMAINS.find((d) => d.id === fa.domainId);
+              const color = getSubdomainColor(fa.subdomainId);
+              const needsAttention = !fa.skipped && fa.totalQuestions > 0 && fa.performancePercent < 60;
+
+              return (
+                <div
+                  key={fa.subdomainId}
+                  className="rounded-lg border border-amber-200 dark:border-amber-900/50 bg-white dark:bg-slate-900 p-3.5"
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="h-2.5 w-2.5 shrink-0 rounded-full"
+                        style={{ backgroundColor: color }}
+                        aria-hidden
+                      />
+                      <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        {fa.subdomainId}
+                        {subdomain ? ` — ${subdomain.title}` : ""}
+                      </span>
+                      <span className="text-xs text-slate-400">({domain?.name ?? fa.domainId})</span>
+                    </div>
+                    {fa.skipped ? (
+                      <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                        Skipped
+                      </span>
+                    ) : needsAttention ? (
+                      <span className="rounded-full bg-red-100 dark:bg-red-950/50 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-400">
+                        Needs attention
+                      </span>
+                    ) : (
+                      <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+                        On track
+                      </span>
+                    )}
+                  </div>
+
+                  {fa.skipped ? (
+                    <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                      You skipped this entire section, so there is no performance data for a
+                      declared focus area. Consider revisiting it since this is a priority for
+                      your career.
+                    </p>
+                  ) : (
+                    <>
+                      <div className="mt-2 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                        <Metric
+                          label="Baseline"
+                          value={fa.baselineScorePercent === null ? "—" : `${fa.baselineScorePercent}%`}
+                        />
+                        <Metric label="Performance" value={`${fa.performancePercent}%`} />
+                        <Metric
+                          label="Correct"
+                          value={`${fa.correctCount} / ${fa.totalQuestions}`}
+                        />
+                      </div>
+                      {needsAttention && (
+                        <p className="mt-2 text-xs font-medium text-red-700 dark:text-red-400">
+                          This is a declared focus area for your career, but your actual
+                          performance ({fa.performancePercent}%) suggests it needs more attention
+                          before you rely on it.
+                        </p>
+                      )}
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Radar comparison */}
       <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
@@ -115,6 +211,7 @@ export function ResultsDashboard() {
           const result = results.find((r) => r.domainId === domain.id);
           if (!result) return null;
           const gap = confidenceGapLabel(result.confidenceGap);
+          const domainFocusAreas = focusAreaResults.filter((fa) => fa.domainId === domain.id);
 
           return (
             <div
@@ -132,6 +229,14 @@ export function ResultsDashboard() {
                     {domain.name}{" "}
                     <span className="text-xs font-normal text-slate-400">({domain.id})</span>
                   </h3>
+                  {domainFocusAreas.length > 0 && (
+                    <span
+                      className="flex items-center gap-1 rounded-full bg-amber-100 dark:bg-amber-950/50 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400"
+                      title={`Career focus area: ${domainFocusAreas.map((fa) => fa.subdomainId).join(", ")}`}
+                    >
+                      ⭐ Focus: {domainFocusAreas.map((fa) => fa.subdomainId).join(", ")}
+                    </span>
+                  )}
                 </div>
                 <span className={`text-xs font-semibold ${gap.className}`}>{gap.text}</span>
               </div>
@@ -177,7 +282,7 @@ export function ResultsDashboard() {
                   label="Correct"
                   value={`${result.correctCount} / ${result.totalQuestions}`}
                 />
-                <Metric label="\u201cI don't know\u201d" value={String(result.idkCount)} />
+                <Metric label={"“I don't know”"} value={String(result.idkCount)} />
               </div>
 
               {/* Comparison bars */}

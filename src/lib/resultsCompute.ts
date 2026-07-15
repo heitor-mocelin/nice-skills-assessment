@@ -1,8 +1,14 @@
-import { DomainResult, QuestionResponse, SubdomainBaseline, SubdomainId } from "@/types/nice";
+import {
+  DomainResult,
+  QuestionResponse,
+  SubdomainBaseline,
+  SubdomainId,
+  SubdomainResult,
+} from "@/types/nice";
 import { DOMAINS } from "@/data/domains";
 import { SUBDOMAINS } from "@/data/subdomains";
 import { loadQuestionBank } from "@/lib/questionBank";
-import { computeDomainBaselinePercentsOrNull } from "@/lib/baselineRollup";
+import { computeDomainBaselinePercentsOrNull, computeSubdomainAverage } from "@/lib/baselineRollup";
 
 /**
  * Computes the Stage 3 results: for every domain, combines the Stage 1
@@ -59,6 +65,41 @@ export function computeDomainResults(
       confidenceGap,
       skippedSubdomainIds,
       totalSubdomains: domainSubdomains.length,
+    };
+  });
+}
+
+/**
+ * Computes Stage 3 results at the sub-domain level so the "focus area for
+ * my career?" flag captured in Stage 1 can actually be surfaced somewhere
+ * (previously it was stored but never read back).
+ */
+export function computeSubdomainResults(
+  baseline: SubdomainBaseline[],
+  responses: QuestionResponse[],
+  skippedSubdomains: SubdomainId[] = []
+): SubdomainResult[] {
+  return SUBDOMAINS.map((subdomain) => {
+    const subBaseline = baseline.find((b) => b.subdomainId === subdomain.id);
+    const average = computeSubdomainAverage(subdomain, subBaseline);
+    const baselineScorePercent = average === null ? null : Math.round((average / 4) * 100);
+
+    const skipped = skippedSubdomains.includes(subdomain.id);
+    const subResponses = responses.filter((r) => r.subdomainId === subdomain.id);
+    const correctCount = subResponses.filter((r) => r.isCorrect).length;
+    const totalQuestions = subResponses.length;
+    const performancePercent =
+      totalQuestions === 0 ? 0 : Math.round((correctCount / totalQuestions) * 100);
+
+    return {
+      subdomainId: subdomain.id,
+      domainId: subdomain.domainId,
+      isFocusArea: subBaseline?.isFocusArea === true,
+      baselineScorePercent,
+      totalQuestions,
+      correctCount,
+      performancePercent,
+      skipped,
     };
   });
 }
