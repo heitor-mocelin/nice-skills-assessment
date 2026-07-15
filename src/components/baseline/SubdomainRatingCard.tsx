@@ -3,6 +3,7 @@
 import { Subdomain } from "@/types/nice";
 import { useAssessment } from "@/context/AssessmentContext";
 import { computeSubdomainAverage, isSubdomainFullyRated } from "@/lib/baselineRollup";
+import { InfoTooltip } from "@/components/ui/InfoTooltip";
 
 interface SubdomainRatingCardProps {
   subdomain: Subdomain;
@@ -62,8 +63,9 @@ export function SubdomainRatingCard({ subdomain, accentColor }: SubdomainRatingC
                 key={i}
                 className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
               >
-                <span className="text-sm text-slate-600 dark:text-slate-400 sm:max-w-md">
-                  {topic}
+                <span className="flex items-start gap-1.5 text-sm text-slate-600 dark:text-slate-400 sm:max-w-md">
+                  <span>{topic.label}</span>
+                  <InfoTooltip description={topic.description} />
                 </span>
                 <div className="flex shrink-0 items-center gap-1.5">
                   {([0, 1, 2, 3, 4] as const).map((value) => {

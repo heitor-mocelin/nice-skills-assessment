@@ -34,6 +34,18 @@ export interface NiceWorkRole {
 }
 
 /**
+ * A single ratable topic ("what lives here" bullet) within a sub-domain.
+ * The short label is the headline text shown next to the rating buttons;
+ * the description gives tangible, concrete context (example actions/tools/
+ * scenarios) shown in a hover tooltip so users know what they're rating
+ * themselves against.
+ */
+export interface SubdomainTopic {
+  label: string;
+  description: string;
+}
+
+/**
  * A sub-domain: a focused cluster of skills within a parent Domain, mapped to
  * one or more official NICE work roles. This is the actual unit the user
  * self-rates against in Stage 1 (not the broad parent Domain), matching the
@@ -45,8 +57,8 @@ export interface Subdomain {
   domainId: DomainId;
   title: string; // e.g. "Security & Enterprise Architecture"
   workRoles: NiceWorkRole[];
-  /** The "what lives here" checklist the user rates themselves against as a whole */
-  topics: string[];
+  /** The "what lives here" checklist the user rates themselves against, topic by topic */
+  topics: SubdomainTopic[];
 }
 
 export interface AnswerOption {
