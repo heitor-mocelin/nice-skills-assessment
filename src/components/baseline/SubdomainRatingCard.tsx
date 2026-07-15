@@ -13,7 +13,7 @@ interface SubdomainRatingCardProps {
  * Renders a single sub-domain worksheet card: NICE work role references,
  * and one 0-4 rating control per topic ("what lives here" bullet). The
  * sub-domain's overall score is the computed average of its rated topics
- * (shown live), a career-focus YES/NO flag, and a free-text notes area.
+ * (shown live) and a career-focus YES/NO flag.
  */
 export function SubdomainRatingCard({ subdomain, accentColor }: SubdomainRatingCardProps) {
   const { getSubdomainBaseline, setTopicRating, updateSubdomainMeta } = useAssessment();
@@ -22,7 +22,6 @@ export function SubdomainRatingCard({ subdomain, accentColor }: SubdomainRatingC
   const average = computeSubdomainAverage(subdomain, baseline);
   const fullyRated = isSubdomainFullyRated(subdomain, baseline);
   const isFocusArea = baseline?.isFocusArea ?? null;
-  const notes = baseline?.notes ?? "";
 
   return (
     <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
@@ -136,26 +135,6 @@ export function SubdomainRatingCard({ subdomain, accentColor }: SubdomainRatingC
             </button>
           </div>
         </div>
-      </div>
-
-      <div className="border-t border-slate-100 dark:border-slate-800 p-5">
-        <label
-          htmlFor={`notes-${subdomain.id}`}
-          className="text-sm font-medium text-slate-700 dark:text-slate-300"
-        >
-          In your own words — how comfortable are you here? Call out uneven spots (e.g.,
-          &ldquo;TCP/IP solid, BGP theoretical only&rdquo;):
-        </label>
-        <textarea
-          id={`notes-${subdomain.id}`}
-          value={notes}
-          onChange={(e) =>
-            updateSubdomainMeta(subdomain.id, subdomain.domainId, { notes: e.target.value })
-          }
-          rows={3}
-          placeholder="Optional notes..."
-          className="mt-2 w-full resize-y rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm text-slate-700 dark:text-slate-200 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-        />
       </div>
     </div>
   );
