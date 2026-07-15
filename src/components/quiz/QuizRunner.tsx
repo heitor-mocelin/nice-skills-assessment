@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAssessment } from "@/context/AssessmentContext";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
+import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import {
   buildQuizQueue,
   getCompletedQuestionCount,
@@ -34,6 +35,7 @@ export function QuizRunner() {
 
   const hasQueue = getTotalQuestionCount(state.quizQuestionIds) > 0;
   const orderedSubdomains = useMemo(() => getOrderedSubdomains(), []);
+  const [confirmingSkipSubdomain, setConfirmingSkipSubdomain] = useState(false);
 
   // Initialize the quiz queue on first arrival at this stage (client-only,
   // after hydration so we don't clobber a queue restored from localStorage).
@@ -107,12 +109,12 @@ export function QuizRunner() {
 
   const handleSkipSubdomain = () => {
     if (!currentSubdomain) return;
-    const confirmed = window.confirm(
-      `Skip the entire "${currentSubdomain.title}" (${currentSubdomain.id}) section? ` +
-        "Any answers already given in this section will be cleared, and it will show as 0% (skipped) on your final report."
-    );
-    if (!confirmed) return;
-    skipSubdomain(currentSubdomain.id);
+    setConfirmingSkipSubdomain(true);
+  };
+
+  const handleConfirmSkipSubdomain = () => {
+    if (currentSubdomain) skipSubdomain(currentSubdomain.id);
+    setConfirmingSkipSubdomain(false);
   };
 
   const handleSubmit = (result: {
@@ -206,6 +208,15 @@ export function QuizRunner() {
         onSubmit={handleSubmit}
         onBack={handleBack}
         onSkip={handleSkip}
+      />
+
+      <ConfirmDialog
+        open={confirmingSkipSubdomain}
+        title={`Skip "${currentSubdomain.id} — ${currentSubdomain.title}"?`}
+        description="Any answers already given in this section will be cleared, and it will show as 0% (skipped) on your final report."
+        confirmLabel="Skip this section"
+        onConfirm={handleConfirmSkipSubdomain}
+        onCancel={() => setConfirmingSkipSubdomain(false)}
       />
     </div>
   );
