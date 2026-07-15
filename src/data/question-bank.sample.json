@@ -1,0 +1,39 @@
+{
+  "version": "2.2.0",
+  "questions": [
+    {
+      "id": "OG-001",
+      "domainId": "OG",
+      "niceReference": "OG-WRL-001 / Cyber Policy and Strategy Planner",
+      "difficulty": 2,
+      "prompt": "Which document primarily establishes an organization's overarching cybersecurity risk management strategy and is typically approved at the executive/board level?",
+      "options": [
+        { "id": "a", "text": "Incident Response Playbook" },
+        { "id": "b", "text": "Cybersecurity Policy or Governance Charter" },
+        { "id": "c", "text": "Network Architecture Diagram" },
+        { "id": "d", "text": "Penetration Test Report" }
+      ],
+      "correctOptionId": "b",
+      "explanation": "A cybersecurity policy/governance charter sets organization-wide direction for risk tolerance, roles, and compliance, and is approved by senior leadership. Playbooks, diagrams, and pentest reports are operational/technical artifacts that implement or inform that governance.",
+      "points": 10,
+      "tags": ["governance", "policy", "risk-management"]
+    },
+    {
+      "id": "PD-001",
+      "domainId": "PD",
+      "niceReference": "PD-WRL-002 / Cyber Defense Analyst",
+      "difficulty": 4,
+      "prompt": "An analyst observes repeated failed authentication attempts from a single external IP against multiple user accounts within a short window, followed by one successful login. What is this pattern MOST indicative of?",
+      "options": [
+        { "id": "a", "text": "Password spraying attack" },
+        { "id": "b", "text": "Distributed Denial of Service (DDoS)" },
+        { "id": "c", "text": "SQL injection attempt" },
+        { "id": "d", "text": "DNS cache poisoning" }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Password spraying involves testing a small set of common passwords across many accounts to avoid lockout thresholds, which matches the pattern of multiple failed logins across accounts culminating in a successful compromise. DDoS targets availability, SQLi targets applications/databases, and DNS poisoning targets name resolution — none match this authentication pattern.",
+      "points": 20,
+      "tags": ["threat-detection", "authentication", "log-analysis"]
+    }
+  ]
+}
