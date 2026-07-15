@@ -11,7 +11,7 @@ import { computeDomainBaselinePercents } from "@/lib/baselineRollup";
 
 export function BaselineForm() {
   const router = useRouter();
-  const { state, completeBaseline } = useAssessment();
+  const { state, completeBaseline, skipBaseline } = useAssessment();
 
   const totalTopics = SUBDOMAINS.reduce((sum, s) => sum + s.topics.length, 0);
   const ratedTopics = state.baseline.reduce(
@@ -25,19 +25,26 @@ export function BaselineForm() {
     [state.baseline]
   );
 
-  const radarData = useMemo(
-    () =>
-      DOMAINS.map((d) => ({
-        label: d.id,
-        value: domainPercents[d.id] ?? 0,
-        color: d.color,
-      })),
+  const radarLabels = useMemo(() => DOMAINS.map((d) => d.id), []);
+  const radarSeries = useMemo(
+    () => [
+      {
+        name: "Baseline",
+        color: "#6366f1",
+        values: DOMAINS.map((d) => domainPercents[d.id] ?? 0),
+      },
+    ],
     [domainPercents]
   );
 
   const handleSubmit = () => {
     if (!allRated) return;
     completeBaseline();
+    router.push("/quiz");
+  };
+
+  const handleSkip = () => {
+    skipBaseline();
     router.push("/quiz");
   };
 
@@ -69,7 +76,7 @@ export function BaselineForm() {
           </section>
         ))}
 
-        <div className="sticky bottom-4">
+        <div className="sticky bottom-4 space-y-2">
           <button
             type="button"
             onClick={handleSubmit}
@@ -79,6 +86,13 @@ export function BaselineForm() {
             {allRated
               ? "Begin Assessment →"
               : `Rate all subjects to continue (${ratedTopics}/${totalTopics})`}
+          </button>
+          <button
+            type="button"
+            onClick={handleSkip}
+            className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-2.5 text-sm font-medium text-slate-500 dark:text-slate-400 shadow-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Skip self-assessment and go straight to the quiz →
           </button>
         </div>
       </div>
@@ -92,7 +106,7 @@ export function BaselineForm() {
             Domain average across all rated subjects — updates live
           </p>
           <div className="mx-auto mt-4 aspect-square max-w-xs">
-            <RadarChart data={radarData} />
+            <RadarChart labels={radarLabels} series={radarSeries} />
           </div>
           <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
             {ratedTopics} / {totalTopics} subjects rated

@@ -3,14 +3,17 @@ import { AssessmentState, DomainId } from "@/types/nice";
 export const STORAGE_KEY = "nice-assessment:state";
 // v2: baseline entries moved from per-domain to per-subdomain granularity.
 // v3: subdomain rating replaced with per-topic ratings (averaged), plus separate focus/notes meta.
-export const SCHEMA_VERSION = 3;
+// v4: quiz queue moved from per-domain to per-subdomain pools (4 easy/3 medium/3 hard,
+//     sampled from a 30-question pool per sub-domain); added skip tracking and the
+//     ability to explicitly skip the baseline stage.
+export const SCHEMA_VERSION = 4;
 
-const EMPTY_QUIZ_QUEUE: Record<DomainId, string[]> = {
-  OG: [],
-  DD: [],
-  IO: [],
-  PD: [],
-  IN: [],
+const EMPTY_SKIP_COUNTS: Record<DomainId, number> = {
+  OG: 0,
+  DD: 0,
+  IO: 0,
+  PD: 0,
+  IN: 0,
 };
 
 /** Builds a fresh, empty assessment state (used on first visit or after reset). */
@@ -19,10 +22,12 @@ export function createInitialState(): AssessmentState {
     schemaVersion: SCHEMA_VERSION,
     currentStage: "not-started",
     baseline: [],
+    baselineSkipped: false,
     responses: [],
-    quizQuestionIds: { ...EMPTY_QUIZ_QUEUE },
-    currentDomainIndex: 0,
+    quizQuestionIds: {},
+    currentSubdomainIndex: 0,
     currentQuestionIndex: 0,
+    skipsUsedByDomain: { ...EMPTY_SKIP_COUNTS },
     startedAt: null,
     completedAt: null,
   };

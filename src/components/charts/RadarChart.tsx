@@ -1,26 +1,28 @@
 "use client";
 
-export interface RadarDatum {
-  label: string;
-  value: number; // 0-100
+export interface RadarSeries {
+  name: string;
   color: string;
+  /** one value (0-100) per axis, in the same order as `labels` */
+  values: number[];
 }
 
 interface RadarChartProps {
-  data: RadarDatum[];
+  labels: string[];
+  series: RadarSeries[];
   size?: number;
 }
 
 /**
- * Lightweight, dependency-free SVG radar chart.
- * Renders one polygon per data point around a circular grid with
- * configurable rings, used to visualize the Stage 1 familiarity baseline.
+ * Lightweight, dependency-free SVG radar chart. Supports overlaying multiple
+ * series (e.g. Stage 1 self-rated baseline vs. Stage 2 actual quiz
+ * performance) on the same axes so users can visually compare the two.
  */
-export function RadarChart({ data, size = 320 }: RadarChartProps) {
+export function RadarChart({ labels, series, size = 320 }: RadarChartProps) {
   const center = size / 2;
   const radius = size * 0.36;
   const rings = [0.25, 0.5, 0.75, 1];
-  const angleStep = (Math.PI * 2) / data.length;
+  const angleStep = (Math.PI * 2) / labels.length;
 
   const pointFor = (index: number, valuePercent: number) => {
     const angle = angleStep * index - Math.PI / 2; // start at top
@@ -31,20 +33,17 @@ export function RadarChart({ data, size = 320 }: RadarChartProps) {
     };
   };
 
-  const dataPoints = data.map((d, i) => pointFor(i, d.value));
-  const polygonPoints = dataPoints.map((p) => `${p.x},${p.y}`).join(" ");
-
   return (
     <svg
       viewBox={`0 0 ${size} ${size}`}
       width="100%"
       height="100%"
       role="img"
-      aria-label="Radar chart of domain familiarity ratings"
+      aria-label="Radar chart comparing familiarity baseline and quiz performance"
     >
       {/* Background grid rings */}
       {rings.map((ringScale) => {
-        const ringPoints = data
+        const ringPoints = labels
           .map((_, i) => {
             const p = pointFor(i, ringScale * 100);
             return `${p.x},${p.y}`;
@@ -63,7 +62,7 @@ export function RadarChart({ data, size = 320 }: RadarChartProps) {
       })}
 
       {/* Axis lines from center to each label */}
-      {data.map((_, i) => {
+      {labels.map((_, i) => {
         const p = pointFor(i, 100);
         return (
           <line
@@ -79,33 +78,39 @@ export function RadarChart({ data, size = 320 }: RadarChartProps) {
         );
       })}
 
-      {/* Data polygon */}
-      <polygon
-        points={polygonPoints}
-        fill="#6366f1"
-        fillOpacity={0.25}
-        stroke="#6366f1"
-        strokeWidth={2}
-      />
-
-      {/* Data point markers */}
-      {dataPoints.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r={4} fill={data[i].color} />
-      ))}
+      {/* One polygon + point markers per series */}
+      {series.map((s) => {
+        const dataPoints = s.values.map((v, i) => pointFor(i, v));
+        const polygonPoints = dataPoints.map((p) => `${p.x},${p.y}`).join(" ");
+        return (
+          <g key={s.name}>
+            <polygon
+              points={polygonPoints}
+              fill={s.color}
+              fillOpacity={0.18}
+              stroke={s.color}
+              strokeWidth={2}
+            />
+            {dataPoints.map((p, i) => (
+              <circle key={i} cx={p.x} cy={p.y} r={3.5} fill={s.color} />
+            ))}
+          </g>
+        );
+      })}
 
       {/* Labels */}
-      {data.map((d, i) => {
+      {labels.map((label, i) => {
         const labelPoint = pointFor(i, 118);
         return (
           <text
-            key={d.label}
+            key={label}
             x={labelPoint.x}
             y={labelPoint.y}
             textAnchor="middle"
             dominantBaseline="middle"
             className="fill-slate-600 dark:fill-slate-300 text-[11px] font-medium"
           >
-            {d.label}
+            {label}
           </text>
         );
       })}

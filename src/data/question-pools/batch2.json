@@ -1,0 +1,6072 @@
+[
+  {
+    "id": "IO-C-E01",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "During a security review of a deployed web application, which finding most clearly shows unnecessary exposure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The admin console is reachable from the internet"
+      },
+      {
+        "id": "b",
+        "text": "The application uses HTTPS for users"
+      },
+      {
+        "id": "c",
+        "text": "Application logs are forwarded centrally"
+      },
+      {
+        "id": "d",
+        "text": "The database is on a private subnet"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An internet-accessible admin console greatly increases attack surface and should usually be restricted to trusted networks or admin access paths. The other options are generally normal or positive security practices.",
+    "points": 10,
+    "tags": [
+      "architecture",
+      "exposure"
+    ]
+  },
+  {
+    "id": "IO-C-E02",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main purpose of a CIS-CAT scan on a server?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compare the system configuration to a CIS benchmark"
+      },
+      {
+        "id": "b",
+        "text": "Measure raw network bandwidth to the server"
+      },
+      {
+        "id": "c",
+        "text": "Test the server for phishing susceptibility"
+      },
+      {
+        "id": "d",
+        "text": "Back up the operating system automatically"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "CIS-CAT evaluates configuration settings against CIS Benchmarks to show whether hardening controls are present or missing. It is not a bandwidth, phishing, or backup tool.",
+    "points": 10,
+    "tags": [
+      "cis-cat",
+      "hardening"
+    ]
+  },
+  {
+    "id": "IO-C-E03",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which missing log source would make it hardest to detect password guessing against a VPN portal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Failed authentication events"
+      },
+      {
+        "id": "b",
+        "text": "Successful backup job logs"
+      },
+      {
+        "id": "c",
+        "text": "Printer status logs"
+      },
+      {
+        "id": "d",
+        "text": "Software inventory reports"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Without failed authentication events, analysts cannot reliably see repeated login failures that indicate brute-force or password-spraying activity. The other data sources do not directly show authentication abuse.",
+    "points": 20,
+    "tags": [
+      "logging",
+      "detection"
+    ]
+  },
+  {
+    "id": "IO-C-E04",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Before a new firewall can generate useful SIEM alerts, what must be done first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Map and parse the firewall fields into normalized event data"
+      },
+      {
+        "id": "b",
+        "text": "Change the firewall hostname to match the SIEM name"
+      },
+      {
+        "id": "c",
+        "text": "Disable all existing firewall rules"
+      },
+      {
+        "id": "d",
+        "text": "Reboot the SIEM collector every hour"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "SIEM content depends on the firewall logs being parsed and normalized correctly so rules can reference fields like source IP, action, and destination. Renaming devices or rebooting collectors does not solve onboarding.",
+    "points": 20,
+    "tags": [
+      "siem",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "IO-C-E05",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Why is a legacy server running an unsupported operating system usually considered high risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It no longer receives vendor security patches"
+      },
+      {
+        "id": "b",
+        "text": "It cannot be backed up over the network"
+      },
+      {
+        "id": "c",
+        "text": "It always uses more CPU than newer systems"
+      },
+      {
+        "id": "d",
+        "text": "It cannot send any logs to a SIEM"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Unsupported systems typically stop receiving security updates, leaving known vulnerabilities unpatched and exploitable. Backup, CPU use, and logging depend on the environment, not support status alone.",
+    "points": 10,
+    "tags": [
+      "legacy",
+      "risk"
+    ]
+  },
+  {
+    "id": "IO-C-E06",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "A CSPM tool reports that a cloud storage bucket is publicly readable. What does that most likely mean?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Anyone on the internet may be able to access the data"
+      },
+      {
+        "id": "b",
+        "text": "Only cloud administrators can view the data"
+      },
+      {
+        "id": "c",
+        "text": "The bucket has exceeded its storage quota"
+      },
+      {
+        "id": "d",
+        "text": "The bucket is encrypted with the wrong algorithm"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A publicly readable bucket can often be accessed without intended restrictions, creating data exposure risk. The finding is about access posture, not quota or encryption selection.",
+    "points": 10,
+    "tags": [
+      "cspm",
+      "cloud"
+    ]
+  },
+  {
+    "id": "IO-C-E07",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In a review of a deployed internal network, why is a single flat network a security concern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It makes lateral movement easier after one system is compromised"
+      },
+      {
+        "id": "b",
+        "text": "It guarantees all systems are fully patched"
+      },
+      {
+        "id": "c",
+        "text": "It prevents central logging from working"
+      },
+      {
+        "id": "d",
+        "text": "It removes the need for endpoint protection"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A flat network gives attackers fewer barriers between systems, so compromise of one host can spread more easily. Network structure does not by itself guarantee patching, logging failure, or eliminate endpoint needs.",
+    "points": 20,
+    "tags": [
+      "architecture",
+      "segmentation"
+    ]
+  },
+  {
+    "id": "IO-C-E08",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "An OpenSCAP report marks the password policy control as FAIL. What does that indicate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The current setting does not match the expected security baseline"
+      },
+      {
+        "id": "b",
+        "text": "The scanner has deleted the password policy"
+      },
+      {
+        "id": "c",
+        "text": "The password policy is stronger than required"
+      },
+      {
+        "id": "d",
+        "text": "The host is unreachable on the network"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A FAIL result means the scanned configuration differs from the benchmark or policy requirement being checked. It does not mean the scanner changed the setting or that the system is unreachable.",
+    "points": 10,
+    "tags": [
+      "openscap",
+      "compliance"
+    ]
+  },
+  {
+    "id": "IO-C-E09",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "If an environment has no DNS logging, what question becomes much harder to answer during an investigation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Which domains the affected host contacted"
+      },
+      {
+        "id": "b",
+        "text": "Who approved the last patch window"
+      },
+      {
+        "id": "c",
+        "text": "How much RAM is installed in the host"
+      },
+      {
+        "id": "d",
+        "text": "Which printer the user selected"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "DNS logs help reconstruct domain lookups and external destinations contacted by a host. Patch approvals, memory size, and printer selection are unrelated to DNS telemetry.",
+    "points": 20,
+    "tags": [
+      "dns",
+      "logging"
+    ]
+  },
+  {
+    "id": "IO-C-E10",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A detection rule keeps alerting on traffic from an approved vulnerability scanner. What is the best first tuning action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allowlist the scanner IPs or service account in that rule"
+      },
+      {
+        "id": "b",
+        "text": "Disable the rule permanently for all assets"
+      },
+      {
+        "id": "c",
+        "text": "Turn off logging on the scanner"
+      },
+      {
+        "id": "d",
+        "text": "Remove the scanner from the network"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Known benign scanner activity should be scoped out of the specific detection logic to reduce false positives without losing general visibility. Disabling the rule entirely creates an unnecessary blind spot.",
+    "points": 20,
+    "tags": [
+      "tuning",
+      "false-positives"
+    ]
+  },
+  {
+    "id": "IO-C-M01",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A review of a production load balancer shows TLS 1.0 and weak ciphers are still enabled for a customer portal. What is the best remediation recommendation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Disable legacy protocols and weak ciphers, then validate client impact"
+      },
+      {
+        "id": "b",
+        "text": "Move the portal to HTTP until the review is complete"
+      },
+      {
+        "id": "c",
+        "text": "Suppress related vulnerability findings in the scanner"
+      },
+      {
+        "id": "d",
+        "text": "Stop collecting load balancer logs to reduce noise"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Disabling outdated protocols and weak ciphers directly reduces exposure to known cryptographic attacks while preserving secure connectivity. The other options either weaken security further or hide the problem.",
+    "points": 30,
+    "tags": [
+      "tls",
+      "architecture",
+      "hardening"
+    ]
+  },
+  {
+    "id": "IO-C-M02",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A weekly compliance scan keeps finding that the local administrator account policy on workstations has drifted from baseline. What is the best long-term fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enforce the setting through GPO or configuration management"
+      },
+      {
+        "id": "b",
+        "text": "Close the finding because it is recurring"
+      },
+      {
+        "id": "c",
+        "text": "Run the scanner less often"
+      },
+      {
+        "id": "d",
+        "text": "Tell users to avoid changing local settings"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Recurring drift is best solved by centrally enforcing the configuration so endpoints return to the approved state automatically. Ignoring the issue or scanning less often does not reduce risk.",
+    "points": 30,
+    "tags": [
+      "drift",
+      "compliance",
+      "gpo"
+    ]
+  },
+  {
+    "id": "IO-C-M03",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A CSPM dashboard shows several managed databases across accounts with security groups allowing 0.0.0.0/0 to the database port. What is the main risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The databases may be directly reachable from the internet"
+      },
+      {
+        "id": "b",
+        "text": "Backups for the databases will stop working"
+      },
+      {
+        "id": "c",
+        "text": "The cloud provider will disable encryption automatically"
+      },
+      {
+        "id": "d",
+        "text": "The databases cannot be monitored by the SOC"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Open-to-world security groups on database ports can expose administrative or data services directly to internet attackers. The finding is about access exposure, not backups or provider-managed encryption behavior.",
+    "points": 30,
+    "tags": [
+      "cspm",
+      "networking",
+      "exposure"
+    ]
+  },
+  {
+    "id": "IO-C-M04",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You are onboarding SaaS audit logs into a SIEM. Which fields are the highest priority to normalize first for detection content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "User identity, source IP, action, and outcome"
+      },
+      {
+        "id": "b",
+        "text": "Dashboard color, widget name, and browser type"
+      },
+      {
+        "id": "c",
+        "text": "CPU temperature, fan speed, and rack location"
+      },
+      {
+        "id": "d",
+        "text": "Spreadsheet tab names and row numbers"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Core audit fields such as actor, source, action, and result enable correlation, triage, and incident investigation. Cosmetic and hardware details do not drive most detection logic.",
+    "points": 30,
+    "tags": [
+      "siem",
+      "normalization",
+      "saas"
+    ]
+  },
+  {
+    "id": "IO-C-M05",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An organization only collects Windows process creation logs, but not PowerShell script block logging. Which detection gap is most likely?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Limited visibility into the contents of malicious PowerShell commands"
+      },
+      {
+        "id": "b",
+        "text": "Inability to see whether a host has a network cable attached"
+      },
+      {
+        "id": "c",
+        "text": "Loss of all DNS resolution data from the environment"
+      },
+      {
+        "id": "d",
+        "text": "No visibility into Linux authentication events"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Process creation shows that PowerShell ran, but script block logging provides far better detail on the actual commands or scripts executed. The other choices concern unrelated data sources.",
+    "points": 30,
+    "tags": [
+      "powershell",
+      "logging",
+      "coverage"
+    ]
+  },
+  {
+    "id": "IO-C-M06",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "EDR detections are noisy on developer build servers because approved compilers and packers resemble malware behavior. What is the best tuning approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create narrow exclusions based on approved paths, signatures, and host groups"
+      },
+      {
+        "id": "b",
+        "text": "Disable the EDR agent on all developer systems"
+      },
+      {
+        "id": "c",
+        "text": "Suppress every alert that mentions scripts or compilers"
+      },
+      {
+        "id": "d",
+        "text": "Reimage the servers after every build"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Well-scoped exclusions reduce false positives while keeping visibility on other systems and behaviors. Disabling protection broadly or suppressing all related alerts removes too much defensive coverage.",
+    "points": 30,
+    "tags": [
+      "edr",
+      "tuning",
+      "developers"
+    ]
+  },
+  {
+    "id": "IO-C-M07",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A legacy application requires SMBv1 and cannot yet be upgraded. Which compensating control provides the best immediate risk reduction?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Isolate the system on a restricted network segment and limit allowed connections"
+      },
+      {
+        "id": "b",
+        "text": "Open SMBv1 to all subnets so users have fewer issues"
+      },
+      {
+        "id": "c",
+        "text": "Stop monitoring the host to avoid alert volume"
+      },
+      {
+        "id": "d",
+        "text": "Share the server with internet-facing workloads"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "When a risky legacy protocol must remain temporarily, strong segmentation and strict access control reduce the chance and impact of exploitation. Expanding access or reducing monitoring makes the risk worse.",
+    "points": 30,
+    "tags": [
+      "legacy",
+      "segmentation",
+      "smb"
+    ]
+  },
+  {
+    "id": "IO-C-M08",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You need the most accurate assessment of local account, registry, and policy settings on servers. Which scan type is preferable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Authenticated configuration scanning"
+      },
+      {
+        "id": "b",
+        "text": "Unauthenticated perimeter scanning only"
+      },
+      {
+        "id": "c",
+        "text": "Only passive DNS monitoring"
+      },
+      {
+        "id": "d",
+        "text": "Manual visual inspection of the server rack"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Authenticated scans can inspect internal configuration details such as local policies and registry settings, giving a more complete compliance picture. Unauthenticated scanning mainly shows externally visible posture.",
+    "points": 30,
+    "tags": [
+      "authenticated-scan",
+      "compliance"
+    ]
+  },
+  {
+    "id": "IO-C-M09",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Public snapshot findings keep reappearing in your CSPM tool even after analysts remediate them manually. What is the best root fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Correct the infrastructure-as-code template or provisioning default that recreates the issue"
+      },
+      {
+        "id": "b",
+        "text": "Ignore repeat findings for 30 days"
+      },
+      {
+        "id": "c",
+        "text": "Disable CSPM alerts for snapshots"
+      },
+      {
+        "id": "d",
+        "text": "Rotate the cloud provider account password"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If misconfigurations are being reintroduced by automation, the durable fix is to repair the template or baseline used for deployment. Repeated manual cleanup alone will not stop recurrence.",
+    "points": 30,
+    "tags": [
+      "cspm",
+      "iac",
+      "root-cause"
+    ]
+  },
+  {
+    "id": "IO-C-M10",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A deployed kiosk fleet uses the same local administrator password on every device. What is the primary security concern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compromise of one kiosk could enable lateral movement to the rest"
+      },
+      {
+        "id": "b",
+        "text": "The devices will consume more bandwidth during logon"
+      },
+      {
+        "id": "c",
+        "text": "Users will be unable to print receipts"
+      },
+      {
+        "id": "d",
+        "text": "The kiosks cannot be monitored by vulnerability scanners"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Shared privileged credentials create a strong lateral movement path because the same password can be reused on multiple systems. The issue is credential reuse, not bandwidth, printing, or scanner compatibility.",
+    "points": 30,
+    "tags": [
+      "credentials",
+      "lateral-movement",
+      "legacy"
+    ]
+  },
+  {
+    "id": "IO-C-H01",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A production microservices environment uses service-mesh mTLS for all east-west traffic, and the network IDS can no longer inspect application payloads. What is the best way to improve detection coverage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Collect service-mesh access logs and flow metadata instead of disabling mTLS"
+      },
+      {
+        "id": "b",
+        "text": "Turn off mTLS permanently so the IDS can read traffic"
+      },
+      {
+        "id": "c",
+        "text": "Rely only on quarterly vulnerability scans"
+      },
+      {
+        "id": "d",
+        "text": "Block all internal service-to-service communication"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "When traffic is intentionally encrypted, defenders should add telemetry from mesh logs, flow records, and host instrumentation rather than weakening transport security. Disabling mTLS would reduce security to regain visibility.",
+    "points": 40,
+    "tags": [
+      "service-mesh",
+      "coverage",
+      "telemetry"
+    ]
+  },
+  {
+    "id": "IO-C-H02",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A brute-force SIEM rule is missing attacks because domain controller logs arrive 20 minutes late from a remote site. What is the best rule-engine adjustment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Correlate on event time with a wider window that accounts for ingestion delay"
+      },
+      {
+        "id": "b",
+        "text": "Lower the alert severity so analysts notice it sooner"
+      },
+      {
+        "id": "c",
+        "text": "Delete older logs from the SIEM to improve speed"
+      },
+      {
+        "id": "d",
+        "text": "Disable time synchronization on the remote site"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If events arrive late, correlation should consider actual event timestamps and enough lookback to capture the activity sequence. Lowering severity or altering time sync does not solve the missed-correlation problem.",
+    "points": 40,
+    "tags": [
+      "siem",
+      "latency",
+      "correlation"
+    ]
+  },
+  {
+    "id": "IO-C-H03",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A business-critical legacy server cannot be patched, cannot run EDR, and must stay online for six months. Which response best reflects sound risk treatment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Apply layered compensating controls such as strict segmentation, allowlisting, jump-host access, and enhanced monitoring"
+      },
+      {
+        "id": "b",
+        "text": "Accept the risk informally and make no technical changes"
+      },
+      {
+        "id": "c",
+        "text": "Expose the server to more networks so support is easier"
+      },
+      {
+        "id": "d",
+        "text": "Disable logging because the server is already vulnerable"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "For a high-risk system that cannot be remediated directly, layered compensating controls are needed to reduce likelihood and impact while preserving visibility. Doing nothing or broadening exposure would be unjustified.",
+    "points": 50,
+    "tags": [
+      "legacy",
+      "compensating-controls",
+      "risk"
+    ]
+  },
+  {
+    "id": "IO-C-H04",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An identity provider logs interactive logins but not token refreshes or privileged role changes. Which investigation blind spot does this create?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Analysts may miss abuse of stolen tokens or silent privilege escalation events"
+      },
+      {
+        "id": "b",
+        "text": "Analysts can no longer detect any DNS traffic"
+      },
+      {
+        "id": "c",
+        "text": "Analysts will be unable to identify workstation serial numbers"
+      },
+      {
+        "id": "d",
+        "text": "Analysts will lose all vulnerability scan results"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Without token lifecycle and privilege-change auditing, an attacker may maintain access or gain rights without creating the expected interactive login trail. The other choices concern unrelated telemetry.",
+    "points": 40,
+    "tags": [
+      "identity",
+      "logging",
+      "coverage"
+    ]
+  },
+  {
+    "id": "IO-C-H05",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Your CSPM platform has 8,000 open findings. Which issue should be prioritized first based on likely attack path?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An internet-exposed VM with a highly privileged cloud role and a public snapshot"
+      },
+      {
+        "id": "b",
+        "text": "A storage account missing a noncritical tag"
+      },
+      {
+        "id": "c",
+        "text": "A test instance with an old owner email label"
+      },
+      {
+        "id": "d",
+        "text": "A VM with no recent cost-allocation update"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The first option combines exposure and privilege, increasing the chance of compromise and blast radius if abused. Cosmetic or administrative metadata issues are generally lower priority than exploitable chained misconfigurations.",
+    "points": 50,
+    "tags": [
+      "cspm",
+      "prioritization",
+      "cloud"
+    ]
+  },
+  {
+    "id": "IO-C-H06",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "EDR telemetry from non-persistent VDI desktops is fragmented because every clone appears as the same sensor identity. What is the best onboarding fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prepare the golden image so each clone registers with a unique sensor identity at deployment"
+      },
+      {
+        "id": "b",
+        "text": "Turn off EDR for VDI systems entirely"
+      },
+      {
+        "id": "c",
+        "text": "Use one shared local admin account for all clones"
+      },
+      {
+        "id": "d",
+        "text": "Delete all VDI logs older than one day"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Non-persistent VDI requires image preparation and sensor registration practices that preserve unique host identity, otherwise history and containment actions become unreliable. Disabling EDR or sharing credentials worsens security.",
+    "points": 40,
+    "tags": [
+      "edr",
+      "vdi",
+      "onboarding"
+    ]
+  },
+  {
+    "id": "IO-C-H07",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A server passes a weekly OpenSCAP scan, but attackers repeatedly disable auditd between scans to reduce visibility. What does this show about the control strategy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Point-in-time compliance scans should be supplemented with continuous monitoring for runtime drift"
+      },
+      {
+        "id": "b",
+        "text": "Compliance scans are useless and should be stopped entirely"
+      },
+      {
+        "id": "c",
+        "text": "Audit logging is less important than inventory tagging"
+      },
+      {
+        "id": "d",
+        "text": "Weekly scans automatically prevent service tampering"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Periodic configuration checks can confirm baseline state at one moment, but they do not guarantee settings remain enforced between scans. Runtime monitoring is needed to catch transient or intentional disabling of controls.",
+    "points": 40,
+    "tags": [
+      "openscap",
+      "drift",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "IO-C-H08",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A Kubernetes cluster lacks API audit logging. Which analyst question becomes hardest to answer after a suspected breach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Who ran kubectl exec against a sensitive pod and when"
+      },
+      {
+        "id": "b",
+        "text": "Which nodes have SSD storage installed"
+      },
+      {
+        "id": "c",
+        "text": "How many vCPUs are assigned to each worker"
+      },
+      {
+        "id": "d",
+        "text": "Which office approved the cluster budget"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Kubernetes audit logs record key control-plane actions such as exec, patch, and role changes. Without them, reconstructing who performed sensitive API actions becomes far more difficult.",
+    "points": 40,
+    "tags": [
+      "kubernetes",
+      "audit",
+      "forensics"
+    ]
+  },
+  {
+    "id": "IO-C-H09",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A reverse proxy adds X-Forwarded-For headers, but the application can also be reached directly from an internal network path. What is the key security finding?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The app should trust client IP headers only from known proxies, or source IPs can be spoofed"
+      },
+      {
+        "id": "b",
+        "text": "The reverse proxy must be removed so the app sees only direct clients"
+      },
+      {
+        "id": "c",
+        "text": "Internal users should be denied all application access"
+      },
+      {
+        "id": "d",
+        "text": "The problem is unrelated to security because the path is internal"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If the application trusts X-Forwarded-For from untrusted paths, an attacker may spoof source IP context used for logging, allowlists, or security decisions. Trust boundaries around forwarded headers must be explicit.",
+    "points": 50,
+    "tags": [
+      "proxy",
+      "trust-boundary",
+      "logging"
+    ]
+  },
+  {
+    "id": "IO-C-H10",
+    "domainId": "IO",
+    "subdomainId": "IO-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Two systems have the same unsupported Java runtime: an internet-facing payroll app and an isolated lab tool used monthly. Which reason best explains why the payroll app should be addressed first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It combines higher business impact, exposure, and exploitability risk"
+      },
+      {
+        "id": "b",
+        "text": "Its Java process will always use more memory"
+      },
+      {
+        "id": "c",
+        "text": "Its users are more likely to forget passwords"
+      },
+      {
+        "id": "d",
+        "text": "It is easier to patch than the lab tool"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Risk prioritization should account for business criticality, exposure, and the likelihood an attacker can reach or abuse the weakness. An internet-facing payroll system presents far greater organizational risk than an isolated lab tool.",
+    "points": 50,
+    "tags": [
+      "risk",
+      "prioritization",
+      "legacy"
+    ]
+  },
+  {
+    "id": "IO-D-E01",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In a SQL query, what does WHERE status = \"Open\" do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Filters the rows to only records with status Open"
+      },
+      {
+        "id": "b",
+        "text": "Sorts all rows alphabetically by status"
+      },
+      {
+        "id": "c",
+        "text": "Creates a new table named Open"
+      },
+      {
+        "id": "d",
+        "text": "Deletes every record not shown"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The WHERE clause filters results so only rows meeting the condition are returned. It does not sort, create tables, or delete data by itself.",
+    "points": 10,
+    "tags": [
+      "sql",
+      "reporting"
+    ]
+  },
+  {
+    "id": "IO-D-E02",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which task is a good candidate for a simple Bash or PowerShell automation script?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Exporting installed software lists from many endpoints on a schedule"
+      },
+      {
+        "id": "b",
+        "text": "Interviewing a user about a phishing email by phone"
+      },
+      {
+        "id": "c",
+        "text": "Approving a legal contract"
+      },
+      {
+        "id": "d",
+        "text": "Rewriting the company security policy"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Repetitive, structured operational tasks such as collecting inventories or reports are ideal for scripting. Human judgment-heavy activities like legal review or interviewing are not basic automation tasks.",
+    "points": 10,
+    "tags": [
+      "automation",
+      "scripting"
+    ]
+  },
+  {
+    "id": "IO-D-E03",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In an ITSM context, what does an SLA usually define?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The required response or resolution time for a ticket"
+      },
+      {
+        "id": "b",
+        "text": "The IP address of the affected device"
+      },
+      {
+        "id": "c",
+        "text": "The encryption key used for backups"
+      },
+      {
+        "id": "d",
+        "text": "The employee who wrote the ticket"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A service level agreement typically sets time-based expectations such as response and resolution targets. It does not define device network details or authorship.",
+    "points": 10,
+    "tags": [
+      "itsm",
+      "sla"
+    ]
+  },
+  {
+    "id": "IO-D-E04",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A support ticket appears to involve a possible malware infection and exceeds your access level. What should you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalate it to the appropriate security or higher-tier team"
+      },
+      {
+        "id": "b",
+        "text": "Close the ticket because it is not a support issue"
+      },
+      {
+        "id": "c",
+        "text": "Keep troubleshooting without documenting anything"
+      },
+      {
+        "id": "d",
+        "text": "Ask the user to disable antivirus and try again"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Security-related tickets outside your scope should be escalated quickly with clear documentation so the right responders can act. Closing it or weakening endpoint controls would increase risk.",
+    "points": 20,
+    "tags": [
+      "escalation",
+      "support"
+    ]
+  },
+  {
+    "id": "IO-D-E05",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which mobile device management control most directly protects lost corporate phones?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enforcing screen lock and device encryption"
+      },
+      {
+        "id": "b",
+        "text": "Increasing the brightness timeout"
+      },
+      {
+        "id": "c",
+        "text": "Allowing unlimited personal app installs"
+      },
+      {
+        "id": "d",
+        "text": "Disabling automatic OS updates"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Screen lock and encryption help protect data if a device is lost or stolen. The other options either do not improve security or make posture worse.",
+    "points": 10,
+    "tags": [
+      "mdm",
+      "endpoint"
+    ]
+  },
+  {
+    "id": "IO-D-E06",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which troubleshooting action creates the biggest endpoint security risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Temporarily disabling endpoint protection to make a user issue disappear"
+      },
+      {
+        "id": "b",
+        "text": "Using approved remote support tools with logging"
+      },
+      {
+        "id": "c",
+        "text": "Checking whether the device is missing required updates"
+      },
+      {
+        "id": "d",
+        "text": "Reviewing the device record in inventory"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Turning off protective controls to work around an issue can expose the device and organization to avoidable threats. Approved support and validation steps are safer approaches.",
+    "points": 20,
+    "tags": [
+      "endpoint",
+      "support",
+      "risk"
+    ]
+  },
+  {
+    "id": "IO-D-E07",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which content makes a knowledge base article most useful to other analysts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Symptoms, root cause, fix steps, and how to verify the fix"
+      },
+      {
+        "id": "b",
+        "text": "Only the ticket number and user name"
+      },
+      {
+        "id": "c",
+        "text": "A screenshot with no text explanation"
+      },
+      {
+        "id": "d",
+        "text": "A list of unrelated software versions"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A useful support article documents what the issue looked like, how it was resolved, and how others can confirm success. Sparse or irrelevant notes do not support repeatable operations.",
+    "points": 10,
+    "tags": [
+      "documentation",
+      "kb"
+    ]
+  },
+  {
+    "id": "IO-D-E08",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does ORDER BY created_at DESC do in a SQL report?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Shows the newest records first"
+      },
+      {
+        "id": "b",
+        "text": "Deletes older records from the table"
+      },
+      {
+        "id": "c",
+        "text": "Groups records by month automatically"
+      },
+      {
+        "id": "d",
+        "text": "Hides records with blank timestamps"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "ORDER BY sorts results, and DESC on a timestamp column typically puts the newest records first. It does not group or delete anything.",
+    "points": 10,
+    "tags": [
+      "sql",
+      "sorting"
+    ]
+  },
+  {
+    "id": "IO-D-E09",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why should support ticket notes include the actions already taken?",
+    "options": [
+      {
+        "id": "a",
+        "text": "So the next analyst can continue without repeating risky or unnecessary steps"
+      },
+      {
+        "id": "b",
+        "text": "So the ticket can never be escalated"
+      },
+      {
+        "id": "c",
+        "text": "So users cannot read their own ticket history"
+      },
+      {
+        "id": "d",
+        "text": "So the asset inventory updates itself"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Good notes reduce duplication, speed handoffs, and help maintain safe, consistent troubleshooting. They do not prevent escalation or automatically change inventory records.",
+    "points": 20,
+    "tags": [
+      "documentation",
+      "handoff"
+    ]
+  },
+  {
+    "id": "IO-D-E10",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "If a Python script needs an API token for a security report, where should the token be stored?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In an environment variable or approved secret store"
+      },
+      {
+        "id": "b",
+        "text": "Hard-coded directly in the script file"
+      },
+      {
+        "id": "c",
+        "text": "In a screenshot attached to the ticket"
+      },
+      {
+        "id": "d",
+        "text": "In the script comments for easy reuse"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Secrets should be stored in controlled locations such as environment variables or a secret manager, not embedded in source code or documentation. Hardcoding increases exposure and reuse risk.",
+    "points": 20,
+    "tags": [
+      "python",
+      "secrets",
+      "automation"
+    ]
+  },
+  {
+    "id": "IO-D-M01",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A manager wants a report showing how many open phishing tickets each office has. Which SQL feature is required?",
+    "options": [
+      {
+        "id": "a",
+        "text": "GROUP BY office"
+      },
+      {
+        "id": "b",
+        "text": "DROP TABLE tickets"
+      },
+      {
+        "id": "c",
+        "text": "UNION ALL with inventory only"
+      },
+      {
+        "id": "d",
+        "text": "TRUNCATE the results set"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "To count tickets per office, the query must group rows by office and then aggregate. DROP, UNION, and TRUNCATE do not perform the needed summarization.",
+    "points": 30,
+    "tags": [
+      "sql",
+      "reporting",
+      "aggregation"
+    ]
+  },
+  {
+    "id": "IO-D-M02",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A host inventory script shows both FIN-LAP-01 and fin-lap-01 as separate systems. What is the best way to avoid this duplicate issue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Normalize hostnames to a consistent case before deduplication"
+      },
+      {
+        "id": "b",
+        "text": "Delete every lowercase hostname from the source data"
+      },
+      {
+        "id": "c",
+        "text": "Stop collecting hostnames from one of the tools"
+      },
+      {
+        "id": "d",
+        "text": "Replace hostnames with random numbers"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Data normalization is a common first step in reliable reporting. Converting values to a consistent case before deduping prevents purely formatting-based duplicates.",
+    "points": 30,
+    "tags": [
+      "data-quality",
+      "scripting",
+      "inventory"
+    ]
+  },
+  {
+    "id": "IO-D-M03",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A phishing-related ticket for an executive mailbox is approaching its SLA and the user is still clicking the suspicious messages. What is the best action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalate immediately, document the risk, and notify the security team per process"
+      },
+      {
+        "id": "b",
+        "text": "Wait until the SLA is breached so the issue is officially urgent"
+      },
+      {
+        "id": "c",
+        "text": "Close the ticket and ask the user to reopen later"
+      },
+      {
+        "id": "d",
+        "text": "Handle it only at the next weekly support meeting"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An executive phishing case with active user exposure should be escalated promptly with clear documentation; waiting increases both operational and security risk. The other options delay response inappropriately.",
+    "points": 30,
+    "tags": [
+      "sla",
+      "escalation",
+      "phishing"
+    ]
+  },
+  {
+    "id": "IO-D-M04",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A corporate phone with company email is reported lost. What is the best first containment step from a support/security perspective?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use MDM to lock or retire the device and revoke access tokens as appropriate"
+      },
+      {
+        "id": "b",
+        "text": "Wait 24 hours in case the user finds it"
+      },
+      {
+        "id": "c",
+        "text": "Ask the user to change their wallpaper remotely"
+      },
+      {
+        "id": "d",
+        "text": "Disable Wi-Fi at the office"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Remote lock/retire actions and access revocation reduce the immediate risk of unauthorized access to corporate data on a lost device. Waiting or changing unrelated settings does not contain the risk.",
+    "points": 30,
+    "tags": [
+      "mdm",
+      "containment",
+      "mobile"
+    ]
+  },
+  {
+    "id": "IO-D-M05",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A runbook for changing a security-related GPO reduced incidents, but one bad change recently broke printing for an entire department. What addition would most improve the runbook?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rollback and validation steps for the change"
+      },
+      {
+        "id": "b",
+        "text": "A larger logo on the first page"
+      },
+      {
+        "id": "c",
+        "text": "A list of printer model colors"
+      },
+      {
+        "id": "d",
+        "text": "A note saying changes are usually safe"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Security operations runbooks should include validation and rollback procedures so teams can confirm success and safely revert if impact appears. Cosmetic changes do not improve operational resilience.",
+    "points": 30,
+    "tags": [
+      "runbook",
+      "change-management",
+      "gpo"
+    ]
+  },
+  {
+    "id": "IO-D-M06",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A dashboard shows a raw count of failed logins since the beginning of the year. Why is that poor for daily triage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It lacks a recent time window and baseline for spotting spikes"
+      },
+      {
+        "id": "b",
+        "text": "It contains too much encryption"
+      },
+      {
+        "id": "c",
+        "text": "It automatically deletes the oldest records"
+      },
+      {
+        "id": "d",
+        "text": "It prevents analysts from exporting CSV files"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Analysts need trend context such as hourly or daily changes relative to normal behavior, not just a cumulative lifetime total. Baselines and time filters make operational dashboards actionable.",
+    "points": 30,
+    "tags": [
+      "dashboard",
+      "metrics",
+      "authentication"
+    ]
+  },
+  {
+    "id": "IO-D-M07",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Hundreds of tickets are being opened for the same VPN disconnect symptom across many users. In ITSM terms, what should happen in addition to handling incidents?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create or link a problem record to address the underlying cause"
+      },
+      {
+        "id": "b",
+        "text": "Delete the duplicate tickets without tracking them"
+      },
+      {
+        "id": "c",
+        "text": "Move all tickets to completed immediately"
+      },
+      {
+        "id": "d",
+        "text": "Stop users from submitting VPN issues"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Repeated incidents with a common root cause should feed problem management so the underlying issue can be identified and fixed. Simply deleting or closing tickets hides the trend.",
+    "points": 30,
+    "tags": [
+      "itsm",
+      "problem-management",
+      "vpn"
+    ]
+  },
+  {
+    "id": "IO-D-M08",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A developer needs temporary local admin rights to install a tool. Which support workflow is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use a documented, time-bound approval with ticket tracking and removal afterward"
+      },
+      {
+        "id": "b",
+        "text": "Add the user permanently to local administrators for convenience"
+      },
+      {
+        "id": "c",
+        "text": "Share a common admin password with the team"
+      },
+      {
+        "id": "d",
+        "text": "Ask the user to bypass the endpoint controls"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Temporary elevated access should be approved, tracked, and revoked to reduce standing privilege. Permanent or shared admin access creates lasting security risk.",
+    "points": 30,
+    "tags": [
+      "least-privilege",
+      "endpoint",
+      "itsm"
+    ]
+  },
+  {
+    "id": "IO-D-M09",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You need a report of all managed laptops, including those with zero open support tickets. Which SQL join is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "LEFT JOIN from the asset table to the ticket table"
+      },
+      {
+        "id": "b",
+        "text": "INNER JOIN between tickets and users only"
+      },
+      {
+        "id": "c",
+        "text": "CROSS JOIN all assets and tickets"
+      },
+      {
+        "id": "d",
+        "text": "No join is needed if the asset table exists"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A LEFT JOIN keeps all rows from the asset table even when there is no matching ticket, which is essential when zero-ticket assets must still appear. INNER JOIN would drop those assets.",
+    "points": 30,
+    "tags": [
+      "sql",
+      "join",
+      "reporting"
+    ]
+  },
+  {
+    "id": "IO-D-M10",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A knowledge base article on suspicious email handling is used by both help desk and security. What information should it include to reduce bad handoffs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The escalation criteria and what evidence to attach"
+      },
+      {
+        "id": "b",
+        "text": "Only the article author and creation date"
+      },
+      {
+        "id": "c",
+        "text": "A list of every mail client font"
+      },
+      {
+        "id": "d",
+        "text": "A note telling analysts to use their own judgment"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Clear escalation triggers and evidence requirements improve consistency across teams and reduce delays. Metadata alone is not enough to guide secure action.",
+    "points": 30,
+    "tags": [
+      "kb",
+      "escalation",
+      "phishing"
+    ]
+  },
+  {
+    "id": "IO-D-H01",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "You need a SQL report showing users with more than five failed logins in any 10-minute window. Which query elements are essential?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A time filter plus GROUP BY user and HAVING COUNT(*) > 5"
+      },
+      {
+        "id": "b",
+        "text": "Only ORDER BY timestamp DESC"
+      },
+      {
+        "id": "c",
+        "text": "A DISTINCT clause with no grouping"
+      },
+      {
+        "id": "d",
+        "text": "A DELETE statement followed by SELECT"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "This type of threshold report requires filtering by time, grouping by the entity of interest, and applying a count condition with HAVING. Sorting alone does not identify threshold breaches.",
+    "points": 40,
+    "tags": [
+      "sql",
+      "authentication",
+      "detection"
+    ]
+  },
+  {
+    "id": "IO-D-H02",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A Bash cleanup job should remove log files older than 7 days but must not delete the current log symlink. What is the safest pattern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use find with -type f and an age filter so only regular files are removed"
+      },
+      {
+        "id": "b",
+        "text": "Delete the whole log directory and recreate it nightly"
+      },
+      {
+        "id": "c",
+        "text": "Follow symlinks automatically to keep things simple"
+      },
+      {
+        "id": "d",
+        "text": "Run rm on every path that contains the word log"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Restricting cleanup to regular files avoids accidentally deleting symlinks or unexpected targets. Broad deletion patterns are risky in operational automation.",
+    "points": 40,
+    "tags": [
+      "bash",
+      "automation",
+      "safety"
+    ]
+  },
+  {
+    "id": "IO-D-H03",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "While helping a user with an account issue, you notice an active EDR alert indicating likely malware execution on that same laptop. What should you do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Follow the security runbook by containing or escalating the device before routine support changes"
+      },
+      {
+        "id": "b",
+        "text": "Ignore the alert until the password reset is complete"
+      },
+      {
+        "id": "c",
+        "text": "Tell the user to keep working while you investigate later"
+      },
+      {
+        "id": "d",
+        "text": "Disable the EDR agent so you can troubleshoot without interruptions"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A likely compromise changes the priority and must be handled through containment and escalation procedures before normal support actions potentially destroy evidence or extend exposure. Disabling protection would worsen the incident.",
+    "points": 40,
+    "tags": [
+      "edr",
+      "support",
+      "escalation"
+    ]
+  },
+  {
+    "id": "IO-D-H04",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A dashboard measures ticket response time using the ticket closure timestamp for issues that are still unresolved. Why is that incorrect?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Response time should be based on first response or acknowledgement, not final closure"
+      },
+      {
+        "id": "b",
+        "text": "Closure time is always earlier than creation time"
+      },
+      {
+        "id": "c",
+        "text": "Unresolved tickets should be excluded from all SLA metrics"
+      },
+      {
+        "id": "d",
+        "text": "SLA metrics must never use timestamps"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Response SLA tracks how quickly the team first engaged, whereas closure or resolution time measures a different service objective. Using closure time for response hides true performance.",
+    "points": 40,
+    "tags": [
+      "sla",
+      "dashboard",
+      "metrics"
+    ]
+  },
+  {
+    "id": "IO-D-H05",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "The company wants to allow personal phones to access corporate email with minimal employee privacy impact. Which control approach best fits that goal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use app-level protection policies and conditional access instead of full device enrollment when possible"
+      },
+      {
+        "id": "b",
+        "text": "Require full device administrator control over every personal phone"
+      },
+      {
+        "id": "c",
+        "text": "Allow any phone without controls to avoid privacy concerns"
+      },
+      {
+        "id": "d",
+        "text": "Share corporate passwords only through SMS"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "App protection and conditional access can secure corporate data while avoiding the broader visibility and control of full-device management on BYOD. Uncontrolled access would not meet security needs.",
+    "points": 50,
+    "tags": [
+      "byod",
+      "mdm",
+      "privacy"
+    ]
+  },
+  {
+    "id": "IO-D-H06",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A PowerShell script will push a registry fix to 2,000 endpoints. Which feature most improves auditability and rollback planning?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Per-endpoint logging of success/failure with timestamps and a way to rerun only failed hosts"
+      },
+      {
+        "id": "b",
+        "text": "Printing a progress bar in bright colors"
+      },
+      {
+        "id": "c",
+        "text": "Disabling all script error handling"
+      },
+      {
+        "id": "d",
+        "text": "Writing only one final line that says completed"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Detailed per-host logging helps operations teams prove what changed, identify failures, and safely retry or roll back targeted systems. Minimal or cosmetic output is not enough for controlled change management.",
+    "points": 40,
+    "tags": [
+      "powershell",
+      "logging",
+      "change-management"
+    ]
+  },
+  {
+    "id": "IO-D-H07",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A knowledge base article contains stale screenshots and steps that no longer match the current operating system. What is the best process improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign article ownership and periodic review/versioning so outdated guidance is corrected"
+      },
+      {
+        "id": "b",
+        "text": "Keep the article unchanged to preserve history"
+      },
+      {
+        "id": "c",
+        "text": "Delete all articles older than one year automatically"
+      },
+      {
+        "id": "d",
+        "text": "Move the article to a private folder so fewer people use it"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Operational documentation needs ownership and review cycles so guidance stays accurate as systems change. Hiding or deleting content without maintenance does not solve knowledge quality problems.",
+    "points": 40,
+    "tags": [
+      "documentation",
+      "governance",
+      "kb"
+    ]
+  },
+  {
+    "id": "IO-D-H08",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An after-hours ticket suggests a privileged administrator may have had credentials stolen. According to a sound escalation matrix, what should happen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Page the on-call incident response or security lead immediately"
+      },
+      {
+        "id": "b",
+        "text": "Leave the ticket for the daytime queue"
+      },
+      {
+        "id": "c",
+        "text": "Ask the user to monitor the account themselves"
+      },
+      {
+        "id": "d",
+        "text": "Wait to see whether another ticket appears"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Potential compromise of privileged credentials is high severity and should trigger immediate after-hours escalation. Waiting for business hours creates unacceptable exposure.",
+    "points": 40,
+    "tags": [
+      "escalation",
+      "credentials",
+      "itsm"
+    ]
+  },
+  {
+    "id": "IO-D-H09",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A monthly SQL report should list every managed device even when no tickets were opened this month, but your current LEFT JOIN still drops zero-ticket devices. What is the likely fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Move the ticket-date filter into the JOIN condition or use conditional aggregation"
+      },
+      {
+        "id": "b",
+        "text": "Replace the LEFT JOIN with an INNER JOIN"
+      },
+      {
+        "id": "c",
+        "text": "Sort by device name before joining"
+      },
+      {
+        "id": "d",
+        "text": "Remove the asset table from the query"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A WHERE filter on the right-side table can turn an outer join into the effect of an inner join by excluding NULL matches. Putting the date condition in the join logic preserves zero-ticket assets.",
+    "points": 50,
+    "tags": [
+      "sql",
+      "left-join",
+      "reporting"
+    ]
+  },
+  {
+    "id": "IO-D-H10",
+    "domainId": "IO",
+    "subdomainId": "IO-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Support is asked to disable Secure Boot across the fleet for a legacy driver issue. What is the best response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Require formal risk review and narrow, documented exceptions instead of a broad fleetwide rollback"
+      },
+      {
+        "id": "b",
+        "text": "Disable Secure Boot everywhere immediately to reduce ticket volume"
+      },
+      {
+        "id": "c",
+        "text": "Tell users to change BIOS settings themselves"
+      },
+      {
+        "id": "d",
+        "text": "Ignore the request and make the driver unsupported forever"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Turning off a major platform protection across the fleet is a security-impacting change that should go through risk review, scoped exceptions, and compensating plans. Immediate broad disablement is not justified.",
+    "points": 50,
+    "tags": [
+      "endpoint",
+      "risk",
+      "change-management"
+    ]
+  },
+  {
+    "id": "PD-A-E01",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main purpose of a SIEM correlation rule?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Combine related events into a more meaningful alert or detection"
+      },
+      {
+        "id": "b",
+        "text": "Increase monitor brightness in the SOC"
+      },
+      {
+        "id": "c",
+        "text": "Encrypt every log before storage"
+      },
+      {
+        "id": "d",
+        "text": "Replace endpoint protection on servers"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Correlation rules connect multiple events or patterns so analysts can detect suspicious activity more effectively than by reviewing raw logs individually. They do not replace all other controls.",
+    "points": 10,
+    "tags": [
+      "siem",
+      "correlation"
+    ]
+  },
+  {
+    "id": "PD-A-E02",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A detection rule fires every time the approved vulnerability scanner touches servers. What is a common way to reduce that false positive?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Suppress or exclude the known scanner traffic in the specific rule"
+      },
+      {
+        "id": "b",
+        "text": "Turn off scanning in the environment"
+      },
+      {
+        "id": "c",
+        "text": "Disable all alerts on those servers"
+      },
+      {
+        "id": "d",
+        "text": "Delete the server inventory records"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Known benign scanner behavior can often be accounted for in the detection logic without losing visibility to real threats. Disabling scanning or all alerts creates unnecessary gaps.",
+    "points": 20,
+    "tags": [
+      "false-positives",
+      "siem",
+      "tuning"
+    ]
+  },
+  {
+    "id": "PD-A-E03",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "When an analyst isolates a host through EDR, what usually happens?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The host is cut off from most network communication but remains manageable"
+      },
+      {
+        "id": "b",
+        "text": "The host is automatically reimaged and deleted from inventory"
+      },
+      {
+        "id": "c",
+        "text": "All logs for that host are erased"
+      },
+      {
+        "id": "d",
+        "text": "The user is granted local admin rights"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "EDR isolation typically limits the host\u2019s network access while preserving management access so responders can investigate or remediate. It is not the same as reimaging or deleting data.",
+    "points": 10,
+    "tags": [
+      "edr",
+      "containment"
+    ]
+  },
+  {
+    "id": "PD-A-E04",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Multiple login attempts use one common password against many different accounts. Which MITRE ATT&CK technique best matches this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Password spraying"
+      },
+      {
+        "id": "b",
+        "text": "Data encrypted for impact"
+      },
+      {
+        "id": "c",
+        "text": "Spearphishing attachment"
+      },
+      {
+        "id": "d",
+        "text": "Account discovery"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Password spraying tries a small number of common passwords across many accounts to avoid lockouts. The other options describe different attack behaviors.",
+    "points": 20,
+    "tags": [
+      "attack",
+      "mitre",
+      "authentication"
+    ]
+  },
+  {
+    "id": "PD-A-E05",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What information should a SOC shift handoff always include?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Open alerts, current status, and next actions"
+      },
+      {
+        "id": "b",
+        "text": "Only the analyst seat assignment"
+      },
+      {
+        "id": "c",
+        "text": "The cafeteria menu for the next shift"
+      },
+      {
+        "id": "d",
+        "text": "Every log ever collected that day"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A good handoff captures what is still active, what has been done, and what needs follow-up so work continues smoothly. Irrelevant details or overwhelming raw data are less useful.",
+    "points": 10,
+    "tags": [
+      "soc",
+      "handoff"
+    ]
+  },
+  {
+    "id": "PD-A-E06",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "An IDS signature fires on a known approved backup server every night. What is the safest tuning action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add a narrowly scoped exception for that expected traffic pattern"
+      },
+      {
+        "id": "b",
+        "text": "Disable the IDS sensor on the backup network"
+      },
+      {
+        "id": "c",
+        "text": "Delete all alerts that mention backup traffic forever"
+      },
+      {
+        "id": "d",
+        "text": "Block the backup server from the network"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A narrow exception for known benign behavior reduces noise while preserving broader detection capability. Turning off the sensor or deleting all related alerts would create blind spots.",
+    "points": 20,
+    "tags": [
+      "ids",
+      "tuning",
+      "soc"
+    ]
+  },
+  {
+    "id": "PD-A-E07",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A packet capture shows one host sending SYN packets to many ports on another host with few completed connections. What does that most likely suggest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Port scanning or reconnaissance"
+      },
+      {
+        "id": "b",
+        "text": "A successful software update"
+      },
+      {
+        "id": "c",
+        "text": "Normal DNS resolution"
+      },
+      {
+        "id": "d",
+        "text": "A printer calibration job"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Many connection attempts to multiple ports with little completion is a classic reconnaissance pattern associated with scanning. The other options do not fit that traffic shape.",
+    "points": 20,
+    "tags": [
+      "network",
+      "triage",
+      "ids"
+    ]
+  },
+  {
+    "id": "PD-A-E08",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is a common first step in a SOAR playbook for a suspicious IP address?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enrich it with reputation, asset, or threat-intel context"
+      },
+      {
+        "id": "b",
+        "text": "Factory reset every host that contacted it"
+      },
+      {
+        "id": "c",
+        "text": "Delete the case automatically"
+      },
+      {
+        "id": "d",
+        "text": "Shut down the SIEM collector"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "SOAR workflows often start by gathering context from threat-intel, asset, and logging systems so analysts can triage faster. Extreme destructive actions should not be first.",
+    "points": 10,
+    "tags": [
+      "soar",
+      "enrichment"
+    ]
+  },
+  {
+    "id": "PD-A-E09",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the first goal of alert triage in a SOC?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Determine whether the alert is credible and gather context"
+      },
+      {
+        "id": "b",
+        "text": "Write the final incident report immediately"
+      },
+      {
+        "id": "c",
+        "text": "Rebuild the affected system without review"
+      },
+      {
+        "id": "d",
+        "text": "Escalate every alert to legal"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Triage starts with validating the alert and building enough context to decide next steps. Not every alert becomes a legal matter or requires immediate rebuild.",
+    "points": 10,
+    "tags": [
+      "triage",
+      "soc"
+    ]
+  },
+  {
+    "id": "PD-A-E10",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "How does XDR differ from a standalone endpoint detection tool?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It correlates telemetry across multiple sources such as endpoint, identity, and email"
+      },
+      {
+        "id": "b",
+        "text": "It only works on Linux endpoints"
+      },
+      {
+        "id": "c",
+        "text": "It removes the need for a SIEM"
+      },
+      {
+        "id": "d",
+        "text": "It can detect only malware and nothing else"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "XDR platforms generally combine and correlate telemetry from several security layers, expanding context beyond endpoint events alone. They do not automatically eliminate other tooling needs.",
+    "points": 20,
+    "tags": [
+      "xdr",
+      "edr",
+      "telemetry"
+    ]
+  },
+  {
+    "id": "PD-A-M01",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A Word document spawns PowerShell with an encoded command. Which MITRE ATT&CK mapping best fits the PowerShell activity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Command and Scripting Interpreter: PowerShell"
+      },
+      {
+        "id": "b",
+        "text": "Network Denial of Service"
+      },
+      {
+        "id": "c",
+        "text": "Remote Services: SSH"
+      },
+      {
+        "id": "d",
+        "text": "Data Encrypted for Impact"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "PowerShell execution from Office is commonly mapped to ATT&CK command-and-scripting interpreter behavior. The other techniques describe unrelated attack actions.",
+    "points": 30,
+    "tags": [
+      "mitre",
+      "powershell",
+      "detection"
+    ]
+  },
+  {
+    "id": "PD-A-M02",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "EDR alerts that an unsigned process attempted to read LSASS memory on a workstation. What is the best immediate analyst action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Isolate the host and escalate for possible credential dumping investigation"
+      },
+      {
+        "id": "b",
+        "text": "Ignore it because LSASS access is always normal"
+      },
+      {
+        "id": "c",
+        "text": "Delete the alert because it came from Windows"
+      },
+      {
+        "id": "d",
+        "text": "Force the user to reboot and close the case"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Unauthorized LSASS access is a common credential theft indicator and warrants containment and escalation. Dismissing it or forcing a reboot can destroy evidence and increase risk.",
+    "points": 30,
+    "tags": [
+      "edr",
+      "credential-dumping",
+      "containment"
+    ]
+  },
+  {
+    "id": "PD-A-M03",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A rule for after-hours admin logins is generating many false positives during scheduled maintenance windows. What is the best tuning step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Incorporate approved change windows or trusted admin jump sources into the logic"
+      },
+      {
+        "id": "b",
+        "text": "Disable all admin-login alerts permanently"
+      },
+      {
+        "id": "c",
+        "text": "Ignore every after-hours login from now on"
+      },
+      {
+        "id": "d",
+        "text": "Stop collecting authentication logs during maintenance"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Context-aware tuning preserves the use case while reducing expected noise from approved activities. Disabling all related alerts or logging removes important coverage.",
+    "points": 30,
+    "tags": [
+      "siem",
+      "tuning",
+      "authentication"
+    ]
+  },
+  {
+    "id": "PD-A-M04",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During a phishing campaign, what should a strong SOC shift handoff include?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Affected users, blocked indicators, actions taken, and pending tasks"
+      },
+      {
+        "id": "b",
+        "text": "Only a note that phishing occurred earlier"
+      },
+      {
+        "id": "c",
+        "text": "The analyst\u2019s lunch break time"
+      },
+      {
+        "id": "d",
+        "text": "Every raw email body ever reported"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Useful handoffs summarize scope, containment status, and outstanding work so the next shift can continue without starting over. Minimal or excessive irrelevant detail is less effective.",
+    "points": 30,
+    "tags": [
+      "soc",
+      "handoff",
+      "phishing"
+    ]
+  },
+  {
+    "id": "PD-A-M05",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An IDS SMB exploit signature keeps triggering on a known backup appliance. Which tuning approach is safest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Scope the detection based on asset role and expected traffic path rather than disabling it globally"
+      },
+      {
+        "id": "b",
+        "text": "Disable all SMB signatures everywhere"
+      },
+      {
+        "id": "c",
+        "text": "Stop backing up the servers"
+      },
+      {
+        "id": "d",
+        "text": "Block the backup appliance from the network"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Refining a detection around known benign asset roles and traffic paths reduces noise while preserving coverage elsewhere. Global disablement would create a large detection gap.",
+    "points": 30,
+    "tags": [
+      "ids",
+      "tuning",
+      "backup"
+    ]
+  },
+  {
+    "id": "PD-A-M06",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A network trace shows one source sending connection attempts to many destinations and ports, with almost no successful sessions. What is the most likely explanation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reconnaissance or scanning activity"
+      },
+      {
+        "id": "b",
+        "text": "A normal software deployment"
+      },
+      {
+        "id": "c",
+        "text": "A user printing to multiple printers"
+      },
+      {
+        "id": "d",
+        "text": "Routine NTP synchronization"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Wide, unsuccessful connection attempts across many targets commonly indicate reconnaissance. The other activities do not usually create that pattern.",
+    "points": 30,
+    "tags": [
+      "network",
+      "recon",
+      "triage"
+    ]
+  },
+  {
+    "id": "PD-A-M07",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A SOAR workflow automatically disables accounts for impossible-travel alerts, but executives are being locked out by false positives. What is the best control improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Require analyst approval for high-impact actions or sensitive accounts"
+      },
+      {
+        "id": "b",
+        "text": "Disable impossible-travel detections entirely"
+      },
+      {
+        "id": "c",
+        "text": "Let the workflow disable accounts and delete the case silently"
+      },
+      {
+        "id": "d",
+        "text": "Turn off MFA for executives"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Adding approval or conditional logic for high-impact remediation balances automation speed with business risk. Turning off the detection or MFA would weaken security.",
+    "points": 30,
+    "tags": [
+      "soar",
+      "automation",
+      "account"
+    ]
+  },
+  {
+    "id": "PD-A-M08",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A finance laptop connects to a rare external domain and triggers an alert. What is the best next triage step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enrich the event with DNS, proxy, asset, and EDR context before escalating"
+      },
+      {
+        "id": "b",
+        "text": "Immediately wipe the laptop with no review"
+      },
+      {
+        "id": "c",
+        "text": "Disable logging to reduce noise"
+      },
+      {
+        "id": "d",
+        "text": "Close the alert because the domain is rare"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Good triage uses additional telemetry to assess whether the behavior is malicious, expected, or accidental before deciding on containment. Wiping or closing without context is poor practice.",
+    "points": 30,
+    "tags": [
+      "triage",
+      "enrichment",
+      "network"
+    ]
+  },
+  {
+    "id": "PD-A-M09",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A user receives repeated MFA prompts and eventually approves one they did not expect. What attack pattern does this most likely suggest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "MFA fatigue or prompt bombing"
+      },
+      {
+        "id": "b",
+        "text": "ARP spoofing"
+      },
+      {
+        "id": "c",
+        "text": "DNS zone transfer abuse"
+      },
+      {
+        "id": "d",
+        "text": "Password vault backup"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Repeated unsolicited MFA requests followed by approval is characteristic of MFA fatigue attacks, where users are pressured into accepting a malicious login. The other options involve different mechanisms.",
+    "points": 30,
+    "tags": [
+      "identity",
+      "mfa",
+      "triage"
+    ]
+  },
+  {
+    "id": "PD-A-M10",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A use case looks for creation of suspicious mailbox forwarding rules. Which ATT&CK behavior does this most closely align to?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Email Forwarding Rule"
+      },
+      {
+        "id": "b",
+        "text": "OS Credential Dumping"
+      },
+      {
+        "id": "c",
+        "text": "Service Stop"
+      },
+      {
+        "id": "d",
+        "text": "Exploit Public-Facing Application"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "ATT&CK includes mailbox or email forwarding rules as a collection-related behavior because attackers use them to monitor or exfiltrate messages. The other techniques describe different attack stages.",
+    "points": 30,
+    "tags": [
+      "mitre",
+      "email",
+      "detection"
+    ]
+  },
+  {
+    "id": "PD-A-H01",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An impossible-travel rule produces frequent false positives because many users authenticate through shared VPN egress points and mobile networks. What is the best improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Correlate travel detections with device, session, and geovelocity context before alerting"
+      },
+      {
+        "id": "b",
+        "text": "Disable all impossible-travel logic forever"
+      },
+      {
+        "id": "c",
+        "text": "Alert only on users whose names start with A-M"
+      },
+      {
+        "id": "d",
+        "text": "Ignore every login from mobile devices"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Identity detections become more accurate when they account for network architecture and session context rather than relying on geolocation alone. Blanket disablement throws away a useful use case.",
+    "points": 40,
+    "tags": [
+      "identity",
+      "siem",
+      "tuning"
+    ]
+  },
+  {
+    "id": "PD-A-H02",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "EDR detects rundll32 loading a DLL from a temp directory on a domain controller. What is the best Tier 2 response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalate immediately and coordinate controlled containment because the host is critical"
+      },
+      {
+        "id": "b",
+        "text": "Silently close the alert because domain controllers are noisy"
+      },
+      {
+        "id": "c",
+        "text": "Force a reboot without collecting any context"
+      },
+      {
+        "id": "d",
+        "text": "Let the user continue until the next shift reviews it"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A suspicious DLL execution on a domain controller is high impact; responders should escalate and coordinate containment carefully to balance business continuity and incident urgency. Blind closure or reboot is unsafe.",
+    "points": 50,
+    "tags": [
+      "edr",
+      "domain-controller",
+      "escalation"
+    ]
+  },
+  {
+    "id": "PD-A-H03",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Coverage review shows your SOC can detect webshell access but has no visibility into follow-on credential dumping on compromised web servers. Which new ATT&CK-aligned use case best closes that gap?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Detect LSASS access or dump-tool execution on the web servers"
+      },
+      {
+        "id": "b",
+        "text": "Add another signature for common printer traffic"
+      },
+      {
+        "id": "c",
+        "text": "Reduce all webshell alert severities to low"
+      },
+      {
+        "id": "d",
+        "text": "Stop collecting endpoint process telemetry"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If the gap is post-exploitation credential theft, detections around LSASS access and dump-tool behavior directly address that missing coverage. The other options do not improve the identified blind spot.",
+    "points": 40,
+    "tags": [
+      "mitre",
+      "coverage",
+      "credential-dumping"
+    ]
+  },
+  {
+    "id": "PD-A-H04",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Packet analysis shows one endpoint making long DNS TXT queries to the same external domain at regular intervals. What does this most strongly suggest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Possible DNS tunneling or covert channel activity"
+      },
+      {
+        "id": "b",
+        "text": "A standard DHCP lease renewal"
+      },
+      {
+        "id": "c",
+        "text": "Routine printer discovery"
+      },
+      {
+        "id": "d",
+        "text": "Normal ARP resolution"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Repeated, unusually large TXT-based DNS exchanges can indicate data transfer or command-and-control over DNS. DHCP, printer discovery, and ARP use different traffic patterns and protocols.",
+    "points": 40,
+    "tags": [
+      "network",
+      "dns",
+      "exfiltration"
+    ]
+  },
+  {
+    "id": "PD-A-H05",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A SOAR playbook keeps reopening the same case and re-isolating a host each time a duplicate alert arrives. What design issue is most likely missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An idempotency or state check before taking action"
+      },
+      {
+        "id": "b",
+        "text": "A brighter dashboard theme"
+      },
+      {
+        "id": "c",
+        "text": "A longer case title field"
+      },
+      {
+        "id": "d",
+        "text": "A larger packet capture buffer"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Automation should check current case or host state before repeating disruptive actions. Idempotent design prevents loops and duplicate remediation from repeated alert events.",
+    "points": 40,
+    "tags": [
+      "soar",
+      "automation",
+      "design"
+    ]
+  },
+  {
+    "id": "PD-A-H06",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A brute-force correlation rule misses attacks in federated identity logs because usernames appear as user@corp.com in one source and CORP\\user in another. What is the best fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Normalize identities to a common format before correlation"
+      },
+      {
+        "id": "b",
+        "text": "Disable one of the identity log sources"
+      },
+      {
+        "id": "c",
+        "text": "Sort the alerts alphabetically by username"
+      },
+      {
+        "id": "d",
+        "text": "Ignore successful logins from federated systems"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Correlation across log sources depends on a consistent identity representation. Normalization avoids splitting one actor into multiple identities and improves detection accuracy.",
+    "points": 50,
+    "tags": [
+      "siem",
+      "normalization",
+      "identity"
+    ]
+  },
+  {
+    "id": "PD-A-H07",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Encrypted east-west traffic has reduced the usefulness of payload-based IDS signatures in a data center. What is the best compensating detection approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use flow, TLS, and host telemetry such as Zeek metadata or endpoint events"
+      },
+      {
+        "id": "b",
+        "text": "Disable encryption so signatures can inspect everything"
+      },
+      {
+        "id": "c",
+        "text": "Stop monitoring east-west traffic entirely"
+      },
+      {
+        "id": "d",
+        "text": "Rely only on annual penetration tests"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Where payload inspection is limited, defenders should shift toward metadata and host-based visibility rather than weakening encryption. Annual tests alone do not replace continuous detection.",
+    "points": 40,
+    "tags": [
+      "ids",
+      "telemetry",
+      "network"
+    ]
+  },
+  {
+    "id": "PD-A-H08",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "During an active incident handoff between SOC shifts, what artifact is most valuable to transfer?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A concise timeline with evidence, hypotheses, and pending actions"
+      },
+      {
+        "id": "b",
+        "text": "Only the ticket number and analyst name"
+      },
+      {
+        "id": "c",
+        "text": "A screenshot of the SIEM home page"
+      },
+      {
+        "id": "d",
+        "text": "A copy of every raw log from the entire environment"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A structured timeline preserves investigation state and reasoning so the next shift can continue efficiently. Raw data without synthesis is harder to act on quickly.",
+    "points": 40,
+    "tags": [
+      "soc",
+      "handoff",
+      "timeline"
+    ]
+  },
+  {
+    "id": "PD-A-H09",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "PsExec from a management server to many hosts is normal during patch windows but suspicious at other times. How should the SOC reduce false positives without losing coverage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Correlate PsExec use with approved change windows, source servers, and service accounts, then alert on deviations"
+      },
+      {
+        "id": "b",
+        "text": "Suppress every PsExec event globally"
+      },
+      {
+        "id": "c",
+        "text": "Allow any lateral movement from management servers"
+      },
+      {
+        "id": "d",
+        "text": "Disable endpoint logging on servers during patching"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Context-aware correlation preserves detections for unusual or unauthorized PsExec activity while filtering known maintenance patterns. Global suppression would hide real abuse.",
+    "points": 50,
+    "tags": [
+      "psexec",
+      "tuning",
+      "lateral-movement"
+    ]
+  },
+  {
+    "id": "PD-A-H10",
+    "domainId": "PD",
+    "subdomainId": "PD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A SOC review finds weak Windows privilege-escalation coverage. Which new telemetry combination would be most useful to build detections?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Windows security logs and Sysmon process/service events"
+      },
+      {
+        "id": "b",
+        "text": "Only DHCP logs"
+      },
+      {
+        "id": "c",
+        "text": "Only badge reader data"
+      },
+      {
+        "id": "d",
+        "text": "Only website uptime checks"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Privilege escalation on Windows often leaves evidence in process creation, service installation, privilege assignment, and related security events. DHCP and uptime data do not provide that visibility.",
+    "points": 50,
+    "tags": [
+      "windows",
+      "coverage",
+      "privilege-escalation"
+    ]
+  },
+  {
+    "id": "PD-B-E01",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main goal of incident containment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Limit the spread and impact of the incident"
+      },
+      {
+        "id": "b",
+        "text": "Write the final lessons learned report"
+      },
+      {
+        "id": "c",
+        "text": "Purchase new forensic software"
+      },
+      {
+        "id": "d",
+        "text": "Notify every customer immediately before validation"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Containment focuses on stopping further damage or spread while responders continue analysis and planning. Reporting and procurement are separate activities.",
+    "points": 10,
+    "tags": [
+      "incident-response",
+      "containment"
+    ]
+  },
+  {
+    "id": "PD-B-E02",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Why is a write blocker used during forensic disk imaging?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To prevent modification of the original evidence media"
+      },
+      {
+        "id": "b",
+        "text": "To compress the image file automatically"
+      },
+      {
+        "id": "c",
+        "text": "To speed up malware execution"
+      },
+      {
+        "id": "d",
+        "text": "To bypass operating system permissions"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A write blocker protects the source drive from accidental changes during acquisition so the original evidence remains intact. It is about integrity, not speed or compression.",
+    "points": 10,
+    "tags": [
+      "forensics",
+      "evidence"
+    ]
+  },
+  {
+    "id": "PD-B-E03",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does chain of custody document for digital evidence?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Who handled the evidence, when, and under what control"
+      },
+      {
+        "id": "b",
+        "text": "Which antivirus product scanned the system"
+      },
+      {
+        "id": "c",
+        "text": "How much storage the evidence consumed"
+      },
+      {
+        "id": "d",
+        "text": "What brand of laptop was used"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Chain of custody records the possession and transfer history of evidence so its handling can be defended later. It does not track unrelated hardware preferences.",
+    "points": 10,
+    "tags": [
+      "forensics",
+      "chain-of-custody"
+    ]
+  },
+  {
+    "id": "PD-B-E04",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why should memory often be captured before powering off a compromised live system?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Volatile evidence such as processes, connections, and keys may disappear on shutdown"
+      },
+      {
+        "id": "b",
+        "text": "Disk evidence is destroyed by RAM collection"
+      },
+      {
+        "id": "c",
+        "text": "Memory images replace the need for all other evidence"
+      },
+      {
+        "id": "d",
+        "text": "Powered-on systems cannot be investigated otherwise"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "RAM contains volatile information that is lost when power is removed, so responders often collect it first when safe and appropriate. It complements rather than replaces disk and log evidence.",
+    "points": 20,
+    "tags": [
+      "memory",
+      "forensics",
+      "volatile-data"
+    ]
+  },
+  {
+    "id": "PD-B-E05",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What best describes static malware analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Inspecting a file without executing it"
+      },
+      {
+        "id": "b",
+        "text": "Running malware on a production workstation"
+      },
+      {
+        "id": "c",
+        "text": "Blocking all internet traffic from the SOC"
+      },
+      {
+        "id": "d",
+        "text": "Reinstalling the infected system"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Static analysis examines the file itself\u2014such as strings, headers, or hashes\u2014without running it. Execution-based testing is dynamic analysis.",
+    "points": 10,
+    "tags": [
+      "malware",
+      "static-analysis"
+    ]
+  },
+  {
+    "id": "PD-B-E06",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the purpose of a lessons learned meeting after an incident?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Identify what worked, what failed, and what to improve"
+      },
+      {
+        "id": "b",
+        "text": "Reassign all IT staff to new roles"
+      },
+      {
+        "id": "c",
+        "text": "Delete all incident records to close the event"
+      },
+      {
+        "id": "d",
+        "text": "Choose a new antivirus vendor immediately"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Lessons learned helps the organization improve people, process, and technology after an incident. It is a review and improvement activity, not automatic restructuring or data deletion.",
+    "points": 10,
+    "tags": [
+      "post-incident",
+      "improvement"
+    ]
+  },
+  {
+    "id": "PD-B-E07",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which stakeholder update is most appropriate during an active incident?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A factual summary of known impact, actions underway, and next update timing"
+      },
+      {
+        "id": "b",
+        "text": "A list of unverified rumors from social media"
+      },
+      {
+        "id": "c",
+        "text": "A promise that no data was affected before analysis is complete"
+      },
+      {
+        "id": "d",
+        "text": "Full raw forensic output with no explanation"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Incident communication should be factual, bounded by what is known, and clear about current actions and next updates. Overstating certainty or passing along rumors can create legal and trust issues.",
+    "points": 20,
+    "tags": [
+      "communications",
+      "incident-response"
+    ]
+  },
+  {
+    "id": "PD-B-E08",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What does MTTD measure in incident operations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The average time from malicious activity beginning to detection"
+      },
+      {
+        "id": "b",
+        "text": "The size of the forensic evidence drive"
+      },
+      {
+        "id": "c",
+        "text": "The number of analysts on shift"
+      },
+      {
+        "id": "d",
+        "text": "The percentage of blocked spam emails"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Mean Time To Detect tracks how quickly the organization notices incidents after they begin. It is a timeliness metric, not a staffing or storage metric.",
+    "points": 20,
+    "tags": [
+      "metrics",
+      "mttd"
+    ]
+  },
+  {
+    "id": "PD-B-E09",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "A ransomware playbook is triggered on a workstation. What is the most urgent first technical action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Isolate the infected system from the network"
+      },
+      {
+        "id": "b",
+        "text": "Publish a press release immediately"
+      },
+      {
+        "id": "c",
+        "text": "Reformat every server in the company"
+      },
+      {
+        "id": "d",
+        "text": "Delete the backup catalog"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Immediate isolation can help stop encryption spread or further attacker communication while responders assess scope. The other actions are premature or harmful.",
+    "points": 10,
+    "tags": [
+      "ransomware",
+      "containment"
+    ]
+  },
+  {
+    "id": "PD-B-E10",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is timeline reconstruction used for in digital forensics?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Placing events in order using timestamps from different artifacts"
+      },
+      {
+        "id": "b",
+        "text": "Compressing disk images for storage"
+      },
+      {
+        "id": "c",
+        "text": "Resetting passwords after a breach"
+      },
+      {
+        "id": "d",
+        "text": "Choosing which SIEM dashboard to display"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Timeline reconstruction helps investigators understand what happened and when by sequencing evidence from logs, files, and system artifacts. It is an analysis technique, not a storage or UI task.",
+    "points": 20,
+    "tags": [
+      "timeline",
+      "forensics"
+    ]
+  },
+  {
+    "id": "PD-B-M01",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A web server may have an active webshell and is still running. What evidence should generally be prioritized before rebooting the host?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Volatile data such as memory, active connections, and running processes"
+      },
+      {
+        "id": "b",
+        "text": "Only the monitor serial number"
+      },
+      {
+        "id": "c",
+        "text": "The office floor map"
+      },
+      {
+        "id": "d",
+        "text": "A fresh OS installation"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If it is safe to do so, responders often collect volatile evidence first because it disappears on reboot and can reveal active malware, connections, and credentials in memory.",
+    "points": 30,
+    "tags": [
+      "forensics",
+      "volatile-data",
+      "webshell"
+    ]
+  },
+  {
+    "id": "PD-B-M02",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A forensic disk image hash does not match the hash recorded for the original drive at acquisition. What is the best interpretation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Evidence integrity is in question and the acquisition should be investigated or repeated if possible"
+      },
+      {
+        "id": "b",
+        "text": "The mismatch proves the malware has been removed"
+      },
+      {
+        "id": "c",
+        "text": "Hashing is optional so the mismatch can be ignored"
+      },
+      {
+        "id": "d",
+        "text": "The original drive must have been encrypted"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Hash mismatches raise integrity concerns because a forensic image should verifiably match the source evidence. The discrepancy must be understood before relying on the image.",
+    "points": 30,
+    "tags": [
+      "hashing",
+      "forensics",
+      "integrity"
+    ]
+  },
+  {
+    "id": "PD-B-M03",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Legal advises that an incident may lead to litigation. What should the technical team do regarding relevant logs and mailboxes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Preserve them under legal hold and suspend routine deletion as directed"
+      },
+      {
+        "id": "b",
+        "text": "Delete old records immediately to reduce exposure"
+      },
+      {
+        "id": "c",
+        "text": "Share everything publicly for transparency"
+      },
+      {
+        "id": "d",
+        "text": "Stop documenting the incident"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Potential litigation requires evidence preservation and coordination with legal so relevant records are not lost through normal retention practices. Deleting or withholding documentation is inappropriate.",
+    "points": 30,
+    "tags": [
+      "legal",
+      "preservation",
+      "incident-response"
+    ]
+  },
+  {
+    "id": "PD-B-M04",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Where should dynamic malware analysis be performed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In an isolated sandbox or lab environment"
+      },
+      {
+        "id": "b",
+        "text": "On a domain controller to watch real behavior"
+      },
+      {
+        "id": "c",
+        "text": "On an employee laptop after hours"
+      },
+      {
+        "id": "d",
+        "text": "Inside the production email server"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Dynamic analysis intentionally executes suspicious code, so it belongs in a controlled environment designed to contain and observe malware safely. Production systems should never be used.",
+    "points": 30,
+    "tags": [
+      "malware",
+      "sandbox",
+      "dynamic-analysis"
+    ]
+  },
+  {
+    "id": "PD-B-M05",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A phishing email led to a malicious macro, then a downloader, then outbound beaconing. Which evidence set best supports root cause analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Email headers, user execution evidence, process tree, and proxy/network logs"
+      },
+      {
+        "id": "b",
+        "text": "Only a screenshot of the ransom note"
+      },
+      {
+        "id": "c",
+        "text": "Only the user\u2019s job title"
+      },
+      {
+        "id": "d",
+        "text": "Only the help desk ticket priority"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Root cause analysis needs evidence across the whole attack chain from delivery to execution and network behavior. A single artifact rarely explains the full sequence.",
+    "points": 30,
+    "tags": [
+      "root-cause",
+      "phishing",
+      "timeline"
+    ]
+  },
+  {
+    "id": "PD-B-M06",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A customer-impacting breach is under investigation and reporters are asking questions. How should external communication be handled?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Through coordinated legal and PR messaging based on validated facts"
+      },
+      {
+        "id": "b",
+        "text": "By letting any analyst answer directly on social media"
+      },
+      {
+        "id": "c",
+        "text": "By denying the incident before confirming details"
+      },
+      {
+        "id": "d",
+        "text": "By sending raw memory dumps to journalists"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "External communications should be coordinated through designated stakeholders so messaging is accurate, legally reviewed, and consistent with what is known. Ad hoc statements create risk.",
+    "points": 30,
+    "tags": [
+      "communications",
+      "legal",
+      "pr"
+    ]
+  },
+  {
+    "id": "PD-B-M07",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A ransomware note appears on one workstation and no broader impact is yet confirmed. What is the best immediate containment step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Isolate the workstation and restrict nearby shares while scoping spread"
+      },
+      {
+        "id": "b",
+        "text": "Restore all servers from backup immediately"
+      },
+      {
+        "id": "c",
+        "text": "Delete all endpoint logs to save space"
+      },
+      {
+        "id": "d",
+        "text": "Wait for more systems to encrypt before acting"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Early containment should focus on the affected system and likely spread paths while responders determine scope. Premature enterprise-wide restores or inaction are not appropriate first steps.",
+    "points": 30,
+    "tags": [
+      "ransomware",
+      "containment",
+      "triage"
+    ]
+  },
+  {
+    "id": "PD-B-M08",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An attacker used stolen VPN credentials. Which activity belongs in eradication and recovery rather than initial detection?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reset credentials, revoke sessions/tokens, and verify persistence is removed"
+      },
+      {
+        "id": "b",
+        "text": "Review the first suspicious login timestamp"
+      },
+      {
+        "id": "c",
+        "text": "Confirm whether the alert is a false positive"
+      },
+      {
+        "id": "d",
+        "text": "Determine which logs contain VPN events"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Eradication and recovery focus on removing attacker access and restoring secure operations, including credential resets and persistence review. The other options fit earlier analysis phases.",
+    "points": 30,
+    "tags": [
+      "eradication",
+      "credentials",
+      "recovery"
+    ]
+  },
+  {
+    "id": "PD-B-M09",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "If malicious activity started at 02:00 and the SOC detected it at 08:30, what is the MTTD for that incident?",
+    "options": [
+      {
+        "id": "a",
+        "text": "6.5 hours"
+      },
+      {
+        "id": "b",
+        "text": "2 hours"
+      },
+      {
+        "id": "c",
+        "text": "8.5 hours"
+      },
+      {
+        "id": "d",
+        "text": "10.5 hours"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "MTTD here is the elapsed time between incident start and detection: 6 hours and 30 minutes. This metric reflects detection speed.",
+    "points": 30,
+    "tags": [
+      "mttd",
+      "metrics",
+      "incident-response"
+    ]
+  },
+  {
+    "id": "PD-B-M10",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Logs from two systems disagree by one hour during timeline analysis because one host was set to the wrong timezone. What is the best analyst response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Normalize timestamps and document the timezone or clock-skew issue"
+      },
+      {
+        "id": "b",
+        "text": "Delete one system\u2019s logs because they conflict"
+      },
+      {
+        "id": "c",
+        "text": "Average the times and use the midpoint"
+      },
+      {
+        "id": "d",
+        "text": "Assume the later time is always correct"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Investigators should normalize and annotate time discrepancies so the final timeline reflects the best available sequence of events. Discarding or guessing at times can corrupt analysis.",
+    "points": 30,
+    "tags": [
+      "timeline",
+      "forensics",
+      "time"
+    ]
+  },
+  {
+    "id": "PD-B-H01",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A domain controller is suspected compromised during business hours. What is the best immediate response approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Engage the incident lead and coordinate controlled containment while preserving volatile evidence where feasible"
+      },
+      {
+        "id": "b",
+        "text": "Force an instant shutdown without notifying anyone"
+      },
+      {
+        "id": "c",
+        "text": "Close the alert until after the maintenance window"
+      },
+      {
+        "id": "d",
+        "text": "Let end users continue authenticating with no additional monitoring"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Because domain controllers are high-impact systems, responders must balance evidence preservation, containment, and business continuity under coordinated incident leadership. Abrupt, unplanned actions can worsen both outage and forensic outcomes.",
+    "points": 50,
+    "tags": [
+      "domain-controller",
+      "incident-response",
+      "containment"
+    ]
+  },
+  {
+    "id": "PD-B-H02",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "You acquire a cloud VM using a provider snapshot API. Which record best supports chain of custody?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Snapshot ID, account, region, timestamps, operator, and hash of any exported image where possible"
+      },
+      {
+        "id": "b",
+        "text": "Only the VM display name and analyst initials"
+      },
+      {
+        "id": "c",
+        "text": "A screenshot of the cloud console home page"
+      },
+      {
+        "id": "d",
+        "text": "The monthly cloud bill total"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Cloud evidence still requires detailed tracking of who acquired what, from where, and when, along with integrity data for exported artifacts when available. Minimal notes are not enough.",
+    "points": 40,
+    "tags": [
+      "cloud",
+      "forensics",
+      "chain-of-custody"
+    ]
+  },
+  {
+    "id": "PD-B-H03",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A malware sample only shows its full behavior after a user opens a document and it reaches its command-and-control server. What sandbox adjustment is most useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use controlled internet simulation and safe user-interaction triggering in the lab"
+      },
+      {
+        "id": "b",
+        "text": "Run it on a production workstation to see real effects"
+      },
+      {
+        "id": "c",
+        "text": "Disable all logging in the sandbox"
+      },
+      {
+        "id": "d",
+        "text": "Examine only the file name and skip execution"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Some malware requires user interaction and network reachability to detonate, so a properly controlled sandbox should simulate those conditions safely. Production execution would be unsafe.",
+    "points": 40,
+    "tags": [
+      "malware",
+      "sandbox",
+      "dynamic-analysis"
+    ]
+  },
+  {
+    "id": "PD-B-H04",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Which statement best reflects sound root cause analysis during an incident?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The earliest alert is not always the initial access; analysts may need to trace backward to the true entry point"
+      },
+      {
+        "id": "b",
+        "text": "The first alert always proves the exact root cause"
+      },
+      {
+        "id": "c",
+        "text": "Root cause is whatever system was encrypted first"
+      },
+      {
+        "id": "d",
+        "text": "Root cause analysis can wait until evidence is deleted"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Detection often occurs after the attacker has already established access, so root cause analysis must trace events back to the original intrusion vector rather than assuming the first alert tells the whole story.",
+    "points": 40,
+    "tags": [
+      "root-cause",
+      "timeline",
+      "incident-response"
+    ]
+  },
+  {
+    "id": "PD-B-H05",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Attackers claim they exfiltrated data during a ransomware incident, and the company is preparing a public statement. What is the best next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Validate the exfiltration scope with forensic evidence and coordinate wording with legal and PR"
+      },
+      {
+        "id": "b",
+        "text": "State publicly that no data left the company before analysis finishes"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the claim because ransom notes are always false"
+      },
+      {
+        "id": "d",
+        "text": "Publish raw packet captures to prove transparency"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Public statements about exfiltration should be evidence-based and coordinated with legal and communications teams. Overconfident denials before validation can create significant legal and reputational risk.",
+    "points": 50,
+    "tags": [
+      "ransomware",
+      "communications",
+      "legal"
+    ]
+  },
+  {
+    "id": "PD-B-H06",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Backups are ready after a ransomware attack, but responders believe the attacker still has domain admin access. What must happen before restored systems are returned to production?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Remove persistence and reset privileged access so the attacker cannot immediately re-compromise restored systems"
+      },
+      {
+        "id": "b",
+        "text": "Restore immediately because backups guarantee safety"
+      },
+      {
+        "id": "c",
+        "text": "Disable logging during recovery to improve speed"
+      },
+      {
+        "id": "d",
+        "text": "Reconnect everything first and investigate later"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Recovery is not complete until the attacker\u2019s access path is removed; otherwise restored systems may be compromised again immediately. Credential and persistence cleanup is essential before reconnecting systems.",
+    "points": 50,
+    "tags": [
+      "ransomware",
+      "recovery",
+      "credentials"
+    ]
+  },
+  {
+    "id": "PD-B-H07",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Responders seize a powered-on encrypted laptop from a suspected insider while the user session is unlocked. Which acquisition order is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Capture volatile memory first, then proceed with additional evidence collection"
+      },
+      {
+        "id": "b",
+        "text": "Shut it down immediately and image only the disk"
+      },
+      {
+        "id": "c",
+        "text": "Close the lid and wait for the battery to drain"
+      },
+      {
+        "id": "d",
+        "text": "Factory reset it to protect the data"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An unlocked, encrypted system may contain decryption keys and volatile artifacts in RAM that will be lost on shutdown. Capturing memory first can preserve evidence that disk imaging alone may miss.",
+    "points": 40,
+    "tags": [
+      "memory",
+      "forensics",
+      "encryption"
+    ]
+  },
+  {
+    "id": "PD-B-H08",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An intrusion began at 01:00, was detected at 07:00, contained by 09:30, and service was restored at 15:00. Using detection-to-restoration as MTTR for this exercise, which metrics are correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "MTTD is 6 hours and MTTR is 8 hours"
+      },
+      {
+        "id": "b",
+        "text": "MTTD is 8 hours and MTTR is 6 hours"
+      },
+      {
+        "id": "c",
+        "text": "MTTD is 14 hours and MTTR is 9.5 hours"
+      },
+      {
+        "id": "d",
+        "text": "MTTD is 1 hour and MTTR is 14 hours"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "MTTD is the 6-hour gap from 01:00 to 07:00. Under the question\u2019s stated definition, MTTR is the 8-hour period from detection at 07:00 to restoration at 15:00.",
+    "points": 50,
+    "tags": [
+      "metrics",
+      "mttd",
+      "mttr"
+    ]
+  },
+  {
+    "id": "PD-B-H09",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "You suspect fileless malware injected code into a user process. Which evidence source is most likely to reveal the injected code or suspicious memory regions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A memory image analyzed with forensic tooling"
+      },
+      {
+        "id": "b",
+        "text": "Only the printed asset inventory report"
+      },
+      {
+        "id": "c",
+        "text": "Only a screenshot of the desktop wallpaper"
+      },
+      {
+        "id": "d",
+        "text": "Only the system purchase order"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Memory analysis is critical for detecting injected code, in-memory artifacts, and suspicious process regions that may never be written to disk. Administrative paperwork would not show those details.",
+    "points": 40,
+    "tags": [
+      "memory",
+      "malware",
+      "forensics"
+    ]
+  },
+  {
+    "id": "PD-B-H10",
+    "domainId": "PD",
+    "subdomainId": "PD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Which pair of metrics would best show executives whether incident operations are improving over time?",
+    "options": [
+      {
+        "id": "a",
+        "text": "MTTD trend and percentage of high-severity incidents contained within SLA"
+      },
+      {
+        "id": "b",
+        "text": "Number of analysts who changed shifts and average meeting length"
+      },
+      {
+        "id": "c",
+        "text": "Total amount of raw log storage and monitor size"
+      },
+      {
+        "id": "d",
+        "text": "Count of office chairs in the SOC and badge swipes"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Executives benefit from metrics tied to detection speed and operational effectiveness, such as MTTD and containment performance against service objectives. The other measures do not reflect incident-response capability.",
+    "points": 40,
+    "tags": [
+      "metrics",
+      "executive-reporting",
+      "mttr"
+    ]
+  },
+  {
+    "id": "PD-C-E01",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is an authenticated vulnerability scan?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A scan that logs into the target to inspect internal settings"
+      },
+      {
+        "id": "b",
+        "text": "A scan that only checks public websites for typos"
+      },
+      {
+        "id": "c",
+        "text": "A scan performed without any credentials"
+      },
+      {
+        "id": "d",
+        "text": "A scan that backs up the server before testing"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Authenticated scans use valid credentials to inspect local configuration, installed software, and patch status more deeply than external-only checks. They are not the same as unauthenticated scans.",
+    "points": 10,
+    "tags": [
+      "vulnerability-scanning",
+      "authenticated"
+    ]
+  },
+  {
+    "id": "PD-C-E02",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does a higher CVSS base score generally indicate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The vulnerability is more severe in terms of technical impact"
+      },
+      {
+        "id": "b",
+        "text": "The vendor released a patch sooner"
+      },
+      {
+        "id": "c",
+        "text": "The finding is guaranteed to be exploited today"
+      },
+      {
+        "id": "d",
+        "text": "The asset owner has accepted the risk"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "CVSS base score reflects inherent severity such as impact and exploitability characteristics, not patch timing or guaranteed exploitation. Prioritization still requires additional context.",
+    "points": 10,
+    "tags": [
+      "cvss",
+      "severity"
+    ]
+  },
+  {
+    "id": "PD-C-E03",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why does known exploit availability usually increase remediation priority?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because the chance of real-world abuse is higher"
+      },
+      {
+        "id": "b",
+        "text": "Because the vulnerability scanner will stop working otherwise"
+      },
+      {
+        "id": "c",
+        "text": "Because CVSS becomes invalid when exploits exist"
+      },
+      {
+        "id": "d",
+        "text": "Because backups will fail if the patch is delayed"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If exploit code or active exploitation exists, the likelihood of attack is higher, so organizations often raise the urgency of remediation. The other effects are not the primary reason.",
+    "points": 20,
+    "tags": [
+      "exploitability",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "PD-C-E04",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is a patch remediation SLA?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The target time window for fixing or mitigating a vulnerability"
+      },
+      {
+        "id": "b",
+        "text": "The password used by the patching team"
+      },
+      {
+        "id": "c",
+        "text": "The list of all operating systems in use"
+      },
+      {
+        "id": "d",
+        "text": "The amount of disk space a patch needs"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A remediation SLA defines how quickly issues of certain severity or risk should be addressed. It is a timing expectation, not a password or hardware detail.",
+    "points": 10,
+    "tags": [
+      "patching",
+      "sla"
+    ]
+  },
+  {
+    "id": "PD-C-E05",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does attack surface management primarily help identify?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Internet-exposed assets and services the organization may have missed"
+      },
+      {
+        "id": "b",
+        "text": "Only employee satisfaction with security tools"
+      },
+      {
+        "id": "c",
+        "text": "The color of network device cables"
+      },
+      {
+        "id": "d",
+        "text": "Which vendor provides the cheapest laptops"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Attack surface management focuses on discovering external exposure and shadow assets that could be targeted by attackers. It is not a procurement or facilities function.",
+    "points": 10,
+    "tags": [
+      "asm",
+      "exposure"
+    ]
+  },
+  {
+    "id": "PD-C-E06",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "When is a risk acceptance decision appropriate in vulnerability management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "When remediation cannot happen immediately and an authorized owner formally accepts the residual risk"
+      },
+      {
+        "id": "b",
+        "text": "Whenever the scanner finds too many issues to review"
+      },
+      {
+        "id": "c",
+        "text": "Whenever a developer dislikes a patch"
+      },
+      {
+        "id": "d",
+        "text": "When the vulnerability has a long CVE description"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Risk acceptance is a governance decision used when the organization intentionally tolerates a known issue under documented approval and conditions. It is not a way to avoid triage effort or preference conflicts.",
+    "points": 20,
+    "tags": [
+      "risk-acceptance",
+      "governance"
+    ]
+  },
+  {
+    "id": "PD-C-E07",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does an unauthenticated scan best represent?",
+    "options": [
+      {
+        "id": "a",
+        "text": "What an outside attacker might see without credentials"
+      },
+      {
+        "id": "b",
+        "text": "The exact state of every local registry key"
+      },
+      {
+        "id": "c",
+        "text": "The chain of custody for evidence"
+      },
+      {
+        "id": "d",
+        "text": "The result of a memory forensic capture"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Unauthenticated scans show externally visible exposure and service posture from an outsider perspective. They cannot inspect many internal configuration details without access.",
+    "points": 10,
+    "tags": [
+      "vulnerability-scanning",
+      "external"
+    ]
+  },
+  {
+    "id": "PD-C-E08",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is shadow IT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unapproved or unmanaged systems, apps, or services used without formal oversight"
+      },
+      {
+        "id": "b",
+        "text": "Encrypted backups stored offsite"
+      },
+      {
+        "id": "c",
+        "text": "A standard cloud provider security feature"
+      },
+      {
+        "id": "d",
+        "text": "The dark mode setting in the ticketing portal"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Shadow IT refers to technology deployed or used outside approved governance, which can create unknown risk and exposure. It is not a built-in security feature.",
+    "points": 10,
+    "tags": [
+      "shadow-it",
+      "governance"
+    ]
+  },
+  {
+    "id": "PD-C-E09",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which content is most useful in an executive vulnerability report?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Trends in critical exposure, remediation progress, and major risks"
+      },
+      {
+        "id": "b",
+        "text": "Every raw plugin output line from the scanner"
+      },
+      {
+        "id": "c",
+        "text": "A list of all analyst keyboard shortcuts"
+      },
+      {
+        "id": "d",
+        "text": "Unsorted screenshots of every console page"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Executives need concise risk-focused summaries and trends, not raw scanner detail. Effective reporting emphasizes exposure, remediation status, and business-relevant priorities.",
+    "points": 20,
+    "tags": [
+      "reporting",
+      "stakeholders",
+      "risk"
+    ]
+  },
+  {
+    "id": "PD-C-E10",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why schedule rescans after the patch window?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To confirm vulnerabilities were actually remediated and to detect remaining exposure"
+      },
+      {
+        "id": "b",
+        "text": "To increase the vulnerability count for reporting"
+      },
+      {
+        "id": "c",
+        "text": "To replace change management entirely"
+      },
+      {
+        "id": "d",
+        "text": "To prevent asset owners from seeing findings"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Rescanning validates that fixes took effect and identifies issues that remain due to failed deployment, incorrect patching, or configuration drift. It is a verification step.",
+    "points": 20,
+    "tags": [
+      "validation",
+      "rescanning",
+      "patching"
+    ]
+  },
+  {
+    "id": "PD-C-M01",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which vulnerability should generally be remediated first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An internet-facing VPN flaw with active exploit activity and high EPSS"
+      },
+      {
+        "id": "b",
+        "text": "An internal test-system flaw with no known exploit and no external exposure"
+      },
+      {
+        "id": "c",
+        "text": "A low-severity informational finding on a printer"
+      },
+      {
+        "id": "d",
+        "text": "A deprecated software notice on an isolated lab box"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Risk-based prioritization weighs exposure and likelihood of exploitation in addition to severity. An internet-facing VPN with active exploitation risk is a much higher priority than isolated low-impact findings.",
+    "points": 30,
+    "tags": [
+      "prioritization",
+      "epss",
+      "vpn"
+    ]
+  },
+  {
+    "id": "PD-C-M02",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An authenticated scan suddenly reports almost no findings on a server group because the scanner password expired. What is the most likely issue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The scan results may contain false negatives due to failed authentication"
+      },
+      {
+        "id": "b",
+        "text": "All vulnerabilities were fixed overnight"
+      },
+      {
+        "id": "c",
+        "text": "The servers became invisible to the network"
+      },
+      {
+        "id": "d",
+        "text": "The asset owners changed the CVE numbering system"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If authenticated access fails, the scanner may lose visibility into local configuration and installed software, making the environment look healthier than it really is. That is a classic false-negative risk.",
+    "points": 30,
+    "tags": [
+      "scanning",
+      "false-negatives",
+      "credentials"
+    ]
+  },
+  {
+    "id": "PD-C-M03",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "What information is most important to include in a remediation tracking ticket?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Asset owner, due date, required action, and how remediation will be validated"
+      },
+      {
+        "id": "b",
+        "text": "Only the CVE number and no owner"
+      },
+      {
+        "id": "c",
+        "text": "The analyst\u2019s favorite plugin ID"
+      },
+      {
+        "id": "d",
+        "text": "A screenshot of the office building"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A good remediation ticket identifies responsibility, expected timeline, required change, and how success will be confirmed. Without ownership and validation, follow-through is weaker.",
+    "points": 30,
+    "tags": [
+      "remediation",
+      "ticketing",
+      "ownership"
+    ]
+  },
+  {
+    "id": "PD-C-M04",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Attack surface management finds a forgotten staging server with an old login page exposed to the internet. What should happen first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Validate ownership and quickly reduce exposure, such as restricting access or taking it offline"
+      },
+      {
+        "id": "b",
+        "text": "Advertise the server so developers can remember it exists"
+      },
+      {
+        "id": "c",
+        "text": "Ignore it until the next quarterly meeting"
+      },
+      {
+        "id": "d",
+        "text": "Move it to a different DNS name and leave it public"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Unknown public exposure should be quickly confirmed and contained because forgotten systems often miss patching and monitoring. Renaming or delaying action does not reduce risk.",
+    "points": 30,
+    "tags": [
+      "asm",
+      "exposure",
+      "shadow-it"
+    ]
+  },
+  {
+    "id": "PD-C-M05",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A business unit requests an exception for a vulnerability that cannot be fixed this quarter. Which detail is essential in the exception workflow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compensating controls plus an expiration or review date"
+      },
+      {
+        "id": "b",
+        "text": "A promise that the issue feels low risk"
+      },
+      {
+        "id": "c",
+        "text": "A note saying the scanner is annoying"
+      },
+      {
+        "id": "d",
+        "text": "The analyst\u2019s desktop wallpaper choice"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Exceptions should be governed with clear conditions, controls, and a time-bound review so they do not become permanent unmanaged risk. Informal statements are not enough.",
+    "points": 30,
+    "tags": [
+      "exception",
+      "risk-acceptance",
+      "governance"
+    ]
+  },
+  {
+    "id": "PD-C-M06",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A critical vulnerability is being actively exploited in the wild, but the normal patch cycle is monthly. What is the best response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use an emergency or out-of-band remediation process"
+      },
+      {
+        "id": "b",
+        "text": "Wait for the next routine patch weekend"
+      },
+      {
+        "id": "c",
+        "text": "Disable the vulnerability scanner until then"
+      },
+      {
+        "id": "d",
+        "text": "Close the finding because the cycle is fixed"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Actively exploited critical issues often require expedited change control and patching outside standard cycles. Rigidly waiting can leave the organization exposed.",
+    "points": 30,
+    "tags": [
+      "patching",
+      "emergency-change",
+      "exploitation"
+    ]
+  },
+  {
+    "id": "PD-C-M07",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A scan profile causes instability on network printers because some checks are too intrusive. What is the best adjustment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use safer scan settings or scoped exclusions for those device types"
+      },
+      {
+        "id": "b",
+        "text": "Stop scanning the entire environment"
+      },
+      {
+        "id": "c",
+        "text": "Ignore all printer-related findings forever"
+      },
+      {
+        "id": "d",
+        "text": "Move the printers to the guest network without review"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Vulnerability programs should tailor scan profiles to device capabilities to maintain coverage without disrupting fragile systems. Abandoning scanning entirely is an overreaction.",
+    "points": 30,
+    "tags": [
+      "scanning",
+      "safe-checks",
+      "devices"
+    ]
+  },
+  {
+    "id": "PD-C-M08",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which dashboard view is most useful for remediation management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Critical vulnerabilities that are past SLA, grouped by owner or business unit"
+      },
+      {
+        "id": "b",
+        "text": "A random list of plugin output lines"
+      },
+      {
+        "id": "c",
+        "text": "All closed tickets from the last five years only"
+      },
+      {
+        "id": "d",
+        "text": "The weather in each data center location"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Managers need to see where serious overdue risk remains and who owns it so they can drive accountability. Raw scan output or unrelated data does not support remediation decisions.",
+    "points": 30,
+    "tags": [
+      "reporting",
+      "sla",
+      "ownership"
+    ]
+  },
+  {
+    "id": "PD-C-M09",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which set of factors best reflects risk-based vulnerability prioritization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "CVSS, exposure, exploit likelihood, and business criticality"
+      },
+      {
+        "id": "b",
+        "text": "Alphabetical order of hostname and ticket number only"
+      },
+      {
+        "id": "c",
+        "text": "How long the CVE description is"
+      },
+      {
+        "id": "d",
+        "text": "Whether the scanner logo is red or blue"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Risk-based programs combine technical severity with exposure, exploitability, and business importance rather than relying on one score alone. That yields better remediation ordering.",
+    "points": 30,
+    "tags": [
+      "risk-based",
+      "cvss",
+      "epss"
+    ]
+  },
+  {
+    "id": "PD-C-M10",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A vulnerability remains open after patch deployment. What should happen before the ticket is closed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify the installed version or config and rescan to confirm remediation"
+      },
+      {
+        "id": "b",
+        "text": "Close it because the patch job reported success"
+      },
+      {
+        "id": "c",
+        "text": "Delete the original finding from the scanner"
+      },
+      {
+        "id": "d",
+        "text": "Reassign the ticket without checking the asset"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Operational validation is important because patch jobs can fail, apply to the wrong component, or require a reboot. Rescanning or version verification confirms the risk is actually removed.",
+    "points": 30,
+    "tags": [
+      "validation",
+      "patching",
+      "rescanning"
+    ]
+  },
+  {
+    "id": "PD-C-H01",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Which vulnerability should be prioritized first for remediation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A CVSS 8.8 VPN flaw with public exploit code, high EPSS, and internet exposure on a critical service"
+      },
+      {
+        "id": "b",
+        "text": "A CVSS 9.8 issue on an isolated lab host with no sensitive data and no known exploit"
+      },
+      {
+        "id": "c",
+        "text": "A medium-severity issue on an internal kiosk with compensating controls"
+      },
+      {
+        "id": "d",
+        "text": "A low-severity finding on a decommissioning test VM"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The first option combines high severity with real exploitability, external reachability, and business impact, making it the strongest risk-based priority. Raw CVSS alone is not sufficient for ordering.",
+    "points": 50,
+    "tags": [
+      "prioritization",
+      "epss",
+      "cvss"
+    ]
+  },
+  {
+    "id": "PD-C-H02",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Authenticated Linux scans reveal the same sudo misconfiguration on 500 servers built from a common gold image. What is the best program response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fix the gold image and remediate the deployed fleet, then validate with rescans"
+      },
+      {
+        "id": "b",
+        "text": "Close the finding because it is widespread"
+      },
+      {
+        "id": "c",
+        "text": "Patch only one server and assume the rest are fixed"
+      },
+      {
+        "id": "d",
+        "text": "Turn off authenticated scanning to reduce alert volume"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A systemic image-based issue should be addressed at the source and across existing systems, followed by verification. Fixing a single host or suppressing visibility would not solve the underlying problem.",
+    "points": 40,
+    "tags": [
+      "gold-image",
+      "scanning",
+      "remediation"
+    ]
+  },
+  {
+    "id": "PD-C-H03",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Two scanners report the same CVE on the same asset with slightly different wording. What is the best way to avoid duplicate remediation work?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deduplicate by asset and vulnerability while retaining supporting evidence and highest severity context"
+      },
+      {
+        "id": "b",
+        "text": "Open separate tickets for every scanner plugin regardless of overlap"
+      },
+      {
+        "id": "c",
+        "text": "Delete all findings from one scanner permanently"
+      },
+      {
+        "id": "d",
+        "text": "Average the CVSS scores and ignore the asset ID"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Deduplication should preserve evidence while consolidating the same underlying issue so owners do not waste effort on multiple tickets for one fix. Asset/vulnerability correlation is key.",
+    "points": 40,
+    "tags": [
+      "deduplication",
+      "reporting",
+      "remediation"
+    ]
+  },
+  {
+    "id": "PD-C-H04",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A container image for an internet-facing service contains a vulnerable package that is not currently used at runtime. What is the best handling decision?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Keep it tracked and assess runtime context, but plan to rebuild the image rather than ignoring it outright"
+      },
+      {
+        "id": "b",
+        "text": "Mark it permanently false positive with no review"
+      },
+      {
+        "id": "c",
+        "text": "Assume unused today means harmless forever"
+      },
+      {
+        "id": "d",
+        "text": "Remove the service from monitoring"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Runtime context matters, but unused packages can still become reachable through future changes or abuse paths, so the issue should remain tracked with a contextual remediation plan. Immediate blind dismissal is risky.",
+    "points": 40,
+    "tags": [
+      "containers",
+      "context",
+      "vulnerability-management"
+    ]
+  },
+  {
+    "id": "PD-C-H05",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A medical device cannot be patched for nine months due to vendor limitations. Which exception workflow is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Formal risk acceptance with segmentation, monitoring, compensating controls, owner approval, and a review date"
+      },
+      {
+        "id": "b",
+        "text": "A verbal agreement to fix it someday"
+      },
+      {
+        "id": "c",
+        "text": "Deleting the finding from reports so clinicians are not worried"
+      },
+      {
+        "id": "d",
+        "text": "Exposing it to the internet to simplify vendor support"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Long-lived exceptions need governance, ownership, compensating controls, and revalidation so the organization actively manages the risk. Informal handling or broader exposure would be unacceptable.",
+    "points": 50,
+    "tags": [
+      "exception",
+      "medical-device",
+      "compensating-controls"
+    ]
+  },
+  {
+    "id": "PD-C-H06",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "After a remediation sprint, which metric is most useful for a board-level update?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Trend of internet-facing critical vulnerabilities past SLA"
+      },
+      {
+        "id": "b",
+        "text": "A dump of every plugin result closed this month"
+      },
+      {
+        "id": "c",
+        "text": "The number of scanner IP addresses in use"
+      },
+      {
+        "id": "d",
+        "text": "Average analyst screen size"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Board stakeholders care about whether material exposure is decreasing, especially on critical externally exposed assets. Trend-based overdue-risk metrics are more meaningful than raw operational detail.",
+    "points": 50,
+    "tags": [
+      "board-reporting",
+      "sla",
+      "risk"
+    ]
+  },
+  {
+    "id": "PD-C-H07",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A scanner reports an RCE finding on a load balancer virtual IP, but the VIP fronts multiple backend services. What is the best next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Map the finding to the actual exposed service path and validate where the vulnerable component lives before assigning remediation"
+      },
+      {
+        "id": "b",
+        "text": "Patch every server in the data center immediately without confirmation"
+      },
+      {
+        "id": "c",
+        "text": "Close the finding because virtual IPs cannot have risk"
+      },
+      {
+        "id": "d",
+        "text": "Assign the ticket to the network team only and stop investigating"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Front-end addresses can obscure which system or application is truly affected, so validation must trace the exposure path before remediation ownership and deadlines are set. Blindly patching everything is inefficient.",
+    "points": 40,
+    "tags": [
+      "validation",
+      "exposure",
+      "triage"
+    ]
+  },
+  {
+    "id": "PD-C-H08",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Attack surface management identifies a dangling DNS record pointing to a deprovisioned cloud resource. What is the key risk and response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Subdomain takeover risk; remove or reclaim the DNS target quickly"
+      },
+      {
+        "id": "b",
+        "text": "Increased CPU usage; buy more servers"
+      },
+      {
+        "id": "c",
+        "text": "Password spraying risk; reset every user password"
+      },
+      {
+        "id": "d",
+        "text": "Loss of physical badge access; reprint badges"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Dangling DNS can allow an attacker to claim the referenced resource and serve content from the trusted subdomain. Fast cleanup or reclamation is the correct response.",
+    "points": 40,
+    "tags": [
+      "asm",
+      "dns",
+      "takeover"
+    ]
+  },
+  {
+    "id": "PD-C-H09",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A high-risk vulnerability is actively exploited, but a quarter-end freeze blocks normal production changes. What is the best governance path?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Trigger emergency risk review with temporary controls and a documented decision on out-of-band remediation"
+      },
+      {
+        "id": "b",
+        "text": "Wait silently until the freeze ends"
+      },
+      {
+        "id": "c",
+        "text": "Delete the finding to avoid conflict with the freeze"
+      },
+      {
+        "id": "d",
+        "text": "Disable IDS signatures related to the vulnerability"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A formal emergency path allows leadership to weigh business constraints against live security risk and apply temporary controls if immediate patching is not possible. Silent delay is poor risk governance.",
+    "points": 50,
+    "tags": [
+      "governance",
+      "patching",
+      "risk"
+    ]
+  },
+  {
+    "id": "PD-C-H10",
+    "domainId": "PD",
+    "subdomainId": "PD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A library vulnerability was fixed in the latest container image, but the service uses rolling deployments. How should remediation be validated?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rescan the new image digest and confirm running deployments no longer use the old vulnerable image"
+      },
+      {
+        "id": "b",
+        "text": "Close the ticket when the CI pipeline succeeds"
+      },
+      {
+        "id": "c",
+        "text": "Assume the registry tag now points to the safe image everywhere"
+      },
+      {
+        "id": "d",
+        "text": "Validate only one development pod"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Container remediation must verify both the image artifact and the deployed runtime state, since old digests may still be active in clusters. A successful build alone does not prove production is clean.",
+    "points": 50,
+    "tags": [
+      "containers",
+      "validation",
+      "deployment"
+    ]
+  },
+  {
+    "id": "PD-D-E01",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which of the following is an example of an indicator of compromise (IOC)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A known malicious file hash"
+      },
+      {
+        "id": "b",
+        "text": "An attacker\u2019s long-term strategic goal"
+      },
+      {
+        "id": "c",
+        "text": "A team\u2019s annual training schedule"
+      },
+      {
+        "id": "d",
+        "text": "A company holiday calendar"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "IOCs are observable artifacts such as malicious IPs, hashes, or domains that can be matched in telemetry. Goals and calendars are not compromise indicators.",
+    "points": 10,
+    "tags": [
+      "cti",
+      "ioc"
+    ]
+  },
+  {
+    "id": "PD-D-E02",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does a TTP describe in threat analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "How an adversary behaves, such as their tactics, techniques, and procedures"
+      },
+      {
+        "id": "b",
+        "text": "A single password reset event"
+      },
+      {
+        "id": "c",
+        "text": "The serial number of a hard drive"
+      },
+      {
+        "id": "d",
+        "text": "The support team\u2019s shift roster"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "TTPs describe attacker behavior patterns and methods, which are more durable than individual indicators. The other choices are not threat-behavior descriptions.",
+    "points": 10,
+    "tags": [
+      "ttp",
+      "cti"
+    ]
+  },
+  {
+    "id": "PD-D-E03",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which behavior is the strongest insider-threat indicator?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A user downloading unusually large amounts of sensitive data after hours without business need"
+      },
+      {
+        "id": "b",
+        "text": "A user forgetting their password once"
+      },
+      {
+        "id": "c",
+        "text": "A printer running low on toner"
+      },
+      {
+        "id": "d",
+        "text": "A laptop installing a routine approved patch"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Unusual, unauthorized bulk access to sensitive data\u2014especially off-hours\u2014can indicate insider misuse or preparation for exfiltration. The other options are common benign events.",
+    "points": 20,
+    "tags": [
+      "insider-threat",
+      "behavior"
+    ]
+  },
+  {
+    "id": "PD-D-E04",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What does TLP:RED generally mean for intelligence sharing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Do not share beyond the specific participants or direct recipients"
+      },
+      {
+        "id": "b",
+        "text": "Share publicly on any website"
+      },
+      {
+        "id": "c",
+        "text": "Share freely with all customers and partners"
+      },
+      {
+        "id": "d",
+        "text": "No restrictions apply because it is urgent"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "TLP:RED is the most restrictive common Traffic Light Protocol marking and is intended only for the direct participants or named recipients. It is not for broader dissemination.",
+    "points": 20,
+    "tags": [
+      "tlp",
+      "sharing"
+    ]
+  },
+  {
+    "id": "PD-D-E05",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "How does a hypothesis-driven threat hunt typically begin?",
+    "options": [
+      {
+        "id": "a",
+        "text": "With a testable suspicion about attacker behavior to investigate"
+      },
+      {
+        "id": "b",
+        "text": "By blocking every external IP address immediately"
+      },
+      {
+        "id": "c",
+        "text": "By deleting all old logs"
+      },
+      {
+        "id": "d",
+        "text": "By sending a press release"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Threat hunting starts with a focused, testable hypothesis about behavior or telemetry patterns, then looks for evidence. It is not random blocking or communication activity.",
+    "points": 10,
+    "tags": [
+      "threat-hunting",
+      "methodology"
+    ]
+  },
+  {
+    "id": "PD-D-E06",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is an ISAC primarily used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sector-based intelligence sharing among member organizations"
+      },
+      {
+        "id": "b",
+        "text": "Reimaging employee laptops remotely"
+      },
+      {
+        "id": "c",
+        "text": "Storing physical evidence in a vault"
+      },
+      {
+        "id": "d",
+        "text": "Managing payroll deductions"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Information Sharing and Analysis Centers help organizations in similar sectors exchange relevant threat information. They are collaboration communities, not endpoint management tools.",
+    "points": 10,
+    "tags": [
+      "isac",
+      "sharing"
+    ]
+  },
+  {
+    "id": "PD-D-E07",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is purple teaming?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Collaboration between offensive and defensive teams to improve detections and response"
+      },
+      {
+        "id": "b",
+        "text": "A new type of firewall hardware"
+      },
+      {
+        "id": "c",
+        "text": "A rule that blocks all phishing emails"
+      },
+      {
+        "id": "d",
+        "text": "A process for deleting old indicators"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Purple teaming brings red-team and blue-team functions together to validate controls and improve defensive coverage based on observed attack behavior. It is a collaborative exercise.",
+    "points": 10,
+    "tags": [
+      "purple-team",
+      "collaboration"
+    ]
+  },
+  {
+    "id": "PD-D-E08",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the purpose of threat actor profiling?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To understand an adversary\u2019s motives, capabilities, and targeting so defenses can be prioritized"
+      },
+      {
+        "id": "b",
+        "text": "To assign every alert to the same actor automatically"
+      },
+      {
+        "id": "c",
+        "text": "To replace all forensic investigation"
+      },
+      {
+        "id": "d",
+        "text": "To estimate the purchase price of malware"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Threat actor profiling helps organizations understand which adversaries are most relevant and how they operate, which supports prioritization and detection planning. It is not perfect automated attribution.",
+    "points": 20,
+    "tags": [
+      "threat-actor",
+      "profiling"
+    ]
+  },
+  {
+    "id": "PD-D-E09",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which event by itself is least likely to indicate insider threat activity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A single mistyped password at logon"
+      },
+      {
+        "id": "b",
+        "text": "A user copying a restricted dataset to personal media"
+      },
+      {
+        "id": "c",
+        "text": "An employee accessing files unrelated to their role"
+      },
+      {
+        "id": "d",
+        "text": "A departing admin creating a new hidden account"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A single failed login is common and benign in many environments. The other behaviors suggest access misuse, persistence, or exfiltration risk.",
+    "points": 10,
+    "tags": [
+      "insider-threat",
+      "triage"
+    ]
+  },
+  {
+    "id": "PD-D-E10",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "To hunt for malicious PowerShell file downloads on Windows, which log type is especially useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Process command-line or PowerShell execution logs"
+      },
+      {
+        "id": "b",
+        "text": "Printer toner level logs"
+      },
+      {
+        "id": "c",
+        "text": "Badge access logs only"
+      },
+      {
+        "id": "d",
+        "text": "Monitor brightness settings"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "PowerShell and process-execution telemetry can reveal suspicious download commands and script behavior. The other data sources do not show command execution.",
+    "points": 20,
+    "tags": [
+      "powershell",
+      "hunting",
+      "logging"
+    ]
+  },
+  {
+    "id": "PD-D-M01",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A threat-intel feed provides malicious domains and hashes tied to a phishing kit targeting your sector. What is the best operational next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Turn the indicators into detections/blocks and map related behavior to ATT&CK for coverage"
+      },
+      {
+        "id": "b",
+        "text": "Archive the report without taking action"
+      },
+      {
+        "id": "c",
+        "text": "Assume every user is already compromised"
+      },
+      {
+        "id": "d",
+        "text": "Delete all existing email rules"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Useful intelligence should be operationalized into detection, blocking, and coverage improvements rather than merely stored. Mapping to ATT&CK also helps identify behavioral gaps beyond the raw IOCs.",
+    "points": 30,
+    "tags": [
+      "cti",
+      "ioc",
+      "mitre"
+    ]
+  },
+  {
+    "id": "PD-D-M02",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An employee who recently gave notice accesses HR records unrelated to their job and copies files to a USB drive. What is the best response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Escalate through the insider-threat process while preserving evidence and business context"
+      },
+      {
+        "id": "b",
+        "text": "Confront the employee directly without coordination"
+      },
+      {
+        "id": "c",
+        "text": "Ignore it because they are still employed"
+      },
+      {
+        "id": "d",
+        "text": "Delete the USB logs to avoid privacy concerns"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Potential insider activity requires a controlled, cross-functional process that preserves evidence and considers legal, HR, and managerial context. Acting alone or ignoring it is risky.",
+    "points": 30,
+    "tags": [
+      "insider-threat",
+      "usb",
+      "escalation"
+    ]
+  },
+  {
+    "id": "PD-D-M03",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which hunt hypothesis is well-formed for persistence detection on Windows?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Adversaries may create scheduled tasks for persistence, so search for unusual new task creation events"
+      },
+      {
+        "id": "b",
+        "text": "Hackers are bad, so block the internet"
+      },
+      {
+        "id": "c",
+        "text": "Every laptop is probably infected"
+      },
+      {
+        "id": "d",
+        "text": "Logs are too noisy to use for hunting"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A good hypothesis is specific, testable, and tied to attacker behavior and telemetry. The other options are vague or not actionable as a hunt.",
+    "points": 30,
+    "tags": [
+      "threat-hunting",
+      "windows",
+      "persistence"
+    ]
+  },
+  {
+    "id": "PD-D-M04",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You receive threat intelligence marked TLP:RED. What is the sharing implication?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Do not redistribute it beyond the named recipients or direct participants"
+      },
+      {
+        "id": "b",
+        "text": "Post it to the company wiki for everyone"
+      },
+      {
+        "id": "c",
+        "text": "Send it to all vendors automatically"
+      },
+      {
+        "id": "d",
+        "text": "Share it publicly because it came from a trusted source"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "TLP:RED is highly restricted and is intended only for the direct participants or explicitly named recipients. Broader posting or forwarding would violate handling guidance.",
+    "points": 30,
+    "tags": [
+      "tlp",
+      "sharing",
+      "governance"
+    ]
+  },
+  {
+    "id": "PD-D-M05",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Why are IOC-only defenses often insufficient against mature threat actors?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because adversaries can quickly rotate infrastructure, so behavior-based detections are also needed"
+      },
+      {
+        "id": "b",
+        "text": "Because IOCs are illegal to collect"
+      },
+      {
+        "id": "c",
+        "text": "Because SIEMs cannot search domains or hashes"
+      },
+      {
+        "id": "d",
+        "text": "Because IOC matching always requires malware execution"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Static indicators age quickly, especially when actors change domains, IPs, or hashes. Behavioral detections tied to TTPs are more durable and should complement IOC matching.",
+    "points": 30,
+    "tags": [
+      "cti",
+      "detection",
+      "ttp"
+    ]
+  },
+  {
+    "id": "PD-D-M06",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A red team demonstrates token theft against your cloud environment and no alert fires. What should purple-team follow-up produce?",
+    "options": [
+      {
+        "id": "a",
+        "text": "New detections, test cases, and validation of response procedures for that behavior"
+      },
+      {
+        "id": "b",
+        "text": "A decision to stop red-team exercises"
+      },
+      {
+        "id": "c",
+        "text": "A public statement blaming the red team"
+      },
+      {
+        "id": "d",
+        "text": "Deletion of all cloud identity logs"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Purple teaming should translate observed gaps into concrete defensive improvements, then test that the new controls work. Cancelling exercises or deleting logs would waste the learning opportunity.",
+    "points": 30,
+    "tags": [
+      "purple-team",
+      "cloud",
+      "detection"
+    ]
+  },
+  {
+    "id": "PD-D-M07",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which threat-intel source should usually be treated as more reliable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A vetted report corroborated by internal telemetry"
+      },
+      {
+        "id": "b",
+        "text": "An anonymous social media post with no supporting evidence"
+      },
+      {
+        "id": "c",
+        "text": "A rumor from an online forum with no details"
+      },
+      {
+        "id": "d",
+        "text": "A forwarded screenshot with no original source"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Reliability improves when the source is known and the content is corroborated by independent or internal evidence. Anonymous, unsupported claims should be treated more cautiously.",
+    "points": 30,
+    "tags": [
+      "cti",
+      "source-evaluation",
+      "reliability"
+    ]
+  },
+  {
+    "id": "PD-D-M08",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "How can analysts reduce confirmation bias in an insider-threat investigation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compare activity against role-based baselines and approved duties before drawing conclusions"
+      },
+      {
+        "id": "b",
+        "text": "Assume suspicious-looking behavior proves malicious intent"
+      },
+      {
+        "id": "c",
+        "text": "Tell only one analyst to review the case and avoid context"
+      },
+      {
+        "id": "d",
+        "text": "Ignore business context to stay technical"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Context matters in insider cases; comparing behavior to baselines, job duties, and known business activity helps avoid jumping to conclusions. Bias can lead to unfair or incorrect escalation.",
+    "points": 30,
+    "tags": [
+      "insider-threat",
+      "bias",
+      "analysis"
+    ]
+  },
+  {
+    "id": "PD-D-M09",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which hunting lead is most suspicious from a threat-analysis perspective?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A non-browser process making rare outbound connections to newly seen domains"
+      },
+      {
+        "id": "b",
+        "text": "A browser visiting the company intranet"
+      },
+      {
+        "id": "c",
+        "text": "A laptop syncing time with NTP"
+      },
+      {
+        "id": "d",
+        "text": "A user printing a payroll report during work hours"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Rare outbound connections from unexpected processes can indicate malware or covert communication and are a useful hunting lead. The other events are more routine in many environments.",
+    "points": 30,
+    "tags": [
+      "threat-hunting",
+      "network",
+      "anomaly"
+    ]
+  },
+  {
+    "id": "PD-D-M10",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Why does actor profiling matter when intelligence shows a ransomware group increasingly targets your industry?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It helps prioritize defenses and hunts relevant to likely attacker behavior"
+      },
+      {
+        "id": "b",
+        "text": "It guarantees the actor will only attack your sector"
+      },
+      {
+        "id": "c",
+        "text": "It replaces the need for incident response plans"
+      },
+      {
+        "id": "d",
+        "text": "It means all unrelated alerts can be ignored"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Relevant actor targeting should influence what detections, hardening, and hunting efforts receive priority, but it does not eliminate all other risks or guarantee future behavior.",
+    "points": 30,
+    "tags": [
+      "profiling",
+      "ransomware",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "PD-D-H01",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An analyst finds several low-confidence IOCs on a paste site with no provenance. What is the best next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Validate the indicators against source reliability and internal telemetry before broad blocking"
+      },
+      {
+        "id": "b",
+        "text": "Block them globally without review because more blocking is always safer"
+      },
+      {
+        "id": "c",
+        "text": "Delete all existing threat intel to avoid confusion"
+      },
+      {
+        "id": "d",
+        "text": "Treat the paste site as authoritative and publish a press release"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Intelligence should be evaluated for source reliability and corroborated where possible before disruptive action is taken. Unvetted broad blocking can create false positives and operational noise.",
+    "points": 40,
+    "tags": [
+      "cti",
+      "validation",
+      "ioc"
+    ]
+  },
+  {
+    "id": "PD-D-H02",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A database administrator exports many records before a planned layoff, but a migration ticket appears to authorize bulk data movement. What is the best insider-threat response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify business justification with the manager/HR and review the transfer context before escalating malicious intent"
+      },
+      {
+        "id": "b",
+        "text": "Immediately accuse the employee and terminate access publicly"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the event because a ticket exists"
+      },
+      {
+        "id": "d",
+        "text": "Delete the logs to avoid privacy issues"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Potential insider cases require careful validation of business context and authorized duties before drawing conclusions. A ticket may be legitimate, incomplete, or misused, so context review is essential.",
+    "points": 50,
+    "tags": [
+      "insider-threat",
+      "analysis",
+      "context"
+    ]
+  },
+  {
+    "id": "PD-D-H03",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "To hunt for living-off-the-land persistence on Windows, which data sources are most valuable together?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sysmon or process-creation logs plus registry, service, and scheduled-task events"
+      },
+      {
+        "id": "b",
+        "text": "Only printer spooler logs"
+      },
+      {
+        "id": "c",
+        "text": "Only website uptime alerts"
+      },
+      {
+        "id": "d",
+        "text": "Only facility access badges"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Living-off-the-land persistence often appears in process execution and configuration changes such as services, tasks, or registry run keys. Combining these sources gives better coverage than any one alone.",
+    "points": 40,
+    "tags": [
+      "threat-hunting",
+      "windows",
+      "persistence"
+    ]
+  },
+  {
+    "id": "PD-D-H04",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A partner sends you intelligence marked TLP:AMBER+STRICT. What is the correct handling?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Share only within your organization on a strict need-to-know basis, not with external clients or partners unless explicitly permitted"
+      },
+      {
+        "id": "b",
+        "text": "Post it to the sector ISAC immediately"
+      },
+      {
+        "id": "c",
+        "text": "Forward it to all vendors for awareness"
+      },
+      {
+        "id": "d",
+        "text": "Treat it as public because AMBER is not RED"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "TLP:AMBER+STRICT is more restrictive than standard AMBER and is intended to remain within the recipient organization on a strict need-to-know basis unless the originator authorizes otherwise.",
+    "points": 50,
+    "tags": [
+      "tlp",
+      "sharing",
+      "governance"
+    ]
+  },
+  {
+    "id": "PD-D-H05",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A purple-team exercise simulates cloud credential theft. Which outcome best shows the exercise was successful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It measured ATT&CK coverage, alert fidelity, detection latency, and response gaps that can now be improved"
+      },
+      {
+        "id": "b",
+        "text": "The red team reached its goal and no one documented anything"
+      },
+      {
+        "id": "c",
+        "text": "A new logo was created for the exercise"
+      },
+      {
+        "id": "d",
+        "text": "All cloud logging was turned off to reduce cost"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Purple teaming is valuable when it generates measurable defensive insights and actionable improvements, not just a red-team win or loss outcome. Metrics and documented gaps enable progress.",
+    "points": 40,
+    "tags": [
+      "purple-team",
+      "metrics",
+      "cloud"
+    ]
+  },
+  {
+    "id": "PD-D-H06",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Intelligence suggests an actor uses domain generation algorithms for command and control. Which defensive hunt is most aligned to that behavior?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Look for endpoints making many NXDOMAIN or rare-domain DNS requests"
+      },
+      {
+        "id": "b",
+        "text": "Only review Windows login banners"
+      },
+      {
+        "id": "c",
+        "text": "Block all TXT records permanently"
+      },
+      {
+        "id": "d",
+        "text": "Search badge logs for late-night entries"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "DGA-based malware often generates many failed or unusual DNS lookups as it searches for active C2 domains, making DNS anomaly hunting effective. The other options do not target that behavior.",
+    "points": 40,
+    "tags": [
+      "dga",
+      "dns",
+      "hunting"
+    ]
+  },
+  {
+    "id": "PD-D-H07",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An insider-threat model flags many overnight logins from system administrators during a planned maintenance weekend. What is the best tuning improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Incorporate role and approved change-window context into the model"
+      },
+      {
+        "id": "b",
+        "text": "Disable insider monitoring for administrators entirely"
+      },
+      {
+        "id": "c",
+        "text": "Treat every after-hours admin login as malicious"
+      },
+      {
+        "id": "d",
+        "text": "Stop collecting authentication logs on weekends"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Behavioral analytics should account for expected duties and scheduled work to reduce false positives without discarding valuable monitoring. Blanket exemptions or blanket suspicion are both poor choices.",
+    "points": 50,
+    "tags": [
+      "insider-threat",
+      "tuning",
+      "behavior"
+    ]
+  },
+  {
+    "id": "PD-D-H08",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "You are hunting for exfiltration through legitimate cloud storage after an impossible-travel alert. Which telemetry combination is most useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Identity logs, proxy or CASB events, and endpoint process telemetry"
+      },
+      {
+        "id": "b",
+        "text": "Only badge reader data"
+      },
+      {
+        "id": "c",
+        "text": "Only vulnerability scan results"
+      },
+      {
+        "id": "d",
+        "text": "Only printer spool logs"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "This scenario requires correlating suspicious identity access with outbound cloud-storage usage and the process or tool that performed it. Identity, web/CASB, and endpoint data together provide that view.",
+    "points": 50,
+    "tags": [
+      "threat-hunting",
+      "exfiltration",
+      "cloud"
+    ]
+  },
+  {
+    "id": "PD-D-H09",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Before sharing new threat indicators externally, what should analysts do if the supporting logs contain customer email addresses?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Strip or minimize customer PII and honor the intelligence handling restrictions"
+      },
+      {
+        "id": "b",
+        "text": "Share the full logs because indicators are more important than privacy"
+      },
+      {
+        "id": "c",
+        "text": "Post the data publicly to crowdsource validation"
+      },
+      {
+        "id": "d",
+        "text": "Delete the indicators so no sharing is possible"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Threat sharing should minimize sensitive data and comply with privacy and handling restrictions. Indicators can usually be shared without unnecessary customer-identifying details.",
+    "points": 40,
+    "tags": [
+      "sharing",
+      "privacy",
+      "cti"
+    ]
+  },
+  {
+    "id": "PD-D-H10",
+    "domainId": "PD",
+    "subdomainId": "PD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "During adversary emulation, a detection fired but analysts closed it as benign because the alert lacked context. What is the best improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add enrichment such as asset criticality, user context, and a runbook so analysts can triage correctly"
+      },
+      {
+        "id": "b",
+        "text": "Delete the detection since it was ignored"
+      },
+      {
+        "id": "c",
+        "text": "Turn off adversary emulation exercises"
+      },
+      {
+        "id": "d",
+        "text": "Reduce all alert severities to informational"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A technically correct alert can still fail operationally if analysts lack the context or guidance to act on it. Enrichment and runbooks improve triage quality and reduce mistaken closures.",
+    "points": 40,
+    "tags": [
+      "purple-team",
+      "triage",
+      "enrichment"
+    ]
+  }
+]

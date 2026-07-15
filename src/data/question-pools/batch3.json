@@ -1,0 +1,6075 @@
+[
+  {
+    "id": "IN-A-E01",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the primary purpose of a preservation letter in a cybercrime investigation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To compel immediate disclosure of content records to investigators"
+      },
+      {
+        "id": "b",
+        "text": "To request that a provider retain potentially relevant data before it is deleted"
+      },
+      {
+        "id": "c",
+        "text": "To authorize investigators to search a suspect's home"
+      },
+      {
+        "id": "d",
+        "text": "To transfer a case to another jurisdiction"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A preservation letter asks a service provider to keep specified records from being deleted while legal process is obtained. It does not itself compel production of the records.",
+    "points": 10,
+    "tags": [
+      "preservation",
+      "legal",
+      "records"
+    ]
+  },
+  {
+    "id": "IN-A-E02",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which legal instrument is generally used to require a third party to produce specified records?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Subpoena"
+      },
+      {
+        "id": "b",
+        "text": "Search warrant"
+      },
+      {
+        "id": "c",
+        "text": "Chain of custody form"
+      },
+      {
+        "id": "d",
+        "text": "Interview outline"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A subpoena is commonly used to compel production of certain records from a third party. A search warrant typically authorizes a search or seizure based on probable cause.",
+    "points": 10,
+    "tags": [
+      "subpoena",
+      "legal",
+      "process"
+    ]
+  },
+  {
+    "id": "IN-A-E03",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why is chain of custody important for digital evidence?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It speeds up password cracking of seized devices"
+      },
+      {
+        "id": "b",
+        "text": "It proves the suspect owned the device"
+      },
+      {
+        "id": "c",
+        "text": "It documents who handled the evidence and helps show it was not altered"
+      },
+      {
+        "id": "d",
+        "text": "It replaces the need for forensic imaging"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Chain of custody records possession, transfer, and handling of evidence. This helps demonstrate integrity and admissibility.",
+    "points": 20,
+    "tags": [
+      "evidence",
+      "custody",
+      "integrity"
+    ]
+  },
+  {
+    "id": "IN-A-E04",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In an investigative interview, what is usually the best opening approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Begin with accusations to pressure the subject"
+      },
+      {
+        "id": "b",
+        "text": "Ask open-ended questions to let the person provide a narrative"
+      },
+      {
+        "id": "c",
+        "text": "Only ask yes-or-no questions"
+      },
+      {
+        "id": "d",
+        "text": "Avoid taking notes to maintain eye contact"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Open-ended questions often produce fuller, less contaminated accounts. They are useful early in interviews before narrowing to specifics.",
+    "points": 10,
+    "tags": [
+      "interview",
+      "methodology",
+      "basics"
+    ]
+  },
+  {
+    "id": "IN-A-E05",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which item is most important to include in case documentation after an investigative step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the investigator's personal opinion of guilt"
+      },
+      {
+        "id": "b",
+        "text": "A record of what was done, when, by whom, and the result"
+      },
+      {
+        "id": "c",
+        "text": "A copy of every unrelated case note"
+      },
+      {
+        "id": "d",
+        "text": "Only screenshots without context"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Good case documentation captures actions, timing, personnel, and outcomes. Clear records support continuity, review, and testimony.",
+    "points": 20,
+    "tags": [
+      "documentation",
+      "casework",
+      "evidence"
+    ]
+  },
+  {
+    "id": "IN-A-E06",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A common challenge in cyber attribution is that attackers often:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use their real names in malware code"
+      },
+      {
+        "id": "b",
+        "text": "Operate only from their home internet connection"
+      },
+      {
+        "id": "c",
+        "text": "Hide behind compromised systems, shared infrastructure, or false flags"
+      },
+      {
+        "id": "d",
+        "text": "Leave no digital activity anywhere"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Attribution is difficult because adversaries can route activity through other systems or deliberately plant misleading indicators. Investigators must avoid overreliance on one artifact.",
+    "points": 20,
+    "tags": [
+      "attribution",
+      "limitations",
+      "infrastructure"
+    ]
+  },
+  {
+    "id": "IN-A-E07",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is OSINT in the context of cyber investigations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A method for decrypting seized hard drives"
+      },
+      {
+        "id": "b",
+        "text": "Information lawfully collected from publicly available sources"
+      },
+      {
+        "id": "c",
+        "text": "Data recovered only through undercover access"
+      },
+      {
+        "id": "d",
+        "text": "A court order for foreign evidence"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "OSINT stands for open-source intelligence. It involves gathering and analyzing publicly available information relevant to an investigation.",
+    "points": 10,
+    "tags": [
+      "osint",
+      "sources",
+      "basics"
+    ]
+  },
+  {
+    "id": "IN-A-E08",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which pattern can be a basic indicator of money laundering activity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A single payroll deposit into an employee account"
+      },
+      {
+        "id": "b",
+        "text": "Regular utility bill payments from a household account"
+      },
+      {
+        "id": "c",
+        "text": "Funds moved rapidly through multiple accounts without clear business purpose"
+      },
+      {
+        "id": "d",
+        "text": "A customer withdrawing cash from their own savings once a month"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Rapid movement through multiple accounts can indicate layering, a common laundering technique. Context matters, but unusual complexity without a clear purpose is a warning sign.",
+    "points": 20,
+    "tags": [
+      "laundering",
+      "finance",
+      "patterns"
+    ]
+  },
+  {
+    "id": "IN-A-E09",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "When tracing cryptocurrency transactions, what does a public blockchain most directly provide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Automatic proof of the real-world identity of every wallet owner"
+      },
+      {
+        "id": "b",
+        "text": "A visible ledger of transactions between addresses"
+      },
+      {
+        "id": "c",
+        "text": "A warrant to seize exchange records"
+      },
+      {
+        "id": "d",
+        "text": "Guaranteed recovery of stolen funds"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Public blockchains show transaction history between addresses. Real-world identity usually requires additional evidence, such as exchange records or other investigative leads.",
+    "points": 10,
+    "tags": [
+      "crypto",
+      "blockchain",
+      "tracing"
+    ]
+  },
+  {
+    "id": "IN-A-E10",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why is coordination with other agencies often necessary in cybercrime cases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because all cybercrime cases must be transferred immediately"
+      },
+      {
+        "id": "b",
+        "text": "Because digital evidence can cross jurisdictions and require different authorities or expertise"
+      },
+      {
+        "id": "c",
+        "text": "Because a local investigator cannot document evidence"
+      },
+      {
+        "id": "d",
+        "text": "Because private-sector victims are never allowed to report incidents directly"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Cyber incidents frequently involve multiple regions, providers, or specialties. Coordination helps align authority, access, and technical capability.",
+    "points": 20,
+    "tags": [
+      "coordination",
+      "jurisdiction",
+      "agencies"
+    ]
+  },
+  {
+    "id": "IN-A-M01",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An investigator learns that a suspect used a social media platform to coordinate a fraud scheme, and the platform may delete older logs soon. What should the investigator do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Send a preservation request to the platform and then seek appropriate legal process for disclosure"
+      },
+      {
+        "id": "b",
+        "text": "Publicly post about the case to pressure the platform"
+      },
+      {
+        "id": "c",
+        "text": "Assume screenshots from a victim are enough and take no further action"
+      },
+      {
+        "id": "d",
+        "text": "Immediately arrest the suspect without preserving platform data"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Preserving data quickly reduces the risk of loss while investigators obtain the legal authority needed to collect it. Victim screenshots may help, but they are not a substitute for provider-held records.",
+    "points": 30,
+    "tags": [
+      "preservation",
+      "platforms",
+      "fraud"
+    ]
+  },
+  {
+    "id": "IN-A-M02",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "While collecting a victim laptop, a responder realizes the system is still powered on and displaying a suspicious remote access session. What is the best next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Immediately close all open windows to stop the attacker"
+      },
+      {
+        "id": "b",
+        "text": "Photograph the screen, document the state, and follow approved live-response procedures"
+      },
+      {
+        "id": "c",
+        "text": "Unplug the device without recording anything"
+      },
+      {
+        "id": "d",
+        "text": "Let the victim keep using the laptop until a warrant is drafted"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Volatile evidence may be lost if the system state changes. Documenting and following approved live-response procedures helps preserve transient information while minimizing contamination.",
+    "points": 30,
+    "tags": [
+      "live-response",
+      "evidence",
+      "documentation"
+    ]
+  },
+  {
+    "id": "IN-A-M03",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A case file contains notes from interviews, screenshots, and forensic results, but the timeline is unclear. Which improvement would most strengthen the file?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Adding a chronological activity log tied to sources and dates"
+      },
+      {
+        "id": "b",
+        "text": "Removing witness statements to shorten the case"
+      },
+      {
+        "id": "c",
+        "text": "Replacing detailed notes with memory-based summaries later"
+      },
+      {
+        "id": "d",
+        "text": "Combining all evidence into one unlabeled folder"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A chronological log helps investigators and reviewers connect actions, evidence, and decisions. It reduces confusion and supports testimony.",
+    "points": 30,
+    "tags": [
+      "timeline",
+      "documentation",
+      "casework"
+    ]
+  },
+  {
+    "id": "IN-A-M04",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During a fraud investigation, funds move from a victim bank account to an exchange, then through several crypto addresses in quick succession. Which interpretation is most reasonable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The rapid movement may reflect layering intended to complicate tracing"
+      },
+      {
+        "id": "b",
+        "text": "The transfers prove the final wallet belongs to the original suspect"
+      },
+      {
+        "id": "c",
+        "text": "Blockchain movement alone establishes criminal intent beyond dispute"
+      },
+      {
+        "id": "d",
+        "text": "Once funds enter crypto, no further tracing is possible"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Rapid multi-hop transfers can indicate layering, though they do not by themselves prove identity or intent. Investigators should combine blockchain analysis with exchange records and other evidence.",
+    "points": 30,
+    "tags": [
+      "crypto",
+      "layering",
+      "fraud"
+    ]
+  },
+  {
+    "id": "IN-A-M05",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An analyst finds a forum post using the same alias as a phishing email sender. What is the best investigative conclusion at this stage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The forum user is conclusively the offender"
+      },
+      {
+        "id": "b",
+        "text": "The alias is a useful lead, but additional corroboration is needed before attribution"
+      },
+      {
+        "id": "c",
+        "text": "The case is solved because the alias appears in two places"
+      },
+      {
+        "id": "d",
+        "text": "The forum post should be ignored because OSINT is never reliable"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Shared aliases can provide valuable leads, but they can also be copied or spoofed. Attribution should rely on corroborating evidence from multiple sources.",
+    "points": 30,
+    "tags": [
+      "osint",
+      "attribution",
+      "corroboration"
+    ]
+  },
+  {
+    "id": "IN-A-M06",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A local investigator identifies a suspect server hosted in another country. What is the most appropriate immediate action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Personally access the foreign server without authorization"
+      },
+      {
+        "id": "b",
+        "text": "Coordinate through appropriate legal and agency channels for cross-border assistance"
+      },
+      {
+        "id": "c",
+        "text": "Close the case because foreign evidence is unusable"
+      },
+      {
+        "id": "d",
+        "text": "Contact the suspect directly and request the logs"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Cross-border evidence collection raises jurisdictional and legal issues. Proper coordination helps avoid unauthorized access and preserves admissibility.",
+    "points": 30,
+    "tags": [
+      "jurisdiction",
+      "international",
+      "coordination"
+    ]
+  },
+  {
+    "id": "IN-A-M07",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which interview practice is most likely to reduce contamination of a witness account in a cyber incident?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Showing the witness other people's statements before questioning"
+      },
+      {
+        "id": "b",
+        "text": "Asking leading questions that suggest the expected answer"
+      },
+      {
+        "id": "c",
+        "text": "Letting the witness describe events in their own words before clarifying specifics"
+      },
+      {
+        "id": "d",
+        "text": "Summarizing the event for the witness and asking for agreement"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Allowing a free narrative first can capture the witness's own recollection with less influence from the interviewer. Clarifying questions can follow afterward.",
+    "points": 30,
+    "tags": [
+      "interview",
+      "witness",
+      "methodology"
+    ]
+  },
+  {
+    "id": "IN-A-M08",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Investigators receive subscriber information from a service provider in response to legal process. What should they generally do before making an arrest based on it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Treat the subscriber name as definitive proof of the user's identity"
+      },
+      {
+        "id": "b",
+        "text": "Corroborate the records with additional evidence linking a person to the activity"
+      },
+      {
+        "id": "c",
+        "text": "Discard the records because provider data is never useful"
+      },
+      {
+        "id": "d",
+        "text": "Publish the subscriber information to solicit tips"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Subscriber records can identify an account holder, but not necessarily the actor behind the conduct. Corroboration is important because accounts and devices may be shared or compromised.",
+    "points": 30,
+    "tags": [
+      "subscriber",
+      "corroboration",
+      "legal"
+    ]
+  },
+  {
+    "id": "IN-A-M09",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A victim company and federal investigators are both collecting evidence from the same phishing incident. What practice best supports multi-agency coordination?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each party silently duplicates work and keeps separate undocumented evidence stores"
+      },
+      {
+        "id": "b",
+        "text": "Establishing points of contact, scope, and evidence-sharing procedures early"
+      },
+      {
+        "id": "c",
+        "text": "Allowing any team member to alter evidence labels for convenience"
+      },
+      {
+        "id": "d",
+        "text": "Delaying all coordination until trial preparation"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Clear roles, contacts, and evidence-handling procedures reduce duplication and confusion. Early coordination improves efficiency and integrity.",
+    "points": 30,
+    "tags": [
+      "coordination",
+      "evidence",
+      "agencies"
+    ]
+  },
+  {
+    "id": "IN-A-M10",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A wallet linked to ransomware payments sends funds to a major exchange. What is the most useful next investigative step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assume the exchange account holder is the ransomware operator without more evidence"
+      },
+      {
+        "id": "b",
+        "text": "Seek appropriate records from the exchange to identify the account and related activity"
+      },
+      {
+        "id": "c",
+        "text": "Stop tracing because funds reached a custodial service"
+      },
+      {
+        "id": "d",
+        "text": "Post the wallet address on social media and wait for public tips"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When funds reach a custodial exchange, account records may help identify the user or associated accounts. Investigators still need lawful process and corroboration.",
+    "points": 30,
+    "tags": [
+      "exchange",
+      "crypto",
+      "records"
+    ]
+  },
+  {
+    "id": "IN-A-H01",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Investigators have probable cause that incriminating data is stored in a suspect's cloud account, but only know the email address and a few relevant dates. Which approach is most defensible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Draft legal process that particularly describes the account and evidence sought, with date and subject-matter limits where feasible"
+      },
+      {
+        "id": "b",
+        "text": "Request every record the provider has ever held for the user because more data is always better"
+      },
+      {
+        "id": "c",
+        "text": "Log into the account using a password found in an old breach list"
+      },
+      {
+        "id": "d",
+        "text": "Ask the provider to decide which files are probably criminal"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Particularity and scope matter in digital evidence requests. Tailoring the request to the known account and relevant evidence reduces overbreadth and improves defensibility.",
+    "points": 40,
+    "tags": [
+      "warrant",
+      "particularity",
+      "cloud"
+    ]
+  },
+  {
+    "id": "IN-A-H02",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A suspect used a privacy-focused coin after cashing out stolen funds from a public blockchain. What is the best assessment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Attribution is impossible, so the case should end"
+      },
+      {
+        "id": "b",
+        "text": "The public-chain history is irrelevant once a privacy coin appears"
+      },
+      {
+        "id": "c",
+        "text": "Tracing becomes harder, so investigators should pivot to exchange records, device evidence, communications, and timing analysis"
+      },
+      {
+        "id": "d",
+        "text": "The privacy coin itself proves intent to launder money"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Privacy-enhancing technologies can reduce visibility, but investigators can still use off-chain and contextual evidence. The presence of a privacy coin alone does not prove criminal intent.",
+    "points": 40,
+    "tags": [
+      "privacycoin",
+      "attribution",
+      "crypto"
+    ]
+  },
+  {
+    "id": "IN-A-H03",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "During a joint operation, one agency proposes using another agency's legal authority as a shortcut to obtain records outside the first agency's jurisdictional limits. What is the strongest professional response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Proceed if the records are important enough"
+      },
+      {
+        "id": "b",
+        "text": "Use the shortcut but omit it from documentation"
+      },
+      {
+        "id": "c",
+        "text": "Decline and ensure legal process and authority align with the responsible agency and jurisdiction"
+      },
+      {
+        "id": "d",
+        "text": "Let the private victim obtain the records informally instead"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Investigators should not evade jurisdictional or legal limits through improper workarounds. Proper authority, documentation, and interagency roles protect the case and the parties involved.",
+    "points": 50,
+    "tags": [
+      "jurisdiction",
+      "ethics",
+      "coordination"
+    ]
+  },
+  {
+    "id": "IN-A-H04",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A seized phone is unlocked when taken into evidence. Officers want to search it immediately for cryptocurrency wallet apps before the battery dies. What consideration is most important?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only speed matters because volatile access overrides all other concerns"
+      },
+      {
+        "id": "b",
+        "text": "The device may contain evidence, but access should still follow authorized scope and approved handling procedures"
+      },
+      {
+        "id": "c",
+        "text": "If the phone is unlocked, no documentation is needed"
+      },
+      {
+        "id": "d",
+        "text": "Any officer may browse through all apps as long as screenshots are taken"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "An unlocked state may create urgency, but investigators must still respect legal scope and preserve evidence properly. Documentation and approved procedures remain critical.",
+    "points": 40,
+    "tags": [
+      "mobile",
+      "scope",
+      "evidence"
+    ]
+  },
+  {
+    "id": "IN-A-H05",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An OSINT analyst links a suspect to a fraud domain using WHOIS history, reused usernames, and a matching profile photo on a public forum. The defense argues misidentification. What would most strengthen attribution?",
+    "options": [
+      {
+        "id": "a",
+        "text": "More screenshots of the same public forum profile"
+      },
+      {
+        "id": "b",
+        "text": "A single anonymous tip repeating the same claim"
+      },
+      {
+        "id": "c",
+        "text": "Independent corroboration such as provider logs, financial records, or device evidence tying the person to the domain activity"
+      },
+      {
+        "id": "d",
+        "text": "A statement that OSINT evidence is always self-authenticating"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Attribution is strongest when public-source findings are corroborated by independent technical or financial evidence. Multiple weak indicators from the same OSINT cluster are not enough by themselves.",
+    "points": 50,
+    "tags": [
+      "osint",
+      "attribution",
+      "corroboration"
+    ]
+  },
+  {
+    "id": "IN-A-H06",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A case involves a business email compromise in which funds were sent through three domestic accounts and then wired abroad. Which investigative theory best explains the domestic accounts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They may be mule accounts used to receive and quickly relay victim funds"
+      },
+      {
+        "id": "b",
+        "text": "They prove the account holders masterminded the scheme"
+      },
+      {
+        "id": "c",
+        "text": "They show the victim authorized the loss"
+      },
+      {
+        "id": "d",
+        "text": "They are irrelevant once money leaves the country"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Fraud schemes often use mule accounts to create distance between the victim and organizers. Account holders may be complicit, recruited, or deceived, so their exact role requires further investigation.",
+    "points": 40,
+    "tags": [
+      "bec",
+      "mules",
+      "fraud"
+    ]
+  },
+  {
+    "id": "IN-A-H07",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Investigators from two regions image the same server on different days without coordinating hash records or documenting system changes. At trial, the defense challenges reliability. What is the core weakness?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Too many investigators worked the case"
+      },
+      {
+        "id": "b",
+        "text": "The lack of coordinated documentation and integrity verification undermines confidence in what changed and when"
+      },
+      {
+        "id": "c",
+        "text": "Server evidence is never admissible if collected twice"
+      },
+      {
+        "id": "d",
+        "text": "Regional investigators cannot work the same incident"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Without coordinated documentation, hashes, and change records, it becomes difficult to explain differences between collections. That gap can weaken claims about integrity and timeline.",
+    "points": 50,
+    "tags": [
+      "integrity",
+      "hashes",
+      "coordination"
+    ]
+  },
+  {
+    "id": "IN-A-H08",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A suspect claims a botnet infected their computer and used it to commit the offense. Which evidence would be most valuable in evaluating that claim?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the ISP bill showing the suspect paid for internet service"
+      },
+      {
+        "id": "b",
+        "text": "System artifacts, malware findings, user activity records, and timing correlations with the alleged conduct"
+      },
+      {
+        "id": "c",
+        "text": "A general statement that botnets exist"
+      },
+      {
+        "id": "d",
+        "text": "The suspect's social media profile picture"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A compromised-device defense requires examining whether malware was present and whether system and user activity align with that explanation. Both inculpatory and exculpatory possibilities should be assessed objectively.",
+    "points": 40,
+    "tags": [
+      "attribution",
+      "malware",
+      "artifacts"
+    ]
+  },
+  {
+    "id": "IN-A-H09",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An investigator interviews a cooperative witness who starts speculating about what \"must have happened\" after reading online commentary. What is the best way to preserve evidentiary value?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Encourage the witness to expand on online theories to fill gaps"
+      },
+      {
+        "id": "b",
+        "text": "Separate firsthand observations from later assumptions and document which is which"
+      },
+      {
+        "id": "c",
+        "text": "Remove all witness notes because speculation appeared"
+      },
+      {
+        "id": "d",
+        "text": "Ask only questions that confirm the investigator's working theory"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Witness accounts are most valuable when firsthand knowledge is distinguished from inference or outside influence. Clear separation helps assess reliability and prevents contamination.",
+    "points": 50,
+    "tags": [
+      "interview",
+      "witness",
+      "documentation"
+    ]
+  },
+  {
+    "id": "IN-A-H10",
+    "domainId": "IN",
+    "subdomainId": "IN-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A ransomware crew uses leak-site posts, encrypted messaging, and rotating infrastructure. Investigators have victim reports, partial wallet tracing, and one seized affiliate laptop. What is the best overall strategy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rely on the leak-site post alone because it is public and easy to authenticate"
+      },
+      {
+        "id": "b",
+        "text": "Build a multi-source case by correlating wallet activity, device artifacts, communications, infrastructure records, and victim timelines"
+      },
+      {
+        "id": "c",
+        "text": "Wait for a confession because mixed evidence is too complex"
+      },
+      {
+        "id": "d",
+        "text": "Focus only on the laptop and ignore network or financial evidence"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Complex cybercrime attribution is strongest when multiple evidence streams converge. Financial, technical, and testimonial evidence can reinforce each other and reduce reliance on any single artifact.",
+    "points": 40,
+    "tags": [
+      "ransomware",
+      "correlation",
+      "attribution"
+    ]
+  },
+  {
+    "id": "IN-B-E01",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the primary purpose of using a hardware write-blocker when imaging a suspect drive?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To prevent any changes to the source media during acquisition"
+      },
+      {
+        "id": "b",
+        "text": "To speed up the imaging process by caching sectors"
+      },
+      {
+        "id": "c",
+        "text": "To decrypt full-disk encryption automatically"
+      },
+      {
+        "id": "d",
+        "text": "To compress the image file for storage"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A write-blocker ensures the examiner does not alter the original evidence. This helps preserve evidentiary integrity and supports admissibility.",
+    "points": 10,
+    "tags": [
+      "write-blocker",
+      "imaging"
+    ]
+  },
+  {
+    "id": "IN-B-E02",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Two SHA-256 hashes taken before and after imaging a disk are identical. What does this most directly indicate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The evidence was encrypted"
+      },
+      {
+        "id": "b",
+        "text": "The copy matches the source at the time hashed"
+      },
+      {
+        "id": "c",
+        "text": "The disk contains no deleted files"
+      },
+      {
+        "id": "d",
+        "text": "The image is ready for courtroom admission without further documentation"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Matching hashes show the imaged data is consistent with the source data at the time of acquisition. Hashes support integrity, but documentation is still required.",
+    "points": 10,
+    "tags": [
+      "hashing",
+      "integrity"
+    ]
+  },
+  {
+    "id": "IN-B-E03",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which tool is widely used as an open-source digital forensics platform for analyzing disk images and artifacts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autopsy"
+      },
+      {
+        "id": "b",
+        "text": "Cellebrite UFED"
+      },
+      {
+        "id": "c",
+        "text": "Wireshark"
+      },
+      {
+        "id": "d",
+        "text": "Nmap"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Autopsy is an open-source digital forensics platform commonly used for file system and artifact analysis. Cellebrite is primarily associated with mobile device forensics.",
+    "points": 20,
+    "tags": [
+      "autopsy",
+      "artifacts"
+    ]
+  },
+  {
+    "id": "IN-B-E04",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which item is most essential in a chain of custody record?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The suspect's social media usernames"
+      },
+      {
+        "id": "b",
+        "text": "A list of all possible forensic tools on the market"
+      },
+      {
+        "id": "c",
+        "text": "Who handled the evidence, when, and for what purpose"
+      },
+      {
+        "id": "d",
+        "text": "The examiner's preferred report template"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Chain of custody documents possession and transfer of evidence. It should clearly show who handled the item, when, and why.",
+    "points": 10,
+    "tags": [
+      "custody",
+      "documentation"
+    ]
+  },
+  {
+    "id": "IN-B-E05",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Cellebrite tools are most commonly associated with which forensic task?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cloud cost optimization"
+      },
+      {
+        "id": "b",
+        "text": "Mobile device extraction and analysis"
+      },
+      {
+        "id": "c",
+        "text": "Firewall rule deployment"
+      },
+      {
+        "id": "d",
+        "text": "Database replication tuning"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Cellebrite is best known for mobile device forensic acquisition and analysis. It is frequently used for smartphones and related app artifacts.",
+    "points": 20,
+    "tags": [
+      "cellebrite",
+      "mobile"
+    ]
+  },
+  {
+    "id": "IN-B-E06",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is a key advantage of FTK during evidence review?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It physically repairs damaged disks"
+      },
+      {
+        "id": "b",
+        "text": "It can index evidence to speed searching and analysis"
+      },
+      {
+        "id": "c",
+        "text": "It guarantees decrypted access to any device"
+      },
+      {
+        "id": "d",
+        "text": "It replaces the need for hashing"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "FTK is known for strong indexing and search capabilities. That helps examiners quickly review large evidence sets.",
+    "points": 20,
+    "tags": [
+      "ftk",
+      "search"
+    ]
+  },
+  {
+    "id": "IN-B-E07",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which description best matches steganography?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deleting files and emptying the recycle bin"
+      },
+      {
+        "id": "b",
+        "text": "Hiding data inside another file such as an image or audio file"
+      },
+      {
+        "id": "c",
+        "text": "Encrypting a hard drive with a known password"
+      },
+      {
+        "id": "d",
+        "text": "Fragmenting a file system to slow analysis"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Steganography conceals information inside another file or medium. Its goal is often to avoid drawing attention to hidden data.",
+    "points": 10,
+    "tags": [
+      "steganography",
+      "anti-forensics"
+    ]
+  },
+  {
+    "id": "IN-B-E08",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "An examiner seizes a powered-on phone at a scene. What is the best immediate step to reduce the risk of remote wiping?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Connect it to public Wi-Fi to sync data"
+      },
+      {
+        "id": "b",
+        "text": "Place it in a Faraday bag or otherwise isolate it from networks"
+      },
+      {
+        "id": "c",
+        "text": "Factory reset it to preserve battery life"
+      },
+      {
+        "id": "d",
+        "text": "Remove evidence labels until analysis begins"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Network isolation helps prevent remote access or wiping. The device state should also be documented before further handling.",
+    "points": 20,
+    "tags": [
+      "mobile",
+      "isolation",
+      "remote-wipe"
+    ]
+  },
+  {
+    "id": "IN-B-E09",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which of the following is a common user activity artifact examined during digital evidence analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "CPU microcode version"
+      },
+      {
+        "id": "b",
+        "text": "Browser history"
+      },
+      {
+        "id": "c",
+        "text": "Monitor brightness setting only"
+      },
+      {
+        "id": "d",
+        "text": "Printer ink level"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Browser history is a common artifact used to reconstruct user activity. It can help establish access patterns, searches, and visited sites.",
+    "points": 10,
+    "tags": [
+      "artifacts",
+      "browser"
+    ]
+  },
+  {
+    "id": "IN-B-E10",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which reporting practice best supports courtroom readiness?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mix assumptions with findings to make the story clearer"
+      },
+      {
+        "id": "b",
+        "text": "Document methods, tools, findings, and limitations clearly"
+      },
+      {
+        "id": "c",
+        "text": "Omit screenshots and timestamps to shorten the report"
+      },
+      {
+        "id": "d",
+        "text": "Use only tool-generated summaries without review"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A defensible report explains what was done, how it was done, and what limitations exist. Clear separation of facts and conclusions strengthens testimony readiness.",
+    "points": 20,
+    "tags": [
+      "reporting",
+      "testimony"
+    ]
+  },
+  {
+    "id": "IN-B-M01",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You are correlating authentication logs from AWS, Azure, and Google Cloud after a suspected account takeover. The timestamps appear inconsistent. What should you do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Discard the provider with the fewest events"
+      },
+      {
+        "id": "b",
+        "text": "Normalize all timestamps to a common reference such as UTC before building a timeline"
+      },
+      {
+        "id": "c",
+        "text": "Assume the earliest timestamp is always correct"
+      },
+      {
+        "id": "d",
+        "text": "Merge the logs alphabetically by username"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Cross-provider timelines require a consistent time basis. Normalizing to UTC reduces errors caused by time zones and formatting differences.",
+    "points": 30,
+    "tags": [
+      "cloud",
+      "timeline",
+      "logs"
+    ]
+  },
+  {
+    "id": "IN-B-M02",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During a seizure, an unlocked smartphone is found displaying an active chat app. Which action best balances preservation and evidentiary integrity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Browse the app manually to look for suspicious messages"
+      },
+      {
+        "id": "b",
+        "text": "Photograph the screen, document the state, isolate the device from networks, and minimize interaction"
+      },
+      {
+        "id": "c",
+        "text": "Power the phone off immediately to stop all changes"
+      },
+      {
+        "id": "d",
+        "text": "Install a new forensic app directly on the device before documenting anything"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The current state may contain volatile evidence, so it should be documented carefully. Network isolation and minimal handling reduce the risk of alteration or remote wiping.",
+    "points": 30,
+    "tags": [
+      "mobile",
+      "preservation",
+      "documentation"
+    ]
+  },
+  {
+    "id": "IN-B-M03",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "After imaging a drive, the verification hash of the image does not match the source hash recorded during acquisition. What is the best next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Proceed with analysis and mention the mismatch later"
+      },
+      {
+        "id": "b",
+        "text": "Reacquire or reverify the evidence and investigate the acquisition process before analysis"
+      },
+      {
+        "id": "c",
+        "text": "Change the source hash in the notes to match the image"
+      },
+      {
+        "id": "d",
+        "text": "Ignore the mismatch if the file count looks correct"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A hash mismatch raises an integrity concern that must be resolved first. Continuing analysis without resolving it can undermine the entire case.",
+    "points": 30,
+    "tags": [
+      "hashing",
+      "integrity",
+      "imaging"
+    ]
+  },
+  {
+    "id": "IN-B-M04",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A forensic report will be reviewed by legal counsel and possibly used in court. Which addition most improves its defensibility?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A brief statement that the examiner is highly experienced"
+      },
+      {
+        "id": "b",
+        "text": "Tool versions, acquisition methods, validation steps, and known limitations"
+      },
+      {
+        "id": "c",
+        "text": "A longer executive summary with fewer technical details"
+      },
+      {
+        "id": "d",
+        "text": "Removal of alternative explanations to avoid confusion"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Detailed methods and limitations allow others to understand and evaluate the work. That transparency supports reproducibility and testimony.",
+    "points": 30,
+    "tags": [
+      "reporting",
+      "validation",
+      "court"
+    ]
+  },
+  {
+    "id": "IN-B-M05",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An examiner encounters a running computer with an encrypted container already mounted. Which evidence should be prioritized before shutdown?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A standard desktop wallpaper screenshot only"
+      },
+      {
+        "id": "b",
+        "text": "Volatile data such as RAM and details of the mounted volume"
+      },
+      {
+        "id": "c",
+        "text": "The office network printer queue"
+      },
+      {
+        "id": "d",
+        "text": "A BIOS update check"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Live memory may contain encryption keys and session data that disappear after shutdown. Documenting the mounted state is also important for later interpretation.",
+    "points": 30,
+    "tags": [
+      "memory",
+      "encryption",
+      "live-response"
+    ]
+  },
+  {
+    "id": "IN-B-M06",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You need to determine whether a user accessed a cloud console from a corporate laptop through VPN. Which evidence combination is most useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cloud audit logs, VPN logs, and endpoint/browser artifacts from the laptop"
+      },
+      {
+        "id": "b",
+        "text": "Only the laptop hostname and MAC address"
+      },
+      {
+        "id": "c",
+        "text": "Only a screenshot of the cloud dashboard"
+      },
+      {
+        "id": "d",
+        "text": "A list of installed fonts on the laptop"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Correlating identity, network, and endpoint artifacts provides a stronger basis for attribution and timeline reconstruction. A single source is usually insufficient.",
+    "points": 30,
+    "tags": [
+      "cloud",
+      "network",
+      "correlation"
+    ]
+  },
+  {
+    "id": "IN-B-M07",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A suspect claims no documents were ever opened on a workstation. Which artifact would most directly help test that claim?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Recent files or link artifacts showing document access"
+      },
+      {
+        "id": "b",
+        "text": "Monitor serial number"
+      },
+      {
+        "id": "c",
+        "text": "Ethernet cable category"
+      },
+      {
+        "id": "d",
+        "text": "Default browser homepage"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Recent file lists and shortcut artifacts often help show whether files were opened. They are commonly used in user activity reconstruction.",
+    "points": 30,
+    "tags": [
+      "artifacts",
+      "user-activity"
+    ]
+  },
+  {
+    "id": "IN-B-M08",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A file's timestamps appear suspiciously clean and inconsistent with surrounding activity. Which anti-forensics technique should you consider?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data deduplication"
+      },
+      {
+        "id": "b",
+        "text": "Timestomping"
+      },
+      {
+        "id": "c",
+        "text": "RAID striping"
+      },
+      {
+        "id": "d",
+        "text": "Tokenization"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Timestomping is used to alter file timestamps to mislead investigators. Comparing multiple metadata sources can help reveal it.",
+    "points": 30,
+    "tags": [
+      "anti-forensics",
+      "timestamps"
+    ]
+  },
+  {
+    "id": "IN-B-M09",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Before testifying, an examiner is asked how they know a tool's output is reliable. What is the strongest response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The vendor says the tool is industry leading"
+      },
+      {
+        "id": "b",
+        "text": "The results were validated with documented methodology, and the examiner understands the tool's limits"
+      },
+      {
+        "id": "c",
+        "text": "The tool has a modern user interface"
+      },
+      {
+        "id": "d",
+        "text": "No validation is needed if the case is urgent"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Courts and reviewers value repeatable methods and an examiner who can explain limitations. Validation and understanding matter more than vendor claims alone.",
+    "points": 30,
+    "tags": [
+      "testimony",
+      "validation"
+    ]
+  },
+  {
+    "id": "IN-B-M10",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A cloud-hosted VM is suspected of being compromised. To preserve evidence with minimal disruption, what is the best initial action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Delete the VM and rely on billing records"
+      },
+      {
+        "id": "b",
+        "text": "Take a provider-supported snapshot and preserve relevant audit logs with timestamps and metadata"
+      },
+      {
+        "id": "c",
+        "text": "Rotate all passwords and ignore the system state"
+      },
+      {
+        "id": "d",
+        "text": "Change the VM's hostname before collection"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A snapshot can preserve disk state while audit logs capture control-plane activity. Both should be documented carefully to support later analysis.",
+    "points": 30,
+    "tags": [
+      "cloud",
+      "snapshot",
+      "preservation"
+    ]
+  },
+  {
+    "id": "IN-B-H01",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A legacy process requires MD5 hashes on evidence forms, but your lab standard now prefers SHA-256. What is the best practice?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use only MD5 because the form mentions it"
+      },
+      {
+        "id": "b",
+        "text": "Use only SHA-256 and leave the MD5 field blank without explanation"
+      },
+      {
+        "id": "c",
+        "text": "Record SHA-256 and, if policy allows, also record MD5 while noting the stronger algorithm used for integrity assurance"
+      },
+      {
+        "id": "d",
+        "text": "Avoid hashing to prevent algorithm disputes"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Using a stronger hash such as SHA-256 is preferred for integrity. If legacy documentation requires MD5, dual-hashing can maintain compatibility while preserving stronger assurance.",
+    "points": 40,
+    "tags": [
+      "hashing",
+      "policy",
+      "integrity"
+    ]
+  },
+  {
+    "id": "IN-B-H02",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Investigators seize a powered-on, unlocked phone believed to auto-lock quickly and require biometric re-authentication. Which approach is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Turn it off immediately to freeze the state"
+      },
+      {
+        "id": "b",
+        "text": "Document the state, keep it powered, isolate it from networks, and coordinate an authorized acquisition with minimal interaction"
+      },
+      {
+        "id": "c",
+        "text": "Hand it back to the user to unlock later if needed"
+      },
+      {
+        "id": "d",
+        "text": "Update the OS to improve extraction compatibility"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "An unlocked state may be critical for access, and shutting down can lose that opportunity. Preserving power, isolating the device, and minimizing interaction reduce risk.",
+    "points": 40,
+    "tags": [
+      "mobile",
+      "live-response",
+      "preservation"
+    ]
+  },
+  {
+    "id": "IN-B-H03",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "You are correlating a suspected data exfiltration event across SaaS logs, cloud audit records, VPN logs, and endpoint telemetry. The actor used multiple identities and IPs. What is the most defensible correlation strategy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rely only on matching source IP addresses"
+      },
+      {
+        "id": "b",
+        "text": "Build a timeline using normalized timestamps, identity events, device identifiers, session artifacts, and unique transaction or request IDs where available"
+      },
+      {
+        "id": "c",
+        "text": "Prefer the log source with the highest event volume and ignore the rest"
+      },
+      {
+        "id": "d",
+        "text": "Use only events that perfectly match on username and city"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Attribution in complex environments requires multiple correlated attributes, not a single field. Time normalization and durable identifiers strengthen the analytic chain.",
+    "points": 50,
+    "tags": [
+      "correlation",
+      "cloud",
+      "network"
+    ]
+  },
+  {
+    "id": "IN-B-H04",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "During live response, you discover a mounted encrypted volume containing suspected contraband, but policy restricts broad exploratory actions on the live system. What should you prioritize?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Copy random user files first because content matters most"
+      },
+      {
+        "id": "b",
+        "text": "Capture volatile data and document the mounted volume state within authorized scope before the opportunity is lost"
+      },
+      {
+        "id": "c",
+        "text": "Run a full vulnerability scan on the host"
+      },
+      {
+        "id": "d",
+        "text": "Uninstall the encryption software to preserve the mount"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When an encrypted volume is already accessible, volatile evidence and mount context may be uniquely valuable. Actions should remain within legal and policy constraints.",
+    "points": 50,
+    "tags": [
+      "encryption",
+      "memory",
+      "scope"
+    ]
+  },
+  {
+    "id": "IN-B-H05",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A JPEG image is suspected of carrying hidden data. Which finding most strongly supports steganography rather than normal file variation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The image has a common resolution used by smartphones"
+      },
+      {
+        "id": "b",
+        "text": "The file shows anomalous size and entropy for its content, and header or structural analysis suggests embedded payload patterns"
+      },
+      {
+        "id": "c",
+        "text": "The image opens normally in a photo viewer"
+      },
+      {
+        "id": "d",
+        "text": "The filename uses uppercase letters"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Steganography often leaves statistical or structural clues even when the carrier renders normally. Entropy, file size anomalies, and format inconsistencies can support suspicion.",
+    "points": 40,
+    "tags": [
+      "steganography",
+      "detection",
+      "artifacts"
+    ]
+  },
+  {
+    "id": "IN-B-H06",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "In court, opposing counsel points out that one parser in a forensic suite misinterpreted a timestamp, though the final conclusion remained unchanged after review. What is the best expert response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deny that any forensic tool can ever be wrong"
+      },
+      {
+        "id": "b",
+        "text": "Explain the discrepancy, describe independent verification or secondary review performed, and clarify why the conclusion still stands"
+      },
+      {
+        "id": "c",
+        "text": "State that parser details are too technical for the court"
+      },
+      {
+        "id": "d",
+        "text": "Withdraw all findings from the case immediately"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Credible testimony acknowledges limitations and shows how conclusions were validated. Independent verification strengthens reliability when a tool issue is identified.",
+    "points": 40,
+    "tags": [
+      "testimony",
+      "validation",
+      "tools"
+    ]
+  },
+  {
+    "id": "IN-B-H07",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A disk image is exported from one examiner, transferred to another team, and later uploaded to secure cloud storage for review. Which chain of custody practice is most important?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the original seizure needs documentation"
+      },
+      {
+        "id": "b",
+        "text": "Record each transfer, custodian, date and time, purpose, storage location, and integrity check values at key stages"
+      },
+      {
+        "id": "c",
+        "text": "Document only transfers that cross country borders"
+      },
+      {
+        "id": "d",
+        "text": "Skip custody entries if the teams trust each other"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Every handoff matters because custody must be traceable from collection through analysis and storage. Integrity checks help show the evidence remained unchanged.",
+    "points": 40,
+    "tags": [
+      "custody",
+      "hashing",
+      "transfer"
+    ]
+  },
+  {
+    "id": "IN-B-H08",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A threat actor appears to have deleted local logs from a cloud workload after suspicious activity. Which evidence source is most likely to remain useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the local application log directory"
+      },
+      {
+        "id": "b",
+        "text": "Provider control-plane audit logs, immutable logging destinations, and related external telemetry such as identity and network logs"
+      },
+      {
+        "id": "c",
+        "text": "The desktop theme settings inside the VM"
+      },
+      {
+        "id": "d",
+        "text": "The user's browser bookmarks alone"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Cloud investigations often benefit from logs outside the compromised host's control. Immutable or separately managed telemetry can survive local tampering.",
+    "points": 50,
+    "tags": [
+      "cloud",
+      "log-tampering",
+      "audit"
+    ]
+  },
+  {
+    "id": "IN-B-H09",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A mobile app's SQLite database on a seized device shows missing chat records, but the write-ahead log (WAL) still exists. What is the best analytic approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ignore the WAL because only the main database file matters"
+      },
+      {
+        "id": "b",
+        "text": "Analyze the main database, WAL, and related app artifacts together to reconstruct recent or partially committed activity"
+      },
+      {
+        "id": "c",
+        "text": "Delete the WAL before opening the database to avoid corruption"
+      },
+      {
+        "id": "d",
+        "text": "Assume the missing records were never present"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "SQLite WAL files can contain recent transactions not yet merged into the main database. Reviewing them alongside app artifacts can reveal deleted or recent activity.",
+    "points": 50,
+    "tags": [
+      "mobile",
+      "sqlite",
+      "artifacts"
+    ]
+  },
+  {
+    "id": "IN-B-H10",
+    "domainId": "IN",
+    "subdomainId": "IN-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "You have only partial packet capture for a suspected HTTPS exfiltration event, but you also have DNS logs, proxy logs, and endpoint file access data. Which conclusion method is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Conclude exfiltration solely because TLS traffic exists"
+      },
+      {
+        "id": "b",
+        "text": "Correlate destination domains, connection timing, uploaded byte counts, and file access or staging activity to support or refute exfiltration"
+      },
+      {
+        "id": "c",
+        "text": "Ignore DNS because it is not content"
+      },
+      {
+        "id": "d",
+        "text": "Rely only on the user's statement"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When payload content is unavailable, a combination of network metadata and endpoint behavior can still support a defensible conclusion. Multiple corroborating sources are key.",
+    "points": 40,
+    "tags": [
+      "network",
+      "exfiltration",
+      "correlation"
+    ]
+  },
+  {
+    "id": "OG-A-E01",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the primary purpose of a cybersecurity strategy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To align security activities with business goals and risk priorities"
+      },
+      {
+        "id": "b",
+        "text": "To replace all operational security procedures"
+      },
+      {
+        "id": "c",
+        "text": "To eliminate the need for compliance reviews"
+      },
+      {
+        "id": "d",
+        "text": "To focus only on purchasing security tools"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A cybersecurity strategy sets direction so security investments and actions support business objectives and risk management. It is broader than tools or procedures alone.",
+    "points": 10,
+    "tags": [
+      "strategy",
+      "alignment"
+    ]
+  },
+  {
+    "id": "OG-A-E02",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which document typically states management's rules and expectations for acceptable security behavior?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Project schedule"
+      },
+      {
+        "id": "b",
+        "text": "Security policy"
+      },
+      {
+        "id": "c",
+        "text": "Network diagram"
+      },
+      {
+        "id": "d",
+        "text": "Incident ticket"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A security policy defines required behaviors, responsibilities, and expectations. Supporting standards and procedures provide more detailed implementation guidance.",
+    "points": 10,
+    "tags": [
+      "policy",
+      "governance"
+    ]
+  },
+  {
+    "id": "OG-A-E03",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which framework is commonly used to organize cybersecurity outcomes into functions such as Identify, Protect, Detect, Respond, and Recover?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ISO 9001"
+      },
+      {
+        "id": "b",
+        "text": "NIST Cybersecurity Framework"
+      },
+      {
+        "id": "c",
+        "text": "PMBOK"
+      },
+      {
+        "id": "d",
+        "text": "COBIT 4"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The NIST CSF organizes cybersecurity activities into core functions that help leaders assess and improve program maturity. It is widely used for governance and communication.",
+    "points": 20,
+    "tags": [
+      "nist-csf",
+      "frameworks"
+    ]
+  },
+  {
+    "id": "OG-A-E04",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In an ISO 27001-based program, what is the main role of top management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Approve every firewall rule change"
+      },
+      {
+        "id": "b",
+        "text": "Provide leadership, resources, and support for the ISMS"
+      },
+      {
+        "id": "c",
+        "text": "Write all technical procedures personally"
+      },
+      {
+        "id": "d",
+        "text": "Perform all vulnerability scans"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "ISO 27001 expects top management to demonstrate leadership and ensure the information security management system is supported. Operational tasks can be delegated.",
+    "points": 20,
+    "tags": [
+      "iso27001",
+      "leadership"
+    ]
+  },
+  {
+    "id": "OG-A-E05",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which metric would be most useful to brief executives on overall phishing risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Average CPU utilization on domain controllers"
+      },
+      {
+        "id": "b",
+        "text": "Percentage of employees who reported simulated phishing emails"
+      },
+      {
+        "id": "c",
+        "text": "Number of keyboard models in use"
+      },
+      {
+        "id": "d",
+        "text": "Length of the latest audit report"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Executive metrics should connect to people risk and business exposure. Reporting rates from phishing exercises help show awareness and detection behavior.",
+    "points": 10,
+    "tags": [
+      "metrics",
+      "phishing"
+    ]
+  },
+  {
+    "id": "OG-A-E06",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "When building a security budget, which item is usually considered an operational expense rather than a capital expense?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A multi-year building renovation"
+      },
+      {
+        "id": "b",
+        "text": "A one-time data center purchase"
+      },
+      {
+        "id": "c",
+        "text": "Annual security awareness training subscription"
+      },
+      {
+        "id": "d",
+        "text": "Land acquisition for a new office"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Recurring subscriptions and training services are commonly budgeted as operational expenses. They support ongoing program operation rather than long-lived capital assets.",
+    "points": 20,
+    "tags": [
+      "budgeting",
+      "resources"
+    ]
+  },
+  {
+    "id": "OG-A-E07",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main goal of security governance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To ensure security decisions are directed, monitored, and accountable"
+      },
+      {
+        "id": "b",
+        "text": "To keep all security information confidential from leadership"
+      },
+      {
+        "id": "c",
+        "text": "To avoid documenting responsibilities"
+      },
+      {
+        "id": "d",
+        "text": "To let technical teams set priorities without oversight"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Security governance establishes decision rights, oversight, and accountability. It helps leaders ensure security supports organizational objectives.",
+    "points": 10,
+    "tags": [
+      "governance",
+      "accountability"
+    ]
+  },
+  {
+    "id": "OG-A-E08",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which statement best describes a strong organizational security culture?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Security is treated as only the IT department's problem"
+      },
+      {
+        "id": "b",
+        "text": "Employees understand their role and routinely make safer decisions"
+      },
+      {
+        "id": "c",
+        "text": "Policies exist but are never discussed in day-to-day work"
+      },
+      {
+        "id": "d",
+        "text": "Only senior leaders are expected to report suspicious activity"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A strong security culture means secure behavior is understood, reinforced, and practiced across the organization. It extends beyond IT and leadership alone.",
+    "points": 20,
+    "tags": [
+      "culture",
+      "awareness"
+    ]
+  },
+  {
+    "id": "OG-A-E09",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which of the following is the best example of a security standard rather than a policy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "All employees must protect company information"
+      },
+      {
+        "id": "b",
+        "text": "Encryption keys for laptops must be at least 256 bits"
+      },
+      {
+        "id": "c",
+        "text": "Management supports risk-based security decisions"
+      },
+      {
+        "id": "d",
+        "text": "The organization values compliance and trust"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Standards provide specific, measurable requirements such as minimum key lengths. Policies are higher-level statements of intent and expectations.",
+    "points": 10,
+    "tags": [
+      "policy",
+      "standards"
+    ]
+  },
+  {
+    "id": "OG-A-E10",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why should security objectives be linked to business objectives?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To reduce the need for asset inventories"
+      },
+      {
+        "id": "b",
+        "text": "To ensure security work protects what matters most to the organization"
+      },
+      {
+        "id": "c",
+        "text": "To prevent executives from reviewing risk"
+      },
+      {
+        "id": "d",
+        "text": "To make technical controls less important"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Linking security objectives to business objectives helps prioritize resources where they deliver the greatest protection and business value. It improves executive support and decision-making.",
+    "points": 20,
+    "tags": [
+      "strategy",
+      "business"
+    ]
+  },
+  {
+    "id": "OG-A-M01",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A hospital is expanding telehealth services quickly. The CISO must update the security strategy for the next year. Which first step is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Purchase more endpoint tools before meeting business leaders"
+      },
+      {
+        "id": "b",
+        "text": "Map telehealth goals, risks, and regulatory obligations to security priorities"
+      },
+      {
+        "id": "c",
+        "text": "Suspend all new digital services until the annual audit is complete"
+      },
+      {
+        "id": "d",
+        "text": "Rewrite all existing policies from scratch"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A sound strategy begins by understanding business direction, risk, and obligations. That alignment ensures security priorities support the telehealth expansion rather than reacting blindly.",
+    "points": 30,
+    "tags": [
+      "strategy",
+      "healthcare",
+      "alignment"
+    ]
+  },
+  {
+    "id": "OG-A-M02",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During a board meeting, directors ask for a concise cybersecurity KPI. Which metric is most likely to support strategic oversight?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Number of command-line tools installed by the SOC"
+      },
+      {
+        "id": "b",
+        "text": "Percentage of critical vulnerabilities remediated within policy target"
+      },
+      {
+        "id": "c",
+        "text": "Total lines of code in security scripts"
+      },
+      {
+        "id": "d",
+        "text": "Exact model numbers of all firewalls"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Boards need trendable indicators tied to risk reduction and policy performance. Timely remediation of critical vulnerabilities shows whether the organization is managing material exposure.",
+    "points": 30,
+    "tags": [
+      "board",
+      "kpi",
+      "vulnerability"
+    ]
+  },
+  {
+    "id": "OG-A-M03",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A policy owner wants to publish a new remote access policy. Which approach best supports effective governance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Release it immediately without review to save time"
+      },
+      {
+        "id": "b",
+        "text": "Have legal, HR, IT, and business stakeholders review and approve it"
+      },
+      {
+        "id": "c",
+        "text": "Limit review to the network team because they manage VPNs"
+      },
+      {
+        "id": "d",
+        "text": "Keep the policy informal so exceptions do not need tracking"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Cross-functional review helps ensure the policy is enforceable, compliant, and aligned with operational realities. Governance is stronger when ownership and approval are clear.",
+    "points": 30,
+    "tags": [
+      "policy",
+      "governance",
+      "stakeholders"
+    ]
+  },
+  {
+    "id": "OG-A-M04",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An organization using the NIST CSF identifies weak detection capabilities. Which action best reflects a risk-based improvement plan?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prioritize logging, monitoring, and alerting enhancements for high-value systems"
+      },
+      {
+        "id": "b",
+        "text": "Delay all changes until every CSF function can be improved equally"
+      },
+      {
+        "id": "c",
+        "text": "Focus only on rewriting the acceptable use policy"
+      },
+      {
+        "id": "d",
+        "text": "Remove existing alerts to reduce analyst workload"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Risk-based planning targets the most important systems and weaknesses first. Improving visibility on high-value assets strengthens the Detect function in a practical way.",
+    "points": 30,
+    "tags": [
+      "nist-csf",
+      "detection",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-A-M05",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A CISO has funding for only one initiative this quarter: additional cloud security training for engineers or a third external assessment. Which factor should drive the decision most?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Which option has the most impressive vendor branding"
+      },
+      {
+        "id": "b",
+        "text": "Which option better reduces the organization's highest current risks"
+      },
+      {
+        "id": "c",
+        "text": "Which option requires the longest slide deck"
+      },
+      {
+        "id": "d",
+        "text": "Which option was used by a competitor last year"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Resource allocation should be based on current risk priorities and expected reduction in exposure. Decisions should not be driven by branding or imitation.",
+    "points": 30,
+    "tags": [
+      "budgeting",
+      "risk",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "OG-A-M06",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "After several policy violations, leadership wants to improve security culture. Which response is most likely to create lasting change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Issue one company-wide warning email and take no further action"
+      },
+      {
+        "id": "b",
+        "text": "Combine targeted training, manager reinforcement, and simple reporting channels"
+      },
+      {
+        "id": "c",
+        "text": "Ban all employee questions about security requirements"
+      },
+      {
+        "id": "d",
+        "text": "Rely only on annual compliance attestations"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Culture improves when expectations are reinforced through training, leadership behavior, and easy processes. One-time warnings rarely change daily habits on their own.",
+    "points": 30,
+    "tags": [
+      "culture",
+      "change-management",
+      "training"
+    ]
+  },
+  {
+    "id": "OG-A-M07",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A global company wants one governance framework to support certification efforts and management system discipline. Which choice best fits that goal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ISO 27001"
+      },
+      {
+        "id": "b",
+        "text": "NIST SP 800-61"
+      },
+      {
+        "id": "c",
+        "text": "OWASP Top 10"
+      },
+      {
+        "id": "d",
+        "text": "MITRE ATT&CK"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "ISO 27001 is designed as a certifiable information security management system framework. It supports governance, continual improvement, and formal assurance.",
+    "points": 30,
+    "tags": [
+      "iso27001",
+      "governance"
+    ]
+  },
+  {
+    "id": "OG-A-M08",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Executives say the security program is hard to understand because reports are too technical. What should the CISO change first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Replace risk trends with packet capture excerpts"
+      },
+      {
+        "id": "b",
+        "text": "Frame reporting in business impact, risk posture, and decision needs"
+      },
+      {
+        "id": "c",
+        "text": "Add more detailed vulnerability scanner raw output"
+      },
+      {
+        "id": "d",
+        "text": "Stop reporting until metrics are perfect"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Executive communication should emphasize business impact, trends, and required decisions. Technical raw data is useful operationally but usually obscures strategic meaning for leadership.",
+    "points": 30,
+    "tags": [
+      "executive",
+      "communication",
+      "metrics"
+    ]
+  },
+  {
+    "id": "OG-A-M09",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A merger introduces a second set of security policies with overlapping requirements. What is the best governance action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allow both sets to remain indefinitely without reconciliation"
+      },
+      {
+        "id": "b",
+        "text": "Create a harmonization effort to consolidate, resolve conflicts, and assign owners"
+      },
+      {
+        "id": "c",
+        "text": "Discard both policy sets and operate informally"
+      },
+      {
+        "id": "d",
+        "text": "Adopt whichever set is shorter"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Mergers often create duplicate or conflicting controls. Consolidating policies with clear ownership reduces confusion and supports consistent governance.",
+    "points": 30,
+    "tags": [
+      "policy",
+      "merger",
+      "governance"
+    ]
+  },
+  {
+    "id": "OG-A-M10",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security steering committee is being formed. Which membership model is most effective?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Security staff only, to avoid business interference"
+      },
+      {
+        "id": "b",
+        "text": "Only external auditors, to ensure objectivity"
+      },
+      {
+        "id": "c",
+        "text": "Leaders from security, IT, legal, HR, and key business units"
+      },
+      {
+        "id": "d",
+        "text": "Randomly selected employees with no decision authority"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "A steering committee works best when it includes cross-functional leaders who can make or influence decisions. Security governance depends on shared ownership across the enterprise.",
+    "points": 30,
+    "tags": [
+      "steering",
+      "governance",
+      "leadership"
+    ]
+  },
+  {
+    "id": "OG-A-H01",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A board approved aggressive international expansion, but the security roadmap still prioritizes low-impact on-premises upgrades. What is the strongest leadership response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Continue the roadmap to avoid disrupting current projects"
+      },
+      {
+        "id": "b",
+        "text": "Rebaseline the security strategy against expansion risks, digital dependencies, and regulatory exposure"
+      },
+      {
+        "id": "c",
+        "text": "Delay security planning until the first overseas incident occurs"
+      },
+      {
+        "id": "d",
+        "text": "Transfer all decisions to the infrastructure manager"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Strategy should be rebaselined when business direction materially changes. International expansion can alter threat exposure, compliance obligations, and resilience needs, requiring reprioritization.",
+    "points": 40,
+    "tags": [
+      "strategy",
+      "board",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-A-H02",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A company tracks hundreds of security metrics, but executives still cannot decide where to invest. Which redesign would best improve decision quality?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add more technical metrics to improve completeness"
+      },
+      {
+        "id": "b",
+        "text": "Reduce reporting to a small set of risk-linked KPIs with thresholds and trends"
+      },
+      {
+        "id": "c",
+        "text": "Report only the total number of alerts received"
+      },
+      {
+        "id": "d",
+        "text": "Replace metrics with vendor benchmark marketing materials"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Leaders need a focused set of indicators tied to risk, targets, and trends. Excessive metrics without decision context create noise rather than insight.",
+    "points": 40,
+    "tags": [
+      "kpi",
+      "executive",
+      "decision-making"
+    ]
+  },
+  {
+    "id": "OG-A-H03",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An enterprise wants to use both NIST CSF and ISO 27001 without duplicating work. Which approach is most effective?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Run separate programs with separate control owners and reports"
+      },
+      {
+        "id": "b",
+        "text": "Map common controls and processes to both frameworks within one governance model"
+      },
+      {
+        "id": "c",
+        "text": "Use ISO 27001 only for IT and NIST CSF only for the board"
+      },
+      {
+        "id": "d",
+        "text": "Alternate frameworks every quarter"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A unified control and governance mapping reduces duplication while satisfying multiple frameworks. Many organizations use one operating model with cross-references to both NIST CSF outcomes and ISO 27001 requirements.",
+    "points": 50,
+    "tags": [
+      "nist-csf",
+      "iso27001",
+      "governance"
+    ]
+  },
+  {
+    "id": "OG-A-H04",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Following a ransomware incident, the CEO wants immediate spending on multiple new tools. The CISO has limited funds. What should the CISO do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Approve all tool purchases to show urgency"
+      },
+      {
+        "id": "b",
+        "text": "Conduct a post-incident gap analysis and prioritize investments by control weakness and business impact"
+      },
+      {
+        "id": "c",
+        "text": "Freeze all spending for a year"
+      },
+      {
+        "id": "d",
+        "text": "Shift the entire budget from training to hardware refresh"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Urgency should still be guided by evidence. A post-incident analysis identifies the most meaningful gaps so limited resources address root causes rather than creating reactive overspend.",
+    "points": 40,
+    "tags": [
+      "budgeting",
+      "incident",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "OG-A-H05",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A multinational organization has well-written policies, but audit results show inconsistent enforcement across regions. Which governance improvement is most likely to solve the root problem?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Translate the policies into more languages and stop there"
+      },
+      {
+        "id": "b",
+        "text": "Define control owners, monitoring, exception handling, and accountability for regional compliance"
+      },
+      {
+        "id": "c",
+        "text": "Reduce the number of audits so regions feel less pressure"
+      },
+      {
+        "id": "d",
+        "text": "Allow each region to interpret mandatory controls independently"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Inconsistent enforcement usually reflects weak operating governance, not just poor wording. Clear ownership, oversight, and exception processes create accountability across regions.",
+    "points": 50,
+    "tags": [
+      "policy",
+      "accountability",
+      "global"
+    ]
+  },
+  {
+    "id": "OG-A-H06",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A security awareness campaign shows high training completion but no reduction in unsafe behavior. What is the best interpretation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Completion rates alone are insufficient and behavior-based measures are needed"
+      },
+      {
+        "id": "b",
+        "text": "The campaign is fully successful because attendance was high"
+      },
+      {
+        "id": "c",
+        "text": "Training should be eliminated because metrics are conflicting"
+      },
+      {
+        "id": "d",
+        "text": "Unsafe behavior is unrelated to culture"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Completion is an activity metric, not an outcome metric. Leaders should measure observable behavior changes, such as reporting rates or policy-compliant actions, to assess cultural impact.",
+    "points": 40,
+    "tags": [
+      "culture",
+      "metrics",
+      "awareness"
+    ]
+  },
+  {
+    "id": "OG-A-H07",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A board asks whether the organization is 'secure enough.' Which response is most appropriate from an executive cybersecurity leader?",
+    "options": [
+      {
+        "id": "a",
+        "text": "State that complete security is impossible and end the discussion"
+      },
+      {
+        "id": "b",
+        "text": "Explain current risk posture, risk appetite alignment, major gaps, and investment decisions needed"
+      },
+      {
+        "id": "c",
+        "text": "Provide only a list of blocked malware events"
+      },
+      {
+        "id": "d",
+        "text": "Answer yes because no breach has been publicly disclosed"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Executive leadership should frame security in terms of risk posture and whether it is within agreed tolerance. The board needs context on gaps and decisions, not false certainty.",
+    "points": 50,
+    "tags": [
+      "board",
+      "risk",
+      "leadership"
+    ]
+  },
+  {
+    "id": "OG-A-H08",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A regulated firm is replacing legacy systems. Business leaders want rapid rollout, but security architecture reviews are causing delays. Which leadership approach best balances the conflict?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Remove all security reviews to meet deadlines"
+      },
+      {
+        "id": "b",
+        "text": "Embed risk-based security checkpoints into the delivery lifecycle and fast-track low-risk changes"
+      },
+      {
+        "id": "c",
+        "text": "Require full board approval for every system change"
+      },
+      {
+        "id": "d",
+        "text": "Pause modernization until every legacy issue is remediated"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Risk-based integration into delivery helps maintain speed while preserving necessary assurance. Tailoring review depth by risk reduces bottlenecks without abandoning governance.",
+    "points": 40,
+    "tags": [
+      "change-management",
+      "governance",
+      "delivery"
+    ]
+  },
+  {
+    "id": "OG-A-H09",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An organization's security budget has grown annually, but residual risk in critical business processes remains high. What does this most strongly suggest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "More spending automatically reduces risk, so the measurements must be wrong"
+      },
+      {
+        "id": "b",
+        "text": "Resource allocation may be poorly aligned to the highest-value risks"
+      },
+      {
+        "id": "c",
+        "text": "All critical processes should be outsourced immediately"
+      },
+      {
+        "id": "d",
+        "text": "The only solution is to double headcount"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Rising spend without meaningful reduction in critical residual risk often indicates misaligned priorities or ineffective investments. Leaders should reassess where funds are going and what outcomes they produce.",
+    "points": 50,
+    "tags": [
+      "budgeting",
+      "risk",
+      "alignment"
+    ]
+  },
+  {
+    "id": "OG-A-H10",
+    "domainId": "OG",
+    "subdomainId": "OG-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "After a major restructuring, employees are bypassing security procedures to keep work moving. Which action is most likely to restore sustainable compliance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Increase disciplinary action only, without changing processes"
+      },
+      {
+        "id": "b",
+        "text": "Redesign key procedures with business input, reinforce manager expectations, and monitor adoption"
+      },
+      {
+        "id": "c",
+        "text": "Suspend all security requirements during the transition"
+      },
+      {
+        "id": "d",
+        "text": "Publish a longer policy document with more detailed penalties"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When procedures are bypassed during change, the issue is often friction between controls and operations. Co-designing workable processes and reinforcing them through management improves adoption and culture.",
+    "points": 40,
+    "tags": [
+      "change-management",
+      "culture",
+      "process"
+    ]
+  },
+  {
+    "id": "OG-B-E01",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which statement best describes the purpose of a risk assessment in cybersecurity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To identify threats, estimate impact and likelihood, and prioritize treatment"
+      },
+      {
+        "id": "b",
+        "text": "To guarantee that no security incident will occur"
+      },
+      {
+        "id": "c",
+        "text": "To replace all compliance requirements with internal policy"
+      },
+      {
+        "id": "d",
+        "text": "To measure employee productivity during audits"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A risk assessment helps an organization understand what could go wrong, how likely it is, and how severe the consequences may be. That information supports prioritizing mitigation efforts.",
+    "points": 10,
+    "tags": [
+      "risk",
+      "assessment"
+    ]
+  },
+  {
+    "id": "OG-B-E02",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In a qualitative risk assessment, risk is most commonly expressed using which type of scale?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Binary code values only"
+      },
+      {
+        "id": "b",
+        "text": "High, medium, low"
+      },
+      {
+        "id": "c",
+        "text": "Exact dollar amounts"
+      },
+      {
+        "id": "d",
+        "text": "CPU utilization percentages"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Qualitative assessments usually rate likelihood and impact using descriptive categories such as high, medium, and low. They are useful when precise numerical data is unavailable.",
+    "points": 10,
+    "tags": [
+      "qualitative",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-B-E03",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the primary difference between qualitative and quantitative risk assessment methods?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Qualitative uses categories, while quantitative uses numerical values"
+      },
+      {
+        "id": "b",
+        "text": "Qualitative is only for privacy, while quantitative is only for finance"
+      },
+      {
+        "id": "c",
+        "text": "Qualitative ignores likelihood, while quantitative ignores impact"
+      },
+      {
+        "id": "d",
+        "text": "Qualitative is required by law, while quantitative is optional"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Qualitative methods use descriptive ratings, while quantitative methods attempt to assign measurable values such as frequency or loss magnitude. Both can be useful depending on context and data availability.",
+    "points": 20,
+    "tags": [
+      "qualitative",
+      "quantitative"
+    ]
+  },
+  {
+    "id": "OG-B-E04",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which framework is widely used for selecting and documenting security controls for U.S. federal information systems?",
+    "options": [
+      {
+        "id": "a",
+        "text": "NIST SP 800-53"
+      },
+      {
+        "id": "b",
+        "text": "OWASP Top 10"
+      },
+      {
+        "id": "c",
+        "text": "MITRE ATT&CK"
+      },
+      {
+        "id": "d",
+        "text": "CIS Benchmarks only"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "NIST SP 800-53 provides a catalog of security and privacy controls used extensively in federal environments and beyond. It supports control selection, tailoring, and assessment.",
+    "points": 20,
+    "tags": [
+      "nist",
+      "controls"
+    ]
+  },
+  {
+    "id": "OG-B-E05",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "A SOC 2 report is primarily focused on controls related to which concept set?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Traffic routing metrics"
+      },
+      {
+        "id": "b",
+        "text": "Trust Services Criteria"
+      },
+      {
+        "id": "c",
+        "text": "Patent registration rules"
+      },
+      {
+        "id": "d",
+        "text": "Software licensing fees"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "SOC 2 examinations evaluate controls against the Trust Services Criteria, such as security, availability, processing integrity, confidentiality, and privacy. It is commonly used in vendor assurance.",
+    "points": 10,
+    "tags": [
+      "soc2",
+      "controls"
+    ]
+  },
+  {
+    "id": "OG-B-E06",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the main objective of control testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To prove a product is bug-free forever"
+      },
+      {
+        "id": "b",
+        "text": "To verify that a control is designed appropriately and operating as intended"
+      },
+      {
+        "id": "c",
+        "text": "To remove the need for risk acceptance"
+      },
+      {
+        "id": "d",
+        "text": "To eliminate all audit documentation"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Control testing evaluates whether a control exists, is properly designed, and works in practice. This supports assurance, audits, and remediation planning.",
+    "points": 20,
+    "tags": [
+      "testing",
+      "controls"
+    ]
+  },
+  {
+    "id": "OG-B-E07",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In an Authorization to Operate process, who typically makes the final risk-based decision to authorize the system?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The help desk supervisor"
+      },
+      {
+        "id": "b",
+        "text": "The authorizing official"
+      },
+      {
+        "id": "c",
+        "text": "The software developer"
+      },
+      {
+        "id": "d",
+        "text": "The external penetration tester"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The authorizing official accepts responsibility for the risk of operating the system. That decision is based on assessment results and supporting authorization documentation.",
+    "points": 10,
+    "tags": [
+      "ato",
+      "authorization"
+    ]
+  },
+  {
+    "id": "OG-B-E08",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Under GDPR, what does DPIA stand for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data Processing Integrity Audit"
+      },
+      {
+        "id": "b",
+        "text": "Digital Privacy Internal Approval"
+      },
+      {
+        "id": "c",
+        "text": "Data Protection Impact Assessment"
+      },
+      {
+        "id": "d",
+        "text": "Data Preservation Investigation Act"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "A DPIA is a Data Protection Impact Assessment. It is used to identify and reduce privacy risks in processing activities, especially when risk to individuals may be high.",
+    "points": 20,
+    "tags": [
+      "gdpr",
+      "dpia"
+    ]
+  },
+  {
+    "id": "OG-B-E09",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which contract clause is most directly related to requiring a service provider to protect customer information?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data protection and security requirements"
+      },
+      {
+        "id": "b",
+        "text": "Office parking allocation"
+      },
+      {
+        "id": "c",
+        "text": "Corporate branding guidelines"
+      },
+      {
+        "id": "d",
+        "text": "Travel reimbursement policy"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Security and data protection clauses define how a provider must safeguard information, report incidents, and handle compliance obligations. They are central to legal and vendor risk review.",
+    "points": 10,
+    "tags": [
+      "contracts",
+      "security"
+    ]
+  },
+  {
+    "id": "OG-B-E10",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the main purpose of third-party risk management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To outsource all security responsibilities"
+      },
+      {
+        "id": "b",
+        "text": "To identify and manage risks introduced by vendors and partners"
+      },
+      {
+        "id": "c",
+        "text": "To avoid signing any supplier agreements"
+      },
+      {
+        "id": "d",
+        "text": "To guarantee every vendor has the same controls"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Third-party risk management evaluates vendors for security, privacy, and operational risks that could affect the organization. It helps reduce exposure from external relationships.",
+    "points": 20,
+    "tags": [
+      "vendor",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-B-M01",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security manager is comparing phishing risk across business units using interviews and workshops, but there is no reliable loss history. Which approach is most appropriate as a starting point?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Qualitative risk assessment with defined scoring criteria"
+      },
+      {
+        "id": "b",
+        "text": "Full actuarial loss modeling based on 10 years of claims data"
+      },
+      {
+        "id": "c",
+        "text": "Immediate risk acceptance without documentation"
+      },
+      {
+        "id": "d",
+        "text": "Penetration testing to calculate annualized loss expectancy"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "When precise data is limited, a qualitative approach provides a practical starting point. Consistent criteria for impact and likelihood improve comparability across units.",
+    "points": 30,
+    "tags": [
+      "qualitative",
+      "phishing",
+      "methodology"
+    ]
+  },
+  {
+    "id": "OG-B-M02",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An analyst using FAIR wants to separate how often ransomware events may occur from how much damage each event could cause. Which FAIR concepts support that distinction?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Control inheritance and baseline tailoring"
+      },
+      {
+        "id": "b",
+        "text": "Loss event frequency and probable loss magnitude"
+      },
+      {
+        "id": "c",
+        "text": "Confidentiality and processing integrity"
+      },
+      {
+        "id": "d",
+        "text": "Data minimization and purpose limitation"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "FAIR explicitly distinguishes event frequency from loss magnitude. This helps analysts reason about how often a loss may happen versus how severe it may be.",
+    "points": 30,
+    "tags": [
+      "fair",
+      "quantitative",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-B-M03",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During a NIST 800-53 assessment, a reviewer finds that account reviews are documented in policy but are not being performed consistently. How should the control most likely be characterized?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Operating effectively because a policy exists"
+      },
+      {
+        "id": "b",
+        "text": "Designed but not operating effectively"
+      },
+      {
+        "id": "c",
+        "text": "Not applicable because it is administrative"
+      },
+      {
+        "id": "d",
+        "text": "Fully inherited from the asset inventory tool"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A documented policy may indicate the control is designed, but inconsistent execution means it is not operating effectively. Assessment should distinguish design from operation.",
+    "points": 30,
+    "tags": [
+      "nist",
+      "testing",
+      "controls"
+    ]
+  },
+  {
+    "id": "OG-B-M04",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A SaaS provider presents a SOC 2 Type II report dated 14 months ago. What is the most reasonable next step in vendor due diligence?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reject the vendor automatically with no further review"
+      },
+      {
+        "id": "b",
+        "text": "Accept the old report as current evidence"
+      },
+      {
+        "id": "c",
+        "text": "Request updated assurance evidence, such as a newer report or bridge letter"
+      },
+      {
+        "id": "d",
+        "text": "Assume GDPR compliance covers all security gaps"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "An older SOC 2 report may leave a gap in assurance coverage. Updated evidence, including a new report or bridge letter, helps validate continued control operation.",
+    "points": 30,
+    "tags": [
+      "soc2",
+      "vendor",
+      "due-diligence"
+    ]
+  },
+  {
+    "id": "OG-B-M05",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A system owner is preparing for an ATO decision. Which package of artifacts is most central to supporting the decision?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Marketing plan, sales forecast, and outage calendar"
+      },
+      {
+        "id": "b",
+        "text": "System security plan, security assessment results, and plan of action and milestones"
+      },
+      {
+        "id": "c",
+        "text": "Source code repository, sprint backlog, and UX mockups"
+      },
+      {
+        "id": "d",
+        "text": "Asset purchase orders and depreciation schedules"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "ATO decisions rely on core authorization artifacts that describe the system, summarize assessment findings, and track remediation. These provide the basis for risk acceptance or denial.",
+    "points": 30,
+    "tags": [
+      "ato",
+      "ssp",
+      "poam"
+    ]
+  },
+  {
+    "id": "OG-B-M06",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A product team plans to launch large-scale monitoring of employee behavior using new analytics. Which condition most strongly suggests a DPIA should be performed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The processing may create high risk to individuals' rights and freedoms"
+      },
+      {
+        "id": "b",
+        "text": "The company already uses cloud storage"
+      },
+      {
+        "id": "c",
+        "text": "The data is stored in CSV format"
+      },
+      {
+        "id": "d",
+        "text": "The project has a limited software budget"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A DPIA is particularly relevant when planned processing is likely to pose high risk to individuals. Large-scale monitoring is a classic trigger for deeper privacy impact analysis.",
+    "points": 30,
+    "tags": [
+      "gdpr",
+      "dpia",
+      "privacy"
+    ]
+  },
+  {
+    "id": "OG-B-M07",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "While reviewing a customer contract, which clause would best ensure the vendor notifies your organization quickly after a breach involving your data?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Data breach notification clause with defined timing and responsibilities"
+      },
+      {
+        "id": "b",
+        "text": "Automatic contract renewal clause"
+      },
+      {
+        "id": "c",
+        "text": "Intellectual property ownership clause only"
+      },
+      {
+        "id": "d",
+        "text": "Most-favored-customer pricing clause"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A breach notification clause should define when and how the vendor must notify, what details to provide, and required cooperation. This is crucial for legal, regulatory, and incident response obligations.",
+    "points": 30,
+    "tags": [
+      "contracts",
+      "breach",
+      "legal"
+    ]
+  },
+  {
+    "id": "OG-B-M08",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A procurement team is onboarding a payment processor that will handle cardholder and customer personal data. Which action is the best risk-management step before contract execution?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Skip assessment because the vendor is well known"
+      },
+      {
+        "id": "b",
+        "text": "Perform vendor due diligence aligned to data sensitivity and service criticality"
+      },
+      {
+        "id": "c",
+        "text": "Wait until after the first incident to review controls"
+      },
+      {
+        "id": "d",
+        "text": "Limit review to the vendor's website privacy statement"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Due diligence should be risk-based and proportionate to the service and data involved. Payment processing and personal data handling justify a more thorough review.",
+    "points": 30,
+    "tags": [
+      "vendor",
+      "due-diligence",
+      "payments"
+    ]
+  },
+  {
+    "id": "OG-B-M09",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An assessor wants evidence that a privileged access review control operated during the last quarter. Which evidence is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A draft policy stating reviews should occur quarterly"
+      },
+      {
+        "id": "b",
+        "text": "A screenshot of the access management tool home page"
+      },
+      {
+        "id": "c",
+        "text": "Completed review records showing reviewer, date, findings, and remediation"
+      },
+      {
+        "id": "d",
+        "text": "A verbal statement from an administrator"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Operational evidence should demonstrate that the control actually ran and produced results. Completed records with timing, ownership, and follow-up are far stronger than policy or oral statements alone.",
+    "points": 30,
+    "tags": [
+      "evidence",
+      "controls",
+      "testing"
+    ]
+  },
+  {
+    "id": "OG-B-M10",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A privacy officer receives a consumer request under CCPA to know what personal information has been collected. Which principle is most relevant to fulfilling that request?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Transparency about data collection and use"
+      },
+      {
+        "id": "b",
+        "text": "Security through obscurity"
+      },
+      {
+        "id": "c",
+        "text": "Unlimited retention without notice"
+      },
+      {
+        "id": "d",
+        "text": "Blocking all outbound network traffic"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "CCPA emphasizes consumer rights related to notice and access to collected personal information. Transparency supports the organization's ability to respond accurately and lawfully.",
+    "points": 30,
+    "tags": [
+      "ccpa",
+      "privacy",
+      "rights"
+    ]
+  },
+  {
+    "id": "OG-B-H01",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A hospital is evaluating ransomware risk to a clinical scheduling system. FAIR analysis estimates a 20% annual chance of a loss event, with a most likely loss of $2M and a long-tail scenario above $10M. What is the strongest reason to present the result as a distribution rather than a single value?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because risk analysts are required to avoid any executive summary"
+      },
+      {
+        "id": "b",
+        "text": "Because cyber loss magnitude is uncertain and decision-makers need to understand the range of plausible outcomes"
+      },
+      {
+        "id": "c",
+        "text": "Because distributions eliminate the need for assumptions"
+      },
+      {
+        "id": "d",
+        "text": "Because regulators only accept percentile-based reporting"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A distribution better communicates uncertainty and variability in loss outcomes than a single point estimate. This helps leaders compare treatment options under realistic ranges of exposure.",
+    "points": 40,
+    "tags": [
+      "fair",
+      "quantitative",
+      "uncertainty"
+    ]
+  },
+  {
+    "id": "OG-B-H02",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Your organization inherits logging controls from a cloud platform but manages application-level audit events itself. During assessment planning, what is the most accurate treatment of this arrangement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mark the entire logging family as fully inherited and out of scope"
+      },
+      {
+        "id": "b",
+        "text": "Treat logging as a shared responsibility and assess both inherited and customer-configured portions"
+      },
+      {
+        "id": "c",
+        "text": "Exclude logging because cloud providers are always solely responsible"
+      },
+      {
+        "id": "d",
+        "text": "Assess only the vendor's SOC 2 report and ignore application settings"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Inherited controls often remain partially shared, especially where platform and customer configurations both matter. Assessment scope should reflect those boundaries instead of assuming full inheritance.",
+    "points": 40,
+    "tags": [
+      "nist",
+      "shared-responsibility",
+      "assessment"
+    ]
+  },
+  {
+    "id": "OG-B-H03",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An authorizing official must decide whether to grant an ATO for a mission-critical system with several high-severity findings, all of which have compensating controls and funded remediation dates within 60 days. Which decision approach is most defensible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deny authorization automatically whenever any high-severity finding exists"
+      },
+      {
+        "id": "b",
+        "text": "Authorize based on documented residual risk, mission need, compensating controls, and tracked remediation commitments"
+      },
+      {
+        "id": "c",
+        "text": "Grant authorization only if every finding is closed before production use, regardless of mission impact"
+      },
+      {
+        "id": "d",
+        "text": "Delegate the decision entirely to the development team"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "ATO decisions are risk-based, not purely checklist-driven. A defensible decision weighs mission need, residual risk, compensating measures, and whether remediation is credible and tracked.",
+    "points": 50,
+    "tags": [
+      "ato",
+      "residual-risk",
+      "governance"
+    ]
+  },
+  {
+    "id": "OG-B-H04",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A global company wants to reuse one privacy assessment for both GDPR and CCPA across a new customer analytics platform. What is the best strategy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use a single generic questionnaire with no mapping to legal obligations"
+      },
+      {
+        "id": "b",
+        "text": "Create a common control-and-data-flow baseline, then map jurisdiction-specific obligations and rights separately"
+      },
+      {
+        "id": "c",
+        "text": "Apply only GDPR because it is broader and automatically satisfies all other laws"
+      },
+      {
+        "id": "d",
+        "text": "Apply only CCPA because it is U.S.-based and simpler"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A shared baseline can reduce duplication, but GDPR and CCPA differ in scope, legal bases, and consumer rights. Mapping specific obligations separately preserves coverage without losing efficiency.",
+    "points": 40,
+    "tags": [
+      "gdpr",
+      "ccpa",
+      "privacy"
+    ]
+  },
+  {
+    "id": "OG-B-H05",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "During contract review, a vendor refuses to accept any audit rights but offers annual independent assurance reports and the ability to answer security questionnaires. What is the most risk-based response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Accept the contract unchanged because any audit rights are unnecessary"
+      },
+      {
+        "id": "b",
+        "text": "Reject the vendor automatically in every case"
+      },
+      {
+        "id": "c",
+        "text": "Evaluate whether alternative assurance mechanisms provide sufficient visibility for the service's risk level, and negotiate targeted rights if gaps remain"
+      },
+      {
+        "id": "d",
+        "text": "Replace all security clauses with a general confidentiality clause"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Audit rights are one means of assurance, not the only one. The right answer depends on criticality, data sensitivity, and whether substitute evidence meaningfully addresses risk.",
+    "points": 50,
+    "tags": [
+      "contracts",
+      "assurance",
+      "vendor"
+    ]
+  },
+  {
+    "id": "OG-B-H06",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A third-party due diligence review shows strong preventive controls but weak incident response coordination, including no contractual obligation to preserve forensic evidence. Why is this a significant governance concern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because preventive controls make response obligations irrelevant"
+      },
+      {
+        "id": "b",
+        "text": "Because post-incident cooperation affects containment, notification, investigation, and legal defensibility"
+      },
+      {
+        "id": "c",
+        "text": "Because forensic evidence is only needed for law enforcement, never for internal response"
+      },
+      {
+        "id": "d",
+        "text": "Because incident response terms are optional if the vendor has cyber insurance"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Vendor incidents can trigger complex legal and operational obligations. If contracts do not support evidence preservation and coordinated response, recovery and defensibility may be impaired.",
+    "points": 40,
+    "tags": [
+      "vendor",
+      "incident-response",
+      "legal"
+    ]
+  },
+  {
+    "id": "OG-B-H07",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An assessor finds a segregation-of-duties control implemented manually in a fast-growing startup. Reviews happen monthly, but privileged changes can occur daily. What is the most important risk implication?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Manual controls are always unacceptable under any framework"
+      },
+      {
+        "id": "b",
+        "text": "The control may be too infrequent relative to the speed of risky activity, increasing the window for undetected abuse or error"
+      },
+      {
+        "id": "c",
+        "text": "Monthly reviews automatically make the control detective and therefore sufficient"
+      },
+      {
+        "id": "d",
+        "text": "Segregation of duties only matters for financial systems"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Control frequency should be evaluated against the pace and materiality of the underlying activity. A long review interval can leave significant exposure even if the control technically exists.",
+    "points": 50,
+    "tags": [
+      "controls",
+      "segregation",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-B-H08",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A controller plans to combine HR data, badge access logs, and productivity metrics for insider-risk analytics. Which factor most strongly increases the need for a rigorous DPIA?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The project uses a cloud database"
+      },
+      {
+        "id": "b",
+        "text": "The processing combines multiple datasets for systematic monitoring that may materially affect employees"
+      },
+      {
+        "id": "c",
+        "text": "The project team is small"
+      },
+      {
+        "id": "d",
+        "text": "The data pipeline runs nightly instead of hourly"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Combining datasets for systematic monitoring can materially affect individuals and create heightened privacy risks. That kind of profiling strongly supports a rigorous DPIA.",
+    "points": 40,
+    "tags": [
+      "dpia",
+      "monitoring",
+      "privacy"
+    ]
+  },
+  {
+    "id": "OG-B-H09",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A company rates a cloud vendor as 'low risk' because the service stores only encrypted customer files. Later, it learns the vendor's administrators can access decryption keys in the same environment. What risk-management failure does this most directly illustrate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Failure to assess actual control design and key management assumptions"
+      },
+      {
+        "id": "b",
+        "text": "Failure to deploy endpoint detection on employee laptops"
+      },
+      {
+        "id": "c",
+        "text": "Failure to create a bug bounty program"
+      },
+      {
+        "id": "d",
+        "text": "Failure to document office evacuation routes"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Encryption claims alone are not enough; assessors must understand who controls keys and how separation is enforced. The original rating relied on an unvalidated assumption about control effectiveness.",
+    "points": 50,
+    "tags": [
+      "vendor",
+      "encryption",
+      "due-diligence"
+    ]
+  },
+  {
+    "id": "OG-B-H10",
+    "domainId": "OG",
+    "subdomainId": "OG-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A legal team reviews a data-processing agreement for a processor that uses multiple subprocessors. Which clause combination most effectively reduces downstream data protection risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auto-renewal and limitation of liability only"
+      },
+      {
+        "id": "b",
+        "text": "Subprocessor notification/approval, flow-down security obligations, and breach notification requirements"
+      },
+      {
+        "id": "c",
+        "text": "Exclusive venue selection and branding restrictions"
+      },
+      {
+        "id": "d",
+        "text": "Net payment terms and tax gross-up language"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Subprocessor governance is critical because risk often flows beyond the primary vendor. Notification, flow-down obligations, and incident terms help preserve accountability and visibility across the chain.",
+    "points": 40,
+    "tags": [
+      "contracts",
+      "subprocessors",
+      "privacy"
+    ]
+  },
+  {
+    "id": "OG-C-E01",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "When building a cybersecurity program roadmap, which factor should usually drive the highest priority items first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Controls that reduce the most significant business risk"
+      },
+      {
+        "id": "b",
+        "text": "Tasks requested by the largest number of teams"
+      },
+      {
+        "id": "c",
+        "text": "Projects with the newest technology"
+      },
+      {
+        "id": "d",
+        "text": "Activities with the lowest upfront cost only"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Roadmaps should prioritize work that most reduces risk to the organization while supporting business objectives. Popularity or novelty alone is not a sound basis for sequencing security work.",
+    "points": 10,
+    "tags": [
+      "roadmap",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "OG-C-E02",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main purpose of a project scope statement for a security initiative?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To define what work is included and excluded"
+      },
+      {
+        "id": "b",
+        "text": "To replace the project schedule"
+      },
+      {
+        "id": "c",
+        "text": "To document employee vacation time"
+      },
+      {
+        "id": "d",
+        "text": "To eliminate all project risks"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A scope statement clarifies deliverables, boundaries, and assumptions. It helps prevent confusion and uncontrolled expansion of project work.",
+    "points": 10,
+    "tags": [
+      "scope",
+      "projects"
+    ]
+  },
+  {
+    "id": "OG-C-E03",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "A vendor declares a product is end-of-life (EOL). What does this most directly mean?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The vendor may stop providing patches and support for the product"
+      },
+      {
+        "id": "b",
+        "text": "The product will automatically uninstall itself"
+      },
+      {
+        "id": "c",
+        "text": "The product becomes free to use permanently"
+      },
+      {
+        "id": "d",
+        "text": "The product is required to be replaced within 24 hours"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "EOL commonly means the vendor will discontinue updates, support, or both. That creates increased operational and security risk over time.",
+    "points": 10,
+    "tags": [
+      "eol",
+      "vendor"
+    ]
+  },
+  {
+    "id": "OG-C-E04",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the primary purpose of a software bill of materials (SBOM)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To list software components and dependencies in a product"
+      },
+      {
+        "id": "b",
+        "text": "To guarantee software has no vulnerabilities"
+      },
+      {
+        "id": "c",
+        "text": "To replace penetration testing"
+      },
+      {
+        "id": "d",
+        "text": "To document physical hardware inventory only"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An SBOM provides visibility into components, libraries, and dependencies. That visibility helps organizations assess exposure when vulnerabilities are disclosed.",
+    "points": 20,
+    "tags": [
+      "sbom",
+      "components"
+    ]
+  },
+  {
+    "id": "OG-C-E05",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Why is stakeholder identification important at the start of a security project?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It helps align decisions, approvals, and communications"
+      },
+      {
+        "id": "b",
+        "text": "It guarantees the project will finish early"
+      },
+      {
+        "id": "c",
+        "text": "It removes the need for a project manager"
+      },
+      {
+        "id": "d",
+        "text": "It prevents all technical failures"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Knowing stakeholders early helps the team understand who must approve, contribute, or be informed. This reduces misalignment and late surprises.",
+    "points": 10,
+    "tags": [
+      "stakeholders",
+      "governance"
+    ]
+  },
+  {
+    "id": "OG-C-E06",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which question is most important when evaluating a security vendor's lifecycle support commitment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "How long the vendor provides patches and security updates"
+      },
+      {
+        "id": "b",
+        "text": "What color scheme the product dashboard uses"
+      },
+      {
+        "id": "c",
+        "text": "How many marketing emails the vendor sends"
+      },
+      {
+        "id": "d",
+        "text": "Whether the vendor has the largest conference booth"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Support duration directly affects exposure to known vulnerabilities and long-term planning. Cosmetic or marketing details do not address operational security risk.",
+    "points": 20,
+    "tags": [
+      "vendor",
+      "support",
+      "patching"
+    ]
+  },
+  {
+    "id": "OG-C-E07",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In project scheduling, what is a dependency?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A task that relies on another task being completed first"
+      },
+      {
+        "id": "b",
+        "text": "A budget item that can be ignored"
+      },
+      {
+        "id": "c",
+        "text": "A stakeholder who dislikes the project"
+      },
+      {
+        "id": "d",
+        "text": "A risk that has already happened"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Dependencies describe the relationship between tasks where one affects the timing of another. They are essential for realistic schedules and sequencing.",
+    "points": 20,
+    "tags": [
+      "schedule",
+      "dependencies"
+    ]
+  },
+  {
+    "id": "OG-C-E08",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which practice most helps reduce third-party component risk in an application?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Maintaining an accurate inventory of included libraries and versions"
+      },
+      {
+        "id": "b",
+        "text": "Using as many external libraries as possible"
+      },
+      {
+        "id": "c",
+        "text": "Ignoring transitive dependencies"
+      },
+      {
+        "id": "d",
+        "text": "Updating components only after a major incident"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "You cannot manage component risk without visibility into what is actually included. Inventory supports vulnerability review, patching, and exception handling.",
+    "points": 20,
+    "tags": [
+      "third-party",
+      "inventory",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-C-E09",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the best reason to track vendor end-of-support dates in advance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To plan upgrades or replacements before support ends"
+      },
+      {
+        "id": "b",
+        "text": "To avoid documenting assets"
+      },
+      {
+        "id": "c",
+        "text": "To eliminate the need for procurement"
+      },
+      {
+        "id": "d",
+        "text": "To make all systems identical"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Advance tracking gives teams time to budget, test, and migrate without entering an unsupported state. Waiting until support ends increases disruption and risk.",
+    "points": 10,
+    "tags": [
+      "support",
+      "planning"
+    ]
+  },
+  {
+    "id": "OG-C-E10",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the main purpose of a risk register in a security project?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To record identified risks, owners, and response plans"
+      },
+      {
+        "id": "b",
+        "text": "To store employee passwords"
+      },
+      {
+        "id": "c",
+        "text": "To replace meeting notes for all teams"
+      },
+      {
+        "id": "d",
+        "text": "To document only completed tasks"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A risk register helps teams track threats to project success and how each risk will be managed. It supports accountability and ongoing review.",
+    "points": 20,
+    "tags": [
+      "risk",
+      "projects"
+    ]
+  },
+  {
+    "id": "OG-C-M01",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security office has funding for only two of five proposed initiatives this quarter. Which approach best supports defensible roadmap prioritization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Select the initiatives with the strongest risk reduction and business alignment"
+      },
+      {
+        "id": "b",
+        "text": "Choose the projects proposed most recently"
+      },
+      {
+        "id": "c",
+        "text": "Fund whichever teams complain the loudest"
+      },
+      {
+        "id": "d",
+        "text": "Pick the initiatives with the longest slide decks"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A defensible roadmap ties decisions to measurable risk reduction and business priorities. Recency, pressure, or presentation style are poor prioritization methods.",
+    "points": 30,
+    "tags": [
+      "roadmap",
+      "prioritization",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-C-M02",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security project is slipping because infrastructure, legal, and procurement each assume another team owns vendor onboarding tasks. What should the project manager do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create and socialize a responsibility matrix with explicit owners"
+      },
+      {
+        "id": "b",
+        "text": "Remove all milestones from the schedule"
+      },
+      {
+        "id": "c",
+        "text": "Wait until the next quarterly review to clarify roles"
+      },
+      {
+        "id": "d",
+        "text": "Assign all tasks to the security engineer informally"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An explicit responsibility matrix such as a RACI clarifies accountability and reduces coordination gaps. Informal ownership or delay usually worsens schedule drift.",
+    "points": 30,
+    "tags": [
+      "stakeholders",
+      "ownership",
+      "schedule"
+    ]
+  },
+  {
+    "id": "OG-C-M03",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Your VPN appliance vendor announces end-of-support in nine months. The device is internet-facing and supports remote access for all employees. What is the best immediate management action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Start a replacement project and track mitigations until migration completes"
+      },
+      {
+        "id": "b",
+        "text": "Do nothing because the appliance still works today"
+      },
+      {
+        "id": "c",
+        "text": "Turn off remote access immediately with no transition plan"
+      },
+      {
+        "id": "d",
+        "text": "Wait for an incident before budgeting for replacement"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An internet-facing remote access dependency creates material risk once support ends. The right response is to launch replacement planning early and manage interim exposure.",
+    "points": 30,
+    "tags": [
+      "eol",
+      "remote-access",
+      "planning"
+    ]
+  },
+  {
+    "id": "OG-C-M04",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A newly disclosed vulnerability affects a library that appears only as a transitive dependency in your application's SBOM. What should the team do next?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assess whether the affected version is present and whether the application is impacted"
+      },
+      {
+        "id": "b",
+        "text": "Ignore it because the team did not directly add the library"
+      },
+      {
+        "id": "c",
+        "text": "Delete the SBOM because it created extra work"
+      },
+      {
+        "id": "d",
+        "text": "Assume the issue is already fixed by the operating system"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Transitive dependencies can still expose the application. The team should validate the version, determine impact, and then decide on remediation or exception handling.",
+    "points": 30,
+    "tags": [
+      "sbom",
+      "dependencies",
+      "vulnerability"
+    ]
+  },
+  {
+    "id": "OG-C-M05",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During evaluation of a new SaaS security tool, which vendor question best supports supply chain risk management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "How the vendor manages vulnerabilities in its own third-party components and communicates them"
+      },
+      {
+        "id": "b",
+        "text": "Which salesperson has the most years at the company"
+      },
+      {
+        "id": "c",
+        "text": "Whether the dashboard uses dark mode"
+      },
+      {
+        "id": "d",
+        "text": "How many trade shows the vendor attends each year"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A vendor's own dependency management and disclosure practices are directly relevant to downstream risk. Sales or cosmetic details do not address supply chain exposure.",
+    "points": 30,
+    "tags": [
+      "vendor",
+      "supply-chain",
+      "due-diligence"
+    ]
+  },
+  {
+    "id": "OG-C-M06",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Halfway through a privileged access management rollout, a sponsor asks to add endpoint encryption and phishing training to the same project. What is the best response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use change control to assess impact on scope, schedule, and resources before approving"
+      },
+      {
+        "id": "b",
+        "text": "Add all requested work immediately without analysis"
+      },
+      {
+        "id": "c",
+        "text": "Reject the sponsor permanently and stop communication"
+      },
+      {
+        "id": "d",
+        "text": "Hide the request from the project team"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The request expands beyond the original objective and should be evaluated through formal change control. That preserves transparency and prevents unmanaged scope growth.",
+    "points": 30,
+    "tags": [
+      "scope",
+      "change-control",
+      "pam"
+    ]
+  },
+  {
+    "id": "OG-C-M07",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A company uses three software suppliers. One supplier has a severe vulnerability in a product used only in a test lab, while another has a high-severity flaw in software that supports customer transactions. Which should be prioritized first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The supplier affecting customer transaction systems"
+      },
+      {
+        "id": "b",
+        "text": "The test lab supplier because the CVSS score is slightly higher"
+      },
+      {
+        "id": "c",
+        "text": "Neither until all suppliers reply with press statements"
+      },
+      {
+        "id": "d",
+        "text": "Whichever supplier has the smaller contract value"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Prioritization should account for business criticality and exposure, not severity labels alone. A flaw affecting production customer transactions typically presents greater organizational risk.",
+    "points": 30,
+    "tags": [
+      "prioritization",
+      "vendors",
+      "impact"
+    ]
+  },
+  {
+    "id": "OG-C-M08",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A hardware security refresh depends on procurement lead times that are longer than expected. What is the most effective project management action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Update the schedule based on the dependency and communicate the revised forecast"
+      },
+      {
+        "id": "b",
+        "text": "Leave the original deadline unchanged and hope delivery improves"
+      },
+      {
+        "id": "c",
+        "text": "Remove procurement from the project plan"
+      },
+      {
+        "id": "d",
+        "text": "Mark the project complete because the order was placed"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Dependencies must be reflected in the schedule as soon as better information is available. Transparent replanning helps leaders make informed tradeoff decisions.",
+    "points": 30,
+    "tags": [
+      "schedule",
+      "dependencies",
+      "procurement"
+    ]
+  },
+  {
+    "id": "OG-C-M09",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An important business application runs on an operating system that will become unsupported in six months, but the replacement project cannot finish in time. What is the best interim approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Document the risk, apply compensating controls, and track a time-bound upgrade plan"
+      },
+      {
+        "id": "b",
+        "text": "Ignore the support deadline because migration is inconvenient"
+      },
+      {
+        "id": "c",
+        "text": "Declare the system low risk without any review"
+      },
+      {
+        "id": "d",
+        "text": "Disconnect every server in the environment indefinitely"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "If replacement cannot be immediate, risk should be explicitly managed with compensating controls and a monitored remediation timeline. Unsupported systems should not simply be ignored.",
+    "points": 30,
+    "tags": [
+      "eol",
+      "compensating-controls",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-C-M10",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Which contract requirement would most improve visibility into third-party software component risk over time?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Require the supplier to provide updated SBOMs and vulnerability notifications"
+      },
+      {
+        "id": "b",
+        "text": "Require the supplier to sponsor an annual conference booth"
+      },
+      {
+        "id": "c",
+        "text": "Require the supplier to use a specific slide template"
+      },
+      {
+        "id": "d",
+        "text": "Require the supplier to rename all internal teams"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Ongoing SBOM access and timely vulnerability notification improve monitoring and response to component risk. The other options do not meaningfully strengthen supply chain oversight.",
+    "points": 30,
+    "tags": [
+      "contracts",
+      "sbom",
+      "suppliers"
+    ]
+  },
+  {
+    "id": "OG-C-H01",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A security leader must rank four roadmap items: replacing an unsupported identity server, improving phishing metrics, piloting a new AI security tool, and automating firewall rule reviews. The identity server supports all employee logins and loses vendor support next month. Which item should come first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Replacing the unsupported identity server"
+      },
+      {
+        "id": "b",
+        "text": "Improving phishing metrics"
+      },
+      {
+        "id": "c",
+        "text": "Piloting the new AI security tool"
+      },
+      {
+        "id": "d",
+        "text": "Automating firewall rule reviews"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An imminent support loss on a core identity service creates concentrated operational and security risk. Criticality and time sensitivity outweigh more discretionary improvements.",
+    "points": 40,
+    "tags": [
+      "roadmap",
+      "identity",
+      "eol"
+    ]
+  },
+  {
+    "id": "OG-C-H02",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Your endpoint vendor reports that a malicious update may have been signed and delivered to some customers. What is the best first coordinated management action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Activate the supplier incident process, identify affected assets, and contain exposure based on trusted guidance"
+      },
+      {
+        "id": "b",
+        "text": "Assume code signing guarantees safety and take no action"
+      },
+      {
+        "id": "c",
+        "text": "Immediately delete every endpoint agent without assessing impact"
+      },
+      {
+        "id": "d",
+        "text": "Wait for the next contract renewal to address the issue"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A potentially compromised signed update is a supply chain incident requiring rapid coordination, scoping, and containment. Acting through a defined supplier incident process preserves control and evidence.",
+    "points": 50,
+    "tags": [
+      "incident",
+      "supplier",
+      "containment"
+    ]
+  },
+  {
+    "id": "OG-C-H03",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An organization receives SBOMs from multiple suppliers, but teams are overwhelmed by vulnerability alerts. Which improvement would most directly support better triage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Correlate SBOM components to deployed products and verify whether vulnerable components are actually in use"
+      },
+      {
+        "id": "b",
+        "text": "Stop collecting SBOMs from suppliers"
+      },
+      {
+        "id": "c",
+        "text": "Treat every published CVE as equally urgent"
+      },
+      {
+        "id": "d",
+        "text": "Base triage only on the age of the supplier relationship"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Effective triage needs context about where a component exists and whether exposure is real in the environment. Raw vulnerability counts without asset or usage mapping create noise.",
+    "points": 40,
+    "tags": [
+      "sbom",
+      "triage",
+      "assets"
+    ]
+  },
+  {
+    "id": "OG-C-H04",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A board-mandated security project has a fixed deadline tied to a regulatory filing. Several dependent workstreams are late, and full scope no longer appears achievable. What is the best project management response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rebaseline around mandatory deliverables, escalate tradeoffs, and defer lower-value scope through governance"
+      },
+      {
+        "id": "b",
+        "text": "Keep the original scope hidden and report green status anyway"
+      },
+      {
+        "id": "c",
+        "text": "Add more optional features so the project appears strategic"
+      },
+      {
+        "id": "d",
+        "text": "Cancel stakeholder meetings until the deadline passes"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "When deadlines are immovable, leaders should focus on required outcomes, make tradeoffs explicit, and use governance to control scope. Hiding status or expanding scope worsens execution risk.",
+    "points": 40,
+    "tags": [
+      "schedule",
+      "governance",
+      "scope"
+    ]
+  },
+  {
+    "id": "OG-C-H05",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A regulated manufacturing system will reach end-of-support in three months, but replacement requires a 12-month validation cycle. Which response is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Implement compensating controls, obtain formal risk acceptance, and execute a funded replacement plan with milestones"
+      },
+      {
+        "id": "b",
+        "text": "Continue operating without documenting the issue because replacement is difficult"
+      },
+      {
+        "id": "c",
+        "text": "Disable all manufacturing systems immediately with no continuity plan"
+      },
+      {
+        "id": "d",
+        "text": "Mark the asset as unsupported but take no further action"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "In regulated environments, immediate replacement may be constrained, so risk must be explicitly governed while exposure is reduced through compensating measures. A funded, time-bound plan is essential.",
+    "points": 50,
+    "tags": [
+      "eol",
+      "regulated",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-C-H06",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Two vendors are finalists for a critical security platform. Vendor A is cheaper but cannot describe its secure development practices or vulnerability disclosure process. Vendor B is more expensive but provides clear lifecycle, patching, and disclosure commitments. Which choice is most defensible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Select Vendor B because lifecycle and disclosure maturity reduce long-term supply chain risk"
+      },
+      {
+        "id": "b",
+        "text": "Select Vendor A because purchase price is the only meaningful criterion"
+      },
+      {
+        "id": "c",
+        "text": "Pick either vendor randomly to avoid bias"
+      },
+      {
+        "id": "d",
+        "text": "Delay evaluation until neither vendor offers security documentation"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "For critical platforms, supplier security maturity and support commitments are core selection criteria, not optional extras. Lower initial cost can be outweighed by higher operational and supply chain risk.",
+    "points": 40,
+    "tags": [
+      "vendor",
+      "selection",
+      "lifecycle"
+    ]
+  },
+  {
+    "id": "OG-C-H07",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A software company wants to reduce the chance of a build pipeline supply chain compromise affecting released products. Which control combination is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use isolated build systems, signed artifacts, and verifiable provenance for releases"
+      },
+      {
+        "id": "b",
+        "text": "Rely only on developer memory to confirm what was released"
+      },
+      {
+        "id": "c",
+        "text": "Allow any package source as long as builds finish quickly"
+      },
+      {
+        "id": "d",
+        "text": "Skip release signing to simplify deployment"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Build isolation, artifact signing, and provenance provide integrity controls across the software delivery chain. Together they reduce the risk of tampered or untrusted outputs reaching customers.",
+    "points": 50,
+    "tags": [
+      "build",
+      "provenance",
+      "integrity"
+    ]
+  },
+  {
+    "id": "OG-C-H08",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A roadmap includes quick wins and foundational architecture work. Multi-factor authentication expansion depends on directory cleanup, while password vault branding changes can be done immediately. Which sequencing is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Start directory cleanup as a dependency while delivering the independent quick win in parallel"
+      },
+      {
+        "id": "b",
+        "text": "Delay all work until every dependency is resolved"
+      },
+      {
+        "id": "c",
+        "text": "Do only branding work because it is easier to finish"
+      },
+      {
+        "id": "d",
+        "text": "Launch MFA expansion first and ignore the directory dependency"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Effective sequencing balances dependency-driven foundational work with independent quick wins. This approach maintains momentum without blocking critical future capabilities.",
+    "points": 40,
+    "tags": [
+      "roadmap",
+      "dependencies",
+      "sequencing"
+    ]
+  },
+  {
+    "id": "OG-C-H09",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "After an incident caused by a typo-squatted open-source package, leadership asks for the most impactful preventive improvement. What should be prioritized?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use approved internal package repositories with dependency review and integrity controls"
+      },
+      {
+        "id": "b",
+        "text": "Ban all open-source software immediately"
+      },
+      {
+        "id": "c",
+        "text": "Allow developers to install packages from any source without oversight"
+      },
+      {
+        "id": "d",
+        "text": "Focus only on changing IDE themes for developers"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Centralized package control, review, and integrity checks directly reduce exposure to malicious or mistaken dependencies. A blanket ban is usually impractical and misses targeted process improvements.",
+    "points": 50,
+    "tags": [
+      "open-source",
+      "packages",
+      "prevention"
+    ]
+  },
+  {
+    "id": "OG-C-H10",
+    "domainId": "OG",
+    "subdomainId": "OG-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Several security appliances across the enterprise will lose support in the same quarter, but replacement funding is limited. Which strategy is best for product support management?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prioritize replacements for internet-facing and business-critical systems, with documented interim controls for the rest"
+      },
+      {
+        "id": "b",
+        "text": "Replace appliances in alphabetical order by vendor name"
+      },
+      {
+        "id": "c",
+        "text": "Spend the full budget on the newest-looking hardware only"
+      },
+      {
+        "id": "d",
+        "text": "Ignore support status until multiple outages occur"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "When resources are constrained, replacements should be ranked by exposure and business impact. Interim controls and documented plans help manage lower-priority unsupported assets responsibly.",
+    "points": 40,
+    "tags": [
+      "support",
+      "prioritization",
+      "appliances"
+    ]
+  },
+  {
+    "id": "OG-D-E01",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the primary goal of a security awareness program?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To replace all technical security controls"
+      },
+      {
+        "id": "b",
+        "text": "To help personnel recognize and respond to security risks"
+      },
+      {
+        "id": "c",
+        "text": "To eliminate the need for security policies"
+      },
+      {
+        "id": "d",
+        "text": "To measure network bandwidth usage"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Security awareness programs aim to improve employee understanding of threats and expected behaviors. They complement, not replace, technical controls and policies.",
+    "points": 10,
+    "tags": [
+      "awareness",
+      "program",
+      "basics"
+    ]
+  },
+  {
+    "id": "OG-D-E02",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which activity is most directly associated with phishing simulation in an awareness program?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sending mock phishing emails to test user responses"
+      },
+      {
+        "id": "b",
+        "text": "Installing antivirus on all endpoints"
+      },
+      {
+        "id": "c",
+        "text": "Encrypting all database backups"
+      },
+      {
+        "id": "d",
+        "text": "Reviewing firewall rules each month"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Phishing simulations imitate real phishing attempts so an organization can assess user behavior and reinforce training. The other choices are security tasks but not simulations.",
+    "points": 10,
+    "tags": [
+      "phishing",
+      "simulation"
+    ]
+  },
+  {
+    "id": "OG-D-E03",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is a skill gap analysis used for in cybersecurity workforce planning?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To identify differences between required and current staff capabilities"
+      },
+      {
+        "id": "b",
+        "text": "To calculate internet outage duration"
+      },
+      {
+        "id": "c",
+        "text": "To classify data by retention period only"
+      },
+      {
+        "id": "d",
+        "text": "To approve all software purchases"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A skill gap analysis compares existing workforce capabilities to the skills needed for current or future work. It supports hiring, training, and role development decisions.",
+    "points": 20,
+    "tags": [
+      "workforce",
+      "skills",
+      "planning"
+    ]
+  },
+  {
+    "id": "OG-D-E04",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which document best guides employees on acceptable behavior and security expectations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Acceptable use policy"
+      },
+      {
+        "id": "b",
+        "text": "Office seating chart"
+      },
+      {
+        "id": "c",
+        "text": "Asset depreciation schedule"
+      },
+      {
+        "id": "d",
+        "text": "Building maintenance log"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "An acceptable use policy defines expected behaviors for using organizational systems and data. It is a common foundation for awareness and training content.",
+    "points": 20,
+    "tags": [
+      "policy",
+      "awareness"
+    ]
+  },
+  {
+    "id": "OG-D-E05",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which audience would most likely need role-based security training instead of only general awareness training?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Software developers handling secure coding tasks"
+      },
+      {
+        "id": "b",
+        "text": "Visitors signing in at reception"
+      },
+      {
+        "id": "c",
+        "text": "Vendors delivering office supplies"
+      },
+      {
+        "id": "d",
+        "text": "All staff equally, with no variation"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Role-based training addresses job-specific responsibilities and risks. Developers often need training on secure coding practices beyond general awareness.",
+    "points": 10,
+    "tags": [
+      "role-based",
+      "training"
+    ]
+  },
+  {
+    "id": "OG-D-E06",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which metric most directly measures training completion?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Percentage of assigned staff who finished the course"
+      },
+      {
+        "id": "b",
+        "text": "Number of blocked IP addresses"
+      },
+      {
+        "id": "c",
+        "text": "Total hard drive capacity"
+      },
+      {
+        "id": "d",
+        "text": "Count of printer support tickets"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Completion rate shows how many assigned learners finished required training. It does not by itself prove behavior change, but it is a basic participation metric.",
+    "points": 20,
+    "tags": [
+      "metrics",
+      "training"
+    ]
+  },
+  {
+    "id": "OG-D-E07",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the best reason to update awareness content regularly?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Threats and business processes change over time"
+      },
+      {
+        "id": "b",
+        "text": "Employees prefer longer login times"
+      },
+      {
+        "id": "c",
+        "text": "Old content makes file storage cheaper"
+      },
+      {
+        "id": "d",
+        "text": "Security tools stop working after one year"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Awareness content should reflect current threats, technologies, and organizational procedures. Regular updates keep training relevant and useful.",
+    "points": 10,
+    "tags": [
+      "content",
+      "awareness",
+      "updates"
+    ]
+  },
+  {
+    "id": "OG-D-E08",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which of the following is the clearest example of measuring awareness campaign effectiveness?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Comparing phishing click rates before and after the campaign"
+      },
+      {
+        "id": "b",
+        "text": "Counting chairs in training rooms"
+      },
+      {
+        "id": "c",
+        "text": "Tracking cafeteria purchases during lunch"
+      },
+      {
+        "id": "d",
+        "text": "Measuring average email attachment size"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A before-and-after comparison of phishing click rates provides a direct indicator of changed user behavior. It ties the campaign to an observable outcome.",
+    "points": 20,
+    "tags": [
+      "campaigns",
+      "metrics",
+      "phishing"
+    ]
+  },
+  {
+    "id": "OG-D-E09",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which training method is most suitable for teaching a consistent baseline message to the entire workforce?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Organization-wide awareness module"
+      },
+      {
+        "id": "b",
+        "text": "One-on-one coaching for each employee only"
+      },
+      {
+        "id": "c",
+        "text": "Exclusive red-team exercise"
+      },
+      {
+        "id": "d",
+        "text": "Forensic lab practicum"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A general awareness module is designed to deliver consistent foundational guidance across the workforce. Specialized methods are better for smaller or more technical audiences.",
+    "points": 10,
+    "tags": [
+      "delivery",
+      "awareness"
+    ]
+  },
+  {
+    "id": "OG-D-E10",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In curriculum development, what is a learning objective?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A clear statement of what learners should know or do after training"
+      },
+      {
+        "id": "b",
+        "text": "A list of all software installed on laptops"
+      },
+      {
+        "id": "c",
+        "text": "A budget line for office furniture"
+      },
+      {
+        "id": "d",
+        "text": "A network diagram showing server locations"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Learning objectives define the intended outcomes of training and help shape content and assessment methods. They are central to effective curriculum design.",
+    "points": 20,
+    "tags": [
+      "curriculum",
+      "objectives"
+    ]
+  },
+  {
+    "id": "OG-D-M01",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A company launches monthly phishing simulations, but the click rate remains unchanged after six months. What should the awareness team do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Increase punishment for all users who click"
+      },
+      {
+        "id": "b",
+        "text": "Review simulation data by audience and adjust training based on observed patterns"
+      },
+      {
+        "id": "c",
+        "text": "Stop simulations because they are ineffective"
+      },
+      {
+        "id": "d",
+        "text": "Replace email with phone-only communication"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Analyzing results by role, department, or campaign type helps identify why the program is not improving outcomes. Targeted adjustments are more effective than punitive or extreme responses.",
+    "points": 30,
+    "tags": [
+      "phishing",
+      "metrics",
+      "analysis"
+    ]
+  },
+  {
+    "id": "OG-D-M02",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During workforce planning, a security manager finds that cloud incident response duties are assigned but no team members have cloud forensics experience. What is the most appropriate next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ignore the gap until an incident occurs"
+      },
+      {
+        "id": "b",
+        "text": "Document the gap and create a plan for training, hiring, or external support"
+      },
+      {
+        "id": "c",
+        "text": "Remove cloud services from the environment immediately"
+      },
+      {
+        "id": "d",
+        "text": "Assign the work to the facilities team"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A recognized capability gap should drive a remediation plan that may include upskilling, recruiting, or contracting support. Ignoring the gap increases operational risk.",
+    "points": 30,
+    "tags": [
+      "workforce",
+      "gap",
+      "planning"
+    ]
+  },
+  {
+    "id": "OG-D-M03",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "You are designing training for system administrators on privileged access management. Which approach is most likely to improve job performance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use generic posters with short slogans only"
+      },
+      {
+        "id": "b",
+        "text": "Provide scenario-based labs tied to administrative tasks and expected controls"
+      },
+      {
+        "id": "c",
+        "text": "Assign the same beginner awareness video used for all staff"
+      },
+      {
+        "id": "d",
+        "text": "Focus only on policy history and avoid demonstrations"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Administrators benefit from hands-on, role-specific training connected to real tasks and security controls. This increases relevance and transfer to operational work.",
+    "points": 30,
+    "tags": [
+      "instruction",
+      "admins",
+      "role-based"
+    ]
+  },
+  {
+    "id": "OG-D-M04",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An awareness campaign about reporting suspicious emails has high course completion but very low reporting volume. Which conclusion is most reasonable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Completion alone does not prove the desired behavior changed"
+      },
+      {
+        "id": "b",
+        "text": "The training was fully successful because everyone finished it"
+      },
+      {
+        "id": "c",
+        "text": "Reporting is unrelated to awareness efforts"
+      },
+      {
+        "id": "d",
+        "text": "The email system must be broken"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Completion measures participation, not whether learners apply the behavior. Low reporting suggests the program should assess barriers, clarity, and reinforcement mechanisms.",
+    "points": 30,
+    "tags": [
+      "metrics",
+      "reporting",
+      "effectiveness"
+    ]
+  },
+  {
+    "id": "OG-D-M05",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A training lead must create curriculum for developers after several code review findings reveal weak input validation practices. What should be prioritized in the new material?",
+    "options": [
+      {
+        "id": "a",
+        "text": "General office safety procedures"
+      },
+      {
+        "id": "b",
+        "text": "Practical secure coding examples focused on validation and common attack paths"
+      },
+      {
+        "id": "c",
+        "text": "A history of programming languages"
+      },
+      {
+        "id": "d",
+        "text": "Procurement approval workflows"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Training should address the observed deficiency with practical examples and likely exploit scenarios. That alignment increases relevance and remediation value.",
+    "points": 30,
+    "tags": [
+      "curriculum",
+      "secure-coding",
+      "developers"
+    ]
+  },
+  {
+    "id": "OG-D-M06",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security team wants to compare awareness performance across business units fairly. Which metric design is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use raw counts of phishing clicks only"
+      },
+      {
+        "id": "b",
+        "text": "Normalize results by participation and audience size, then compare trends"
+      },
+      {
+        "id": "c",
+        "text": "Compare only units with the most employees"
+      },
+      {
+        "id": "d",
+        "text": "Exclude units that performed poorly"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Normalized metrics account for differences in staff size and participation levels, making comparisons more meaningful. Trend analysis also helps identify sustained improvement or decline.",
+    "points": 30,
+    "tags": [
+      "metrics",
+      "benchmarking",
+      "campaigns"
+    ]
+  },
+  {
+    "id": "OG-D-M07",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "After a merger, two organizations have different security training catalogs and role definitions. What should happen first to support integrated workforce development?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Retire all training until a new fiscal year begins"
+      },
+      {
+        "id": "b",
+        "text": "Map roles, required competencies, and existing content to identify overlaps and gaps"
+      },
+      {
+        "id": "c",
+        "text": "Assign all employees the most advanced courses available"
+      },
+      {
+        "id": "d",
+        "text": "Keep both catalogs permanently without review"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A mapping exercise establishes a baseline for harmonizing roles, competencies, and training content. It helps avoid duplication and exposes missing coverage.",
+    "points": 30,
+    "tags": [
+      "workforce",
+      "curriculum",
+      "merger"
+    ]
+  },
+  {
+    "id": "OG-D-M08",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An instructor notices that learners pass quizzes but fail to perform correctly during incident handling exercises. What change would most likely improve effectiveness?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add more memorization questions"
+      },
+      {
+        "id": "b",
+        "text": "Incorporate realistic practice scenarios and performance-based assessments"
+      },
+      {
+        "id": "c",
+        "text": "Shorten the course by removing exercises"
+      },
+      {
+        "id": "d",
+        "text": "Stop measuring learner performance"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Performance-based assessments better evaluate whether learners can apply knowledge in realistic situations. Scenario practice closes the gap between recall and execution.",
+    "points": 30,
+    "tags": [
+      "instruction",
+      "assessment",
+      "exercises"
+    ]
+  },
+  {
+    "id": "OG-D-M09",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A phishing campaign is being planned for a global workforce. Which design choice best supports ethical and effective execution?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tailor messages to business context and provide timely follow-up education"
+      },
+      {
+        "id": "b",
+        "text": "Use public shaming for anyone who clicks"
+      },
+      {
+        "id": "c",
+        "text": "Send the same message every week until users stop responding"
+      },
+      {
+        "id": "d",
+        "text": "Include fake termination notices to maximize panic"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Contextual, educational simulations promote learning while reducing unnecessary harm. Punitive or manipulative tactics can damage trust and distort outcomes.",
+    "points": 30,
+    "tags": [
+      "phishing",
+      "campaigns",
+      "ethics"
+    ]
+  },
+  {
+    "id": "OG-D-M10",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A program manager needs evidence that technical training improved analyst capability. Which measure is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Number of slides presented"
+      },
+      {
+        "id": "b",
+        "text": "Average time and accuracy in analyst lab tasks before versus after training"
+      },
+      {
+        "id": "c",
+        "text": "Amount spent on the training platform"
+      },
+      {
+        "id": "d",
+        "text": "Length of the class roster"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Pre- and post-training performance on relevant tasks provides direct evidence of capability improvement. Operationally meaningful measures are stronger than activity or cost metrics.",
+    "points": 30,
+    "tags": [
+      "training",
+      "effectiveness",
+      "analysts"
+    ]
+  },
+  {
+    "id": "OG-D-H01",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A CISO wants to justify continued investment in a security awareness program to executives. Which evaluation strategy is most defensible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Report only the number of newsletters sent"
+      },
+      {
+        "id": "b",
+        "text": "Link program activities to behavior metrics, incident trends, and business risk indicators over time"
+      },
+      {
+        "id": "c",
+        "text": "State that awareness is required by tradition"
+      },
+      {
+        "id": "d",
+        "text": "Measure success solely by course completion"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A defensible case ties awareness efforts to measurable behavior changes and relevant risk outcomes. Executives need evidence connected to business impact, not just activity counts.",
+    "points": 40,
+    "tags": [
+      "executive",
+      "metrics",
+      "risk"
+    ]
+  },
+  {
+    "id": "OG-D-H02",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Your organization is building a multi-year cybersecurity workforce plan. Threat exposure is increasing in identity, cloud, and OT environments, but the current team is strong mainly in on-premises network defense. What is the best planning approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Preserve current staffing because retraining is disruptive"
+      },
+      {
+        "id": "b",
+        "text": "Forecast capability needs by mission area, assess current competencies, and phase hiring and upskilling accordingly"
+      },
+      {
+        "id": "c",
+        "text": "Hire only entry-level staff to reduce cost"
+      },
+      {
+        "id": "d",
+        "text": "Wait for a breach before changing role priorities"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Strategic workforce planning should align future mission needs with present capabilities and close gaps through phased hiring and development. This supports sustainable readiness across evolving environments.",
+    "points": 40,
+    "tags": [
+      "workforce",
+      "strategy",
+      "planning"
+    ]
+  },
+  {
+    "id": "OG-D-H03",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A security training team observes that phishing failure rates decrease immediately after campaigns but return to baseline within two months. Which program redesign is most likely to create durable improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Run a single annual awareness video instead of campaigns"
+      },
+      {
+        "id": "b",
+        "text": "Use spaced reinforcement with role-specific follow-ups, manager support, and reporting practice embedded in workflow"
+      },
+      {
+        "id": "c",
+        "text": "Increase quiz difficulty while reducing feedback"
+      },
+      {
+        "id": "d",
+        "text": "Stop measuring after each campaign"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Durable behavior change usually requires reinforcement over time and support in the learner's work context. Spaced, role-specific interventions are more effective than isolated events.",
+    "points": 50,
+    "tags": [
+      "phishing",
+      "behavior",
+      "reinforcement"
+    ]
+  },
+  {
+    "id": "OG-D-H04",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An enterprise is standardizing role-based training for SOC analysts, incident responders, and threat hunters across regions. Which design principle best prevents curriculum drift while preserving local relevance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allow every region to create unrelated content independently"
+      },
+      {
+        "id": "b",
+        "text": "Define common competency outcomes and core modules, then permit localized scenarios and examples"
+      },
+      {
+        "id": "c",
+        "text": "Use one generic awareness course for all technical roles"
+      },
+      {
+        "id": "d",
+        "text": "Avoid version control for training materials"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A shared competency framework and core content maintain consistency, while localized examples keep training applicable. This balances standardization with operational context.",
+    "points": 40,
+    "tags": [
+      "curriculum",
+      "standardization",
+      "roles"
+    ]
+  },
+  {
+    "id": "OG-D-H05",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "Following an internal audit, leadership asks whether poor incident reporting stems from lack of awareness, process friction, or distrust of consequences. Which assessment plan is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assume awareness is the problem and assign mandatory retraining only"
+      },
+      {
+        "id": "b",
+        "text": "Combine reporting workflow analysis, user surveys, focus groups, and reporting behavior data to isolate causes"
+      },
+      {
+        "id": "c",
+        "text": "Penalize non-reporting employees immediately"
+      },
+      {
+        "id": "d",
+        "text": "Stop collecting reports to avoid bias"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When multiple factors may drive behavior, mixed-method assessment provides better evidence than a single assumption. It helps distinguish knowledge gaps from process and culture barriers.",
+    "points": 50,
+    "tags": [
+      "reporting",
+      "assessment",
+      "culture"
+    ]
+  },
+  {
+    "id": "OG-D-H06",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A training manager must evaluate a new malware analysis course for reverse engineers. Which outcome measure best reflects instructional effectiveness?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Learner satisfaction scores alone"
+      },
+      {
+        "id": "b",
+        "text": "Percentage of students who attended all sessions"
+      },
+      {
+        "id": "c",
+        "text": "Improvement in correctly classifying samples and documenting analysis steps in controlled labs"
+      },
+      {
+        "id": "d",
+        "text": "Number of course handouts distributed"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "For advanced technical training, effectiveness should be measured by demonstrated performance on authentic tasks. Lab-based outcomes are more valid than attendance or satisfaction alone.",
+    "points": 40,
+    "tags": [
+      "instruction",
+      "labs",
+      "evaluation"
+    ]
+  },
+  {
+    "id": "OG-D-H07",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A public sector organization must prioritize limited training funds across roles. Risk analysis shows high business impact from cloud misconfiguration, identity abuse, and delayed incident triage. Which allocation strategy is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Distribute funds equally across all departments regardless of mission need"
+      },
+      {
+        "id": "b",
+        "text": "Concentrate investment on roles whose capability gaps most affect those priority risks, while maintaining baseline awareness for all staff"
+      },
+      {
+        "id": "c",
+        "text": "Spend the entire budget on executive briefings"
+      },
+      {
+        "id": "d",
+        "text": "Invest only in general awareness because it reaches more people"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Training investments should be risk-informed and targeted where skill gaps materially affect mission outcomes. Baseline awareness remains important, but specialized capability gaps often need focused funding.",
+    "points": 50,
+    "tags": [
+      "budget",
+      "risk",
+      "workforce"
+    ]
+  },
+  {
+    "id": "OG-D-H08",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An organization wants to map training pathways to NICE work roles Workforce Management, Curriculum Development, and Instruction. What is the most useful first deliverable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A competency matrix linking tasks, knowledge, skills, and role-specific learning objectives"
+      },
+      {
+        "id": "b",
+        "text": "A list of all employees sorted alphabetically"
+      },
+      {
+        "id": "c",
+        "text": "A catalog of hardware serial numbers"
+      },
+      {
+        "id": "d",
+        "text": "A copy of the building evacuation map"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A competency matrix translates role expectations into concrete training requirements and learning objectives. It provides the structure for pathways, assessments, and gap analysis.",
+    "points": 40,
+    "tags": [
+      "nice",
+      "competencies",
+      "curriculum"
+    ]
+  },
+  {
+    "id": "OG-D-H09",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A global firm runs phishing simulations in multiple countries and notices one region has unusually high failure rates. Before concluding the workforce is less security-aware, what should the program owner examine first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Whether language, localization, cultural context, and reporting workflows affected the results"
+      },
+      {
+        "id": "b",
+        "text": "Whether that region should lose email access permanently"
+      },
+      {
+        "id": "c",
+        "text": "Whether to publish the region's rankings company-wide"
+      },
+      {
+        "id": "d",
+        "text": "Whether to exclude the region from future campaigns"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Cross-region results can be distorted by localization issues, workflow differences, and cultural context. Valid interpretation requires examining those factors before judging awareness levels.",
+    "points": 50,
+    "tags": [
+      "phishing",
+      "localization",
+      "analysis"
+    ]
+  },
+  {
+    "id": "OG-D-H10",
+    "domainId": "OG",
+    "subdomainId": "OG-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "After developing a new secure configuration training course, which validation step best ensures the material is instructionally sound and operationally relevant before full rollout?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Publish it immediately to all staff without review"
+      },
+      {
+        "id": "b",
+        "text": "Pilot it with representative learners and subject matter experts, then revise based on performance and feedback"
+      },
+      {
+        "id": "c",
+        "text": "Approve it based only on visual design quality"
+      },
+      {
+        "id": "d",
+        "text": "Wait until the next audit to see if it works"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Piloting with target learners and SMEs tests both instructional quality and operational relevance. Revising from observed results reduces rollout risk and improves effectiveness.",
+    "points": 40,
+    "tags": [
+      "pilot",
+      "curriculum",
+      "validation"
+    ]
+  }
+]

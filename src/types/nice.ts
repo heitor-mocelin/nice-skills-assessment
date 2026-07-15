@@ -13,6 +13,12 @@ export type SubdomainId = string;
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5;
 
 /**
+ * Coarse difficulty tier used to build the quiz's fixed question mix per
+ * sub-domain (4 easy + 3 medium + 3 hard shown out of a pool of 10/10/10).
+ */
+export type DifficultyTier = "easy" | "medium" | "hard";
+
+/**
  * Self-attestation comfort/familiarity rating for a sub-domain, 0 (no
  * familiarity) to 4 (expert). Matches the paper worksheet's 0-4 scale.
  */
@@ -67,10 +73,12 @@ export interface AnswerOption {
 }
 
 export interface Question {
-  id: string; // unique id, e.g. "OG-001"
+  id: string; // unique id, e.g. "DD-A-E-01" (subdomain + tier initial + index)
   domainId: DomainId;
+  subdomainId: SubdomainId;
   /** NICE Task/Competency/Work Role reference this question maps to (optional metadata) */
   niceReference?: string;
+  tier: DifficultyTier;
   difficulty: DifficultyLevel;
   prompt: string;
   options: AnswerOption[];
@@ -83,7 +91,12 @@ export interface Question {
   tags?: string[];
 }
 
-/** The full question bank, keyed by domain, designed to scale to 20-40 questions per domain */
+/**
+ * The full question bank. Designed around a fixed pool per sub-domain: 30
+ * questions (10 easy / 10 medium / 10 hard). The quiz engine samples a fixed
+ * mix (4 easy + 3 medium + 3 hard = 10 shown) from each sub-domain's pool,
+ * and the skip mechanic draws replacements from the same tier's remainder.
+ */
 export interface QuestionBank {
   version: string; // NICE framework version, e.g. "2.2.0"
   domains: Domain[];
@@ -116,6 +129,7 @@ export interface SubdomainBaseline {
 export interface QuestionResponse {
   questionId: string;
   domainId: DomainId;
+  subdomainId: SubdomainId;
   /** id of the option the user selected; null if they used "I don't know" */
   selectedOptionId: string | null;
   /** true when the user explicitly clicked "I don't know" instead of guessing */
@@ -134,12 +148,22 @@ export interface AssessmentState {
   schemaVersion: number; // bump if shape changes, to safely migrate/reset localStorage
   currentStage: "baseline" | "quiz" | "results" | "not-started";
   baseline: SubdomainBaseline[];
+  /** true when the user explicitly clicked "Skip Assessment" instead of rating every topic */
+  baselineSkipped: boolean;
   responses: QuestionResponse[];
-  /** ids of questions served in this session, per domain, preserves ordering */
-  quizQuestionIds: Record<DomainId, string[]>;
-  /** index of the current question within the current domain's quiz queue */
-  currentDomainIndex: number;
+  /**
+   * Ids of questions served in this session, per sub-domain (4 easy + 3
+   * medium + 3 hard, sampled from that sub-domain's 30-question pool),
+   * preserving serve order. Skipping a question swaps its id in-place for
+   * an unused same-tier question from the same sub-domain's pool.
+   */
+  quizQuestionIds: Record<SubdomainId, string[]>;
+  /** index into the ordered sub-domain traversal (see getOrderedSubdomains) */
+  currentSubdomainIndex: number;
+  /** index of the current question within the current sub-domain's quiz queue */
   currentQuestionIndex: number;
+  /** how many questions the user has skipped so far, per parent domain (cap: 3) */
+  skipsUsedByDomain: Record<DomainId, number>;
   startedAt: number | null;
   completedAt: number | null;
 }
@@ -150,14 +174,16 @@ export interface AssessmentState {
 
 export interface DomainResult {
   domainId: DomainId;
-  baselineScorePercent: number; // avg of subdomain ratings (0-4) normalized to 0-100
+  /** avg of subdomain ratings (0-4) normalized to 0-100; null if the baseline was skipped or has no rated topics */
+  baselineScorePercent: number | null;
   totalQuestions: number;
   correctCount: number;
   incorrectCount: number;
   idkCount: number;
+  skippedCount: number;
   pointsEarned: number;
   pointsPossible: number;
   performancePercent: number; // 0-100, actual quiz performance
-  /** performancePercent - baselineScorePercent; negative = overconfident, positive = underconfident */
-  confidenceGap: number;
+  /** performancePercent - baselineScorePercent; null when there's no baseline to compare against */
+  confidenceGap: number | null;
 }

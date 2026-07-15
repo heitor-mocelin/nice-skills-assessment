@@ -11,10 +11,11 @@ export default function BaselinePage() {
           Familiarity Baseline
         </h1>
         <p className="mt-2 max-w-2xl text-slate-500 dark:text-slate-400">
-          Before the quiz begins, rate your comfort level with each domain from
-          1 (no familiarity) to 5 (expert). This establishes a self-perception
+          Before the quiz begins, rate each topic below from 0 (no
+          familiarity) to 4 (expert). This establishes a self-perception
           baseline we&apos;ll compare against your actual quiz performance in
-          the final results.
+          the final results — or skip straight to the quiz if you&apos;d
+          rather not self-rate.
         </p>
       </div>
 

@@ -1,0 +1,5997 @@
+[
+  {
+    "id": "DD-A-E01",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which design choice best reflects a zero-trust network approach for an internal finance application?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Place the app on the flat corporate LAN because employees are trusted"
+      },
+      {
+        "id": "b",
+        "text": "Require identity-based access and isolate the app in a dedicated segment"
+      },
+      {
+        "id": "c",
+        "text": "Allow all office IP ranges and skip MFA for internal users"
+      },
+      {
+        "id": "d",
+        "text": "Expose the app directly to the internet so security tools can inspect it"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Zero trust removes implicit trust based on location. Identity-based access plus segmentation limits lateral movement and enforces least privilege.",
+    "points": 10,
+    "tags": [
+      "zero-trust",
+      "segmentation"
+    ]
+  },
+  {
+    "id": "DD-A-E02",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the primary purpose of micro-segmentation in a data center or cloud environment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Speed up DNS resolution between servers"
+      },
+      {
+        "id": "b",
+        "text": "Reduce east-west attack spread between workloads"
+      },
+      {
+        "id": "c",
+        "text": "Replace backups with replication"
+      },
+      {
+        "id": "d",
+        "text": "Eliminate the need for authentication"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Micro-segmentation restricts workload-to-workload traffic so a compromise in one zone does not freely spread to others.",
+    "points": 10,
+    "tags": [
+      "microsegmentation",
+      "networking"
+    ]
+  },
+  {
+    "id": "DD-A-E03",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A web application needs users to sign in with a corporate identity provider and receive an ID token for the app. Which protocol pair is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "FTP with SSH"
+      },
+      {
+        "id": "b",
+        "text": "OAuth 2.0 with OpenID Connect"
+      },
+      {
+        "id": "c",
+        "text": "Syslog with SNMP"
+      },
+      {
+        "id": "d",
+        "text": "RADIUS with TACACS+"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "OAuth 2.0 handles delegated authorization and OpenID Connect adds authentication and ID tokens for web and mobile apps.",
+    "points": 20,
+    "tags": [
+      "oidc",
+      "oauth2",
+      "iam"
+    ]
+  },
+  {
+    "id": "DD-A-E04",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which federation standard is commonly used to exchange authentication assertions between an enterprise identity provider and a legacy SaaS application?",
+    "options": [
+      {
+        "id": "a",
+        "text": "SAML"
+      },
+      {
+        "id": "b",
+        "text": "ARP"
+      },
+      {
+        "id": "c",
+        "text": "NTP"
+      },
+      {
+        "id": "d",
+        "text": "GRE"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "SAML is widely used for browser-based SSO between identity providers and older enterprise or SaaS applications.",
+    "points": 10,
+    "tags": [
+      "saml",
+      "federation"
+    ]
+  },
+  {
+    "id": "DD-A-E05",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the main function of a hardware security module (HSM) in an enterprise crypto design?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compress certificates before storage"
+      },
+      {
+        "id": "b",
+        "text": "Generate and protect high-value cryptographic keys"
+      },
+      {
+        "id": "c",
+        "text": "Route TLS traffic between subnets"
+      },
+      {
+        "id": "d",
+        "text": "Rotate user passwords automatically"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "An HSM is designed to generate, store, and use sensitive keys in tamper-resistant hardware.",
+    "points": 20,
+    "tags": [
+      "hsm",
+      "pki",
+      "keys"
+    ]
+  },
+  {
+    "id": "DD-A-E06",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "During certificate lifecycle management, what should happen before a public-facing TLS certificate expires?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The private key should be emailed to administrators"
+      },
+      {
+        "id": "b",
+        "text": "The certificate should be renewed or replaced and deployed"
+      },
+      {
+        "id": "c",
+        "text": "The CA root should be deleted from clients"
+      },
+      {
+        "id": "d",
+        "text": "The DNS zone should be recreated"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Certificates should be renewed or replaced before expiration to avoid outages and trust failures.",
+    "points": 10,
+    "tags": [
+      "certificates",
+      "pki"
+    ]
+  },
+  {
+    "id": "DD-A-E07",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In a cloud landing zone, what is the main reason to separate workloads into multiple accounts or subscriptions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To disable logging by default"
+      },
+      {
+        "id": "b",
+        "text": "To improve blast-radius control and governance boundaries"
+      },
+      {
+        "id": "c",
+        "text": "To make IP addresses longer"
+      },
+      {
+        "id": "d",
+        "text": "To remove the need for IAM roles"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Separate accounts or subscriptions help isolate risk, apply policy boundaries, and delegate administration safely.",
+    "points": 20,
+    "tags": [
+      "cloud",
+      "landing-zone",
+      "governance"
+    ]
+  },
+  {
+    "id": "DD-A-E08",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What does mutual TLS (mTLS) add compared with standard server-side TLS for service-to-service communication?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the client proves its identity"
+      },
+      {
+        "id": "b",
+        "text": "Both client and server authenticate each other with certificates"
+      },
+      {
+        "id": "c",
+        "text": "Traffic is no longer encrypted"
+      },
+      {
+        "id": "d",
+        "text": "API keys are embedded in certificates"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "mTLS authenticates both sides of the connection, which is useful for east-west service authentication.",
+    "points": 20,
+    "tags": [
+      "mtls",
+      "service-mesh"
+    ]
+  },
+  {
+    "id": "DD-A-E09",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which threat-modeling method focuses on categories like spoofing, tampering, and repudiation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kanban"
+      },
+      {
+        "id": "b",
+        "text": "STRIDE"
+      },
+      {
+        "id": "c",
+        "text": "BGP"
+      },
+      {
+        "id": "d",
+        "text": "RAID"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "STRIDE is a threat-modeling framework that categorizes threats such as spoofing, tampering, and information disclosure.",
+    "points": 10,
+    "tags": [
+      "threat-modeling",
+      "stride"
+    ]
+  },
+  {
+    "id": "DD-A-E10",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which design objective is most closely associated with high availability?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ensuring a system can continue operating during a component failure"
+      },
+      {
+        "id": "b",
+        "text": "Keeping all backups offline for seven years"
+      },
+      {
+        "id": "c",
+        "text": "Using the same administrator account everywhere"
+      },
+      {
+        "id": "d",
+        "text": "Replacing incident response with change control"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "High availability aims to keep services running despite failures by removing single points of failure.",
+    "points": 20,
+    "tags": [
+      "ha",
+      "resilience"
+    ]
+  },
+  {
+    "id": "DD-A-M01",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An architect is segmenting a hospital network. Which placement best supports zero-trust and least privilege for medical imaging workstations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Same VLAN as internet-facing kiosks for simplicity"
+      },
+      {
+        "id": "b",
+        "text": "Dedicated segment with only required flows to PACS and identity services"
+      },
+      {
+        "id": "c",
+        "text": "Flat subnet shared with domain controllers and file servers"
+      },
+      {
+        "id": "d",
+        "text": "Direct internet access with local firewall disabled"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A dedicated segment with narrowly allowed flows supports least privilege and reduces lateral movement from unrelated systems.",
+    "points": 30,
+    "tags": [
+      "zero-trust",
+      "segmentation"
+    ]
+  },
+  {
+    "id": "DD-A-M02",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A customer portal calls internal APIs on behalf of a signed-in user. Which OAuth 2.0 pattern is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Client credentials grant because no user context is needed"
+      },
+      {
+        "id": "b",
+        "text": "Authorization code flow so the app can obtain user-scoped tokens"
+      },
+      {
+        "id": "c",
+        "text": "Resource owner password flow for all partners"
+      },
+      {
+        "id": "d",
+        "text": "Anonymous access with signed cookies only"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Authorization code flow is intended for user sign-in scenarios and supports delegated user-scoped access tokens.",
+    "points": 30,
+    "tags": [
+      "oauth2",
+      "api-security"
+    ]
+  },
+  {
+    "id": "DD-A-M03",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A partner company needs SSO into an older SaaS product that cannot validate OIDC ID tokens. What is the most practical federation choice?",
+    "options": [
+      {
+        "id": "a",
+        "text": "SAML federation from the partner IdP"
+      },
+      {
+        "id": "b",
+        "text": "NAT gateway peering"
+      },
+      {
+        "id": "c",
+        "text": "Client VPN with shared local accounts"
+      },
+      {
+        "id": "d",
+        "text": "Kerberos constrained delegation over the internet"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "For legacy SaaS that expects browser SSO assertions, SAML federation is usually the compatible approach.",
+    "points": 30,
+    "tags": [
+      "saml",
+      "federation"
+    ]
+  },
+  {
+    "id": "DD-A-M04",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A platform team wants application secrets encrypted with keys that cloud administrators cannot export. Which design best fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Store keys in source control with branch protection"
+      },
+      {
+        "id": "b",
+        "text": "Use a KMS backed by an HSM or dedicated HSM service"
+      },
+      {
+        "id": "c",
+        "text": "Put all secrets in environment variables forever"
+      },
+      {
+        "id": "d",
+        "text": "Use self-signed certificates as database passwords"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "KMS backed by HSM controls key usage and prevents export of sensitive key material while enabling managed rotation and auditing.",
+    "points": 30,
+    "tags": [
+      "kms",
+      "hsm",
+      "secrets"
+    ]
+  },
+  {
+    "id": "DD-A-M05",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An organization is adopting a multi-account cloud strategy. Which shared service is most commonly centralized in the landing zone?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Per-developer local SQLite databases"
+      },
+      {
+        "id": "b",
+        "text": "Organization-wide logging and security monitoring"
+      },
+      {
+        "id": "c",
+        "text": "Application feature flags for one team only"
+      },
+      {
+        "id": "d",
+        "text": "USB device inventory for laptops"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Centralized logging, security monitoring, and guardrails are common landing-zone capabilities shared across accounts or subscriptions.",
+    "points": 30,
+    "tags": [
+      "cloud",
+      "landing-zone",
+      "logging"
+    ]
+  },
+  {
+    "id": "DD-A-M06",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A service mesh is introduced to secure east-west traffic. Which control should the architects enable first to reduce impersonation risk between services?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Disable certificate rotation"
+      },
+      {
+        "id": "b",
+        "text": "Enforce mTLS between workloads"
+      },
+      {
+        "id": "c",
+        "text": "Publish all services through the public API gateway"
+      },
+      {
+        "id": "d",
+        "text": "Use one shared service account for the namespace"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "mTLS with workload identity is foundational in a service mesh because it authenticates services and encrypts service-to-service traffic.",
+    "points": 30,
+    "tags": [
+      "service-mesh",
+      "mtls"
+    ]
+  },
+  {
+    "id": "DD-A-M07",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During a STRIDE session for a file-upload feature, the team asks how an attacker might abuse oversized archives to exhaust CPU and storage. Which outcome are they creating?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A backup retention schedule"
+      },
+      {
+        "id": "b",
+        "text": "An abuse case to inform mitigations"
+      },
+      {
+        "id": "c",
+        "text": "A purchase order for storage"
+      },
+      {
+        "id": "d",
+        "text": "A PKI certificate profile"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Threat modeling often uses abuse cases to capture realistic attacker behaviors that drive design controls such as size limits and scanning.",
+    "points": 30,
+    "tags": [
+      "threat-modeling",
+      "abuse-cases"
+    ]
+  },
+  {
+    "id": "DD-A-M08",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security architect uses SABSA in an architecture review. What is SABSA mainly providing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A packet capture format"
+      },
+      {
+        "id": "b",
+        "text": "A risk-driven enterprise security architecture method"
+      },
+      {
+        "id": "c",
+        "text": "A hardware encryption algorithm"
+      },
+      {
+        "id": "d",
+        "text": "A software bill of materials standard"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "SABSA is a business- and risk-driven framework for designing and tracing enterprise security architecture.",
+    "points": 30,
+    "tags": [
+      "sabsa",
+      "architecture"
+    ]
+  },
+  {
+    "id": "DD-A-M09",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A critical application must survive the loss of a single availability zone with no manual failover. Which design most directly meets the requirement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nightly tape backup to an offsite vault"
+      },
+      {
+        "id": "b",
+        "text": "Active deployment across multiple zones behind a health-aware load balancer"
+      },
+      {
+        "id": "c",
+        "text": "One large VM with RAID 1 disks"
+      },
+      {
+        "id": "d",
+        "text": "Manual DR runbook stored in the wiki"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Multi-zone active deployment with health-aware traffic management is the direct way to survive a single-zone failure automatically.",
+    "points": 30,
+    "tags": [
+      "availability",
+      "failure-domains"
+    ]
+  },
+  {
+    "id": "DD-A-M10",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An API gateway is placed in front of several microservices. Which security function is best handled at the gateway layer?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kernel patching on worker nodes"
+      },
+      {
+        "id": "b",
+        "text": "Token validation, rate limiting, and centralized policy enforcement"
+      },
+      {
+        "id": "c",
+        "text": "Database index tuning"
+      },
+      {
+        "id": "d",
+        "text": "Compiling application binaries"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "API gateways are well suited for shared controls like auth token validation, rate limiting, and policy enforcement.",
+    "points": 30,
+    "tags": [
+      "api-gateway",
+      "policy"
+    ]
+  },
+  {
+    "id": "DD-A-H01",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A company wants branch-office users to reach internal apps without broad network access. Which architecture most closely aligns with zero trust?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Site-to-site VPN that exposes the full server subnet"
+      },
+      {
+        "id": "b",
+        "text": "Identity-aware proxy that grants per-application access after device and user checks"
+      },
+      {
+        "id": "c",
+        "text": "Permanent administrator sessions through a jump box"
+      },
+      {
+        "id": "d",
+        "text": "Allowing all traffic from RFC1918 office ranges"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Identity-aware per-application access preserves least privilege and avoids giving remote users blanket network reachability.",
+    "points": 40,
+    "tags": [
+      "zero-trust",
+      "remote-access"
+    ]
+  },
+  {
+    "id": "DD-A-H02",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A platform team is designing privileged access for production databases across cloud and on-premises. Which control combination is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Shared DBA password stored in a wiki"
+      },
+      {
+        "id": "b",
+        "text": "Federated SSO with MFA, just-in-time elevation, and session recording through a PAM workflow"
+      },
+      {
+        "id": "c",
+        "text": "Local accounts synchronized by cron"
+      },
+      {
+        "id": "d",
+        "text": "Long-lived service tokens copied to administrators"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Privileged access designs should minimize standing privilege and add strong accountability with MFA, JIT elevation, and session auditing.",
+    "points": 50,
+    "tags": [
+      "pam",
+      "iam",
+      "privileged-access"
+    ]
+  },
+  {
+    "id": "DD-A-H03",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A public API must support mutual authentication between thousands of partner systems without shipping a private CA root to every application team. Which approach scales best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hardcode partner API keys into the service mesh"
+      },
+      {
+        "id": "b",
+        "text": "Use a managed partner PKI or trusted issuing CA with automated certificate enrollment and revocation"
+      },
+      {
+        "id": "c",
+        "text": "Issue one client certificate shared by all partners"
+      },
+      {
+        "id": "d",
+        "text": "Replace TLS with an IP allowlist"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Scalable partner mTLS depends on managed issuance, revocation, and trust distribution rather than shared certificates or IP-only controls.",
+    "points": 40,
+    "tags": [
+      "pki",
+      "mtls",
+      "partners"
+    ]
+  },
+  {
+    "id": "DD-A-H04",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A regulated enterprise wants encryption keys for one workload isolated from cloud-provider operators and from other business units. Which design is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "One tenant-wide KMS key for everything"
+      },
+      {
+        "id": "b",
+        "text": "Dedicated HSM-backed key store with workload-specific keys, separation of duties, and audited key usage"
+      },
+      {
+        "id": "c",
+        "text": "Store database keys in the application image"
+      },
+      {
+        "id": "d",
+        "text": "Use the TLS server certificate private key for data-at-rest encryption"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Strong separation uses dedicated key scopes, HSM-backed protection, and separation of duties to reduce insider and cross-tenant risk.",
+    "points": 50,
+    "tags": [
+      "key-management",
+      "hsm",
+      "separation-of-duties"
+    ]
+  },
+  {
+    "id": "DD-A-H05",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An enterprise is choosing between per-region subscriptions and a single global subscription for cloud workloads. Which factor most strongly argues for separate subscriptions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Need for different blast-radius, policy, and billing boundaries"
+      },
+      {
+        "id": "b",
+        "text": "Desire to shorten DNS hostnames"
+      },
+      {
+        "id": "c",
+        "text": "Preference for fewer IAM roles"
+      },
+      {
+        "id": "d",
+        "text": "Requirement to avoid tagging resources"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Separate subscriptions or accounts are primarily justified by isolation, policy, and administrative boundaries, not naming convenience.",
+    "points": 40,
+    "tags": [
+      "cloud",
+      "governance",
+      "multi-account"
+    ]
+  },
+  {
+    "id": "DD-A-H06",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A service mesh issues workload certificates every few hours. What is the main security advantage of such short-lived identities?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They eliminate the need for clock synchronization"
+      },
+      {
+        "id": "b",
+        "text": "They reduce the impact window if a certificate is stolen"
+      },
+      {
+        "id": "c",
+        "text": "They allow plaintext failover automatically"
+      },
+      {
+        "id": "d",
+        "text": "They make audit logs unnecessary"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Short-lived workload identities limit how long compromised credentials remain useful and support automated rotation.",
+    "points": 50,
+    "tags": [
+      "service-mesh",
+      "certificates",
+      "rotation"
+    ]
+  },
+  {
+    "id": "DD-A-H07",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "During threat modeling of a password-reset flow, the team identifies that reset links can be replayed after use. Which mitigation best addresses the finding?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Increase the email font size"
+      },
+      {
+        "id": "b",
+        "text": "Make reset tokens single-use and short-lived, tied to the intended account"
+      },
+      {
+        "id": "c",
+        "text": "Move the feature behind a faster CDN"
+      },
+      {
+        "id": "d",
+        "text": "Store the token in client-side local storage indefinitely"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Replay risk is reduced by single-use, expiring tokens bound to the target account and invalidated after successful reset.",
+    "points": 40,
+    "tags": [
+      "threat-modeling",
+      "tokens",
+      "account-recovery"
+    ]
+  },
+  {
+    "id": "DD-A-H08",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A reference architecture review finds teams interpreting TOGAF and security controls inconsistently. What artifact would most directly improve implementation consistency?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A standardized security reference architecture with approved patterns and decision records"
+      },
+      {
+        "id": "b",
+        "text": "A longer employee handbook"
+      },
+      {
+        "id": "c",
+        "text": "A list of laptop asset tags"
+      },
+      {
+        "id": "d",
+        "text": "A monthly newsletter about outages"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Reusable reference architectures and decision records turn high-level frameworks into actionable, consistent implementation guidance.",
+    "points": 40,
+    "tags": [
+      "reference-architecture",
+      "togaf"
+    ]
+  },
+  {
+    "id": "DD-A-H09",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A payment platform requires a recovery point objective of near zero for a regional database failure. Which design most directly supports that goal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Weekly full backups only"
+      },
+      {
+        "id": "b",
+        "text": "Synchronous replication across failure domains with automated failover"
+      },
+      {
+        "id": "c",
+        "text": "Cold standby rebuilt from infrastructure code after an outage"
+      },
+      {
+        "id": "d",
+        "text": "Manual export to CSV every night"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Near-zero RPO requires data written to more than one failure domain before acknowledgment, typically via synchronous replication.",
+    "points": 50,
+    "tags": [
+      "dr",
+      "rpo",
+      "replication"
+    ]
+  },
+  {
+    "id": "DD-A-H10",
+    "domainId": "DD",
+    "subdomainId": "DD-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A hybrid architecture spans on-prem services and two clouds. Which trust design is least likely to create identity sprawl?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Separate local accounts in every environment"
+      },
+      {
+        "id": "b",
+        "text": "A federated identity plane with centralized lifecycle management and workload trust brokering"
+      },
+      {
+        "id": "c",
+        "text": "SSH keys shared by all administrators"
+      },
+      {
+        "id": "d",
+        "text": "Password synchronization by spreadsheet"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Federated identity with centralized lifecycle management reduces duplicate accounts and makes policy application consistent across environments.",
+    "points": 40,
+    "tags": [
+      "hybrid",
+      "federation",
+      "identity"
+    ]
+  },
+  {
+    "id": "DD-B-E01",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which secure-coding practice most directly reduces SQL injection risk in an application?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Building SQL queries with string concatenation"
+      },
+      {
+        "id": "b",
+        "text": "Using parameterized queries or prepared statements"
+      },
+      {
+        "id": "c",
+        "text": "Hiding the database server behind NAT"
+      },
+      {
+        "id": "d",
+        "text": "Compressing HTTP responses"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Prepared statements separate data from code, preventing user input from being interpreted as SQL commands.",
+    "points": 10,
+    "tags": [
+      "owasp",
+      "input-validation",
+      "sql"
+    ]
+  },
+  {
+    "id": "DD-B-E02",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the safest place to store an API key used by a CI pipeline?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hardcoded in the application source code"
+      },
+      {
+        "id": "b",
+        "text": "In a managed secret store or vault with controlled access"
+      },
+      {
+        "id": "c",
+        "text": "Inside a public Docker image label"
+      },
+      {
+        "id": "d",
+        "text": "In a README file for developers"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Secrets should be stored in dedicated secret managers or vaults, not embedded in code or public artifacts.",
+    "points": 20,
+    "tags": [
+      "secrets",
+      "vault"
+    ]
+  },
+  {
+    "id": "DD-B-E03",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Why are signed build artifacts useful in a CI/CD pipeline?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They make the binaries smaller"
+      },
+      {
+        "id": "b",
+        "text": "They allow consumers to verify provenance and integrity"
+      },
+      {
+        "id": "c",
+        "text": "They replace the need for testing"
+      },
+      {
+        "id": "d",
+        "text": "They prevent all runtime vulnerabilities"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Artifact signing helps downstream users verify that a package came from the expected build process and was not tampered with.",
+    "points": 10,
+    "tags": [
+      "supply-chain",
+      "signing"
+    ]
+  },
+  {
+    "id": "DD-B-E04",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the main benefit of scanning Terraform or CloudFormation templates before deployment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It increases CPU speed on the target servers"
+      },
+      {
+        "id": "b",
+        "text": "It can catch insecure configurations before they are applied"
+      },
+      {
+        "id": "c",
+        "text": "It automatically patches all operating systems"
+      },
+      {
+        "id": "d",
+        "text": "It replaces cloud IAM policies"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "IaC scanning finds misconfigurations such as open security groups or missing encryption before infrastructure is created.",
+    "points": 20,
+    "tags": [
+      "iac",
+      "scanning"
+    ]
+  },
+  {
+    "id": "DD-B-E05",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which container image choice is generally better for reducing attack surface?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A minimal base image containing only required packages"
+      },
+      {
+        "id": "b",
+        "text": "A full desktop image with browsers and compilers"
+      },
+      {
+        "id": "c",
+        "text": "An image that runs everything as root"
+      },
+      {
+        "id": "d",
+        "text": "An image built from a shared home directory"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Minimal images reduce unnecessary packages and services, shrinking the attack surface and dependency footprint.",
+    "points": 20,
+    "tags": [
+      "containers",
+      "hardening"
+    ]
+  },
+  {
+    "id": "DD-B-E06",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In Kubernetes, what is the purpose of an admission controller or admission policy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To replace kube-scheduler"
+      },
+      {
+        "id": "b",
+        "text": "To enforce rules on objects before they are created or updated"
+      },
+      {
+        "id": "c",
+        "text": "To encrypt etcd backups automatically"
+      },
+      {
+        "id": "d",
+        "text": "To assign static IP addresses to pods"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Admission controls can block or mutate insecure resource definitions, such as privileged pods or missing labels.",
+    "points": 10,
+    "tags": [
+      "kubernetes",
+      "admission-control"
+    ]
+  },
+  {
+    "id": "DD-B-E07",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which SDLC activity best ensures security is considered before coding starts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Adding security requirements during planning"
+      },
+      {
+        "id": "b",
+        "text": "Running the application in production for a week"
+      },
+      {
+        "id": "c",
+        "text": "Buying a new firewall after release"
+      },
+      {
+        "id": "d",
+        "text": "Disabling code review to speed delivery"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Security requirements placed early in the SDLC shape design and implementation decisions before defects are built in.",
+    "points": 20,
+    "tags": [
+      "sdlc",
+      "requirements"
+    ]
+  },
+  {
+    "id": "DD-B-E08",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main problem with hardcoding credentials in source code?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It makes code compile more slowly"
+      },
+      {
+        "id": "b",
+        "text": "It exposes secrets to anyone who can access the repository or logs"
+      },
+      {
+        "id": "c",
+        "text": "It prevents servers from syncing time"
+      },
+      {
+        "id": "d",
+        "text": "It disables TLS by default"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Hardcoded credentials are easily leaked through repositories, forks, logs, or backups and are difficult to rotate safely.",
+    "points": 10,
+    "tags": [
+      "secrets",
+      "hardcoding"
+    ]
+  },
+  {
+    "id": "DD-B-E09",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In an OT environment using the Purdue model, where are PLCs typically located?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enterprise IT network at Level 5"
+      },
+      {
+        "id": "b",
+        "text": "Industrial control layers near Levels 1-2"
+      },
+      {
+        "id": "c",
+        "text": "Public internet DMZ"
+      },
+      {
+        "id": "d",
+        "text": "Developer laptop subnet"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "PLCs are part of the control layers of industrial networks, typically closer to Levels 1-2 in the Purdue model.",
+    "points": 20,
+    "tags": [
+      "ot",
+      "purdue",
+      "plc"
+    ]
+  },
+  {
+    "id": "DD-B-E10",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which memory-safety issue is common in unmanaged languages such as C when bounds are not checked?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Buffer overflow"
+      },
+      {
+        "id": "b",
+        "text": "Cross-site request forgery"
+      },
+      {
+        "id": "c",
+        "text": "DNS cache poisoning"
+      },
+      {
+        "id": "d",
+        "text": "ARP spoofing"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Without automatic bounds checking, writing past a buffer in unmanaged languages can corrupt memory and enable exploitation.",
+    "points": 20,
+    "tags": [
+      "memory-safety",
+      "secure-coding"
+    ]
+  },
+  {
+    "id": "DD-B-M01",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A developer adds a hidden form field called role=admin and the backend trusts it. Which flaw is most likely present?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Strong input canonicalization"
+      },
+      {
+        "id": "b",
+        "text": "Broken authorization logic"
+      },
+      {
+        "id": "c",
+        "text": "Improper TLS termination"
+      },
+      {
+        "id": "d",
+        "text": "Safe secret rotation"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Authorization decisions must be enforced server-side; trusting client-supplied role values is a classic access-control flaw.",
+    "points": 30,
+    "tags": [
+      "authorization",
+      "owasp"
+    ]
+  },
+  {
+    "id": "DD-B-M02",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Your pipeline injects a cloud credential into a build job. Which control best limits the impact if the job is compromised?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Use a long-lived administrator key"
+      },
+      {
+        "id": "b",
+        "text": "Issue short-lived, scoped credentials from the CI workload identity"
+      },
+      {
+        "id": "c",
+        "text": "Store the key in the container image layer"
+      },
+      {
+        "id": "d",
+        "text": "Share one credential across all repositories"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Short-lived scoped credentials tied to workload identity reduce standing privilege and simplify rotation and revocation.",
+    "points": 30,
+    "tags": [
+      "ci-cd",
+      "secrets",
+      "identity"
+    ]
+  },
+  {
+    "id": "DD-B-M03",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A release team wants higher SLSA assurance. Which change most directly improves build integrity?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allow developers to modify artifacts on the release server after build"
+      },
+      {
+        "id": "b",
+        "text": "Use an isolated, auditable build service that signs provenance"
+      },
+      {
+        "id": "c",
+        "text": "Skip dependency pinning to get the newest libraries"
+      },
+      {
+        "id": "d",
+        "text": "Run builds only on personal laptops"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Higher build assurance comes from controlled, auditable builds and signed provenance rather than mutable manual release steps.",
+    "points": 30,
+    "tags": [
+      "slsa",
+      "build-integrity"
+    ]
+  },
+  {
+    "id": "DD-B-M04",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An IaC scan flags that an object storage bucket is publicly readable. What should happen next in a mature pipeline?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ignore the result because the code has not deployed yet"
+      },
+      {
+        "id": "b",
+        "text": "Triage the finding against intended design and fail the release if exposure is not approved"
+      },
+      {
+        "id": "c",
+        "text": "Disable scanning to reduce noise"
+      },
+      {
+        "id": "d",
+        "text": "Wait for a penetration test months later"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Findings should be triaged against design intent, and material misconfigurations should block promotion until resolved or explicitly accepted.",
+    "points": 30,
+    "tags": [
+      "iac",
+      "release-gates"
+    ]
+  },
+  {
+    "id": "DD-B-M05",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A Kubernetes team wants to prevent containers from running as root unless an exception is approved. Which mechanism is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pod Security admission or policy-based admission controls"
+      },
+      {
+        "id": "b",
+        "text": "Horizontal Pod Autoscaler"
+      },
+      {
+        "id": "c",
+        "text": "CoreDNS rewrite rules"
+      },
+      {
+        "id": "d",
+        "text": "kubectl port-forward"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Admission policies are designed to enforce guardrails such as non-root containers and other workload security constraints.",
+    "points": 30,
+    "tags": [
+      "kubernetes",
+      "policy"
+    ]
+  },
+  {
+    "id": "DD-B-M06",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A product owner asks when security should participate in a new feature. Which answer best aligns with a secure SDLC?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only after production release"
+      },
+      {
+        "id": "b",
+        "text": "At requirements, design, implementation, and release checkpoints"
+      },
+      {
+        "id": "c",
+        "text": "Only if a customer files a security bug"
+      },
+      {
+        "id": "d",
+        "text": "Only during annual audit season"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Secure SDLC integrates security throughout the lifecycle, not as a one-time gate after coding is complete.",
+    "points": 30,
+    "tags": [
+      "sdlc",
+      "secure-design"
+    ]
+  },
+  {
+    "id": "DD-B-M07",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An OT engineer proposes monthly forced rebooting of a safety system to apply patches immediately. What is the key security engineering concern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The patches are too small to matter"
+      },
+      {
+        "id": "b",
+        "text": "Safety and process availability may outweigh immediate patching and require compensating controls"
+      },
+      {
+        "id": "c",
+        "text": "Reboots always improve reliability"
+      },
+      {
+        "id": "d",
+        "text": "ICS devices cannot use authentication"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "OT environments often balance security against safety and process continuity, so patching plans must consider operational impact and maintenance windows.",
+    "points": 30,
+    "tags": [
+      "ot",
+      "safety",
+      "patching"
+    ]
+  },
+  {
+    "id": "DD-B-M08",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A repo contains a secret-scanning rule and pre-commit hook, but developers can bypass it locally. Which additional control best reduces risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rely only on code reviewers noticing secrets"
+      },
+      {
+        "id": "b",
+        "text": "Run mandatory server-side secret scanning in CI before merge"
+      },
+      {
+        "id": "c",
+        "text": "Disable branch protection"
+      },
+      {
+        "id": "d",
+        "text": "Store credentials in test fixtures"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Server-side scanning in CI or on the hosting platform provides a centrally enforced check even if local hooks are bypassed.",
+    "points": 30,
+    "tags": [
+      "secrets",
+      "ci-cd"
+    ]
+  },
+  {
+    "id": "DD-B-M09",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An image scanner reports critical packages in a container that are not used by the app. What is the most direct remediation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add more CPU to the pod"
+      },
+      {
+        "id": "b",
+        "text": "Rebuild from a slimmer base image and remove unnecessary packages"
+      },
+      {
+        "id": "c",
+        "text": "Publish the image to more registries"
+      },
+      {
+        "id": "d",
+        "text": "Turn off runtime logging"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Reducing unused packages lowers attack surface and the number of inherited vulnerabilities in the image.",
+    "points": 30,
+    "tags": [
+      "containers",
+      "image-scanning"
+    ]
+  },
+  {
+    "id": "DD-B-M10",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A team wants to detect drift from approved Terraform after deployment. Which practice is most useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Manual screenshots of the console"
+      },
+      {
+        "id": "b",
+        "text": "Periodic drift detection comparing deployed state to version-controlled IaC"
+      },
+      {
+        "id": "c",
+        "text": "Disabling state locking"
+      },
+      {
+        "id": "d",
+        "text": "Using one shared admin account for all changes"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Drift detection highlights out-of-band changes that diverge from approved infrastructure code and should be investigated.",
+    "points": 30,
+    "tags": [
+      "iac",
+      "drift"
+    ]
+  },
+  {
+    "id": "DD-B-H01",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A C service validates that input length is less than 256 bytes but then copies user data into a 64-byte stack buffer. Which issue remains?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only a logging failure"
+      },
+      {
+        "id": "b",
+        "text": "A memory-safety bug despite superficial validation"
+      },
+      {
+        "id": "c",
+        "text": "A cloud IAM misconfiguration"
+      },
+      {
+        "id": "d",
+        "text": "A DNS rebinding flaw"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Validation must align with actual destination bounds; copying up to 255 bytes into a 64-byte buffer still enables overflow.",
+    "points": 40,
+    "tags": [
+      "memory-safety",
+      "c"
+    ]
+  },
+  {
+    "id": "DD-B-H02",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A pipeline signs artifacts, but the private signing key is stored on the same build worker used for untrusted pull requests. What is the biggest risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Artifacts will be too large"
+      },
+      {
+        "id": "b",
+        "text": "A compromised worker could sign malicious artifacts as legitimate"
+      },
+      {
+        "id": "c",
+        "text": "Docker layers will not cache"
+      },
+      {
+        "id": "d",
+        "text": "The SCM history will be lost"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "If untrusted code can reach the signing environment or key material, provenance loses meaning because malicious artifacts can be signed.",
+    "points": 50,
+    "tags": [
+      "signing",
+      "ci-cd",
+      "keys"
+    ]
+  },
+  {
+    "id": "DD-B-H03",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A company adopts ephemeral runners for CI. Which additional step best strengthens supply-chain security?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allow outbound access to every host on the internet"
+      },
+      {
+        "id": "b",
+        "text": "Pin and verify dependencies and emit signed build provenance"
+      },
+      {
+        "id": "c",
+        "text": "Disable artifact retention entirely"
+      },
+      {
+        "id": "d",
+        "text": "Run builds without source control metadata"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Ephemeral runners help, but dependency integrity and signed provenance are still key to demonstrating what was built and from which inputs.",
+    "points": 40,
+    "tags": [
+      "slsa",
+      "dependencies",
+      "provenance"
+    ]
+  },
+  {
+    "id": "DD-B-H04",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An attacker can modify Terraform state storage. What is the most serious consequence?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cloud icons in the console may change color"
+      },
+      {
+        "id": "b",
+        "text": "Future plans and applies may trust tampered infrastructure state"
+      },
+      {
+        "id": "c",
+        "text": "The compiler will reject YAML manifests"
+      },
+      {
+        "id": "d",
+        "text": "Kubernetes services lose DNS names immediately"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Compromised state can mislead automation about actual resources, enabling unauthorized changes or hiding drift.",
+    "points": 50,
+    "tags": [
+      "terraform",
+      "state-security"
+    ]
+  },
+  {
+    "id": "DD-B-H05",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A Kubernetes cluster allows privileged containers, hostPath mounts, and hostNetwork by default. Why is this combination especially dangerous?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It improves pod startup time too much"
+      },
+      {
+        "id": "b",
+        "text": "A compromised pod can more easily escape isolation and affect the node or network"
+      },
+      {
+        "id": "c",
+        "text": "It prevents image pulls from private registries"
+      },
+      {
+        "id": "d",
+        "text": "It disables horizontal scaling"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "These capabilities break normal isolation boundaries, giving pods much greater access to the host and surrounding environment.",
+    "points": 40,
+    "tags": [
+      "kubernetes",
+      "runtime-security"
+    ]
+  },
+  {
+    "id": "DD-B-H06",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A release process performs SAST and container scanning, but security defects are rarely fixed because delivery dates dominate. Which SDLC improvement is most likely to change outcomes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add more scanners only"
+      },
+      {
+        "id": "b",
+        "text": "Define measurable security acceptance criteria and enforce release gates tied to risk thresholds"
+      },
+      {
+        "id": "c",
+        "text": "Delay all testing until after deployment"
+      },
+      {
+        "id": "d",
+        "text": "Move every team to one giant repository"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Tools alone are insufficient; explicit criteria and enforceable gates create accountability and consistent decision-making.",
+    "points": 50,
+    "tags": [
+      "sdlc",
+      "governance",
+      "release-gates"
+    ]
+  },
+  {
+    "id": "DD-B-H07",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An OT historian server needs data from a PLC network but should not permit commands back into control equipment. Which design best supports that goal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bi-directional flat routing between zones"
+      },
+      {
+        "id": "b",
+        "text": "A controlled conduit such as a one-way or tightly filtered data path from control to historian"
+      },
+      {
+        "id": "c",
+        "text": "A shared Windows file share across all levels"
+      },
+      {
+        "id": "d",
+        "text": "Direct internet access from PLCs"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Industrial architectures should minimize command paths into control zones and often use tightly controlled conduits for telemetry.",
+    "points": 40,
+    "tags": [
+      "ot",
+      "purdue",
+      "segmentation"
+    ]
+  },
+  {
+    "id": "DD-B-H08",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A monorepo uses reusable pipeline templates. A template change can silently give every job production deploy rights. Which control most directly mitigates that systemic risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Store templates in the same mutable branch as feature code"
+      },
+      {
+        "id": "b",
+        "text": "Version and protect pipeline templates with code review and least-privilege service identities"
+      },
+      {
+        "id": "c",
+        "text": "Allow engineers to edit deploy secrets during runtime"
+      },
+      {
+        "id": "d",
+        "text": "Turn off audit logging for faster execution"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Reusable templates become high-value assets; protecting them and limiting job identities prevents one change from expanding privilege everywhere.",
+    "points": 50,
+    "tags": [
+      "ci-cd",
+      "least-privilege",
+      "templates"
+    ]
+  },
+  {
+    "id": "DD-B-H09",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A build process copies production secrets into integration test containers for convenience. What is the best architectural fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Encrypt the secrets with a key stored in the same repo"
+      },
+      {
+        "id": "b",
+        "text": "Use environment-specific secrets and synthetic test data provided just in time"
+      },
+      {
+        "id": "c",
+        "text": "Rename the production secrets to test values"
+      },
+      {
+        "id": "d",
+        "text": "Store secrets in container labels"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Tests should use non-production secrets and data, ideally delivered just in time with least privilege and auditability.",
+    "points": 40,
+    "tags": [
+      "secrets",
+      "testing"
+    ]
+  },
+  {
+    "id": "DD-B-H10",
+    "domainId": "DD",
+    "subdomainId": "DD-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A vendor delivers signed firmware for a field PLC, but there is no rollback protection. What risk remains?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The firmware will not boot at all"
+      },
+      {
+        "id": "b",
+        "text": "An attacker may install an older vulnerable but still validly signed firmware image"
+      },
+      {
+        "id": "c",
+        "text": "The serial cable will overheat"
+      },
+      {
+        "id": "d",
+        "text": "Checksums become unnecessary"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Signing proves authenticity, but without anti-rollback controls a device may still accept an older signed image with known vulnerabilities.",
+    "points": 50,
+    "tags": [
+      "ot",
+      "firmware",
+      "signing"
+    ]
+  },
+  {
+    "id": "DD-C-E01",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which testing method analyzes source code or binaries without running the application?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DAST"
+      },
+      {
+        "id": "b",
+        "text": "SAST"
+      },
+      {
+        "id": "c",
+        "text": "Packet capture"
+      },
+      {
+        "id": "d",
+        "text": "Load balancing"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "SAST inspects code or compiled artifacts statically, while DAST tests a running application.",
+    "points": 10,
+    "tags": [
+      "sast",
+      "testing"
+    ]
+  },
+  {
+    "id": "DD-C-E02",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What does software composition analysis (SCA) primarily identify?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Routing loops in a network"
+      },
+      {
+        "id": "b",
+        "text": "Third-party dependencies and known vulnerable components"
+      },
+      {
+        "id": "c",
+        "text": "Physical tampering with servers"
+      },
+      {
+        "id": "d",
+        "text": "Wireless channel interference"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "SCA inventories libraries and components and checks them against known vulnerability and license data.",
+    "points": 20,
+    "tags": [
+      "sca",
+      "dependencies"
+    ]
+  },
+  {
+    "id": "DD-C-E03",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "During manual code review, which issue is a reviewer most likely to catch?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A missing server-side authorization check in business logic"
+      },
+      {
+        "id": "b",
+        "text": "A failed hard drive sector"
+      },
+      {
+        "id": "c",
+        "text": "A broken fiber patch cable"
+      },
+      {
+        "id": "d",
+        "text": "A duplicate DHCP lease"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Human reviewers are well suited to spotting logic flaws such as missing authorization decisions in code paths.",
+    "points": 10,
+    "tags": [
+      "code-review",
+      "authorization"
+    ]
+  },
+  {
+    "id": "DD-C-E04",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the main goal of a penetration test scope document?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To guarantee zero findings"
+      },
+      {
+        "id": "b",
+        "text": "To define targets, rules of engagement, and constraints"
+      },
+      {
+        "id": "c",
+        "text": "To replace the final report"
+      },
+      {
+        "id": "d",
+        "text": "To approve production database schema changes"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A scope document clarifies what is in bounds, what methods are permitted, and what limitations apply to the test.",
+    "points": 20,
+    "tags": [
+      "pentest",
+      "scoping"
+    ]
+  },
+  {
+    "id": "DD-C-E05",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which activity best represents fuzzing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sending many unexpected or malformed inputs to observe failures"
+      },
+      {
+        "id": "b",
+        "text": "Reviewing an architecture diagram for data flows"
+      },
+      {
+        "id": "c",
+        "text": "Checking password age in Active Directory"
+      },
+      {
+        "id": "d",
+        "text": "Installing OS patches"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Fuzzing exercises software with malformed or random inputs to uncover crashes, hangs, and parsing weaknesses.",
+    "points": 10,
+    "tags": [
+      "fuzzing",
+      "negative-testing"
+    ]
+  },
+  {
+    "id": "DD-C-E06",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why is tuning a SAST or DAST tool important?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To increase monitor brightness"
+      },
+      {
+        "id": "b",
+        "text": "To reduce noise and improve finding relevance for the environment"
+      },
+      {
+        "id": "c",
+        "text": "To remove the need for remediation"
+      },
+      {
+        "id": "d",
+        "text": "To encrypt all logs automatically"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Tool tuning helps reduce false positives, focus on relevant rules, and make triage manageable.",
+    "points": 20,
+    "tags": [
+      "triage",
+      "tooling"
+    ]
+  },
+  {
+    "id": "DD-C-E07",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What does traceability in a security test plan mean?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each test maps back to a requirement or control"
+      },
+      {
+        "id": "b",
+        "text": "All test data is stored on paper"
+      },
+      {
+        "id": "c",
+        "text": "Only one tester can run the plan"
+      },
+      {
+        "id": "d",
+        "text": "Tests are executed without documentation"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Traceability links tests to requirements so teams can show that expected security behaviors were actually verified.",
+    "points": 20,
+    "tags": [
+      "traceability",
+      "test-planning"
+    ]
+  },
+  {
+    "id": "DD-C-E08",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which evidence is most useful to show an auditor that a security requirement was tested?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A screenshot of a team chat"
+      },
+      {
+        "id": "b",
+        "text": "Recorded test results tied to the requirement and test case"
+      },
+      {
+        "id": "c",
+        "text": "A marketing brochure"
+      },
+      {
+        "id": "d",
+        "text": "An empty spreadsheet"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Auditors look for objective evidence such as documented test cases, results, and links to the underlying requirement.",
+    "points": 10,
+    "tags": [
+      "audit",
+      "evidence"
+    ]
+  },
+  {
+    "id": "DD-C-E09",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "IAST differs from DAST because IAST typically:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Runs inside or alongside the application to observe execution"
+      },
+      {
+        "id": "b",
+        "text": "Works only on air-gapped systems"
+      },
+      {
+        "id": "c",
+        "text": "Cannot detect server-side issues"
+      },
+      {
+        "id": "d",
+        "text": "Replaces secure design review entirely"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "IAST instruments or observes the running application internally, combining runtime context with testing activity.",
+    "points": 20,
+    "tags": [
+      "iast",
+      "testing"
+    ]
+  },
+  {
+    "id": "DD-C-E10",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which document usually contains the findings, risk ratings, and remediation advice after a penetration test?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Change request form"
+      },
+      {
+        "id": "b",
+        "text": "Penetration test report"
+      },
+      {
+        "id": "c",
+        "text": "DHCP scope list"
+      },
+      {
+        "id": "d",
+        "text": "Asset depreciation schedule"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The penetration test report captures what was tested, what was found, supporting evidence, and recommended fixes.",
+    "points": 10,
+    "tags": [
+      "pentest",
+      "reporting"
+    ]
+  },
+  {
+    "id": "DD-C-M01",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A DAST scan reports reflected XSS on an endpoint that only serves JSON to authenticated API clients. What should the assessor do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Treat it as critical immediately"
+      },
+      {
+        "id": "b",
+        "text": "Validate exploitability in the real context before escalating severity"
+      },
+      {
+        "id": "c",
+        "text": "Delete the scan result automatically"
+      },
+      {
+        "id": "d",
+        "text": "Disable the endpoint permanently"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Triage should confirm whether the finding is exploitable in the actual response context, client behavior, and authentication model.",
+    "points": 30,
+    "tags": [
+      "dast",
+      "triage",
+      "xss"
+    ]
+  },
+  {
+    "id": "DD-C-M02",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A repository uses heavily generated code, causing a SAST tool to flood the queue with irrelevant findings. What is the best improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ignore the tool entirely"
+      },
+      {
+        "id": "b",
+        "text": "Tune scope and rules to exclude generated artifacts and focus on actionable paths"
+      },
+      {
+        "id": "c",
+        "text": "Send all findings directly to developers unchanged"
+      },
+      {
+        "id": "d",
+        "text": "Move scanning to production only"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Excluding generated code and tuning rules improves signal so teams can focus on findings they can actually fix.",
+    "points": 30,
+    "tags": [
+      "sast",
+      "tuning"
+    ]
+  },
+  {
+    "id": "DD-C-M03",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "During manual review, a tester sees an endpoint that checks if a user is authenticated but never verifies record ownership. What class of issue is this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Broken access control"
+      },
+      {
+        "id": "b",
+        "text": "Weak NTP configuration"
+      },
+      {
+        "id": "c",
+        "text": "Certificate pinning"
+      },
+      {
+        "id": "d",
+        "text": "Resource exhaustion only"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Authentication alone is insufficient; missing object- or function-level authorization is a broken access control flaw.",
+    "points": 30,
+    "tags": [
+      "code-review",
+      "authorization"
+    ]
+  },
+  {
+    "id": "DD-C-M04",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A client wants a penetration test against production, but the environment hosts other tenants. Which scoping decision is most important before testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Printer toner levels"
+      },
+      {
+        "id": "b",
+        "text": "Rules of engagement and explicit boundaries to avoid impacting other tenants"
+      },
+      {
+        "id": "c",
+        "text": "The color theme of the report"
+      },
+      {
+        "id": "d",
+        "text": "The tester\u2019s favorite toolkit"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Multi-tenant production testing requires clear authorization, boundaries, timing, and constraints to prevent collateral impact.",
+    "points": 30,
+    "tags": [
+      "pentest",
+      "scope"
+    ]
+  },
+  {
+    "id": "DD-C-M05",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A fuzz test causes an API parser to consume 100% CPU for minutes without crashing. How should this result be interpreted?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is irrelevant because there was no crash"
+      },
+      {
+        "id": "b",
+        "text": "It may indicate a denial-of-service weakness worth triage and reproduction"
+      },
+      {
+        "id": "c",
+        "text": "It proves the parser is memory-safe"
+      },
+      {
+        "id": "d",
+        "text": "It automatically closes all other findings"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Fuzzing results include hangs and pathological resource use, not just memory corruption or process crashes.",
+    "points": 30,
+    "tags": [
+      "fuzzing",
+      "dos"
+    ]
+  },
+  {
+    "id": "DD-C-M06",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A security requirement states that only managers can approve payments over $10,000. Which test case best demonstrates traceability?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A generic login smoke test"
+      },
+      {
+        "id": "b",
+        "text": "A documented test that a non-manager approval attempt over $10,000 is denied"
+      },
+      {
+        "id": "c",
+        "text": "A network bandwidth test"
+      },
+      {
+        "id": "d",
+        "text": "A scan of open-source licenses"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "That negative test directly validates the stated authorization requirement and provides clear requirement-to-test linkage.",
+    "points": 30,
+    "tags": [
+      "traceability",
+      "acceptance-criteria"
+    ]
+  },
+  {
+    "id": "DD-C-M07",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A team must provide evidence for a product certification review. Which package is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unlinked screenshots from different tools"
+      },
+      {
+        "id": "b",
+        "text": "Requirements, test cases, execution results, defect dispositions, and approvals in one traceable set"
+      },
+      {
+        "id": "c",
+        "text": "A list of developer names"
+      },
+      {
+        "id": "d",
+        "text": "Only the final binary hash"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Certification and audit reviews rely on complete, traceable evidence from requirement through verification result and disposition.",
+    "points": 30,
+    "tags": [
+      "evidence",
+      "certification"
+    ]
+  },
+  {
+    "id": "DD-C-M08",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An SCA tool flags a vulnerable library, but the vulnerable function is not reachable in the product. What is the best next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ignore the result forever"
+      },
+      {
+        "id": "b",
+        "text": "Document reachability and risk, then decide whether to upgrade, compensate, or accept based on policy"
+      },
+      {
+        "id": "c",
+        "text": "Delete the dependency inventory"
+      },
+      {
+        "id": "d",
+        "text": "Mark the finding as a false positive without evidence"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Reachability and actual exploit conditions should inform prioritization, but the decision should be documented and policy-based.",
+    "points": 30,
+    "tags": [
+      "sca",
+      "triage",
+      "reachability"
+    ]
+  },
+  {
+    "id": "DD-C-M09",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A secure design review notices that all admin actions are performed through the same API used by regular users, differentiated only by a client-side flag. What is the review outcome?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Acceptable because the UI hides the flag"
+      },
+      {
+        "id": "b",
+        "text": "High-risk design issue requiring server-side authorization separation"
+      },
+      {
+        "id": "c",
+        "text": "A backup configuration task"
+      },
+      {
+        "id": "d",
+        "text": "A minor branding issue"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Relying on client-side role indicators is a design flaw because authorization must be enforced on the server.",
+    "points": 30,
+    "tags": [
+      "design-review",
+      "authorization"
+    ]
+  },
+  {
+    "id": "DD-C-M10",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A tester uses OWASP WSTG and PTES during an engagement. What is the main benefit of using those methodologies?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They guarantee no legal approval is needed"
+      },
+      {
+        "id": "b",
+        "text": "They provide a repeatable structure for planning, execution, and reporting"
+      },
+      {
+        "id": "c",
+        "text": "They replace technical skill entirely"
+      },
+      {
+        "id": "d",
+        "text": "They prevent all false positives automatically"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Established methodologies promote coverage, consistency, and documented process across different testing engagements.",
+    "points": 30,
+    "tags": [
+      "ptes",
+      "owasp",
+      "methodology"
+    ]
+  },
+  {
+    "id": "DD-C-H01",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A SAST tool reports a deserialization sink reachable only when a feature flag is enabled for one customer. What is the best triage outcome?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Close it because not all customers use the feature"
+      },
+      {
+        "id": "b",
+        "text": "Assess exploitability in that deployment path and prioritize based on exposed risk and reachability"
+      },
+      {
+        "id": "c",
+        "text": "Raise it to critical for every environment without analysis"
+      },
+      {
+        "id": "d",
+        "text": "Delete the feature flag"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Risk depends on whether the path is reachable in real deployments; feature-gated code can still be high priority where enabled.",
+    "points": 40,
+    "tags": [
+      "sast",
+      "reachability",
+      "triage"
+    ]
+  },
+  {
+    "id": "DD-C-H02",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A DAST scanner misses an authorization flaw that occurs only after a sequence of business workflow steps. What does this most strongly suggest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DAST is always useless"
+      },
+      {
+        "id": "b",
+        "text": "Stateful manual testing or workflow-aware automation is needed in addition to scanning"
+      },
+      {
+        "id": "c",
+        "text": "The application has no vulnerabilities"
+      },
+      {
+        "id": "d",
+        "text": "TLS inspection is broken"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Complex logic flaws often depend on state and workflow context that generic scanners do not model well.",
+    "points": 50,
+    "tags": [
+      "dast",
+      "manual-testing",
+      "workflow"
+    ]
+  },
+  {
+    "id": "DD-C-H03",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A red team report shows command execution through an admin feature, but the target was outside the approved scope. What should the customer do first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Publicly disclose immediately"
+      },
+      {
+        "id": "b",
+        "text": "Validate the finding safely within an authorized scope and review the rules-of-engagement breach"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the issue because scope was wrong"
+      },
+      {
+        "id": "d",
+        "text": "Promote the tester to administrator"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Out-of-scope activity is a process concern, but the technical issue still needs safe validation and governance follow-up.",
+    "points": 40,
+    "tags": [
+      "pentest",
+      "scope",
+      "governance"
+    ]
+  },
+  {
+    "id": "DD-C-H04",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A fuzzing campaign finds intermittent parser crashes only under address sanitizer builds, not release builds. Why are the results still valuable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are invalid because production did not crash"
+      },
+      {
+        "id": "b",
+        "text": "Sanitizers can reveal latent memory corruption before it becomes an exploitable production issue"
+      },
+      {
+        "id": "c",
+        "text": "They only indicate CPU throttling"
+      },
+      {
+        "id": "d",
+        "text": "They prove the compiler is broken"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Instrumentation often exposes memory misuse earlier and more reliably than release builds, making the findings highly actionable.",
+    "points": 50,
+    "tags": [
+      "fuzzing",
+      "memory-safety"
+    ]
+  },
+  {
+    "id": "DD-C-H05",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A product has a requirement that all audit logs be tamper-evident. Which verification evidence is strongest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A design slide saying logs are important"
+      },
+      {
+        "id": "b",
+        "text": "Test results showing unauthorized log modification is detected or prevented, tied to the requirement"
+      },
+      {
+        "id": "c",
+        "text": "A note from the project manager"
+      },
+      {
+        "id": "d",
+        "text": "A screenshot of disk usage"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Objective verification should demonstrate the control behavior, not just describe intended design.",
+    "points": 40,
+    "tags": [
+      "audit",
+      "verification"
+    ]
+  },
+  {
+    "id": "DD-C-H06",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A certification body asks how a security claim in the target of evaluation was validated. Which response is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "By citing industry reputation only"
+      },
+      {
+        "id": "b",
+        "text": "By showing traceability from security claim to test method, results, and defect resolution evidence"
+      },
+      {
+        "id": "c",
+        "text": "By stating that no issues were reported by users"
+      },
+      {
+        "id": "d",
+        "text": "By providing only the source code archive"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Certification-oriented evidence must show how each claim was tested and what objective results support it.",
+    "points": 50,
+    "tags": [
+      "certification",
+      "traceability",
+      "evidence"
+    ]
+  },
+  {
+    "id": "DD-C-H07",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An assessor is selecting between SAST, DAST, IAST, and code review for a heavily API-driven microservice. Which combination is most likely to catch both insecure patterns and runtime misconfigurations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only one weekly network scan"
+      },
+      {
+        "id": "b",
+        "text": "SAST plus targeted manual review and runtime testing such as DAST or IAST"
+      },
+      {
+        "id": "c",
+        "text": "Only source formatting checks"
+      },
+      {
+        "id": "d",
+        "text": "Only infrastructure cost reports"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Layered assessment techniques provide broader coverage than any single method, especially for APIs and business logic.",
+    "points": 40,
+    "tags": [
+      "assessment",
+      "layered-testing"
+    ]
+  },
+  {
+    "id": "DD-C-H08",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A DAST finding shows SQL injection only when a reverse proxy rewrites a header before it reaches the app. What lesson should the verifier take?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ignore intermediary behavior"
+      },
+      {
+        "id": "b",
+        "text": "Test architecture-dependent request paths because real deployment components can create or expose vulnerabilities"
+      },
+      {
+        "id": "c",
+        "text": "Disable all proxies permanently"
+      },
+      {
+        "id": "d",
+        "text": "Treat header rewriting as unrelated to security"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Verification must consider the deployed architecture; proxies, gateways, and middleware can materially affect exploitability.",
+    "points": 50,
+    "tags": [
+      "dast",
+      "deployment",
+      "architecture"
+    ]
+  },
+  {
+    "id": "DD-C-H09",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A code review identifies a risky cryptographic construction but no immediate exploit path. How should it be documented?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Not recorded because it is not exploitable today"
+      },
+      {
+        "id": "b",
+        "text": "As a design weakness with potential future impact and recommended remediation"
+      },
+      {
+        "id": "c",
+        "text": "As a network outage"
+      },
+      {
+        "id": "d",
+        "text": "As a hardware asset change"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Some findings represent latent design weaknesses that should be tracked even if exploitation is not currently demonstrated.",
+    "points": 40,
+    "tags": [
+      "code-review",
+      "crypto"
+    ]
+  },
+  {
+    "id": "DD-C-H10",
+    "domainId": "DD",
+    "subdomainId": "DD-C",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A testing team cannot show which requirements were not verified before release. What is the most significant governance failure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lack of subnetting"
+      },
+      {
+        "id": "b",
+        "text": "Lack of coverage visibility and acceptance decision support"
+      },
+      {
+        "id": "c",
+        "text": "Use of encrypted backups"
+      },
+      {
+        "id": "d",
+        "text": "Having too many testers"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Without traceability and coverage status, stakeholders cannot make informed release decisions about residual security risk.",
+    "points": 50,
+    "tags": [
+      "governance",
+      "traceability",
+      "coverage"
+    ]
+  },
+  {
+    "id": "DD-D-E01",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which statement is a well-written security requirement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The system should be very secure"
+      },
+      {
+        "id": "b",
+        "text": "The system shall lock an account for 15 minutes after 5 failed login attempts within 10 minutes"
+      },
+      {
+        "id": "c",
+        "text": "Admins should be careful with passwords"
+      },
+      {
+        "id": "d",
+        "text": "The application must use modern technology"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Good requirements are specific, testable, and measurable rather than vague aspirations.",
+    "points": 10,
+    "tags": [
+      "requirements",
+      "controls"
+    ]
+  },
+  {
+    "id": "DD-D-E02",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the purpose of requirements traceability?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To make requirements longer"
+      },
+      {
+        "id": "b",
+        "text": "To link requirements to design, implementation, and verification artifacts"
+      },
+      {
+        "id": "c",
+        "text": "To hide changes from auditors"
+      },
+      {
+        "id": "d",
+        "text": "To replace version control"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Traceability helps prove that requirements were implemented and tested and that changes are controlled.",
+    "points": 20,
+    "tags": [
+      "traceability",
+      "baselines"
+    ]
+  },
+  {
+    "id": "DD-D-E03",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "A compliance rule requires encryption of customer data at rest. In engineering terms, this is usually translated into:",
+    "options": [
+      {
+        "id": "a",
+        "text": "A control requirement for storage encryption"
+      },
+      {
+        "id": "b",
+        "text": "A request for larger hard drives"
+      },
+      {
+        "id": "c",
+        "text": "A need for faster DNS resolution"
+      },
+      {
+        "id": "d",
+        "text": "A marketing requirement"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Compliance statements need to be translated into concrete technical or procedural controls that can be implemented and verified.",
+    "points": 10,
+    "tags": [
+      "compliance",
+      "controls"
+    ]
+  },
+  {
+    "id": "DD-D-E04",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "When evaluating a new security vendor, what should be reviewed first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The logo design"
+      },
+      {
+        "id": "b",
+        "text": "The product\u2019s security due diligence information and architectural fit"
+      },
+      {
+        "id": "c",
+        "text": "The office furniture quality"
+      },
+      {
+        "id": "d",
+        "text": "The color of the dashboard"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Early build/buy evaluation should consider security posture, architecture fit, integration needs, and risk.",
+    "points": 20,
+    "tags": [
+      "due-diligence",
+      "vendor"
+    ]
+  },
+  {
+    "id": "DD-D-E05",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is a proof of concept (PoC) typically used for in technology R&D?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To prove a product is production-ready"
+      },
+      {
+        "id": "b",
+        "text": "To test whether an idea or approach is feasible"
+      },
+      {
+        "id": "c",
+        "text": "To replace legal review"
+      },
+      {
+        "id": "d",
+        "text": "To finalize the long-term operating budget"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A PoC validates feasibility and assumptions before a full commitment is made.",
+    "points": 20,
+    "tags": [
+      "poc",
+      "research"
+    ]
+  },
+  {
+    "id": "DD-D-E06",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In a baseline-controlled requirements process, what does a baseline represent?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The current approved set of requirements at a point in time"
+      },
+      {
+        "id": "b",
+        "text": "A list of internet bookmarks"
+      },
+      {
+        "id": "c",
+        "text": "A firewall rule order"
+      },
+      {
+        "id": "d",
+        "text": "A password rotation schedule"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "A baseline is the approved snapshot of requirements used for controlled engineering and change management.",
+    "points": 10,
+    "tags": [
+      "baseline",
+      "requirements"
+    ]
+  },
+  {
+    "id": "DD-D-E07",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which question is most relevant during build-versus-buy analysis of a security tool?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Does the vendor provide a cafeteria?"
+      },
+      {
+        "id": "b",
+        "text": "Can the option meet security requirements and be supported at acceptable risk and cost?"
+      },
+      {
+        "id": "c",
+        "text": "What color are the server racks?"
+      },
+      {
+        "id": "d",
+        "text": "Will it eliminate all incidents forever?"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Build-versus-buy decisions weigh capability, risk, integration, supportability, and cost rather than cosmetic factors.",
+    "points": 20,
+    "tags": [
+      "build-buy",
+      "risk"
+    ]
+  },
+  {
+    "id": "DD-D-E08",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the goal of vulnerability research fundamentals in an engineering context?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To understand how weaknesses arise and how to mitigate them"
+      },
+      {
+        "id": "b",
+        "text": "To attack production systems without permission"
+      },
+      {
+        "id": "c",
+        "text": "To avoid documenting defects"
+      },
+      {
+        "id": "d",
+        "text": "To replace patch management"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Understanding vulnerability classes helps engineers design safer systems and evaluate technology risk.",
+    "points": 10,
+    "tags": [
+      "vulnerability-research",
+      "engineering"
+    ]
+  },
+  {
+    "id": "DD-D-E09",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which artifact best shows that a compliance requirement was turned into engineering work?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A meme in team chat"
+      },
+      {
+        "id": "b",
+        "text": "A mapped control requirement in the backlog or specification"
+      },
+      {
+        "id": "c",
+        "text": "A ping test result"
+      },
+      {
+        "id": "d",
+        "text": "A desktop wallpaper"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A mapped requirement or backlog item shows how compliance obligations were translated into implementable engineering tasks.",
+    "points": 20,
+    "tags": [
+      "compliance",
+      "backlog"
+    ]
+  },
+  {
+    "id": "DD-D-E10",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why is version control valuable for requirement documents?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It makes fonts larger"
+      },
+      {
+        "id": "b",
+        "text": "It preserves history, change rationale, and review records"
+      },
+      {
+        "id": "c",
+        "text": "It removes the need for testing"
+      },
+      {
+        "id": "d",
+        "text": "It encrypts databases automatically"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Version control supports disciplined change management, collaboration, and auditability for requirement artifacts.",
+    "points": 20,
+    "tags": [
+      "requirements",
+      "version-control"
+    ]
+  },
+  {
+    "id": "DD-D-M01",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A policy says privileged access must be logged. Which requirement best translates that policy for a new admin portal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Admins should be monitored carefully"
+      },
+      {
+        "id": "b",
+        "text": "The system shall record successful and failed privileged actions with user ID, time, source IP, and tamper-evident storage"
+      },
+      {
+        "id": "c",
+        "text": "Logging is recommended"
+      },
+      {
+        "id": "d",
+        "text": "Use best practices for monitoring"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The translated requirement is specific enough to implement and test, unlike vague policy language.",
+    "points": 30,
+    "tags": [
+      "requirements",
+      "logging"
+    ]
+  },
+  {
+    "id": "DD-D-M02",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A program adopts SP 800-160-style engineering discipline. Which practice most directly supports it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Allowing requirements to change informally in chat"
+      },
+      {
+        "id": "b",
+        "text": "Maintaining traceability among requirements, architecture, implementation, and verification"
+      },
+      {
+        "id": "c",
+        "text": "Skipping baselines to move faster"
+      },
+      {
+        "id": "d",
+        "text": "Using one spreadsheet with no approvals"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Systems security engineering emphasizes disciplined lifecycle artifacts, traceability, and controlled change.",
+    "points": 30,
+    "tags": [
+      "sp800-160",
+      "traceability"
+    ]
+  },
+  {
+    "id": "DD-D-M03",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A team is buying a SaaS security platform that requires broad API permissions in the cloud tenant. What should happen before adoption?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Grant permissions in production immediately"
+      },
+      {
+        "id": "b",
+        "text": "Perform security due diligence on the permission model, data handling, and tenant isolation"
+      },
+      {
+        "id": "c",
+        "text": "Assume marketplace listing means zero risk"
+      },
+      {
+        "id": "d",
+        "text": "Disable logging so onboarding is faster"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Broad permissions can create major risk, so due diligence should assess data access, architecture, and least-privilege options.",
+    "points": 30,
+    "tags": [
+      "saas",
+      "due-diligence",
+      "cloud"
+    ]
+  },
+  {
+    "id": "DD-D-M04",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A PoC of a passwordless login method works in the lab, but enterprise browser support is inconsistent. What is the best next decision?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Declare success and mandate rollout"
+      },
+      {
+        "id": "b",
+        "text": "Document the constraint and expand evaluation against target environments before adoption"
+      },
+      {
+        "id": "c",
+        "text": "Ignore browser compatibility"
+      },
+      {
+        "id": "d",
+        "text": "Replace all identity systems immediately"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A PoC proves feasibility under limited conditions; adoption decisions should consider target environment compatibility and operational constraints.",
+    "points": 30,
+    "tags": [
+      "poc",
+      "adoption"
+    ]
+  },
+  {
+    "id": "DD-D-M05",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A research team is comparing two secrets-management products. Which criterion is most security-relevant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Whether the UI uses dark mode"
+      },
+      {
+        "id": "b",
+        "text": "How each product handles key protection, auditability, rotation, and access control integration"
+      },
+      {
+        "id": "c",
+        "text": "Which vendor has the larger booth at a conference"
+      },
+      {
+        "id": "d",
+        "text": "Whether the installer includes wallpapers"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Security product evaluation should focus on control strength, operational fit, and evidence, not cosmetic attributes.",
+    "points": 30,
+    "tags": [
+      "vendor",
+      "secrets",
+      "evaluation"
+    ]
+  },
+  {
+    "id": "DD-D-M06",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A requirement baseline changes after a new regulation takes effect. What should happen to affected test cases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nothing; tests never change"
+      },
+      {
+        "id": "b",
+        "text": "They should be reviewed and updated to maintain traceability to the revised requirements"
+      },
+      {
+        "id": "c",
+        "text": "Delete all prior evidence"
+      },
+      {
+        "id": "d",
+        "text": "Only update the project title"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When requirements change, linked verification artifacts must be reviewed so coverage remains accurate.",
+    "points": 30,
+    "tags": [
+      "baseline",
+      "testing"
+    ]
+  },
+  {
+    "id": "DD-D-M07",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A compliance team says data must be retained for seven years. What makes the resulting engineering requirement testable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It references exact data classes, retention period, and disposal behavior"
+      },
+      {
+        "id": "b",
+        "text": "It says data should be handled properly"
+      },
+      {
+        "id": "c",
+        "text": "It names a single employee who cares about the issue"
+      },
+      {
+        "id": "d",
+        "text": "It avoids specifying scope"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Specific scope, duration, and expected behavior make retention requirements verifiable.",
+    "points": 30,
+    "tags": [
+      "requirements",
+      "retention"
+    ]
+  },
+  {
+    "id": "DD-D-M08",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A startup is evaluating whether to build its own SIEM correlation engine. Which factor most strongly favors buying instead?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The team likes writing parsers"
+      },
+      {
+        "id": "b",
+        "text": "The requirement is common, time-to-value matters, and the startup lacks long-term detection engineering capacity"
+      },
+      {
+        "id": "c",
+        "text": "The office internet is slow"
+      },
+      {
+        "id": "d",
+        "text": "The founders prefer a shorter company name"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Buying is often favored when capabilities are commodity-like and the organization lacks capacity to build and sustain them securely.",
+    "points": 30,
+    "tags": [
+      "build-buy",
+      "siem"
+    ]
+  },
+  {
+    "id": "DD-D-M09",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An engineer studying a published vulnerability wants to derive useful lessons without reproducing an exploit in production. What is the best approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Review root cause, affected assumptions, and mitigations in a controlled environment"
+      },
+      {
+        "id": "b",
+        "text": "Run the exploit against customer systems"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the advisory because it is public"
+      },
+      {
+        "id": "d",
+        "text": "Disable patching until more research is done"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Safe vulnerability research focuses on understanding root cause and mitigations in controlled settings.",
+    "points": 30,
+    "tags": [
+      "vulnerability-research",
+      "root-cause"
+    ]
+  },
+  {
+    "id": "DD-D-M10",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A requirement says an external vendor must support SSO. Which missing detail is most important before implementation begins?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Office parking availability"
+      },
+      {
+        "id": "b",
+        "text": "Which federation protocol and identity trust boundaries are acceptable"
+      },
+      {
+        "id": "c",
+        "text": "The vendor\u2019s favorite programming language"
+      },
+      {
+        "id": "d",
+        "text": "The color of the login button"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Protocol and trust-boundary specifics are needed to make the requirement actionable and testable.",
+    "points": 30,
+    "tags": [
+      "requirements",
+      "federation"
+    ]
+  },
+  {
+    "id": "DD-D-H01",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A security requirement states that all sensitive APIs must be protected, but teams disagree on what sensitive means. What is the best corrective action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Leave it ambiguous for flexibility"
+      },
+      {
+        "id": "b",
+        "text": "Refine the requirement with classification criteria and examples tied to business impact"
+      },
+      {
+        "id": "c",
+        "text": "Ask each developer to decide individually"
+      },
+      {
+        "id": "d",
+        "text": "Remove the requirement entirely"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Ambiguous terms cause inconsistent implementation; defining classification criteria makes the requirement enforceable and testable.",
+    "points": 40,
+    "tags": [
+      "requirements",
+      "classification"
+    ]
+  },
+  {
+    "id": "DD-D-H02",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An engineering baseline for an identity program changes after a merger introduces a second IdP. Which artifact is most critical to update first to avoid downstream confusion?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Employee holiday calendar"
+      },
+      {
+        "id": "b",
+        "text": "The approved requirements and architecture baseline that define trust relationships"
+      },
+      {
+        "id": "c",
+        "text": "Desktop wallpapers"
+      },
+      {
+        "id": "d",
+        "text": "Power strip inventory"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When trust relationships change, the authoritative requirements and architecture baseline should be updated so design, implementation, and tests remain aligned.",
+    "points": 50,
+    "tags": [
+      "baseline",
+      "identity",
+      "traceability"
+    ]
+  },
+  {
+    "id": "DD-D-H03",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A vendor\u2019s product promises AI-driven threat detection but will not provide data-flow documentation or tenant-isolation details. What is the best adoption stance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Adopt immediately because the feature set is advanced"
+      },
+      {
+        "id": "b",
+        "text": "Treat the missing due-diligence evidence as a material risk and block or limit adoption until resolved"
+      },
+      {
+        "id": "c",
+        "text": "Assume the sales contract covers all technical issues"
+      },
+      {
+        "id": "d",
+        "text": "Disable internal review to move faster"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Opaque architecture and data handling create security and compliance uncertainty that should be resolved before broad deployment.",
+    "points": 40,
+    "tags": [
+      "due-diligence",
+      "vendor-risk"
+    ]
+  },
+  {
+    "id": "DD-D-H04",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A PoC for a new cryptographic library performs well, but the library has no long-term maintenance history and weak secure-default documentation. What is the best recommendation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deploy it everywhere because benchmarks were good"
+      },
+      {
+        "id": "b",
+        "text": "Treat supportability and secure-operability risk as part of the adoption decision, not just raw performance"
+      },
+      {
+        "id": "c",
+        "text": "Ignore documentation quality"
+      },
+      {
+        "id": "d",
+        "text": "Replace all existing crypto immediately"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "R&D evaluation should include maintenance, defaults, support, and integration risk in addition to technical capability.",
+    "points": 50,
+    "tags": [
+      "rd",
+      "crypto",
+      "adoption"
+    ]
+  },
+  {
+    "id": "DD-D-H05",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A team maps a regulatory requirement to a compensating control rather than the literal text. What must they preserve for audit defensibility?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the name of the engineer who suggested it"
+      },
+      {
+        "id": "b",
+        "text": "A documented rationale showing how the compensating control satisfies the requirement intent"
+      },
+      {
+        "id": "c",
+        "text": "A screenshot of the regulation title"
+      },
+      {
+        "id": "d",
+        "text": "A copy of the office seating chart"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Compensating controls can be valid, but the rationale and evidence must show that intent and risk are adequately addressed.",
+    "points": 40,
+    "tags": [
+      "compliance",
+      "compensating-controls"
+    ]
+  },
+  {
+    "id": "DD-D-H06",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A research engineer wants to compare sandbox escape vulnerabilities across products. Which approach best stays within vulnerability research fundamentals?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Build a production worm to test every host"
+      },
+      {
+        "id": "b",
+        "text": "Study published advisories, architecture assumptions, and mitigation patterns in isolated lab environments"
+      },
+      {
+        "id": "c",
+        "text": "Exploit customer systems to collect evidence"
+      },
+      {
+        "id": "d",
+        "text": "Skip legal and safety review because it is research"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Foundational research should be controlled, ethical, and focused on understanding patterns and mitigations.",
+    "points": 50,
+    "tags": [
+      "vulnerability-research",
+      "lab"
+    ]
+  },
+  {
+    "id": "DD-D-H07",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A requirements set includes both business and security constraints, but no priority or rationale. What risk does that create?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It improves clarity automatically"
+      },
+      {
+        "id": "b",
+        "text": "Teams may make inconsistent trade-offs because they lack decision context when constraints conflict"
+      },
+      {
+        "id": "c",
+        "text": "It guarantees faster delivery"
+      },
+      {
+        "id": "d",
+        "text": "It reduces the need for testing"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Priority and rationale help teams resolve conflicts and preserve intent when trade-offs are necessary.",
+    "points": 40,
+    "tags": [
+      "requirements",
+      "prioritization"
+    ]
+  },
+  {
+    "id": "DD-D-H08",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A build-versus-buy review underestimates the operational burden of self-hosting a secrets platform. Which hidden cost category is most often missed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Font licensing"
+      },
+      {
+        "id": "b",
+        "text": "Ongoing patching, backup, HA, key rotation, and on-call support responsibilities"
+      },
+      {
+        "id": "c",
+        "text": "Coffee supplies"
+      },
+      {
+        "id": "d",
+        "text": "Office rent only"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Operational ownership includes reliability, maintenance, recovery, and security administration costs beyond initial development.",
+    "points": 50,
+    "tags": [
+      "build-buy",
+      "operations",
+      "secrets"
+    ]
+  },
+  {
+    "id": "DD-D-H09",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A compliance-derived requirement mandates encryption, but the architecture omits key-rotation ownership. What does that indicate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A complete requirement set"
+      },
+      {
+        "id": "b",
+        "text": "A gap in translating policy intent into operationally complete controls"
+      },
+      {
+        "id": "c",
+        "text": "A networking problem only"
+      },
+      {
+        "id": "d",
+        "text": "An unavoidable vendor issue"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Control requirements should include operational responsibilities such as rotation, custody, and monitoring, not just the word encryption.",
+    "points": 40,
+    "tags": [
+      "requirements",
+      "key-management"
+    ]
+  },
+  {
+    "id": "DD-D-H10",
+    "domainId": "DD",
+    "subdomainId": "DD-D",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A security research PoC shows a browser-based attack is feasible only with legacy settings disabled in the corporate standard build. What is the correct interpretation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The issue is irrelevant everywhere forever"
+      },
+      {
+        "id": "b",
+        "text": "Adoption risk depends on baseline configuration, so the finding should be analyzed against actual managed-state exposure"
+      },
+      {
+        "id": "c",
+        "text": "All browsers are vulnerable equally"
+      },
+      {
+        "id": "d",
+        "text": "The PoC is invalid because it used a lab"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "R&D findings need to be interpreted in the context of real deployment baselines to judge practical exposure.",
+    "points": 50,
+    "tags": [
+      "poc",
+      "baseline",
+      "risk"
+    ]
+  },
+  {
+    "id": "IO-A-E01",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which protocol translates a hostname such as app.example.com into an IP address?",
+    "options": [
+      {
+        "id": "a",
+        "text": "NTP"
+      },
+      {
+        "id": "b",
+        "text": "DNS"
+      },
+      {
+        "id": "c",
+        "text": "DHCP"
+      },
+      {
+        "id": "d",
+        "text": "OSPF"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "DNS resolves hostnames to IP addresses so clients can locate services on the network.",
+    "points": 10,
+    "tags": [
+      "dns",
+      "tcpip"
+    ]
+  },
+  {
+    "id": "IO-A-E02",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "A /24 IPv4 subnet contains how many total addresses?",
+    "options": [
+      {
+        "id": "a",
+        "text": "64"
+      },
+      {
+        "id": "b",
+        "text": "128"
+      },
+      {
+        "id": "c",
+        "text": "256"
+      },
+      {
+        "id": "d",
+        "text": "512"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "A /24 leaves 8 host bits, yielding 2^8 or 256 total addresses.",
+    "points": 20,
+    "tags": [
+      "subnetting",
+      "ipv4"
+    ]
+  },
+  {
+    "id": "IO-A-E03",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the primary purpose of a VLAN on a switch?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Increase monitor resolution"
+      },
+      {
+        "id": "b",
+        "text": "Create separate Layer 2 broadcast domains"
+      },
+      {
+        "id": "c",
+        "text": "Encrypt all traffic automatically"
+      },
+      {
+        "id": "d",
+        "text": "Replace routing protocols"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "VLANs segment Layer 2 networks into separate broadcast domains for isolation and manageability.",
+    "points": 10,
+    "tags": [
+      "vlan",
+      "switching"
+    ]
+  },
+  {
+    "id": "IO-A-E04",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why is NAT commonly used at an internet edge?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To convert private addresses so internal hosts can reach external networks"
+      },
+      {
+        "id": "b",
+        "text": "To replace DNS"
+      },
+      {
+        "id": "c",
+        "text": "To synchronize clocks"
+      },
+      {
+        "id": "d",
+        "text": "To disable routing"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "NAT commonly translates private internal addresses to public ones for outbound connectivity.",
+    "points": 20,
+    "tags": [
+      "nat",
+      "routing"
+    ]
+  },
+  {
+    "id": "IO-A-E05",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which routing protocol is widely used as an interior gateway protocol inside an enterprise network?",
+    "options": [
+      {
+        "id": "a",
+        "text": "BGP"
+      },
+      {
+        "id": "b",
+        "text": "OSPF"
+      },
+      {
+        "id": "c",
+        "text": "ARP"
+      },
+      {
+        "id": "d",
+        "text": "SNMP"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "OSPF is a common link-state interior routing protocol used within organizations.",
+    "points": 20,
+    "tags": [
+      "ospf",
+      "routing"
+    ]
+  },
+  {
+    "id": "IO-A-E06",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What does DHCP primarily provide to a client host?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A TLS certificate"
+      },
+      {
+        "id": "b",
+        "text": "Dynamic network configuration such as IP address and gateway"
+      },
+      {
+        "id": "c",
+        "text": "Packet captures"
+      },
+      {
+        "id": "d",
+        "text": "Spanning-tree root election"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "DHCP assigns addressing and related network settings to clients automatically.",
+    "points": 10,
+    "tags": [
+      "dhcp",
+      "tcpip"
+    ]
+  },
+  {
+    "id": "IO-A-E07",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which technology is most commonly used to prevent Layer 2 switching loops?",
+    "options": [
+      {
+        "id": "a",
+        "text": "BGP"
+      },
+      {
+        "id": "b",
+        "text": "Spanning Tree Protocol"
+      },
+      {
+        "id": "c",
+        "text": "NTP"
+      },
+      {
+        "id": "d",
+        "text": "GRE"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Spanning Tree Protocol blocks redundant Layer 2 paths as needed to avoid loops and broadcast storms.",
+    "points": 20,
+    "tags": [
+      "stp",
+      "switching"
+    ]
+  },
+  {
+    "id": "IO-A-E08",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is a common use of a load balancer?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assign PCI bus numbers"
+      },
+      {
+        "id": "b",
+        "text": "Distribute client requests across multiple backend servers"
+      },
+      {
+        "id": "c",
+        "text": "Create domain accounts"
+      },
+      {
+        "id": "d",
+        "text": "Compile application code"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Load balancers improve scale and availability by distributing requests among healthy backends.",
+    "points": 20,
+    "tags": [
+      "load-balancer",
+      "availability"
+    ]
+  },
+  {
+    "id": "IO-A-E09",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "Which protocol is most associated with secure remote-access tunnels at the network layer?",
+    "options": [
+      {
+        "id": "a",
+        "text": "IPsec"
+      },
+      {
+        "id": "b",
+        "text": "TFTP"
+      },
+      {
+        "id": "c",
+        "text": "SMTP"
+      },
+      {
+        "id": "d",
+        "text": "LLDP"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "IPsec is a standard suite for network-layer VPN tunnels.",
+    "points": 10,
+    "tags": [
+      "vpn",
+      "ipsec"
+    ]
+  },
+  {
+    "id": "IO-A-E10",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "In 802.1X network access control, what is being checked before full network access is granted?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Whether the cable is blue"
+      },
+      {
+        "id": "b",
+        "text": "The client\u2019s authentication to the network"
+      },
+      {
+        "id": "c",
+        "text": "The monitor serial number"
+      },
+      {
+        "id": "d",
+        "text": "Which browser the user prefers"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "802.1X uses an authentication exchange before granting access to the network.",
+    "points": 20,
+    "tags": [
+      "8021x",
+      "nac"
+    ]
+  },
+  {
+    "id": "IO-A-M01",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A host with address 10.20.30.45/27 needs to reach the internet. Which address range is on its local subnet?",
+    "options": [
+      {
+        "id": "a",
+        "text": "10.20.30.0-10.20.30.31"
+      },
+      {
+        "id": "b",
+        "text": "10.20.30.32-10.20.30.63"
+      },
+      {
+        "id": "c",
+        "text": "10.20.30.64-10.20.30.95"
+      },
+      {
+        "id": "d",
+        "text": "10.20.30.128-10.20.30.159"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A /27 has blocks of 32 addresses. Address 45 falls within the 32-63 subnet.",
+    "points": 30,
+    "tags": [
+      "subnetting",
+      "ipv4"
+    ]
+  },
+  {
+    "id": "IO-A-M02",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "Users in one VLAN cannot reach another until a new gateway is configured. What capability was missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Inter-VLAN routing"
+      },
+      {
+        "id": "b",
+        "text": "SNMP traps"
+      },
+      {
+        "id": "c",
+        "text": "PAT only"
+      },
+      {
+        "id": "d",
+        "text": "NTP peering"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Traffic between VLANs requires Layer 3 routing, typically on a router or Layer 3 switch.",
+    "points": 30,
+    "tags": [
+      "vlan",
+      "routing"
+    ]
+  },
+  {
+    "id": "IO-A-M03",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A branch router should prefer a specific MPLS path for internal prefixes while still learning internet routes from another peer. Which protocol is best suited for exchanging routes with service providers?",
+    "options": [
+      {
+        "id": "a",
+        "text": "STP"
+      },
+      {
+        "id": "b",
+        "text": "BGP"
+      },
+      {
+        "id": "c",
+        "text": "ARP"
+      },
+      {
+        "id": "d",
+        "text": "DHCP"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "BGP is commonly used to exchange routing information with upstream providers and to apply path policy.",
+    "points": 30,
+    "tags": [
+      "bgp",
+      "wan"
+    ]
+  },
+  {
+    "id": "IO-A-M04",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "An NTP server in a DMZ is drifting badly, causing Kerberos failures. What is the operational priority?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Increase VLAN count"
+      },
+      {
+        "id": "b",
+        "text": "Restore accurate time synchronization because time-sensitive protocols depend on it"
+      },
+      {
+        "id": "c",
+        "text": "Disable DNSSEC"
+      },
+      {
+        "id": "d",
+        "text": "Turn off spanning tree"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Accurate time is critical for Kerberos, logging, certificates, and many security controls.",
+    "points": 30,
+    "tags": [
+      "ntp",
+      "kerberos"
+    ]
+  },
+  {
+    "id": "IO-A-M05",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A reverse proxy terminates TLS before forwarding traffic to backend servers. What is the main reason to do this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To make packets larger"
+      },
+      {
+        "id": "b",
+        "text": "To centralize certificate handling and apply Layer 7 controls"
+      },
+      {
+        "id": "c",
+        "text": "To eliminate DNS records"
+      },
+      {
+        "id": "d",
+        "text": "To avoid routing tables"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "TLS termination at a proxy or load balancer simplifies certificate management and enables inspection, routing, and WAF functions.",
+    "points": 30,
+    "tags": [
+      "tls",
+      "proxy",
+      "load-balancer"
+    ]
+  },
+  {
+    "id": "IO-A-M06",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A wireless network uses WPA2-Enterprise with 802.1X. Which backend service commonly validates user or device credentials?",
+    "options": [
+      {
+        "id": "a",
+        "text": "RADIUS"
+      },
+      {
+        "id": "b",
+        "text": "BGP"
+      },
+      {
+        "id": "c",
+        "text": "Syslog"
+      },
+      {
+        "id": "d",
+        "text": "mDNS"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "802.1X enterprise wireless commonly relies on a RADIUS server to authenticate supplicants.",
+    "points": 30,
+    "tags": [
+      "wireless",
+      "radius",
+      "8021x"
+    ]
+  },
+  {
+    "id": "IO-A-M07",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A network operator wants to understand which internal hosts are sending the most traffic to a SaaS provider. Which data source is most efficient?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Full packet capture from every switchport"
+      },
+      {
+        "id": "b",
+        "text": "NetFlow or IPFIX records from edge devices"
+      },
+      {
+        "id": "c",
+        "text": "A screenshot of the routing table"
+      },
+      {
+        "id": "d",
+        "text": "A DHCP reservation list"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Flow telemetry summarizes conversations and volume efficiently without requiring full packet capture everywhere.",
+    "points": 30,
+    "tags": [
+      "netflow",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "IO-A-M08",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A VPC and VNet in different clouds need private connectivity without traversing the public internet. Which design is most suitable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Public DNS forwarding only"
+      },
+      {
+        "id": "b",
+        "text": "A site-to-site VPN or dedicated private interconnect"
+      },
+      {
+        "id": "c",
+        "text": "Disabling routing on both sides"
+      },
+      {
+        "id": "d",
+        "text": "Using only browser proxies"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Private cross-cloud connectivity typically uses VPN or dedicated interconnect services rather than public paths.",
+    "points": 30,
+    "tags": [
+      "cloud-networking",
+      "vpn"
+    ]
+  },
+  {
+    "id": "IO-A-M09",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A DNS zone allows unsigned dynamic updates from any internal host. What is the main security concern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Faster clock drift"
+      },
+      {
+        "id": "b",
+        "text": "Unauthorized hosts may alter name records"
+      },
+      {
+        "id": "c",
+        "text": "OSPF adjacency loss"
+      },
+      {
+        "id": "d",
+        "text": "Reduced Wi-Fi throughput"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Unrestricted dynamic updates can allow rogue hosts to poison internal DNS records.",
+    "points": 30,
+    "tags": [
+      "dns",
+      "security"
+    ]
+  },
+  {
+    "id": "IO-A-M10",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A firewall team needs to allow outbound HTTPS from a private subnet through one public IP for many servers. Which function is required?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Destination NAT only"
+      },
+      {
+        "id": "b",
+        "text": "Source NAT or PAT on the egress device"
+      },
+      {
+        "id": "c",
+        "text": "Spanning tree portfast"
+      },
+      {
+        "id": "d",
+        "text": "DHCP snooping"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Many-to-one outbound internet access from private hosts typically uses source NAT/PAT at the edge.",
+    "points": 30,
+    "tags": [
+      "nat",
+      "firewall"
+    ]
+  },
+  {
+    "id": "IO-A-H01",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A packet capture shows repeated SYN packets leaving a client with no SYN-ACK returning. Which explanation is most likely?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The TCP three-way handshake completed successfully"
+      },
+      {
+        "id": "b",
+        "text": "The server or a path device is not returning or allowing the response"
+      },
+      {
+        "id": "c",
+        "text": "DNS caching is working normally"
+      },
+      {
+        "id": "d",
+        "text": "SNMP community strings are invalid"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Repeated SYN retransmissions usually indicate the connection attempt is not being answered, often due to filtering or an unreachable service.",
+    "points": 40,
+    "tags": [
+      "tcp",
+      "packet-analysis"
+    ]
+  },
+  {
+    "id": "IO-A-H02",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An enterprise has overlapping RFC1918 address space after an acquisition. Which design best enables interim connectivity between both environments?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Disable routing everywhere"
+      },
+      {
+        "id": "b",
+        "text": "Use translation or carefully controlled segmentation at the interconnect until renumbering is complete"
+      },
+      {
+        "id": "c",
+        "text": "Run spanning tree across the WAN"
+      },
+      {
+        "id": "d",
+        "text": "Put both environments in one flat VLAN"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When addresses overlap, translation or isolated connectivity designs are needed until a cleaner addressing plan is implemented.",
+    "points": 50,
+    "tags": [
+      "nat",
+      "merger",
+      "routing"
+    ]
+  },
+  {
+    "id": "IO-A-H03",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A BGP edge receives a full internet table from two providers. What control most directly prevents accidental advertisement of internal prefixes to the internet?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A local printer ACL"
+      },
+      {
+        "id": "b",
+        "text": "Explicit outbound prefix filtering and route policy"
+      },
+      {
+        "id": "c",
+        "text": "Longer Ethernet cables"
+      },
+      {
+        "id": "d",
+        "text": "More DHCP scopes"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Outbound prefix filters and route policy are essential to stop route leaks of internal networks.",
+    "points": 40,
+    "tags": [
+      "bgp",
+      "routing-policy"
+    ]
+  },
+  {
+    "id": "IO-A-H04",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A campus switch stack experiences intermittent Layer 2 storms after a maintenance change. Which evidence would best confirm a spanning-tree issue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "High DNS TTL values"
+      },
+      {
+        "id": "b",
+        "text": "MAC address table flapping and topology change events"
+      },
+      {
+        "id": "c",
+        "text": "Expired TLS certificates"
+      },
+      {
+        "id": "d",
+        "text": "Low CPU on all switches"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "MAC flapping and frequent topology changes are strong indicators of Layer 2 loop or spanning-tree instability.",
+    "points": 50,
+    "tags": [
+      "stp",
+      "switching",
+      "troubleshooting"
+    ]
+  },
+  {
+    "id": "IO-A-H05",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A web application needs to preserve the original client IP after TLS termination at the load balancer. Which approach is commonly used?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rely on the backend ARP cache"
+      },
+      {
+        "id": "b",
+        "text": "Insert and trust a header such as X-Forwarded-For from the load balancer"
+      },
+      {
+        "id": "c",
+        "text": "Disable TCP checksums"
+      },
+      {
+        "id": "d",
+        "text": "Move the site to FTP"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When proxies terminate connections, they often pass the originating client IP to backends via trusted forwarding headers.",
+    "points": 40,
+    "tags": [
+      "proxy",
+      "tls",
+      "logging"
+    ]
+  },
+  {
+    "id": "IO-A-H06",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A remote-access VPN is working, but users can reach every internal subnet although policy should limit them to one application zone. What architectural control is missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Larger MTU settings"
+      },
+      {
+        "id": "b",
+        "text": "Granular VPN authorization and downstream segmentation or ACL enforcement"
+      },
+      {
+        "id": "c",
+        "text": "A second DNS server"
+      },
+      {
+        "id": "d",
+        "text": "Additional STP root guards"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "VPN connectivity alone does not enforce least privilege; access must be restricted by policy and segmentation after tunnel establishment.",
+    "points": 50,
+    "tags": [
+      "vpn",
+      "access-control",
+      "segmentation"
+    ]
+  },
+  {
+    "id": "IO-A-H07",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A NAC deployment authenticates devices with certificates and also checks patch status before placing them on the production VLAN. What is that second function called?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Route summarization"
+      },
+      {
+        "id": "b",
+        "text": "Posture assessment"
+      },
+      {
+        "id": "c",
+        "text": "Static NAT"
+      },
+      {
+        "id": "d",
+        "text": "Port mirroring"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Posture assessment evaluates endpoint state such as patching or AV before assigning access.",
+    "points": 40,
+    "tags": [
+      "nac",
+      "posture"
+    ]
+  },
+  {
+    "id": "IO-A-H08",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An analyst must prove whether a data exfiltration alert involved large file transfer or many small encrypted sessions. Which combination is most useful?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the asset inventory"
+      },
+      {
+        "id": "b",
+        "text": "NetFlow for volume patterns plus selective packet capture where lawful and available"
+      },
+      {
+        "id": "c",
+        "text": "A printout of VLAN IDs"
+      },
+      {
+        "id": "d",
+        "text": "A list of Wi-Fi SSIDs"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Flow records reveal conversation size and timing at scale, while packet captures add protocol detail for targeted validation.",
+    "points": 50,
+    "tags": [
+      "netflow",
+      "pcap",
+      "analysis"
+    ]
+  },
+  {
+    "id": "IO-A-H09",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A cloud team uses private endpoints so PaaS databases stay off the public internet. What routing implication must be handled carefully?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Private endpoint traffic may require DNS and route changes so clients resolve and reach private addresses"
+      },
+      {
+        "id": "b",
+        "text": "Spanning tree root must move to the cloud"
+      },
+      {
+        "id": "c",
+        "text": "NTP becomes unnecessary"
+      },
+      {
+        "id": "d",
+        "text": "BGP cannot exist in cloud networks"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Private endpoints depend heavily on correct DNS resolution and routing toward private service IPs instead of public endpoints.",
+    "points": 40,
+    "tags": [
+      "private-endpoint",
+      "dns",
+      "cloud-networking"
+    ]
+  },
+  {
+    "id": "IO-A-H10",
+    "domainId": "IO",
+    "subdomainId": "IO-A",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A DNS resolver is vulnerable to cache poisoning because source port and transaction ID entropy are weak. What is the core security problem?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The resolver lacks enough VLANs"
+      },
+      {
+        "id": "b",
+        "text": "An attacker can more easily forge a response that the resolver accepts as legitimate"
+      },
+      {
+        "id": "c",
+        "text": "The switch is dropping jumbo frames"
+      },
+      {
+        "id": "d",
+        "text": "The firewall cannot perform NAT"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Resolver acceptance relies partly on unpredictable query parameters; weak entropy makes forged responses more feasible.",
+    "points": 50,
+    "tags": [
+      "dns",
+      "cache-poisoning"
+    ]
+  },
+  {
+    "id": "IO-B-E01",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In Active Directory, what is a Group Policy Object (GPO) commonly used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Configuring and enforcing settings across users or computers"
+      },
+      {
+        "id": "b",
+        "text": "Replacing DNS entirely"
+      },
+      {
+        "id": "c",
+        "text": "Creating database indexes"
+      },
+      {
+        "id": "d",
+        "text": "Managing Wi-Fi channels"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "GPOs centrally apply security and configuration settings to Windows systems and users.",
+    "points": 10,
+    "tags": [
+      "gpo",
+      "windows"
+    ]
+  },
+  {
+    "id": "IO-B-E02",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which protocol is primarily used by Active Directory for ticket-based authentication in a domain?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kerberos"
+      },
+      {
+        "id": "b",
+        "text": "FTP"
+      },
+      {
+        "id": "c",
+        "text": "BGP"
+      },
+      {
+        "id": "d",
+        "text": "IMAP"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Kerberos is the standard ticket-based authentication protocol used by Active Directory domains.",
+    "points": 20,
+    "tags": [
+      "kerberos",
+      "ad"
+    ]
+  },
+  {
+    "id": "IO-B-E03",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "On Linux, which command is commonly used to view or control services managed by systemd?",
+    "options": [
+      {
+        "id": "a",
+        "text": "systemctl"
+      },
+      {
+        "id": "b",
+        "text": "route print"
+      },
+      {
+        "id": "c",
+        "text": "gpupdate"
+      },
+      {
+        "id": "d",
+        "text": "diskpart"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "systemctl is the primary tool for managing services and units under systemd.",
+    "points": 10,
+    "tags": [
+      "linux",
+      "systemd"
+    ]
+  },
+  {
+    "id": "IO-B-E04",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What is the purpose of a hardening baseline such as CIS Benchmarks or STIGs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To increase social media engagement"
+      },
+      {
+        "id": "b",
+        "text": "To provide recommended secure configuration settings"
+      },
+      {
+        "id": "c",
+        "text": "To replace all patching"
+      },
+      {
+        "id": "d",
+        "text": "To generate SQL queries"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Hardening baselines give structured guidance for securely configuring systems and services.",
+    "points": 20,
+    "tags": [
+      "hardening",
+      "cis"
+    ]
+  },
+  {
+    "id": "IO-B-E05",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which database control best protects data if physical disks are stolen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Encryption at rest"
+      },
+      {
+        "id": "b",
+        "text": "A longer hostname"
+      },
+      {
+        "id": "c",
+        "text": "Disabling backups"
+      },
+      {
+        "id": "d",
+        "text": "Using default passwords"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Encryption at rest helps protect stored data from disclosure if underlying media is lost or stolen.",
+    "points": 20,
+    "tags": [
+      "database",
+      "encryption"
+    ]
+  },
+  {
+    "id": "IO-B-E06",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "What is the main purpose of backups?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To replace authentication"
+      },
+      {
+        "id": "b",
+        "text": "To restore data or systems after loss, corruption, or compromise"
+      },
+      {
+        "id": "c",
+        "text": "To improve monitor refresh rate"
+      },
+      {
+        "id": "d",
+        "text": "To create VLANs automatically"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Backups provide a recovery path when data is deleted, corrupted, or otherwise unavailable.",
+    "points": 10,
+    "tags": [
+      "backup",
+      "recovery"
+    ]
+  },
+  {
+    "id": "IO-B-E07",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Which identity lifecycle event should trigger prompt removal of unnecessary access?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Joiner"
+      },
+      {
+        "id": "b",
+        "text": "Mover"
+      },
+      {
+        "id": "c",
+        "text": "Leaver"
+      },
+      {
+        "id": "d",
+        "text": "Printer deployment"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "When someone leaves the organization, accounts and access should be disabled or removed promptly.",
+    "points": 20,
+    "tags": [
+      "identity-lifecycle",
+      "jml"
+    ]
+  },
+  {
+    "id": "IO-B-E08",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 1,
+    "prompt": "In Linux file permissions, what does chmod primarily change?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DNS resolution order"
+      },
+      {
+        "id": "b",
+        "text": "File mode bits such as read, write, and execute permissions"
+      },
+      {
+        "id": "c",
+        "text": "Database replication lag"
+      },
+      {
+        "id": "d",
+        "text": "Kerberos ticket lifetime"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "chmod changes file and directory permission bits controlling access behavior.",
+    "points": 10,
+    "tags": [
+      "linux",
+      "permissions"
+    ]
+  },
+  {
+    "id": "IO-B-E09",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "What does Entra ID primarily provide in a Microsoft cloud environment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Layer 2 switching service"
+      },
+      {
+        "id": "b",
+        "text": "Cloud identity and access management"
+      },
+      {
+        "id": "c",
+        "text": "A hardware RAID controller"
+      },
+      {
+        "id": "d",
+        "text": "A packet-capture appliance"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Microsoft Entra ID provides identity, authentication, and access management capabilities for cloud services.",
+    "points": 20,
+    "tags": [
+      "entra",
+      "identity"
+    ]
+  },
+  {
+    "id": "IO-B-E10",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "easy",
+    "difficulty": 2,
+    "prompt": "Why is patch management important?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It guarantees zero vulnerabilities forever"
+      },
+      {
+        "id": "b",
+        "text": "It reduces exposure by fixing known defects and vulnerabilities"
+      },
+      {
+        "id": "c",
+        "text": "It prevents all user mistakes"
+      },
+      {
+        "id": "d",
+        "text": "It eliminates the need for backups"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Timely patching reduces the window of exposure to known bugs and security issues.",
+    "points": 20,
+    "tags": [
+      "patching",
+      "hardening"
+    ]
+  },
+  {
+    "id": "IO-B-M01",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A new employee cannot access a file share even after successful domain login. Which administrative area should be checked first?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The user\u2019s group memberships and share/NTFS permissions"
+      },
+      {
+        "id": "b",
+        "text": "The office thermostat"
+      },
+      {
+        "id": "c",
+        "text": "Switch spanning tree priority"
+      },
+      {
+        "id": "d",
+        "text": "The monitor cable"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Successful authentication does not imply authorization; file share access depends on group membership and filesystem/share permissions.",
+    "points": 30,
+    "tags": [
+      "ad",
+      "permissions"
+    ]
+  },
+  {
+    "id": "IO-B-M02",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A Linux web service should start at boot and restart automatically on failure. What is the best way to manage it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A recurring desktop reminder"
+      },
+      {
+        "id": "b",
+        "text": "A systemd service unit with the appropriate restart policy"
+      },
+      {
+        "id": "c",
+        "text": "A text file in /home only"
+      },
+      {
+        "id": "d",
+        "text": "A browser bookmark"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "systemd units provide controlled startup, restart, dependency, and logging behavior for Linux services.",
+    "points": 30,
+    "tags": [
+      "linux",
+      "systemd",
+      "services"
+    ]
+  },
+  {
+    "id": "IO-B-M03",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A patch cycle must cover critical servers with minimal downtime. Which approach is most operationally sound?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Patch everything simultaneously during business hours"
+      },
+      {
+        "id": "b",
+        "text": "Use maintenance windows, testing, rollback plans, and staged deployment groups"
+      },
+      {
+        "id": "c",
+        "text": "Wait for annual audits only"
+      },
+      {
+        "id": "d",
+        "text": "Disable backups before patching"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Staged deployment with testing and rollback planning reduces risk while keeping systems current.",
+    "points": 30,
+    "tags": [
+      "patching",
+      "operations"
+    ]
+  },
+  {
+    "id": "IO-B-M04",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A VM host is running out of datastore space because snapshots were never removed. What is the likely issue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "DNS recursion loop"
+      },
+      {
+        "id": "b",
+        "text": "Storage consumed by long-lived snapshots and changed blocks"
+      },
+      {
+        "id": "c",
+        "text": "Kerberos ticket mismatch"
+      },
+      {
+        "id": "d",
+        "text": "GPO inheritance block"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Snapshots accumulate changed data over time and can consume significant storage if left in place.",
+    "points": 30,
+    "tags": [
+      "virtualization",
+      "storage"
+    ]
+  },
+  {
+    "id": "IO-B-M05",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A DBA needs to let analysts read only selected tables in a production database. Which control is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Share the application admin account"
+      },
+      {
+        "id": "b",
+        "text": "Grant least-privilege database roles limited to required objects"
+      },
+      {
+        "id": "c",
+        "text": "Copy production passwords into a spreadsheet"
+      },
+      {
+        "id": "d",
+        "text": "Disable auditing to improve performance"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Role-based least privilege restricts analysts to the minimum database objects and actions they need.",
+    "points": 30,
+    "tags": [
+      "database",
+      "least-privilege"
+    ]
+  },
+  {
+    "id": "IO-B-M06",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A backup job shows green every night, but recovery has never been tested. What is the main risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Backups become larger than expected"
+      },
+      {
+        "id": "b",
+        "text": "Data may not actually be restorable when needed"
+      },
+      {
+        "id": "c",
+        "text": "Kerberos tickets will expire"
+      },
+      {
+        "id": "d",
+        "text": "The servers will not join the domain"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Successful backup completion does not guarantee recoverability; restore testing validates that backups are usable.",
+    "points": 30,
+    "tags": [
+      "backup",
+      "restore-testing"
+    ]
+  },
+  {
+    "id": "IO-B-M07",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A user moves from finance to engineering but keeps old access for months. What process failure does this show?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Weak NTP peering"
+      },
+      {
+        "id": "b",
+        "text": "Poor mover lifecycle and access recertification control"
+      },
+      {
+        "id": "c",
+        "text": "Incorrect VLAN tagging"
+      },
+      {
+        "id": "d",
+        "text": "BGP route dampening"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Mover events should trigger timely access review and adjustment so users do not accumulate unnecessary privileges.",
+    "points": 30,
+    "tags": [
+      "jml",
+      "access-review"
+    ]
+  },
+  {
+    "id": "IO-B-M08",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A Windows admin needs to push a registry-based security setting to all workstations in one OU. Which tool is most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "GPO linked to that OU"
+      },
+      {
+        "id": "b",
+        "text": "Local hosts file edits"
+      },
+      {
+        "id": "c",
+        "text": "A DNS TXT record"
+      },
+      {
+        "id": "d",
+        "text": "A storage snapshot"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "OU-linked Group Policy is the standard way to deploy registry-backed Windows security settings at scale.",
+    "points": 30,
+    "tags": [
+      "windows",
+      "gpo"
+    ]
+  },
+  {
+    "id": "IO-B-M09",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A Linux administrator wants a service account to run one backup command with elevated privileges but nothing else. Which design is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Give the account full root shell access"
+      },
+      {
+        "id": "b",
+        "text": "Use narrowly scoped sudo rules for the required command"
+      },
+      {
+        "id": "c",
+        "text": "Share the root password"
+      },
+      {
+        "id": "d",
+        "text": "Make the account owner of every file"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Scoped sudo rules support least privilege by allowing only the specific administrative action required.",
+    "points": 30,
+    "tags": [
+      "linux",
+      "sudo",
+      "least-privilege"
+    ]
+  },
+  {
+    "id": "IO-B-M10",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "medium",
+    "difficulty": 3,
+    "prompt": "A database server stores sensitive customer data and must support disaster recovery. Which pair of controls is most important?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Color-coded cables and larger monitors"
+      },
+      {
+        "id": "b",
+        "text": "Verified backups plus tested recovery procedures"
+      },
+      {
+        "id": "c",
+        "text": "Disabling logs and using default accounts"
+      },
+      {
+        "id": "d",
+        "text": "Daily password emails to admins"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Data protection requires both reliable backups and proven recovery procedures, especially for critical databases.",
+    "points": 30,
+    "tags": [
+      "database",
+      "dr",
+      "backup"
+    ]
+  },
+  {
+    "id": "IO-B-H01",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "Kerberos authentication fails for many users after a domain controller\u2019s clock drifts by several minutes. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kerberos depends on reasonably synchronized time to validate tickets"
+      },
+      {
+        "id": "b",
+        "text": "VLAN tags expired"
+      },
+      {
+        "id": "c",
+        "text": "GPOs require RAID 10"
+      },
+      {
+        "id": "d",
+        "text": "DNS cannot resolve usernames anymore"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Kerberos uses time-based ticket validation and will fail if clock skew exceeds allowed tolerances.",
+    "points": 40,
+    "tags": [
+      "kerberos",
+      "time"
+    ]
+  },
+  {
+    "id": "IO-B-H02",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "An administrator applies a new GPO and unexpectedly weakens security on thousands of hosts due to inheritance order. What should have been reviewed more carefully?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The cafeteria menu"
+      },
+      {
+        "id": "b",
+        "text": "OU structure, link order, inheritance, and resultant set of policy before rollout"
+      },
+      {
+        "id": "c",
+        "text": "The monitor brightness setting"
+      },
+      {
+        "id": "d",
+        "text": "The MAC address table"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "GPO behavior depends on scope, precedence, inheritance, and enforced settings; testing resultant policy helps prevent broad misconfiguration.",
+    "points": 50,
+    "tags": [
+      "gpo",
+      "change-management"
+    ]
+  },
+  {
+    "id": "IO-B-H03",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A Linux server was hardened to a CIS profile, but an application now fails because it depended on an insecure legacy cipher. What is the best response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Remove all hardening permanently"
+      },
+      {
+        "id": "b",
+        "text": "Assess whether an exception, compensating control, or application update is appropriate and document the risk decision"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the outage"
+      },
+      {
+        "id": "d",
+        "text": "Delete audit logs"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Hardening exceptions should be risk-based, documented, and ideally paired with remediation rather than simply undoing security controls wholesale.",
+    "points": 40,
+    "tags": [
+      "hardening",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "IO-B-H04",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A virtualization cluster loses one host and several VMs restart elsewhere, but one critical VM does not because its datastore is local to the failed host. What design weakness caused this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Too many DNS records"
+      },
+      {
+        "id": "b",
+        "text": "Lack of shared or replicated storage for workload mobility and recovery"
+      },
+      {
+        "id": "c",
+        "text": "Incorrect shell aliases"
+      },
+      {
+        "id": "d",
+        "text": "Excessive Kerberos ticket lifetimes"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "HA for virtual machines depends on surviving host failure and having storage available from other nodes.",
+    "points": 50,
+    "tags": [
+      "virtualization",
+      "storage",
+      "ha"
+    ]
+  },
+  {
+    "id": "IO-B-H05",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A DBA encrypts a database at rest but stores the decryption keys on the same server with broad admin access. What issue remains?",
+    "options": [
+      {
+        "id": "a",
+        "text": "No issue remains"
+      },
+      {
+        "id": "b",
+        "text": "Key management may be too weak because attackers or admins on the server can still access the protected data"
+      },
+      {
+        "id": "c",
+        "text": "Backups become impossible"
+      },
+      {
+        "id": "d",
+        "text": "SQL queries cannot be optimized"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Encryption effectiveness depends heavily on separation and protection of keys, not just enabling the feature.",
+    "points": 40,
+    "tags": [
+      "database",
+      "key-management"
+    ]
+  },
+  {
+    "id": "IO-B-H06",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A ransomware event encrypts the primary file server and its connected backup repository because the same admin credentials were used everywhere. Which backup design principle was violated?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Loop prevention"
+      },
+      {
+        "id": "b",
+        "text": "Isolation or immutability of backup paths and credentials"
+      },
+      {
+        "id": "c",
+        "text": "Subnet summarization"
+      },
+      {
+        "id": "d",
+        "text": "DNS split-horizon"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Backups should be isolated and protected so compromise of primary systems does not immediately compromise recovery assets.",
+    "points": 50,
+    "tags": [
+      "backup",
+      "ransomware",
+      "immutability"
+    ]
+  },
+  {
+    "id": "IO-B-H07",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "An organization provisions accounts quickly for joiners but rarely disables SaaS access for contractors whose purchase orders end. What is the key control gap?",
+    "options": [
+      {
+        "id": "a",
+        "text": "STP guard timers"
+      },
+      {
+        "id": "b",
+        "text": "Leaver process integration with identity and vendor offboarding"
+      },
+      {
+        "id": "c",
+        "text": "TLS cipher ordering"
+      },
+      {
+        "id": "d",
+        "text": "Disk defragmentation"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Identity lifecycle controls must include timely deprovisioning for non-employees and contingent workers, not just employees.",
+    "points": 40,
+    "tags": [
+      "jml",
+      "deprovisioning",
+      "saas"
+    ]
+  },
+  {
+    "id": "IO-B-H08",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A Linux admin uses chmod 777 on an application directory to solve a deployment problem. Why is this dangerous?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It improves logging too much"
+      },
+      {
+        "id": "b",
+        "text": "It grants broad write access that can enable tampering or privilege abuse"
+      },
+      {
+        "id": "c",
+        "text": "It disables DNSSEC"
+      },
+      {
+        "id": "d",
+        "text": "It prevents backups from running"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "World-writable permissions are rarely appropriate on application directories because they allow unauthorized modification.",
+    "points": 50,
+    "tags": [
+      "linux",
+      "permissions",
+      "hardening"
+    ]
+  },
+  {
+    "id": "IO-B-H09",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 4,
+    "prompt": "A hybrid identity deployment syncs accounts from on-prem AD to Entra ID, but terminated users can still access cloud apps for hours. Which area most needs improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Printer queue policies"
+      },
+      {
+        "id": "b",
+        "text": "Identity disablement propagation and conditional access/session revocation processes"
+      },
+      {
+        "id": "c",
+        "text": "BGP metrics"
+      },
+      {
+        "id": "d",
+        "text": "Storage deduplication"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Disabling on-prem accounts is not enough if cloud sessions or synchronization timing leave access active longer than policy allows.",
+    "points": 40,
+    "tags": [
+      "entra",
+      "identity-lifecycle",
+      "session"
+    ]
+  },
+  {
+    "id": "IO-B-H10",
+    "domainId": "IO",
+    "subdomainId": "IO-B",
+    "tier": "hard",
+    "difficulty": 5,
+    "prompt": "A recovery drill restores the database successfully but application servers fail because connection secrets were rotated after the backup. What lesson is most important?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only database files matter in recovery"
+      },
+      {
+        "id": "b",
+        "text": "Recovery testing must include dependent secrets, configuration, and end-to-end service validation"
+      },
+      {
+        "id": "c",
+        "text": "Snapshots always solve this problem"
+      },
+      {
+        "id": "d",
+        "text": "Patch management should be stopped"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "System recovery is broader than raw data restore; dependent credentials, configs, and application integration must also be recoverable.",
+    "points": 50,
+    "tags": [
+      "recovery",
+      "database",
+      "secrets"
+    ]
+  }
+]

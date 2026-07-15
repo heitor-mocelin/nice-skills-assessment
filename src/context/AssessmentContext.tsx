@@ -22,6 +22,7 @@ import {
   setAssessmentState,
   subscribe,
 } from "@/lib/assessmentStore";
+import { MAX_SKIPS_PER_DOMAIN, findReplacementQuestion } from "@/lib/quizEngine";
 
 type SubdomainMetaPatch = Partial<Pick<SubdomainBaseline, "isFocusArea" | "notes">>;
 
@@ -44,9 +45,24 @@ interface AssessmentContextValue {
     patch: SubdomainMetaPatch
   ) => void;
   completeBaseline: () => void;
-  startQuiz: (quizQuestionIds: Record<DomainId, string[]>) => void;
+  /** Skips Stage 1 entirely — jumps straight to the quiz with no baseline recorded. */
+  skipBaseline: () => void;
+  startQuiz: (quizQuestionIds: Record<SubdomainId, string[]>) => void;
   recordResponse: (response: QuestionResponse) => void;
-  advanceQuestion: (domainIndex: number, questionIndex: number) => void;
+  advanceQuestion: (subdomainIndex: number, questionIndex: number) => void;
+  /**
+   * Skips the current question, swapping it for an unused same-tier
+   * question from the same sub-domain's pool (up to MAX_SKIPS_PER_DOMAIN
+   * per parent domain). Returns false if the domain's skip cap is reached
+   * or no replacement is available.
+   */
+  skipQuestion: (
+    subdomainId: SubdomainId,
+    domainId: DomainId,
+    questionId: string,
+    tier: "easy" | "medium" | "hard"
+  ) => boolean;
+  remainingSkips: (domainId: DomainId) => number;
   completeQuiz: () => void;
   resetAssessment: () => void;
 }
@@ -129,11 +145,20 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     }));
   }, []);
 
-  const startQuiz = useCallback((quizQuestionIds: Record<DomainId, string[]>) => {
+  const skipBaseline = useCallback(() => {
+    setAssessmentState((prev) => ({
+      ...prev,
+      currentStage: "quiz",
+      baselineSkipped: true,
+      startedAt: prev.startedAt ?? Date.now(),
+    }));
+  }, []);
+
+  const startQuiz = useCallback((quizQuestionIds: Record<SubdomainId, string[]>) => {
     setAssessmentState((prev) => ({
       ...prev,
       quizQuestionIds,
-      currentDomainIndex: 0,
+      currentSubdomainIndex: 0,
       currentQuestionIndex: 0,
     }));
   }, []);
@@ -148,13 +173,58 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     }));
   }, []);
 
-  const advanceQuestion = useCallback((domainIndex: number, questionIndex: number) => {
+  const advanceQuestion = useCallback((subdomainIndex: number, questionIndex: number) => {
     setAssessmentState((prev) => ({
       ...prev,
-      currentDomainIndex: domainIndex,
+      currentSubdomainIndex: subdomainIndex,
       currentQuestionIndex: questionIndex,
     }));
   }, []);
+
+  const remainingSkips = useCallback(
+    (domainId: DomainId): number => {
+      return MAX_SKIPS_PER_DOMAIN - (state.skipsUsedByDomain[domainId] ?? 0);
+    },
+    [state.skipsUsedByDomain]
+  );
+
+  const skipQuestion = useCallback(
+    (
+      subdomainId: SubdomainId,
+      domainId: DomainId,
+      questionId: string,
+      tier: "easy" | "medium" | "hard"
+    ): boolean => {
+      const prev = getSnapshot();
+      const usedSoFar = prev.skipsUsedByDomain[domainId] ?? 0;
+      if (usedSoFar >= MAX_SKIPS_PER_DOMAIN) return false;
+
+      const allQueuedIds = new Set(Object.values(prev.quizQuestionIds).flat());
+      const replacement = findReplacementQuestion(subdomainId, tier, allQueuedIds);
+      if (!replacement) return false;
+
+      setAssessmentState((p) => {
+        const currentQueue = p.quizQuestionIds[subdomainId] ?? [];
+        const swapIndex = currentQueue.indexOf(questionId);
+        if (swapIndex === -1) return p;
+
+        const nextQueue = [...currentQueue];
+        nextQueue[swapIndex] = replacement.id;
+
+        return {
+          ...p,
+          quizQuestionIds: { ...p.quizQuestionIds, [subdomainId]: nextQueue },
+          skipsUsedByDomain: {
+            ...p.skipsUsedByDomain,
+            [domainId]: (p.skipsUsedByDomain[domainId] ?? 0) + 1,
+          },
+        };
+      });
+
+      return true;
+    },
+    []
+  );
 
   const completeQuiz = useCallback(() => {
     setAssessmentState((prev) => ({
@@ -176,9 +246,12 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       setTopicRating,
       updateSubdomainMeta,
       completeBaseline,
+      skipBaseline,
       startQuiz,
       recordResponse,
       advanceQuestion,
+      skipQuestion,
+      remainingSkips,
       completeQuiz,
       resetAssessment,
     }),
@@ -189,9 +262,12 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       setTopicRating,
       updateSubdomainMeta,
       completeBaseline,
+      skipBaseline,
       startQuiz,
       recordResponse,
       advanceQuestion,
+      skipQuestion,
+      remainingSkips,
       completeQuiz,
       resetAssessment,
     ]
