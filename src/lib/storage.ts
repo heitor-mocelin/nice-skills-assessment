@@ -1,8 +1,9 @@
 import { AssessmentState, DomainId } from "@/types/nice";
 
 export const STORAGE_KEY = "nice-assessment:state";
-// Bumped: baseline entries moved from per-domain to per-subdomain granularity.
-export const SCHEMA_VERSION = 2;
+// v2: baseline entries moved from per-domain to per-subdomain granularity.
+// v3: subdomain rating replaced with per-topic ratings (averaged), plus separate focus/notes meta.
+export const SCHEMA_VERSION = 3;
 
 const EMPTY_QUIZ_QUEUE: Record<DomainId, string[]> = {
   OG: [],

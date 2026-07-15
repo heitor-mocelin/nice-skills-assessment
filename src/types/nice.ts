@@ -82,11 +82,18 @@ export interface QuestionBank {
 /* User progress / response tracking                                       */
 /* ---------------------------------------------------------------------- */
 
-/** Stage 1: user's self-rated familiarity for a single sub-domain, captured before the quiz */
+/**
+ * Stage 1: user's self-rated familiarity for a single sub-domain, captured
+ * before the quiz. Each topic in the sub-domain's checklist is rated
+ * individually (0-4); the sub-domain's overall rating is the computed
+ * average of its rated topics (see computeSubdomainAverage in
+ * src/lib/baselineRollup.ts) rather than a single manually-entered value.
+ */
 export interface SubdomainBaseline {
   subdomainId: SubdomainId;
   domainId: DomainId;
-  rating: FamiliarityRating; // 0-4
+  /** rating per topic, keyed by the topic's index within Subdomain.topics */
+  topicRatings: Record<number, FamiliarityRating>;
   /** whether the user flagged this sub-domain as a career focus area */
   isFocusArea: boolean | null;
   /** free-form notes, e.g. "TCP/IP solid, BGP theoretical only" */

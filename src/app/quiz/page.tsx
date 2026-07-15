@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useAssessment } from "@/context/AssessmentContext";
+import { SUBDOMAINS } from "@/data/subdomains";
+import { computeSubdomainAverage } from "@/lib/baselineRollup";
 
 /**
  * Temporary placeholder for Stage 2 (The Assessment / Quiz Engine).
@@ -30,12 +32,16 @@ export default function QuizPlaceholderPage() {
             Saved baseline ratings:
           </p>
           <ul className="mt-2 space-y-1 text-slate-500 dark:text-slate-400">
-            {state.baseline.map((b) => (
-              <li key={b.subdomainId}>
-                {b.subdomainId}: {b.rating}/4
-                {b.isFocusArea ? " · focus area" : ""}
-              </li>
-            ))}
+            {state.baseline.map((b) => {
+              const subdomain = SUBDOMAINS.find((s) => s.id === b.subdomainId);
+              const avg = subdomain ? computeSubdomainAverage(subdomain, b) : null;
+              return (
+                <li key={b.subdomainId}>
+                  {b.subdomainId}: {avg !== null ? avg.toFixed(1) : "—"}/4
+                  {b.isFocusArea ? " · focus area" : ""}
+                </li>
+              );
+            })}
           </ul>
           <p className="mt-2 text-slate-400">Current stage: {state.currentStage}</p>
         </div>

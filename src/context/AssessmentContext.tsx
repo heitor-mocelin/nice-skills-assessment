@@ -23,19 +23,25 @@ import {
   subscribe,
 } from "@/lib/assessmentStore";
 
-type SubdomainBaselinePatch = Partial<
-  Pick<SubdomainBaseline, "rating" | "isFocusArea" | "notes">
->;
+type SubdomainMetaPatch = Partial<Pick<SubdomainBaseline, "isFocusArea" | "notes">>;
 
 interface AssessmentContextValue {
   state: AssessmentState;
   /** true once the client has mounted and the useSyncExternalStore snapshot reflects localStorage */
   isHydrated: boolean;
   getSubdomainBaseline: (subdomainId: SubdomainId) => SubdomainBaseline | null;
-  updateSubdomainBaseline: (
+  /** Rates a single topic (bullet point) within a sub-domain, 0-4. */
+  setTopicRating: (
     subdomainId: SubdomainId,
     domainId: DomainId,
-    patch: SubdomainBaselinePatch
+    topicIndex: number,
+    rating: FamiliarityRating
+  ) => void;
+  /** Updates the sub-domain's career-focus flag and/or free-text notes. */
+  updateSubdomainMeta: (
+    subdomainId: SubdomainId,
+    domainId: DomainId,
+    patch: SubdomainMetaPatch
   ) => void;
   completeBaseline: () => void;
   startQuiz: (quizQuestionIds: Record<DomainId, string[]>) => void;
@@ -47,7 +53,21 @@ interface AssessmentContextValue {
 
 const AssessmentContext = createContext<AssessmentContextValue | null>(null);
 
-const DEFAULT_RATING: FamiliarityRating = 0;
+function ensureBaselineEntry(
+  prev: AssessmentState,
+  subdomainId: SubdomainId,
+  domainId: DomainId
+): SubdomainBaseline {
+  return (
+    prev.baseline.find((b) => b.subdomainId === subdomainId) ?? {
+      subdomainId,
+      domainId,
+      topicRatings: {},
+      isFocusArea: null,
+      notes: "",
+    }
+  );
+}
 
 export function AssessmentProvider({ children }: { children: React.ReactNode }) {
   // Synchronizes with the external localStorage-backed store. On the server
@@ -64,23 +84,36 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     [state.baseline]
   );
 
-  const updateSubdomainBaseline = useCallback(
-    (subdomainId: SubdomainId, domainId: DomainId, patch: SubdomainBaselinePatch) => {
+  const setTopicRating = useCallback(
+    (
+      subdomainId: SubdomainId,
+      domainId: DomainId,
+      topicIndex: number,
+      rating: FamiliarityRating
+    ) => {
       setAssessmentState((prev) => {
-        const existing = prev.baseline.find((b) => b.subdomainId === subdomainId);
-        const next: SubdomainBaseline = existing
-          ? { ...existing, ...patch }
-          : {
-              subdomainId,
-              domainId,
-              rating: DEFAULT_RATING,
-              isFocusArea: null,
-              notes: "",
-              ...patch,
-            };
+        const existing = ensureBaselineEntry(prev, subdomainId, domainId);
+        const next: SubdomainBaseline = {
+          ...existing,
+          topicRatings: { ...existing.topicRatings, [topicIndex]: rating },
+        };
         return {
           ...prev,
           currentStage: prev.currentStage === "not-started" ? "baseline" : prev.currentStage,
+          baseline: [...prev.baseline.filter((b) => b.subdomainId !== subdomainId), next],
+        };
+      });
+    },
+    []
+  );
+
+  const updateSubdomainMeta = useCallback(
+    (subdomainId: SubdomainId, domainId: DomainId, patch: SubdomainMetaPatch) => {
+      setAssessmentState((prev) => {
+        const existing = ensureBaselineEntry(prev, subdomainId, domainId);
+        const next: SubdomainBaseline = { ...existing, ...patch };
+        return {
+          ...prev,
           baseline: [...prev.baseline.filter((b) => b.subdomainId !== subdomainId), next],
         };
       });
@@ -140,7 +173,8 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       state,
       isHydrated,
       getSubdomainBaseline,
-      updateSubdomainBaseline,
+      setTopicRating,
+      updateSubdomainMeta,
       completeBaseline,
       startQuiz,
       recordResponse,
@@ -152,7 +186,8 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       state,
       isHydrated,
       getSubdomainBaseline,
-      updateSubdomainBaseline,
+      setTopicRating,
+      updateSubdomainMeta,
       completeBaseline,
       startQuiz,
       recordResponse,

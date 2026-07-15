@@ -13,9 +13,12 @@ export function BaselineForm() {
   const router = useRouter();
   const { state, completeBaseline } = useAssessment();
 
-  const ratedSubdomainIds = new Set(state.baseline.map((b) => b.subdomainId));
-  const allRated = SUBDOMAINS.every((s) => ratedSubdomainIds.has(s.id));
-  const ratedCount = ratedSubdomainIds.size;
+  const totalTopics = SUBDOMAINS.reduce((sum, s) => sum + s.topics.length, 0);
+  const ratedTopics = state.baseline.reduce(
+    (sum, b) => sum + Object.keys(b.topicRatings).length,
+    0
+  );
+  const allRated = ratedTopics >= totalTopics;
 
   const domainPercents = useMemo(
     () => computeDomainBaselinePercents(state.baseline),
@@ -75,7 +78,7 @@ export function BaselineForm() {
           >
             {allRated
               ? "Begin Assessment →"
-              : `Rate all sub-domains to continue (${ratedCount}/${SUBDOMAINS.length})`}
+              : `Rate all subjects to continue (${ratedTopics}/${totalTopics})`}
           </button>
         </div>
       </div>
@@ -86,13 +89,13 @@ export function BaselineForm() {
             Your Familiarity Baseline
           </h3>
           <p className="mt-1 text-center text-xs text-slate-400">
-            Domain average across rated sub-domains — updates live
+            Domain average across all rated subjects — updates live
           </p>
           <div className="mx-auto mt-4 aspect-square max-w-xs">
             <RadarChart data={radarData} />
           </div>
           <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
-            {ratedCount} / {SUBDOMAINS.length} sub-domains rated
+            {ratedTopics} / {totalTopics} subjects rated
           </p>
         </div>
       </div>
