@@ -267,11 +267,17 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       let currentStage = prev.currentStage;
       let completedAt = prev.completedAt;
 
-      if (ordered[prev.currentSubdomainIndex]?.id === subdomainId) {
-        const nextIndex = findNextNonEmptySubdomainIndexFrom(
-          nextQueue,
-          prev.currentSubdomainIndex
-        );
+      // Advance whenever the sub-domain the user is currently sitting on has
+      // run out of questions — rather than only when it exactly matches the
+      // sub-domain just skipped. Comparing IDs here left a window where a
+      // stale/out-of-sync currentSubdomainIndex (e.g. a concurrent position
+      // reset) would silently mark the sub-domain as skipped without ever
+      // moving the user forward, making "confirm" appear to do nothing.
+      const currentSubdomainHasQuestionsLeft =
+        (nextQueue[ordered[currentSubdomainIndex]?.id]?.length ?? 0) > 0;
+
+      if (!currentSubdomainHasQuestionsLeft) {
+        const nextIndex = findNextNonEmptySubdomainIndexFrom(nextQueue, currentSubdomainIndex);
         if (nextIndex !== null) {
           currentSubdomainIndex = nextIndex;
           currentQuestionIndex = 0;
