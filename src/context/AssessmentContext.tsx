@@ -12,6 +12,7 @@ import {
   DomainId,
   FamiliarityRating,
   QuestionResponse,
+  QuestionsPerSubdomain,
   SubdomainBaseline,
   SubdomainId,
 } from "@/types/nice";
@@ -27,6 +28,7 @@ import {
   findNextNonEmptySubdomainIndexFrom,
   findReplacementQuestion,
   getOrderedSubdomains,
+  isAllQuestionsMode,
 } from "@/lib/quizEngine";
 
 type SubdomainMetaPatch = Partial<Pick<SubdomainBaseline, "isFocusArea" | "notes">>;
@@ -52,7 +54,10 @@ interface AssessmentContextValue {
   completeBaseline: () => void;
   /** Skips Stage 1 entirely — jumps straight to the quiz with no baseline recorded. */
   skipBaseline: () => void;
-  startQuiz: (quizQuestionIds: Record<SubdomainId, string[]>) => void;
+  startQuiz: (
+    quizQuestionIds: Record<SubdomainId, string[]>,
+    questionsPerSubdomain: QuestionsPerSubdomain
+  ) => void;
   recordResponse: (response: QuestionResponse) => void;
   advanceQuestion: (subdomainIndex: number, questionIndex: number) => void;
   /**
@@ -83,6 +88,15 @@ interface AssessmentContextValue {
 
 const AssessmentContext = createContext<AssessmentContextValue | null>(null);
 
+// Stable references for the hydration flag below — `useSyncExternalStore`
+// is the React-recommended way to know "have we hydrated on the client
+// yet?" without the cascading-render pitfalls of setState-in-an-effect: the
+// server snapshot is false, the client snapshot is true, and React handles
+// swapping from one to the other safely after hydration completes.
+const subscribeNever = () => () => {};
+const getHydratedSnapshot = () => true;
+const getHydratingServerSnapshot = () => false;
+
 function ensureBaselineEntry(
   prev: AssessmentState,
   subdomainId: SubdomainId,
@@ -105,7 +119,17 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
   // (avoiding hydration mismatches); React then re-renders with the real
   // persisted value once mounted.
   const state = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const isHydrated = typeof window !== "undefined";
+  // `typeof window !== "undefined"` is true even during the client's first
+  // (hydration) render pass, not just after mount — so using it directly
+  // here caused hydration mismatches for any UI that renders differently
+  // once "hydrated" (e.g. a picker screen replacing a loading placeholder).
+  // This mirrors `state` above: false on the server/hydration pass, true
+  // once the client has taken over.
+  const isHydrated = useSyncExternalStore(
+    subscribeNever,
+    getHydratedSnapshot,
+    getHydratingServerSnapshot
+  );
 
   const getSubdomainBaseline = useCallback(
     (subdomainId: SubdomainId): SubdomainBaseline | null => {
@@ -168,14 +192,18 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
     }));
   }, []);
 
-  const startQuiz = useCallback((quizQuestionIds: Record<SubdomainId, string[]>) => {
-    setAssessmentState((prev) => ({
-      ...prev,
-      quizQuestionIds,
-      currentSubdomainIndex: 0,
-      currentQuestionIndex: 0,
-    }));
-  }, []);
+  const startQuiz = useCallback(
+    (quizQuestionIds: Record<SubdomainId, string[]>, questionsPerSubdomain: QuestionsPerSubdomain) => {
+      setAssessmentState((prev) => ({
+        ...prev,
+        quizQuestionIds,
+        questionsPerSubdomain,
+        currentSubdomainIndex: 0,
+        currentQuestionIndex: 0,
+      }));
+    },
+    []
+  );
 
   const recordResponse = useCallback((response: QuestionResponse) => {
     setAssessmentState((prev) => ({
@@ -197,9 +225,10 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
 
   const remainingSkips = useCallback(
     (domainId: DomainId): number => {
+      if (isAllQuestionsMode(state.questionsPerSubdomain)) return 0;
       return MAX_SKIPS_PER_DOMAIN - (state.skipsUsedByDomain[domainId] ?? 0);
     },
-    [state.skipsUsedByDomain]
+    [state.skipsUsedByDomain, state.questionsPerSubdomain]
   );
 
   const skipQuestion = useCallback(
@@ -210,6 +239,7 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
       tier: "easy" | "medium" | "hard"
     ): boolean => {
       const prev = getSnapshot();
+      if (isAllQuestionsMode(prev.questionsPerSubdomain)) return false;
       const usedSoFar = prev.skipsUsedByDomain[domainId] ?? 0;
       if (usedSoFar >= MAX_SKIPS_PER_DOMAIN) return false;
 
@@ -249,6 +279,7 @@ export function AssessmentProvider({ children }: { children: React.ReactNode }) 
 
   const skipSubdomain = useCallback((subdomainId: SubdomainId) => {
     setAssessmentState((prev) => {
+      if (isAllQuestionsMode(prev.questionsPerSubdomain)) return prev;
       if (prev.skippedSubdomains.includes(subdomainId)) return prev;
 
       const nextQueue: Record<SubdomainId, string[]> = {

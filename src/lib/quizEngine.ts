@@ -1,10 +1,40 @@
-import { DomainId, Question, Subdomain, SubdomainId } from "@/types/nice";
+import { DomainId, Question, QuestionsPerSubdomain, Subdomain, SubdomainId } from "@/types/nice";
 import { DOMAINS } from "@/data/domains";
 import { SUBDOMAINS } from "@/data/subdomains";
 import { loadQuestionBank } from "@/lib/questionBank";
 
-/** How many questions of each tier are shown per sub-domain (out of a 10/10/10 pool). */
+/** How many questions of each tier are shown per sub-domain (out of a 10/10/10 pool), at the default length. */
 export const TIER_COMPOSITION = { easy: 4, medium: 3, hard: 3 } as const;
+
+/** The quiz-length choices offered to the user before starting Stage 2 (questions per sub-domain). */
+export const QUESTIONS_PER_SUBDOMAIN_OPTIONS: readonly QuestionsPerSubdomain[] = [10, 20, 30];
+
+/** Default quiz length, matching the app's original fixed behavior. */
+export const DEFAULT_QUESTIONS_PER_SUBDOMAIN: QuestionsPerSubdomain = 10;
+
+/** 30 = the full 10/10/10 pool per sub-domain, i.e. "All questions". */
+export function isAllQuestionsMode(questionsPerSubdomain: QuestionsPerSubdomain): boolean {
+  return questionsPerSubdomain === 30;
+}
+
+/**
+ * Scales TIER_COMPOSITION's 4:3:3 easy:medium:hard ratio up to the chosen
+ * quiz length. At 30 (the full pool) this is simply 10/10/10 — every
+ * question in every tier, with nothing held back.
+ */
+export function getTierComposition(
+  questionsPerSubdomain: QuestionsPerSubdomain
+): Record<keyof typeof TIER_COMPOSITION, number> {
+  switch (questionsPerSubdomain) {
+    case 20:
+      return { easy: 8, medium: 6, hard: 6 };
+    case 30:
+      return { easy: 10, medium: 10, hard: 10 };
+    case 10:
+    default:
+      return { ...TIER_COMPOSITION };
+  }
+}
 
 /** Max number of "skip and get another" actions a user may use per parent domain. */
 export const MAX_SKIPS_PER_DOMAIN = 3;
@@ -32,21 +62,25 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 /**
- * Builds the initial quiz queue: for every sub-domain, samples 4 easy + 3
- * medium + 3 hard questions (shuffled within tier, then interleaved) from
- * that sub-domain's 30-question pool. Keyed by SubdomainId, in the order
- * questions will be served within that sub-domain.
+ * Builds the initial quiz queue: for every sub-domain, samples questions
+ * from that sub-domain's 30-question pool according to the chosen quiz
+ * length (see getTierComposition) — shuffled within tier, then interleaved.
+ * Keyed by SubdomainId, in the order questions will be served within that
+ * sub-domain. Defaults to the original fixed 10-per-sub-domain length.
  */
-export function buildQuizQueue(): Record<SubdomainId, string[]> {
+export function buildQuizQueue(
+  questionsPerSubdomain: QuestionsPerSubdomain = DEFAULT_QUESTIONS_PER_SUBDOMAIN
+): Record<SubdomainId, string[]> {
   const bank = loadQuestionBank();
   const queue = {} as Record<SubdomainId, string[]>;
+  const composition = getTierComposition(questionsPerSubdomain);
 
   for (const subdomain of getOrderedSubdomains()) {
     const pool = bank.questions.filter((q) => q.subdomainId === subdomain.id);
     const picked: Question[] = [];
-    (Object.keys(TIER_COMPOSITION) as (keyof typeof TIER_COMPOSITION)[]).forEach((tier) => {
+    (Object.keys(composition) as (keyof typeof composition)[]).forEach((tier) => {
       const tierQuestions = shuffle(pool.filter((q) => q.tier === tier));
-      picked.push(...tierQuestions.slice(0, TIER_COMPOSITION[tier]));
+      picked.push(...tierQuestions.slice(0, composition[tier]));
     });
     queue[subdomain.id] = shuffle(picked).map((q) => q.id);
   }

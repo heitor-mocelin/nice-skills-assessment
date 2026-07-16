@@ -19,6 +19,15 @@ export type DifficultyLevel = 1 | 2 | 3 | 4 | 5;
 export type DifficultyTier = "easy" | "medium" | "hard";
 
 /**
+ * How many questions the user chooses to answer per sub-domain, out of the
+ * 30-question pool (10 easy / 10 medium / 10 hard). 30 means "All questions"
+ * — the entire pool with nothing held back, in which case skipping (either a
+ * single question or a whole sub-domain) is disabled since there's no
+ * unused replacement question left to swap in.
+ */
+export type QuestionsPerSubdomain = 10 | 20 | 30;
+
+/**
  * Self-attestation comfort/familiarity rating for a sub-domain, 0 (no
  * familiarity) to 4 (expert). Matches the paper worksheet's 0-4 scale.
  */
@@ -158,6 +167,8 @@ export interface AssessmentState {
    * an unused same-tier question from the same sub-domain's pool.
    */
   quizQuestionIds: Record<SubdomainId, string[]>;
+  /** How many questions per sub-domain the user chose before starting the quiz (10, 20, or all 30). */
+  questionsPerSubdomain: QuestionsPerSubdomain;
   /** index into the ordered sub-domain traversal (see getOrderedSubdomains) */
   currentSubdomainIndex: number;
   /** index of the current question within the current sub-domain's quiz queue */

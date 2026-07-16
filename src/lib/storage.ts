@@ -1,4 +1,5 @@
 import { AssessmentState, DomainId } from "@/types/nice";
+import { DEFAULT_QUESTIONS_PER_SUBDOMAIN } from "@/lib/quizEngine";
 
 export const STORAGE_KEY = "nice-assessment:state";
 // v2: baseline entries moved from per-domain to per-subdomain granularity.
@@ -9,7 +10,9 @@ export const STORAGE_KEY = "nice-assessment:state";
 // v5: added the ability to skip an entire sub-domain during the quiz
 //     (skippedSubdomains), shown as a zeroed-out, explicitly flagged
 //     section in the results dashboard.
-export const SCHEMA_VERSION = 5;
+// v6: added questionsPerSubdomain — the user now chooses quiz length (10,
+//     20, or all 30 questions per sub-domain) before Stage 2 starts.
+export const SCHEMA_VERSION = 6;
 
 const EMPTY_SKIP_COUNTS: Record<DomainId, number> = {
   OG: 0,
@@ -28,6 +31,7 @@ export function createInitialState(): AssessmentState {
     baselineSkipped: false,
     responses: [],
     quizQuestionIds: {},
+    questionsPerSubdomain: DEFAULT_QUESTIONS_PER_SUBDOMAIN,
     currentSubdomainIndex: 0,
     currentQuestionIndex: 0,
     skipsUsedByDomain: { ...EMPTY_SKIP_COUNTS },

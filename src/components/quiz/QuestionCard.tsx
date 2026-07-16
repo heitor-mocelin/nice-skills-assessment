@@ -26,6 +26,8 @@ interface QuestionCardProps {
   canGoBack: boolean;
   /** Skips remaining for this question's parent domain (0 disables the Skip button). */
   skipsRemaining: number;
+  /** When true (quiz length = "All questions"), skipping is disabled entirely — there are no spare questions left in reserve. */
+  allQuestionsMode: boolean;
   /** This question's sub-domain shade (see src/lib/domainColors.ts) — used for the badge and selection accents. */
   accentColor: string;
   onSubmit: (result: {
@@ -54,6 +56,7 @@ export function QuestionCard({
   existingResponse,
   canGoBack,
   skipsRemaining,
+  allQuestionsMode,
   accentColor,
   onSubmit,
   onBack,
@@ -244,7 +247,7 @@ export function QuestionCard({
         )}
       </div>
 
-      {!hasAnswered && (
+      {!hasAnswered && !allQuestionsMode && (
         <button
           type="button"
           onClick={onSkip}

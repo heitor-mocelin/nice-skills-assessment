@@ -4,9 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAssessment } from "@/context/AssessmentContext";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
+import { QuizLengthPicker } from "@/components/quiz/QuizLengthPicker";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import {
   buildQuizQueue,
+  DEFAULT_QUESTIONS_PER_SUBDOMAIN,
   getCompletedQuestionCount,
   getDomainIdForSubdomain,
   getFirstNonEmptySubdomainIndex,
@@ -15,9 +17,11 @@ import {
   getPreviousPosition,
   getQuestionById,
   getTotalQuestionCount,
+  isAllQuestionsMode,
   MAX_SKIPS_PER_DOMAIN,
 } from "@/lib/quizEngine";
 import { getSubdomainColor } from "@/lib/domainColors";
+import { QuestionsPerSubdomain } from "@/types/nice";
 
 export function QuizRunner() {
   const router = useRouter();
@@ -36,14 +40,13 @@ export function QuizRunner() {
   const hasQueue = getTotalQuestionCount(state.quizQuestionIds) > 0;
   const orderedSubdomains = useMemo(() => getOrderedSubdomains(), []);
   const [confirmingSkipSubdomain, setConfirmingSkipSubdomain] = useState(false);
+  const [selectedLength, setSelectedLength] = useState<QuestionsPerSubdomain>(
+    DEFAULT_QUESTIONS_PER_SUBDOMAIN
+  );
 
-  // Initialize the quiz queue on first arrival at this stage (client-only,
-  // after hydration so we don't clobber a queue restored from localStorage).
-  useEffect(() => {
-    if (!isHydrated || hasQueue) return;
-    const queue = buildQuizQueue();
-    startQuiz(queue);
-  }, [isHydrated, hasQueue, startQuiz]);
+  const handleStartQuiz = () => {
+    startQuiz(buildQuizQueue(selectedLength), selectedLength);
+  };
 
   const currentSubdomain = orderedSubdomains[state.currentSubdomainIndex];
   const currentQuestionIds = state.quizQuestionIds[currentSubdomain?.id] ?? [];
@@ -152,7 +155,25 @@ export function QuizRunner() {
     }
   };
 
-  if (!isHydrated || !hasQueue || !currentQuestion || !currentSubdomain) {
+  if (!isHydrated) {
+    return (
+      <div className="flex flex-1 items-center justify-center py-24 text-slate-400">
+        Loading quiz…
+      </div>
+    );
+  }
+
+  if (!hasQueue) {
+    return (
+      <QuizLengthPicker
+        selected={selectedLength}
+        onSelect={setSelectedLength}
+        onStart={handleStartQuiz}
+      />
+    );
+  }
+
+  if (!currentQuestion || !currentSubdomain) {
     return (
       <div className="flex flex-1 items-center justify-center py-24 text-slate-400">
         Loading quiz…
@@ -164,6 +185,7 @@ export function QuizRunner() {
   const domainId = getDomainIdForSubdomain(currentSubdomain.id);
   const skipsRemaining = domainId ? remainingSkips(domainId) : 0;
   const accentColor = getSubdomainColor(currentSubdomain.id);
+  const allQuestionsMode = isAllQuestionsMode(state.questionsPerSubdomain);
 
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -180,20 +202,22 @@ export function QuizRunner() {
             style={{ width: `${progressPercent}%`, backgroundColor: accentColor }}
           />
         </div>
-        {domainId && (
+        {domainId && !allQuestionsMode && (
           <p className="mt-1.5 text-right text-xs text-slate-400">
             {skipsRemaining}/{MAX_SKIPS_PER_DOMAIN} skips left in {domainId}
           </p>
         )}
-        <div className="mt-2 flex justify-end">
-          <button
-            type="button"
-            onClick={handleSkipSubdomain}
-            className="text-xs font-medium text-slate-400 underline decoration-dotted underline-offset-2 transition-colors hover:text-red-500 dark:hover:text-red-400"
-          >
-            Skip this entire section ({currentSubdomain.id}) →
-          </button>
-        </div>
+        {!allQuestionsMode && (
+          <div className="mt-2 flex justify-end">
+            <button
+              type="button"
+              onClick={handleSkipSubdomain}
+              className="text-xs font-medium text-slate-400 underline decoration-dotted underline-offset-2 transition-colors hover:text-red-500 dark:hover:text-red-400"
+            >
+              Skip this entire section ({currentSubdomain.id}) →
+            </button>
+          </div>
+        )}
       </div>
 
       <QuestionCard
@@ -204,6 +228,7 @@ export function QuizRunner() {
         existingResponse={existingResponse}
         canGoBack={previousPosition !== null}
         skipsRemaining={skipsRemaining}
+        allQuestionsMode={allQuestionsMode}
         accentColor={accentColor}
         onSubmit={handleSubmit}
         onBack={handleBack}
